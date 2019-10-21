@@ -1,0 +1,1401 @@
+<configs>
+
+<!--	// SMX // Tip Window -->
+
+		<remove xpath="/windows/window[@name='windowTip']" />
+
+		<append xpath="/windows">
+			<window name="windowTip" depth="15" pos="-323,250" size="647,450" anchor="CenterCenter" pivot="center" controller="TipWindow" cursor_area="true">
+				<panel name="header" style="smx_uipanel_header">
+					<sprite name="SMXuiPanelBG" size="647,450" style="smx_uipanel_background" />
+					<sprite name="SMXuiPanelHD" size="647,80" style="smx_uipanel_header_background" />
+					<sprite name="SMXsepLineHD" size="5,607" style="smx_uipanel_header_separation" />
+					<label name="windowName" size="647,80" style="smx_uipanel_title" text="{tiptitle}" />
+				</panel>
+
+				<rect name="content" depth="3" pos="0,-66" size="647,340">
+					<rect name="description" depth="1" pos="40,-5" size="570,320" visible="{showdescription}">
+						<label name="descriptionText" depth="3" width="570" text="{tiptext}" font_size="30" font_face="AgencyB" crispness="Never" effect="outline" upper_case="false" overflow="resizeheight" />
+					</rect>
+
+					<rect name="btnContinue" depth="3" pos="233,-345">
+						<smx_uibutton_1 name="btnContinue" depth="3" width="180" height="60" caption_key="btnContinue" justify="center" />
+					</rect>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Mouseover Tooltip -->
+
+		<remove xpath="/windows/window[@name='toolTip']" />
+
+		<append xpath="/windows">
+			<window name="toolTip" width="100" height="25" depth="310" controller="ToolTip" above_soft_cursor="true" >
+				<rect>
+					<sprite depth="0" name="sprBackground" pos="3,-3" color="[uiElementsBG]" type="sliced" globalopacitymod="0.8" />
+					<sprite depth="1" name="sprBackgroundBorder" sprite="menu_empty2px" color="255,0,0" type="sliced" fillcenter="false" globalopacitymod="1.5" />
+					<label depth="3" name="lblText" text="" pos="10,-6" font_size="25" font_face="AgencyB" crispness="Never" effect="outline" overflow="resizefreely" />
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Conversation NPC Window -->
+
+		<remove xpath="/windows/window[@name='windowRespondentName']" />
+
+		<append xpath="/windows">
+			<window name="windowRespondentName" depth="0" pos="0,-15" size="1000,80" controller="DialogRespondentName">
+				<sprite name="SMXconTraderBG" pos="0,-75" size="1000,80" style="smx_con_trader_background" pivot="center" />
+				<rect name="content" depth="1" >
+					<label name="header.name" pos="0,-13" size="1000,80" style="smx_uipanel_title" text="{respondentname}" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" pivot="center" />
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Conversation Statements Window -->
+
+		<remove xpath="/windows/window[@name='windowStatement']" />
+
+		<append xpath="/windows">
+			<window name="windowStatement" depth="1" pos="0,-100" size="1000,150" controller="DialogStatementWindow">
+				<rect name="content" depth="1">
+					<label name="statementLabel" depth="3" pos="0,11" size="800,40" text="{statement}" font_size="30" font_face="AgencyB" crispness="Never" effect="outline" justify="left" pivot="center" />
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Conversation Player Window -->
+
+		<remove xpath="/windows/window[@name='windowResponses']" />
+
+		<append xpath="/windows">
+			<window name="windowResponses" depth="0" pos="0,150" controller="CharacterFrameWindow" defaultcolor="[white]" hoveredcolor="[selectedColor]" cursor_area="true">
+				<sprite name="SMXconPlayerBG" pos="0,-50" size="1000,200" style="smx_con_player_background" pivot="center" />
+				<label name="characterName" pos="0,72" size="1000,80" style="smx_uipanel_title" text="" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" pivot="center" />
+				<label name="levelNumber" depth="2" pos="99999,99999" size="80,28" text="" color="[lightGrey]" />
+				<panel name="previewFrame" depth="9" pos="-460,180" width="257" disableautobackground="true" snap="false">
+					<rect>
+						<texture name="playerPreview" depth="2" size="255,702" material="Materials/Transparent Colored" globalopacity="false" />
+					</rect>
+				</panel>
+
+				<grid name="items" pos="-190,0" size="640,120" rows="3" cols="2" cell_width="320" cell_height="40" repeat_content="true" controller="DialogResponseList" arrangement="vertical">
+					<smx_response_entry id="0" />
+				</grid>
+			</window>
+		</append>
+
+
+<!--	// SMX // Quest Offer Window -->
+
+		<remove xpath="/windows/window[@name='windowQuestOffer']" />
+		
+		<append xpath="/windows">
+			<window name="windowQuestOffer" depth="15" pos="-323,250" size="647,450" anchor="CenterCenter" controller="QuestOfferWindow" pivot="center" cursor_area="true">
+
+				<panel name="header" style="smx_uipanel_header">
+					<sprite name="SMXuiPanelBG" size="647,450" style="smx_uipanel_background" />
+					<sprite name="SMXuiPanelHD" size="647,80" style="smx_uipanel_header_background" />
+					<sprite name="SMXsepLineHD" size="5,607" style="smx_uipanel_header_separation" />
+					<label name="windowName" size="647,80" style="smx_uipanel_title" text="{questname}" />
+					<sprite name="SMXvpDivider" depth="5" pos="192,-71" size="5,190" style="smx_uipanel_header_separation" rotation="360" />
+					<sprite name="SMXhpDivider" depth="5" pos="20,-270" size="5,607" style="smx_uipanel_header_separation" justify="center" />
+					<sprite name="SMXuiAccent" depth="4" pos="25,-270" size="600,181" style="smx_uipanel_accent" color="[uiElementsRed]" justify="center" />
+					<sprite name="SMXuiAccentGlow" depth="3" pos="25,-270" size="600,137" style="smx_uipanel_accent_glow" color="[uiElementsRed]" justify="center" />
+				</panel>
+
+				<rect name="contentInfo" depth="3" pos="0,-66" size="647,340">
+					<rect name="preview" depth="1" pos="40,0" size="150,150">
+						<sprite name="frame" pos="0,0" style="smx_item_preview_frame" color="[white]" globalopacitymod="1.8" />
+						<sprite name="background" pos="-10,-87" style="smx_item_preview_background" color="[uiElementsBG]" globalopacitymod="0.5" />
+						<sprite name="windowIcon" depth="3" pos="75,-75" size="100,100" sprite="{questicon}" pivot="center" foregroundlayer="true" />
+						<label depth="3" pos="75,-177" size="150,28" text="{questdifficulty}" font_size="32" color="[uiElementsRed]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" pivot="center" justify="center" />
+					</rect>
+
+					<rect name="description" depth="1" pos="205,-2" size="400,190" visible="{showdescription}">
+						<label name="descriptionText" depth="3" width="400" text="{questoffer}" font_size="24" font_face="AgencyB" crispness="Never" effect="outline" upper_case="false" />
+					</rect>
+
+					<rect name="contentRewards" depth="9" pos="0,-240" size="647,85" controller="QuestRewardsWindow">
+						<rect visible="{showquest}">
+							<label name="descriptionText" depth="3" pos="6,-6" width="647" height="85" text="{commonrewards}
+							{chosentitle}{chosenrewards}
+							{chaintitle}{chainrewards}" font_size="28" font_face="AgencyB" crispness="Never" effect="outline" />
+						</rect>
+						<rect visible="{showempty}">
+							<label name="descriptionText" depth="3" pos="0,0" width="100%" height="65" text="REWARDS NOT AVAILABLE AT THIS TIME." text_key="xuiRewardsNotAvailable" font_size="28" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+						</rect>
+					</rect>
+
+					<rect name="buttons" pos="0,-345" size="647,60">
+						<rect name="btnAccept" depth="3" pos="-150,0" size="647,60" enabled_font_color="[labelColor]" disabled_font_color="[disabledLabelColor]" disableautobackground="true" justify="center">
+							<button name="clickable" pos="235,0" size="180,60" atlas="uiElements" sprite="smx_ui_button_1" defaultcolor="[uiElementsBTN]" disabledcolor="[darkGrey]" hovercolor="[lightGrey]" type="sliced" hoverscale="1.0" justify="center" sound_play_on_hover="[default_uihover]" sound="[default_click]" /> 
+							<label name="windowName" depth="2" pos="3,-19" text="ACCEPT" text_key="xuiAccept" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+						</rect>
+						<rect name="btnDecline" depth="3" pos="150,0" size="647,60" enabled_font_color="[labelColor]" disabled_font_color="[disabledLabelColor]" disableautobackground="true" justify="center">
+							<button name="clickable" pos="235,0" size="180,60" atlas="uiElements" sprite="smx_ui_button_1" flip="vertically" defaultcolor="[uiElementsBTN]" disabledcolor="[darkGrey]" hovercolor="[lightGrey]" type="sliced" hoverscale="1.0" justify="center" sound_play_on_hover="[default_uihover]" sound="[default_click]" /> 
+							<label name="windowName" depth="2" pos="3,-19" text="DECLINE" text_key="xuiDecline" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+						</rect>
+					</rect>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Drag & Drop -->
+
+		<remove xpath="/windows/window[@name='dragAndDropItemStack']" />
+
+		<append xpath="/windows">
+			<window name="dragAndDropItemStack" depth="300" size="86,86" controller="DragAndDropWindow">
+				<grid panel_sort_order="5">
+					<rect>
+						<smx_drag_item_stack />
+					</rect>
+				</grid>
+			</window>
+		</append>
+
+
+<!--	// SMX // Window NON Paging Header -->
+
+		<remove xpath="/windows/window[@name='windowNonPagingHeader']" />
+
+		<append xpath="/windows">
+			<window name="windowNonPagingHeader" style="smx_paging_windows" controller="WindowNonPagingHeader">
+				<sprite name="SMXnonPagingWindowBG" style="smx_paging_windows_background" />
+				<label style="smx_paging_windows_title" />
+			</window>
+		</append>
+
+
+<!--	// SMX // Window Paging Header -->
+
+		<remove xpath="/windows/window[@name='windowPagingHeader']" />
+
+		<append xpath="/windows">
+			<window name="windowPagingHeader" style="smx_paging_windows" controller="WindowSelector" cursor_area="true">
+				<sprite name="SMXpagingWindowBG" style="smx_paging_windows_background" />
+
+				<button style="press, hover, smx_paging_window_icon_crafting, smx_ui_icon_colors" collider_scale="1.2" />
+				<button style="press, hover, smx_paging_window_icon_character, smx_ui_icon_colors" collider_scale="1.2" />
+				<button style="press, hover, smx_paging_window_icon_map, smx_ui_icon_colors" collider_scale="1.2" />
+				<button style="press, hover, smx_paging_window_icon_skills, smx_ui_icon_colors" collider_scale="1.2" />
+
+				<label style="smx_paging_windows_title" />
+
+				<button style="press, hover, smx_paging_window_icon_quests, smx_ui_icon_colors" collider_scale="1.5" />
+				<button style="press, hover, smx_paging_window_icon_journal, smx_ui_icon_colors" collider_scale="1.2" />
+				<button style="press, hover, smx_paging_window_icon_players, smx_ui_icon_colors" collider_scale="1.2" />
+				<button style="press, hover, smx_paging_window_icon_creative, smx_ui_icon_colors" collider_scale="1.2" />
+
+				<gamepad_icon depth="1" name="LB_Icon" size="35,35" pos="-8,-20" pivot="Right" sprite="Button_LB" />
+				<gamepad_icon depth="1" name="RB_Icon" size="35,35" pos="608,-20" pivot="Left" sprite="Button_RB" />
+			</window>
+		</append>
+
+
+<!--	// SMX // Sign Edit -->
+
+		<remove xpath="/windows/window[@name='windowSignEdit']" />
+
+		<append xpath="/windows">
+			<window name="windowSignEdit" pos="-225,400" size="450,450" panel="Center" controller="SignWindow" cursor_area="true">
+
+				<panel name="header" style="smx_uipanel_header">
+					<sprite name="SMXuiPanelBG" size="450,480" style="smx_uipanel_background" />
+					<sprite name="SMXuiPanelHD" size="450,80" style="smx_uipanel_header_background" />
+					<sprite name="SMXsepLineHD" size="5,410" style="smx_uipanel_header_separation" />
+					<label name="windowName" size="450,80" style="smx_uipanel_title" text="SIGN" text_key="xuiSign" />
+					<sprite name="SMXhpDivider" pos="20,-285" size="5,410" style="smx_uipanel_header_separation" />
+				</panel>
+
+				<rect name="preview" depth="1" pos="130,-71" size="300,165">
+					<sprite name="itemSplash" depth="9" pos="-100,20" size="400,250" atlas="uiElements" sprite="smx_iteminfo_preview_background" type="sliced" color="[uiElementsRed]" />
+					<sprite name="itemPreview" depth="10" pos="100,-106" size="249,165" style="smx_item_preview_icon" atlas="uiElements" sprite="smx_uipanel_sign_nofeedzombie" />
+				</rect>
+
+				<rect name="content" depth="3" pos="0,-295" height="120">
+					<smx_sign_text_area />
+				</rect>
+
+				<rect name="btnClose" depth="3" pos="0,-445" size="450,60">
+					<rect name="btnClose" depth="4" pos="0,0" size="450,60" enabled_font_color="[labelColor]" disabled_font_color="[disabledLabelColor]" disableautobackground="true" justify="center">
+						<button name="clickable" pos="135,0" size="180,60" atlas="uiElements" sprite="smx_ui_button_1" defaultcolor="[uiElementsBTN]" disabledcolor="[darkGrey]" hovercolor="[lightGrey]" type="sliced" hoverscale="1.0" justify="center" sound_play_on_hover="[default_uihover]" sound="[default_click]" /> 
+						<label name="windowName" depth="2" pos="3,-19" text="CLOSE" text_key="xuiClose" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+					</rect>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Journal List -->
+
+		<remove xpath="/windows/window[@name='windowJournalList']" />
+
+		<append xpath="/windows">
+			<window name="windowJournalList" width="450" height="10" panel="Center" controller="JournalEntryListWindow" cursor_area="true" >
+
+				<rect name="content" depth="0" pos="70,-85" height="464">
+					<rect name="searchControls" depth="6" pos="0,4" size="40,495">
+						<sprite name="searchIcon" depth="4" pos="70,-22" size="28,28" style="smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_search_icon" pivot="center" />
+						<smx_journal_search name="searchInput" depth="5" pos="40,-22" size="250,30" pivot="center" />
+					</rect>
+
+					<rect name="pageControl" depth="4" pos="-213,-611" size="40,495">
+						<panel name="searchScroll" pos="396,2" size="98,43" disableautobackground="true">
+							<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+							<rect depth="4" pos="37,-7">
+								<label name="pageNumber" depth="5" pos="0,-5" size="30,28" text="1" font_size="26" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+							</rect>
+							<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+						</panel>
+					</rect>
+
+					<grid name="journalList" pos="6,-60" width="450" height="368" rows="8" cols="1" cell_width="390" cell_height="55" controller="JournalEntryList" repeat_content="true" arrangement="vertical" normal_color="[iconColor]" disabled_color="[iconColor]">
+						<smx_journal_entry name="0" />
+					</grid>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Journal List -->
+
+		<remove xpath="/windows/window[@name='windowJournalEntryDescription']" />
+
+		<append xpath="/windows">
+			<window name="windowJournalEntryDescription" width="1250" height="600" panel="Center" controller="JournalEntryDescriptionWindow" cursor_area="true" >
+
+				<panel name="header" style="smx_uipanel_header">
+					<sprite name="SMXuiPanelBG" size="1250,750" style="smx_uipanel_background" />
+					<sprite name="SMXuiPanelHD" size="1250,80" style="smx_uipanel_header_background" />
+					<sprite name="SMXsepLineHD" size="5,1210" style="smx_uipanel_header_separation" />
+					<sprite name="SMXuiPanelTabsBG" size="1230,52" style="smx_uipanel_tabs" />
+					<sprite name="SMXsepLineTB" size="5,1210" style="smx_uipanel_tabs_separation" />
+					<sprite name="SMXvpDivider" pos="540,-720" size="5,600" style="smx_uipanel_header_separation" rotation="180" />
+					<label name="windowName" size="1250,80" style="smx_uipanel_title" text="{entrytitle}" />
+					<label name="SMXuiPanelTime" depth="9" pos="880,-75" size="300,40" text="{timestamp}" color="[lightGrey]" font_size="40" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+				</panel>
+
+				<rect name="content" depth="4" pos="550,-125" size="630,550">
+					<label name="descriptionText" depth="5" pos="8,-8" size="630,550" text="{entrydescription}" font_size="28" font_face="AgencyB" crispness="Never" effect="outline" />
+					<rect visible="{showempty}">
+						<sprite name="SMXdescriptionIcon" depth="3" pos="215,-120" size="200,200" atlas="uiIcons" sprite="smx_paging_journal_icon" color="[uiElementsRed]" justify="center" />
+						<label name="descriptionText" depth="3" pos="0,-360" width="100%" height="65" text="DESCRIPTION NOT AVAILABLE AT THIS TIME." text_key="xuiDescriptionNotAvailable" font_size="28" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+					</rect>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Backpack Window -->
+
+		<remove xpath="/windows/window[@name='windowBackpack']" />
+
+		<append xpath="/windows">
+			<window name="windowBackpack" depth="1" size="470,750" anchor="CenterCenter" panel="Right" controller="BackpackWindow" cursor_area="true">
+
+				<panel name="SMXwindowBackpack" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smx_uipanel_header">
+						<sprite name="SMXuiPanelBG" size="470,750" style="smx_uipanel_background" />
+						<sprite name="SMXuiPanelHD" size="470,80" style="smx_uipanel_header_background" />
+						<sprite name="SMXsepLineHD" size="5,430" style="smx_uipanel_header_separation" />
+						<label name="windowName" size="470,80" style="smx_uipanel_title" text="INVENTORY" text_key="xuiInventory" />
+						<sprite name="SMXvpDivider" depth="4" pos="390,-90" size="5,620" style="smx_uipanel_header_separation" color="[white]" rotation="360" />
+						<button name="btnStashFillStacks" depth="3" pos="425,-140" size="60,60" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_backpack_dumpfill_icon" pivot="center" tooltip_key="lblStashFillStacks" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
+						<button name="btnStashSmart" depth="3" pos="425,-225" size="60,60" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_backpack_dumpsmart_icon" pivot="center" tooltip_key="lblStashSmart" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
+						<button name="btnStashAll" depth="3" pos="425,-310" size="60,60" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_backpack_dumpall_icon" pivot="center" tooltip_key="lblStashAll" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
+						<smx_stashbuttons_combobox name="cbxLockedSlots" pos="430,-400" type="ComboBoxInt" value_min="0" value_max="45" value_wrap="true" value_increment="1" tooltip_key="xuiStashLockedSlots" visible="{lootingorvehiclestorage}" />
+						<button name="btnClearInventory" depth="3" pos="425,-550" size="40,40" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_backpack_trash_icon" pivot="center" tooltip_key="lblClearInventory" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+						<button name="btnSort" depth="3" pos="425,-620" size="40,40" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_backpack_sort_icon" pivot="center" tooltip_key="lblSortInventory" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+					</panel>
+
+					<panel name="content" depth="1" pos="30,-60" size="630,730" disableautobackground="true">
+						<grid name="inventory" depth="2" pos="3,-3" rows="9" cols="5" cell_width="68" cell_height="68" controller="Backpack" repeat_content="true">
+							<smx_backpack_itemstack_65 name="0" />
+						</grid>
+					</panel>
+
+					<panel name="SMXcurrency" depth="3" pos="0,-680" height="43" disableautobackground="true">
+						<sprite name="costIcon" depth="3" pos="75,-25" size="26,26" atlas="uiIcons" sprite="smx_backpack_currency_icon" color="[white]" pivot="center" forgroundlayer="true" />
+						<sprite depth="2" name="background" pos="107,-9" size="268,30" atlas="uiElements" sprite="smx_uipanel_searchinput_background" color="[black]" type="sliced" />
+						<sprite depth="3" name="frame" pos="107,-9" size="270,30" atlas="uiElements" sprite="smx_uipanel_searchinput_frame" color="[white]" type="sliced" />
+						<label name="currency" depth="3" pos="68,-9" size="300,28" text="{currencyamount}" color="[lightGrey]" justify="right" />
+					</panel>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	//SMX // Empty Info Window --> <!-- ADD LOCALIZATION? -->
+
+		<remove xpath="/windows/window[@name='emptyInfoPanel']" />
+
+		<append xpath="/windows">
+			<window name="emptyInfoPanel" depth="1" size="450,750" anchor="CenterCenter" panel="Center" controller="InfoWindow" cursor_area="true" >
+
+				<panel name="SMXemptyInfoPanel" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smx_uipanel_header">
+						<sprite name="SMXuiPanelBG" size="450,750" style="smx_uipanel_background" />
+						<sprite name="SMXuiPanelHD" size="450,80" style="smx_uipanel_header_background" />
+						<sprite name="SMXsepLineHD" size="5,410" style="smx_uipanel_header_separation" />
+						<label name="windowName" size="450,80" style="smx_uipanel_title" text="INSPECT" text_key="xuiInspect" />
+					</panel>
+
+					<rect name="contentCraftingInfo" depth="3" pos="0,-10" height="346">
+						<sprite name="SMXuiPanelMLC" depth="3" pos="225,-100" size="40,40" atlas="uiIcons" sprite="smx_uipanel_mcleft_icon" color="[uiElementsIcon]" pivot="center" justify="center" foregroundlayer="true" />
+						<label name="descriptionText" depth="3" pos="0,-140" size="450,150" text="TO INSPECT AN ITEM, RECIPE OR ACTIVE EFFECT" text_key="" font_size="20" justify="center" />
+						<label name="descriptionText" depth="3" pos="0,-170" size="450,150" text="HOLD AND DRAG TO TAKE A STACK" text_key="" font_size="20" color="uiElementsLabel" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+						<label name="descriptionText" depth="3" pos="0,-200" size="450,150" text="TO DROP OR SWAP A STACK" text_key="" font_size="20" color="uiElementsLabel" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+
+						<sprite name="SMXuiPanelMRC" depth="3" pos="225,-300" size="40,40" atlas="uiIcons" sprite="smx_uipanel_mcright_icon" color="[uiElementsIcon]" pivot="center" justify="center" foregroundlayer="true" />
+						<label name="descriptionText" depth="3" pos="0,-350" size="450,150" text="HOLD AND DRAG TO TAKE A HALF STACK" text_key="" font_size="20" color="uiElementsLabel" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+						<label name="descriptionText" depth="3" pos="0,-380" size="450,150" text="TO DROP ONE ITEM AT A TIME" text_key="" font_size="20" color="uiElementsLabel" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+
+						<sprite name="SMXuiPanelSMLC" depth="3" pos="225,-470" size="115,40" atlas="uiIcons" sprite="smx_iteminfo_shiftkeymcleft_icon3" color="[uiElementsIcon]" pivot="center" justify="center" foregroundlayer="true" />
+						<label name="descriptionText" depth="3" pos="0,-510" size="450,150" text="TO MOVE A STACK BETWEEN AREAS" text_key="" font_size="20" color="uiElementsLabel" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+
+						<sprite name="SMXuiPanelRC" depth="3" pos="225,-610" size="40,40" atlas="uiIcons" sprite="smx_iteminfo_rkey_icon" color="[uiElementsIcon]" pivot="center" justify="center" foregroundlayer="true" />
+						<label name="descriptionText" depth="3" pos="0,-650" size="450,150" text="TO TAKE EVERYTHING FROM A CONTAINER" text_key="" font_size="20" color="uiElementsLabel" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+					</rect>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// SMX // Item Info Window -->
+
+		<remove xpath="/windows/window[@name='itemInfoPanel']" />
+
+		<append xpath="/windows">
+			<window name="itemInfoPanel" depth="1" size="450,750" anchor="CenterCenter" panel="Center" controller="ItemInfoWindow" cursor_area="true">
+
+				<panel name="SMXitemInfoPanel" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smx_uipanel_header">
+						<sprite name="SMXuiPanelBG" size="450,750" style="smx_uipanel_background" />
+						<sprite name="SMXuiPanelHD" size="450,80" style="smx_uipanel_header_background" />
+						<sprite name="SMXsepLineHD" size="5,410" style="smx_uipanel_header_separation" />
+						<label name="windowName" pos="35,-26" width="380" height="30" style="smx_uipanel_title" text="{itemname}" overflow="ClampContent" /> <!-- OVERFLOW CODE - WORKING? -->
+						<sprite name="windowIcon" depth="2" pos="4,-5" size="0,0" style="icon32px" sprite="{itemgroupicon}" /> <!-- MANDATORY CODE, OR IT BLOWS UP -->
+						<sprite name="SMXvpDivider" depth="4" pos="320,-90" size="5,620" style="smx_uipanel_header_separation" color="[white]" rotation="360" />
+						<sprite name="SMXhpDivider1" depth="4" pos="30,-305" size="5,280" style="smx_uipanel_header_separation" color="[white]" />
+						<sprite name="SMXhpDivider2" depth="4" pos="30,-545" size="5,280" style="smx_uipanel_header_separation" color="[white]" />
+					</panel>
+
+					<rect name="contentInfo" depth="1" pos="0,-46" height="346">
+						<rect name="preview" depth="1" pos="72,-25" size="165,165">
+							<label name="SMXcurrency" depth="12" pos="0,-5" size="300,28" text="${itemcost}{markup}" font_size="50" color="[mediumGrey]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" visible="false" />
+							<sprite name="sprQuality" depth="9" pos="-25,-26" size="256,160" atlas="uiElements" sprite="smx_iteminfo_preview_background" type="sliced" color="{durabilitycolor}" />
+							<sprite name="itemPreview" depth="10" pos="100,-106" size="165,165" style="smx_item_preview_icon" sprite="{itemicon}" color="{itemicontint}" />
+							<sprite name="itemtypeicon" depth="12" pos="175,-5" size="40,40" sprite="ui_game_symbol_{itemtypeicon}" color="{itemtypeicontint}" foregroundlayer="true" visible="{hasitemtypeicon}" />
+							<sprite name="durabilityBackground" depth="3" pos="2,-195" size="200,14" atlas="uiElements" sprite="smx_iteminfo_durability_bar" color="[uiElementsBG]" type="sliced" visible="{hasdurability}" />
+							<sprite name="durabilityBar" depth="4" pos="2,-195" size="200,14" atlas="uiElements" sprite="smx_iteminfo_durability_bar" color="{durabilitycolor}" type="filled" fill="{durabilityfill}" visible="{hasdurability}" />
+							<label name="durabilityValue" depth="12" pos="5,-155" size="200,52" text="{durabilitytext}" font_size="50" font_face="AgencyB" crispness="Never" effect="outline" justify="{durabilityjustify}" visible="false" />
+						</rect>
+
+						<rect name="SMXactionMenu" depth="3" pos="330,-50" size="95,600" visible="{shownormaloptions}">
+							<grid name="itemActions" pos="0,0" width="65" height="100%" rows="5" cols="1" cell_width="65" cell_height="65" controller="ItemActionList" repeat_content="true" visible="false">
+								<smx_item_action_entry />
+							</grid>
+						</rect>
+
+						<rect name="SMXtraderActionMenu" depth="3" pos="330,-50" size="95,600" visible="{showtraderoptions}">
+							<grid name="vendorItemActions" pos="0,0" width="65" height="100%" rows="1" cols="1" cell_width="65" cell_height="65" controller="ItemActionList" repeat_content="true" visible="false">
+								<smx_item_action_entry />
+							</grid>
+							<rect name="counterControl" pos="38,-330" size="120,42" controller="Counter">
+								<smx_counter_control />
+							</rect>
+						</rect>
+
+						<rect name="searchControls" depth="2" pos="330,-532" size="448,43" visible="{showstatanddescription}">
+							<button name="statButton" depth="4" pos="38,-35" size="50,50" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_iteminfo_swap_icon" pivot="center" tooltip="Stats" selected="true" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{showdescription}" />
+							<button name="descriptionButton" depth="4" pos="38,-35" size="50,50" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_iteminfo_swap_icon" pivot="center" tooltip="Description" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{showstats}" />
+						</rect>
+
+						<rect name="stats" depth="2" pos="65,-270" size="230,228" visible="{showstats}">
+							<rect pos="0,0" height="30">
+								<label depth="3" pos="0,-3" width="220" text="{itemstattitle1}" font_size="20" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="0,-3" width="220" text="{itemstat1}" font_size="20" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-30" height="30">
+								<label depth="3" pos="0,-3" width="220" text="{itemstattitle2}" font_size="20" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="0,-3" width="220" text="{itemstat2}" font_size="20" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-60" height="30">
+								<label depth="3" pos="0,-3" width="220" text="{itemstattitle3}" font_size="20" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="0,-3" width="220" text="{itemstat3}" font_size="20" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-90" height="30">
+								<label depth="3" pos="0,-3" width="220" text="{itemstattitle4}" font_size="20" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="0,-3" width="220" text="{itemstat4}" font_size="20" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-120" height="30">
+								<label depth="3" pos="0,-3" width="220" text="{itemstattitle5}" font_size="20" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="0,-3" width="220" text="{itemstat5}" font_size="20" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-150" height="30">
+								<label depth="3" pos="0,-3" width="220" text="{itemstattitle6}" font_size="20" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="0,-3" width="220" text="{itemstat6}" font_size="20" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-180" height="30">
+								<label depth="3" pos="0,-3" width="220" text="{itemstattitle7}" font_size="20" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="0,-3" width="220" text="{itemstat7}" font_size="20" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+						</rect>
+
+						<rect name="description" depth="2" pos="65,-270" size="230,230" visible="{showonlydescription}">
+							<label name="descriptionText" depth="3" width="230" text="{itemdescription}" font_size="20" font_face="AgencyB" crispness="Never" effect="outline" upper_case="false" />
+						</rect>
+
+						<rect name="description" depth="2" pos="65,-270" size="230,230" visible="{showdescription}">
+							<label name="descriptionText" depth="3" width="230" text="{itemdescription}" font_size="20" font_face="AgencyB" crispness="Never" effect="outline" upper_case="false" />
+						</rect>
+
+						<grid name="parts" pos="65,-510" rows="2" cols="3" cell_width="75" cell_height="75" repeat_content="false" controller="PartList">
+							<smx_partlist_itemstack_65 name="0" />
+							<smx_partlist_itemstack_65 name="0" />
+							<smx_partlist_itemstack_65 name="0" />
+							<smx_partlist_itemstack_65 name="0" />
+							<smx_partlist_itemstack_65 name="0" />
+						</grid>
+					</rect>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// SMX // Crafting Info Window -->
+
+		<remove xpath="/windows/window[@name='craftingInfoPanel']" />
+
+		<append xpath="/windows">
+			<window name="craftingInfoPanel" depth="1" size="450,750" style="smx_crafting_info_window" anchor="CenterCenter" panel="Center" controller="CraftingInfoWindow" cursor_area="true">
+
+				<panel name="SMXcraftingInfoPanel" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smx_uipanel_header">
+						<sprite name="SMXuiPanelBG" size="450,750" style="smx_uipanel_background" />
+						<sprite name="SMXuiPanelHD" size="450,80" style="smx_uipanel_header_background" />
+						<sprite name="SMXsepLineHD" size="5,410" style="smx_uipanel_header_separation" />
+						<label name="windowName" pos="35,-24" width="380" height="30" style="smx_uipanel_title" text="{itemname}" overflow="ClampContent" /> <!-- OVERFLOW CODE - WORKING? -->
+						<sprite name="windowIcon" depth="2" pos="4,-5" size="0,0" style="icon32px" sprite="{itemgroupicon}" /> <!-- MANDATORY CODE, OR IT BLOWS UP -->
+						<sprite name="costIcon" depth="4" pos="577,-10" size="0,0" sprite="ui_game_symbol_coin" color="[white]" foregroundlayer="true" /> <!-- MANDATORY CODE, OR IT BLOWS UP -->
+						<sprite name="SMXvpDivider" depth="4" pos="320,-90" size="5,620" style="smx_uipanel_header_separation" color="[white]" rotation="360" />
+						<sprite name="SMXhpDivider1" depth="4" pos="30,-305" size="5,280" style="smx_uipanel_header_separation" color="[white]" />
+						<sprite name="SMXhpDivider2" depth="4" pos="30,-545" size="5,280" style="smx_uipanel_header_separation" color="[white]" />
+					</panel>
+
+					<rect name="contentCraftingInfo" depth="1" pos="0,-46" height="346">
+						<rect name="preview" depth="1" pos="72,-25" size="165,165">
+							<label name="craftingTime" depth="12" pos="0,-5" size="300,28" text="{craftingtime}" font_size="50" color="[mediumGrey]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+							<sprite name="sprQuality" depth="9" pos="-25,-26" size="256,160" atlas="uiElements" sprite="smx_iteminfo_preview_background" type="sliced" color="{durabilitycolor}" />
+							<sprite name="itemPreview" depth="10" pos="100,-106" size="165,165" style="smx_item_preview_icon" sprite="{itemicon}" color="{itemicontint}" />
+							<sprite name="itemtypeicon" depth="12" pos="175,-5" size="40,40" sprite="ui_game_symbol_{itemtypeicon}" color="{itemtypeicontint}" foregroundlayer="true" visible="{hasitemtypeicon}" />
+						</rect>
+
+						<rect name="requiredToolOverlay" pos="0,0">
+							<sprite name="requiredToolCheckmark" depth="15" pos="45,-40" size="40,40" atlas="uiIcons" sprite="ui_game_symbol_check" pivot="center" color="[red]" />
+							<label name="requiredToolText" depth="15" pos="25,-215" size="300,32" text="Required" text_key="xuiRequired" color="[red]" font_size="30" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+						</rect>
+
+						<rect name="SMXactionMenu" depth="3" pos="330,-50" size="95,600">
+							<grid name="itemActions" pos="0,0" width="65" height="100%" rows="3" cols="1" cell_width="65" cell_height="65" controller="ItemActionList" repeat_content="true" visible="false">
+								<smx_item_action_entry />
+							</grid>
+							<rect name="recipeCraftCountControl" pos="38,-330" size="120,42" controller="RecipeCraftCount">
+								<smx_counter_control />
+							</rect>
+							<grid name="unlockedBy" depth="3" pos="0,-460" rows="6" width="65" height="65" cell_height="60" cell_width="50" controller="UnlockByList" arrangement="vertical">
+								<smx_unlocked_by_row name="1" /> 
+								<smx_unlocked_by_row name="2" /> 
+								<smx_unlocked_by_row name="3" /> 
+								<smx_unlocked_by_row name="4" /> 
+								<smx_unlocked_by_row name="5" /> 
+							</grid> 
+						</rect>
+
+						<rect name="searchControls" depth="2" pos="99999,99999" width="448" height="43"> <!-- MANDATORY CODE, OR IT BLOWS UP -->
+							<sprite depth="1" color="[mediumGrey]" type="sliced" globalopacity="true" />
+							<button name="ingredientsButton" depth="4" pos="22,-22" style="icon30px, press" sprite="ui_game_symbol_resource" pivot="center" tooltip_key="ingredient" sound="[paging_click]" selected="true" />
+							<button name="descriptionButton" depth="4" pos="65,-22" style="icon30px, press" sprite="ui_game_symbol_book" pivot="center" tooltip_key="lblBookDesc" sound="[paging_click]" />
+							<button name="showunlocksButton" depth="4" pos="108,-22" style="icon30px, press" sprite="ui_game_symbol_unlock" pivot="center" tooltip_key="xuiSkillUnlocks" sound="[paging_click]" visible="{showunlockedbytab}" />
+						</rect>
+
+						<rect name="description" depth="2" pos="65,-270" size="230,230">
+							<rect visible="true">
+								<label name="descriptionText" depth="3" width="230" text="{itemdescription}" font_size="20" font_face="AgencyB" crispness="Never" effect="outline" upper_case="false" />
+							</rect>
+						</rect>
+
+						<grid name="ingredients" pos="65,-510" rows="2" cols="3" cell_height="90" cell_width="75" controller="IngredientList" arrangement="horizontal" repeat_content="true">
+							<smx_ingredient_row name="0" />
+						</grid>
+					</rect>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// SMX // Buff Info Panel -->
+
+		<remove xpath="/windows/window[@name='buffInfoPanel']" />
+
+		<append xpath="/windows">
+			<window name="buffInfoPanel" size="450,750" anchor="CenterCenter" panel="Center" controller="BuffInfoWindow">
+
+				<panel name="SMXbuffInfoPanel" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smx_uipanel_header">
+						<sprite name="SMXuiPanelBG" size="450,750" style="smx_uipanel_background" />
+						<sprite name="SMXuiPanelHD" size="450,80" style="smx_uipanel_header_background" />
+						<sprite name="SMXsepLineHD" size="5,410" style="smx_uipanel_header_separation" />
+						<label name="windowName" pos="35,-24" size="380,30" style="smx_uipanel_title" text="{buffname|once}" overflow="ClampContent" />
+						<sprite name="SMXhpDivider1" depth="4" pos="20,-305" size="5,410" style="smx_uipanel_header_separation" color="[white]" />
+						<sprite name="SMXhpDivider2" depth="4" pos="20,-545" size="5,410" style="smx_uipanel_header_separation" color="[white]" />
+					</panel>
+
+
+					<rect name="contentBuffInfo" depth="1" pos="0,-46" height="346">
+						<rect name="preview" depth="1" pos="72,-25" size="165,165">
+							<sprite name="itemSplash" depth="9" pos="-42,20" size="400,250" atlas="uiElements" sprite="smx_iteminfo_preview_background" type="sliced" color="[darkGrey]" />
+							<sprite name="itemPreview" depth="10" pos="150,-106" size="165,165" style="smx_buff_preview_icon" sprite="{bufficon|once}" color="{buffcolor}" />
+						</rect>
+						
+						<rect name="SMXactionMenu" depth="3" pos="330,-50" size="95,600" visible="{shownormaloptions}">
+							<grid name="itemActions" pos="0,0" width="65" height="100%" rows="3" cols="1" cell_width="65" cell_height="65" controller="ItemActionList" repeat_content="true">
+								<smx_buff_item_action_entry />
+							</grid>
+						</rect>
+
+						<rect name="description" depth="2" pos="65,-270" size="320,230" visible="{showdescription}">
+							<label name="descriptionText" depth="3" width="320" text="{buffdescription|once}" font_size="20" font_face="AgencyB" crispness="Never" effect="outline" upper_case="false" />
+						</rect>
+					</rect>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// SMX // Creative Window -->
+
+		<remove xpath="/windows/window[@name='windowCreative']" />
+
+		<append xpath="/windows">
+			<window name="windowCreative" depth="1" size="650,750" panel="Left" anchor_side="bottomright" controller="CreativeWindow" normal_color="[iconColor]" cursor_area="true">
+
+				<panel name="SMXwindowCreative" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smx_uipanel_header">
+						<sprite name="SMXuiPanelBG" size="650,750" style="smx_uipanel_background" />
+						<sprite name="SMXuiPanelHD" size="650,80" style="smx_uipanel_header_background" />
+						<sprite name="SMXsepLineHD" size="5,610" style="smx_uipanel_header_separation" />
+						<sprite name="SMXuiPanelTabsBG" size="630,52" style="smx_uipanel_tabs" />
+						<sprite name="SMXsepLineTB" size="5,610" style="smx_uipanel_tabs_separation" />
+						<label name="windowName" size="650,80" style="smx_uipanel_title" text="CREATIVE" text_key="xuiCreative" />
+						<sprite name="windowicon" depth="4" pos="70,-42" size="28,28" style="smx_ui_icon_colors" atlas="uiIcons" sprite="ui_game_symbol_lightbulb" pivot="center" sound="[paging_click]" />
+						<label name="resultCount" depth="5" pos="400,-75" size="200,40" text="" color="[lightGrey]" font_size="40" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+						<sprite name="SMXvpDivider" depth="4" pos="550,-120" size="5,600" style="smx_uipanel_header_separation" color="[white]" rotation="360" />
+					</panel>
+
+					<panel name="content" pos="20,-43" disableautobackground="true">
+
+						<rect name="tabsCategory" depth="5" pos="28,-20" size="597,43">
+							<button name="all" depth="4" pos="22,-22" size="28,28" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_creative_cart_icon" pivot="center" tooltip="All" tooltip_key="lblAll" sound_play_on_hover="[default_uihover]" sound="[paging_click]" selected="true" />
+							<button name="blocks" depth="4" pos="65,-22" size="28,28" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_creative_block_icon" pivot="center" tooltip="All Blocks" tooltip_key="lblAllBlocks" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+							<button name="items" depth="4" pos="108,-22" size="28,28" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_creative_items_icon" pivot="center" tooltip="All Items" tooltip_key="lblAllItems" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+
+							<button name="simplepickup" depth="4" pos="169,-22" size="28,28" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_creative_pickup_icon" pivot="center" tooltip="Simple Pickup" tooltip_key="lblSimplePickup" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+							<button name="devblocks" depth="4" pos="212,-22" size="28,28" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_creative_dev_icon" pivot="center" tooltip="Dev Blocks" tooltip_key="lblDevBlocks" sound_play_on_hover="[default_uihover]" sound="[paging_click]" console_enabled="false" />
+						</rect>
+
+						<rect name="searchControls" depth="6" pos="0,-108" size="495,40">
+							<button name="favorites" depth="4" pos="75,-2" size="28,28" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_favorite_icon" pivot="center" sound="[paging_click]" tooltip="Favorites" tooltip_key="lblFavorites" collider_scale="1.5" />
+							<sprite name="searchIcon" depth="4" pos="135,-2" size="28,28" style="smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_search_icon" pivot="center" />
+							<smx_creative_search name="searchInput" depth="5" size="495,30" pivot="center" />
+						</rect>
+
+						<rect name="pageControl" depth="4" pos="223,-630" size="495,40">
+							<panel name="searchScroll" size="98,43" disableautobackground="true">
+								<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+								<rect depth="4" pos="37,-7">
+									<label name="pageNumber" depth="5" pos="0,-5" size="30,28" text="1" font_size="26" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+								</rect>
+								<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+							</panel>
+						</rect>
+
+						<rect name="filterRow" depth="2" pos="13,-56" size="580,43">
+							<grid name="categories" pos="540,-20" size="40,360" rows="9" cols="1" cell_width="40" cell_height="40" repeat_content="true" controller="CategoryList">
+								<smx_creative_category_icon />
+							</grid>
+
+							<grid name="subCategories" pos="540,-365" size="40,240" rows="6" cols="1" cell_width="40" cell_height="40" repeat_content="true" controller="CategoryList">
+								<smx_creative_category_icon />
+							</grid>
+						</rect>
+
+						<grid name="queue" pos="35,-145" rows="7" cols="7" cell_width="68" cell_height="68" repeat_content="true" controller="CreativeStackGrid">
+							<smx_creative_stack name="0"/>
+						</grid>
+					</panel>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// SMX // Crafting Window -->
+
+		<remove xpath="/windows/window[@name='windowCraftingList']" />
+
+		<append xpath="/windows">
+			<window name="windowCraftingList" size="470,633" panel="Left" controller="CraftingListInfo" cursor_area="true">
+
+				<panel name="SMXwindowCraftingList" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smx_uipanel_header">
+						<sprite name="SMXuiPanelBG" size="480,750" style="smx_uipanel_background" />
+						<sprite name="SMXuiPanelHD" size="480,80" style="smx_uipanel_header_background" />
+						<sprite name="SMXsepLineHD" size="5,440" style="smx_uipanel_header_separation" />
+						<sprite name="SMXuiPanelTabsBG" size="460,52" style="smx_uipanel_tabs" />
+						<sprite name="SMXsepLineTB" size="5,440" style="smx_uipanel_tabs_separation" />
+						<label name="windowName" size="480,80" style="smx_uipanel_title" text="basics" text_key="xuiBasics" />
+						<sprite name="SMXvpDivider" depth="4" pos="390,-120" size="5,510" style="smx_uipanel_header_separation" color="[white]" rotation="360" />
+						<sprite name="SMXhpDivider" pos="25,-640" size="5,430" style="smx_uipanel_tabs_separation" />
+						<sprite name="SMXuiAccent" depth="4" pos="25,-640" size="430,79" style="smx_uipanel_accent" color="[uiElementsRed]" justify="center" />
+						<sprite name="SMXuiAccentGlow" depth="3" pos="25,-640" size="430,35" style="smx_uipanel_accent_glow" color="[uiElementsRed]" justify="center" />
+					</panel>
+
+					<panel name="content" depth="4" pos="20,-59" size="430,574" on_scroll="true" disableautobackground="true">
+						<rect name="categorySelector" depth="2" pos="3,-6" size="424,40">
+							<grid name="categories" pos="14,0" size="396,40" rows="1" cols="9" cell_width="44" cell_height="40" repeat_content="true" controller="CategoryList">
+								<smx_crafting_category_icon />
+							</grid>
+						</rect>
+
+						<rect name="searchControls" depth="2" pos="14,-60" size="342,40">
+							<button name="favorites" depth="4" pos="322,-20" size="32,32" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_favorite_icon" pivot="center" tooltip="Favorites" tooltip_key="lblFavorites" sound_play_on_hover="[default_uihover]" sound="[paging_click]" collider_scale="1.5" />
+							<panel pos="30,2" width="300" disableautobackground="true">
+								<smx_recipe_search name="searchInput" depth="6" />
+							</panel>
+						</rect>
+
+						<grid name="recipes" depth="2" pos="15,-110" size="68,68" rows="6" cols="5" cell_width="68" cell_height="68" controller="RecipeList" repeat_content="true" arrangement="horizontal">
+							<smx_crafting_recipe_entry name="0" />
+						</grid>
+
+						<rect name="pageControl" depth="4" pos="14,-526" size="342,40">
+							<panel name="searchScroll" pos="119,2" size="98,43" disableautobackground="true">
+								<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+								<rect depth="4" pos="37,-7">
+									<label name="pageNumber" depth="5" pos="0,-5" size="30,28" text="1" font_size="26" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+								</rect>
+								<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+							</panel>
+						</rect>
+					</panel>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// SMX // Crafting Queue -->
+
+		<remove xpath="/windows/window[@name='windowCraftingQueue']" />
+
+		<append xpath="/windows">
+			<window name="windowCraftingQueue" depth="9" size="470,68" panel="Left" cursor_area="true">
+				<rect depth="9" pos="20,0" size="430,68" controller="CraftingQueue">
+					<sprite name="queueIcon" depth="9" pos="400,-34" size="32,32" atlas="uiIcons" sprite="smx_ui_general_queue_icon" color="[white]" pivot="center" foregroundlayer="true" />
+					<grid name="queue" pos="15,0" rows="1" cols="5" cell_width="68" cell_height="68" repeat_content="true">
+						<smx_crafting_recipe_stack name="0"/>
+					</grid>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Crafting Window - Workstation -->
+
+		<append xpath="/windows">
+			<window name="windowWorkstationCraftingList" size="480,633" panel="Left" controller="CraftingListInfo" cursor_area="true">
+
+				<panel name="SMXwindowWorkstationCraftingList" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smx_uipanel_header">
+						<sprite name="SMXuiPanelBG" size="480,750" style="smx_uipanel_background" />
+						<sprite name="SMXuiPanelHD" size="480,80" style="smx_uipanel_header_background" />
+						<sprite name="SMXsepLineHD" size="5,440" style="smx_uipanel_header_separation" />
+						<sprite name="SMXuiPanelTabsBG" size="460,52" style="smx_uipanel_tabs" />
+						<sprite name="SMXsepLineTB" size="5,440" style="smx_uipanel_tabs_separation" />
+						<label name="windowName" size="480,80" style="smx_uipanel_title" text="basics" text_key="xuiBasics" />
+						<sprite name="SMXvpDivider" depth="4" pos="390,-120" size="5,510" style="smx_uipanel_header_separation" color="[white]" rotation="360" />
+						<sprite name="SMXhpDivider" pos="25,-640" size="5,430" style="smx_uipanel_tabs_separation" />
+						<sprite name="SMXuiAccent" depth="4" pos="25,-640" size="430,79" style="smx_uipanel_accent" color="[uiElementsRed]" justify="center" />
+						<sprite name="SMXuiAccentGlow" depth="3" pos="25,-640" size="430,35" style="smx_uipanel_accent_glow" color="[uiElementsRed]" justify="center" />
+					</panel>
+
+					<panel name="content" depth="4" pos="20,-59" size="430,574" on_scroll="true" disableautobackground="true">
+						<rect name="categorySelector" depth="2" pos="3,-6" size="424,40">
+							<grid name="categories" pos="14,0" size="396,40" rows="1" cols="9" cell_width="44" cell_height="40" repeat_content="true" controller="CategoryList">
+								<smx_crafting_category_icon />
+							</grid>
+						</rect>
+
+						<rect name="searchControls" depth="2" pos="14,-60" size="342,40">
+							<button name="favorites" depth="4" pos="322,-20" size="32,32" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_favorite_icon" pivot="center" tooltip="Favorites" tooltip_key="lblFavorites" sound_play_on_hover="[default_uihover]" sound="[paging_click]" collider_scale="1.5" />
+							<panel pos="30,2" width="300" disableautobackground="true">
+								<smx_recipe_search name="searchInput" depth="6" />
+							</panel>
+						</rect>
+
+						<grid name="recipes" depth="2" pos="15,-110" size="68,68" rows="5" cols="5" cell_width="68" cell_height="68" controller="RecipeList" repeat_content="true" arrangement="horizontal">
+							<smx_crafting_recipe_entry name="0" />
+						</grid>
+
+						<rect name="pageControl" depth="4" pos="14,-453" size="342,40">
+							<panel name="searchScroll" pos="119,2" size="98,43" disableautobackground="true">
+								<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+								<rect depth="4" pos="37,-7">
+									<label name="pageNumber" depth="5" pos="0,-5" size="30,28" text="1" font_size="26" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+								</rect>
+								<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+							</panel>
+						</rect>
+					</panel>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// SMX // Crafting Queue - Workstation -->
+
+		<append xpath="/windows">
+			<window name="windowWorkstationCraftingQueue" depth="9" size="470,68" panel="Left" cursor_area="true">
+				<rect depth="9" pos="20,86" size="430,68" controller="CraftingQueue">
+					<sprite name="queueIcon" depth="9" pos="408,-34" size="32,32" atlas="uiIcons" sprite="smx_ui_general_queue_icon" color="[white]" pivot="center" foregroundlayer="true" />
+					<grid name="queue" pos="15,0" rows="1" cols="5" cell_width="68" cell_height="68" repeat_content="true">
+						<smx_crafting_recipe_stack name="0"/>
+					</grid>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Crafting Output - Workstations -->
+
+		<append xpath="/windows">
+			<window name="windowOutputWorkStation" depth="9" size="470,68" anchor="BottomLeft" panel="Left" cursor_area="true">
+				<rect name="content" depth="9" pos="20,76" size="430,68" disablefallthrough="true" on_press="true">
+						<sprite name="outputIcon" depth="9" pos="408,-34" size="32,32" atlas="uiIcons" sprite="smx_ui_general_output_icon" color="[white]" pivot="center" foregroundlayer="true"/>
+						<grid name="inventory" pos="11,3" rows="1" cols="5" cell_width="68" cell_height="68" controller="WorkstationOutputGrid" repeat_content="true">
+							<smx_backpack_itemstack_65 name="0"/>
+						</grid>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Workstation Fuel -->
+
+		<remove xpath="/windows/window[@name='windowFuel']" />
+
+		<append xpath="/windows">
+			<window name="windowFuel" depth="9" size="470,10" panel="Left" cursor_area="true">
+
+				<rect name="content" depth="2" pos="400,697" size="53,243">
+					<panel name="SMXburnTime" depth="2" pos="-48,47" size="470,80" disableautobackground="true">
+						<sprite name="windowIcon" depth="2" pos="-35,3" size="32,32" sprite="ui_game_symbol_fire" color="[lightGrey]" />
+						<label name="burnTimeLeft" depth="2" pos="0,0" size="80,45" text="00:00" color="[lightGrey]" font_size="40" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+					</panel>
+
+					<panel name="buttonContent" depth="9" pos="0,0" size="53,80" disableautobackground="true">
+							<button name="button" pos="2,-2" size="50,50" sprite="ui_game_symbol_fire" disabledcolor="[lightGrey]" defaultcolor="255,165,0,158" hoversprite="ui_game_symbol_fire" hovercolor="255,165,0,255" type="sliced" hoverscale="1.0" collider_scale="1.5" />
+							<label name="onoff" depth="2" pos="2,-57" text="TURN ON" text_key="xuiTurnOn" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+					</panel>
+
+					<rect name="content" depth="0" pos="0,-80" size="53,162">
+						<rect disablefallthrough="true">
+							<grid rows="3" cols="1" pos="0,0" cell_width="53" cell_height="53" controller="WorkstationFuelGrid" repeat_content="true" allow_sort_order="false">
+								<smx_fuel_stack_50 name="0" />
+							</grid>
+						</rect>
+
+						<grid name="slot_preview" depth="1" rows="3" cols="1" pos="0,0" cell_width="53" cell_height="53" controller="SlotPreview">
+							<rect>
+								<sprite name="slot" depth="2" pos="28,-25" size="30,30" sprite="resourceWood" atlas="ItemIconAtlasGreyscale" pivot="center" foregroundlayer="true" />
+							</rect>
+							<rect>
+								<sprite name="slot" depth="2" pos="28,-25" size="30,30" sprite="resourceWood" atlas="ItemIconAtlasGreyscale" pivot="center" foregroundlayer="true" />
+							</rect>
+							<rect>
+								<sprite name="slot" depth="2" pos="28,-25" size="30,30" sprite="resourceWood" atlas="ItemIconAtlasGreyscale" pivot="center" foregroundlayer="true" />
+							</rect>
+						</grid>
+					</rect>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Workstation Tools Campfire -->
+
+		<remove xpath="/windows/window[@name='windowToolsCampfire']" />
+
+		<append xpath="/windows">
+			<window name="windowToolsCampfire" depth="9" size="480,10" panel="Left" cursor_area="true">
+				<rect name="content" depth="2" pos="400,417" size="53,162" disablefallthrough="true">
+					<grid name="inventory" rows="3" cols="1" pos="0,0" cell_width="53" cell_height="53" controller="WorkstationToolGrid" repeat_content="true" allow_sort_order="false" required_tools="toolCookingPot,toolCookingGrill,toolBeaker" required_tools_only="true">
+						<smx_tools_stack_50 name="0" />
+					</grid>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Workstation Window - Forge -->
+
+		<append xpath="/windows">
+			<window name="windowCraftingListForge" size="480,633" panel="Left" controller="CraftingListInfo" cursor_area="true">
+
+				<panel name="SMXwindowForgeCraftingList" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smx_uipanel_header">
+						<sprite name="SMXuiPanelBG" size="480,750" style="smx_uipanel_background" />
+						<sprite name="SMXuiPanelHD" size="480,80" style="smx_uipanel_header_background" />
+						<sprite name="SMXsepLineHD" size="5,440" style="smx_uipanel_header_separation" />
+						<sprite name="SMXuiPanelTabsBG" size="460,52" style="smx_uipanel_tabs" />
+						<sprite name="SMXsepLineTB" size="5,440" style="smx_uipanel_tabs_separation" />
+						<label name="windowName" size="480,80" style="smx_uipanel_title" text="basics" text_key="xuiBasics" />
+						<sprite name="SMXvpDivider" depth="4" pos="390,-120" size="5,510" style="smx_uipanel_header_separation" color="[white]" rotation="360" />
+						<sprite name="SMXhpDivider" pos="25,-640" size="5,430" style="smx_uipanel_tabs_separation" />
+						<sprite name="SMXuiAccent" depth="4" pos="25,-640" size="430,79" style="smx_uipanel_accent" color="[uiElementsRed]" justify="center" />
+						<sprite name="SMXuiAccentGlow" depth="3" pos="25,-640" size="430,35" style="smx_uipanel_accent_glow" color="[uiElementsRed]" justify="center" />
+					</panel>
+
+					<panel name="content" depth="4" pos="20,-59" size="430,574" on_scroll="true" disableautobackground="true">
+						<rect name="categorySelector" depth="2" pos="3,-6" size="424,40">
+							<grid name="categories" pos="14,0" size="396,40" rows="1" cols="9" cell_width="44" cell_height="40" repeat_content="true" controller="CategoryList">
+								<smx_crafting_category_icon />
+							</grid>
+						</rect>
+
+						<rect name="searchControls" depth="2" pos="14,-60" size="342,40">
+							<button name="favorites" depth="4" pos="322,-20" size="32,32" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_favorite_icon" pivot="center" tooltip="Favorites" tooltip_key="lblFavorites" sound_play_on_hover="[default_uihover]" sound="[paging_click]" collider_scale="1.5" />
+							<panel pos="30,2" width="300" disableautobackground="true">
+								<smx_recipe_search name="searchInput" depth="6" />
+							</panel>
+						</rect>
+
+						<grid name="recipes" depth="2" pos="15,-246" size="68,68" rows="3" cols="5" cell_width="68" cell_height="68" controller="RecipeList" repeat_content="true" arrangement="horizontal">
+							<smx_crafting_recipe_entry name="0" />
+						</grid>
+
+						<rect name="pageControl" depth="4" pos="14,-453" size="342,40">
+							<panel name="searchScroll" pos="119,2" size="98,43" disableautobackground="true">
+								<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+								<rect depth="4" pos="37,-7">
+									<label name="pageNumber" depth="5" pos="0,-5" size="30,28" text="1" font_size="26" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+								</rect>
+								<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+							</panel>
+						</rect>
+					</panel>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// SMX // Workstation Tools - Forge -->
+
+		<remove xpath="/windows/window[@name='windowToolsForge']" />
+
+		<append xpath="/windows">
+			<window name="windowToolsForge" depth="9" size="480,10" panel="Left" cursor_area="true">
+				<rect name="content" depth="2" pos="400,417" size="53,162" disablefallthrough="true">
+					<grid name="inventory" rows="3" cols="1" pos="0,0" cell_width="53" cell_height="53" controller="WorkstationToolGrid" repeat_content="true" allow_sort_order="false" required_tools="toolAnvil,toolForgeCrucible,toolBellows" required_tools_only="true">
+						<smx_tools_stack_50 name="0" />
+					</grid>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Workstation Input - Forge -->
+
+		<remove xpath="/windows/window[@name='windowForgeInput']" />
+
+		<append xpath="/windows">
+			<window name="windowForgeInput" depth="9" size="480,10" panel="Left" controller="WorkstationMaterialInputWindow" materials_accepted="iron,brass,lead,glass,stone,clay" valid_materials_color="[green]" invalid_materials_color="[red]" cursor_area="true">
+
+				<sprite name="backgroundMain" depth="2" pos="99999,99999" size="0,0" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" on_press="true" />
+
+				<panel name="SMXwindowForgeInput" pos="0,0" disableautobackground="true">
+
+					<panel name="content" depth="4" pos="31,669" size="430,136" disableautobackground="true">
+						<rect name="content" depth="1" pos="0,0" size="68,136">
+							<grid depth="7" pos="0,0" rows="2" cols="1" cell_width="68" cell_height="68" controller="WorkstationMaterialInputGrid" repeat_content="true">
+								<smx_backpack_itemstack_65 name="0" />
+							</grid>
+						</rect>
+
+						<rect name="content2" depth="0" pos="136,0" size="210,136" on_press="true">
+
+							<sprite name="SMXredArrow" depth="9" pos="-60,-25" size="60,91" atlas="uiIcons" sprite="smx_uipanel_arrowmax_icon_new" color="[uiElementsRed]" flip="horizontally" />
+							
+							<grid pos="0,0" rows="2" cols="3" cell_width="68" cell_height="68"  repeat_content="false">
+								<smx_input_forge_material_1 name="Iron" />
+								<smx_input_forge_material_2 name="Brass" />
+								<smx_input_forge_material_3 name="Lead" />
+								<smx_input_forge_material_4 name="Glass" />
+								<smx_input_forge_material_5 name="Stone" />
+								<smx_input_forge_material_6 name="Clay" />
+							</grid>
+						</rect>
+					</panel>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// SMX // SMX Empty Helper Window -->
+
+		<append xpath="/windows">
+			<window name="SMXemptyFillerWindow" depth="1" size="480,10" anchor="BottomLeft" panel="Left" />
+		</append>
+
+
+<!--	// SMX // Vanilla Output Removal -->
+
+		<remove xpath="/windows/window[@name='windowOutput']" />
+
+
+<!--	// SMX // Character Window -->
+
+		<remove xpath="/windows/window[@name='CharacterFrameWindow']" />
+
+		<append xpath="/windows">
+			<window name="CharacterFrameWindow" size="650,750" panel="Left" controller="CharacterFrameWindow" defaultcolor="[darkGrey]" hoveredcolor="[selectedColor]" cursor_area="true"> <!-- REVISIT COLORS -->
+
+				<panel name="SMXcharacterFrameWindow" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smx_uipanel_header">
+						<sprite name="SMXuiPanelBG" size="650,750" style="smx_uipanel_background" />
+						<sprite name="SMXuiPanelHD" size="650,80" style="smx_uipanel_header_background" />
+						<sprite name="SMXsepLineHD" size="5,610" style="smx_uipanel_header_separation" />
+						<sprite name="SMXuiPanelTabsBG" size="630,52" style="smx_uipanel_tabs" />
+						<sprite name="SMXsepLineTB" size="5,610" style="smx_uipanel_tabs_separation" />
+						<label name="characterName" size="650,80" style="smx_uipanel_title" text="" />
+						<sprite name="SMXvpDivider" depth="4" pos="373,-120" size="5,610" style="smx_uipanel_header_separation" color="[white]" rotation="360" />
+						<sprite name="SMXhpDivider" pos="38,-530" size="5,335" style="smx_uipanel_tabs_separation" color="[uiElementsRed]" />
+					</panel>
+
+					<panel name="content" depth="5" pos="0,-43" disableautobackground="true">
+						<rect name="searchControls" depth="2" pos="3,-6" size="640,34">
+							<grid name="searchControls" size="640,34" pos="425,-35" rows="1" cols="3" cell_width="63" cell_height="43" repeat_content="false">
+								<button name="characterButton" depth="4" size="32,32" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_stats_icon" pivot="center" tooltip="Stats" tooltip_key="lblStats" sound="[paging_click]" selected="true" />
+								<button name="coreStatButton" depth="4" size="32,32" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_statscore_icon" pivot="center" tooltip="Stats" tooltip_key="lblStats" sound="[paging_click]" />
+							</grid>
+							
+							<label name="levelNumber" depth="4" pos="10,-23" size="370,32" text="" color="[lightGrey]" font_size="32" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+						</rect>
+
+						<rect pos="0,-5">
+							<panel name="previewFrame" depth="2" pos="100,-34" width="370" on_press="true" on_hover="true" disableautobackground="true" snap="false">
+								<rect>
+									<texture depth="2" pos="30,-40" name="playerPreview" material="Materials/Transparent Colored" size="128,351" globalopacity="false"/>
+								</rect>
+							</panel>
+
+							<panel name="equipment" pos="0,-37" size="70,350" disableautobackground="true">
+								<rect controller="EquipmentStackGrid">
+									<grid name="inventory" pos="40,-30" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+										<smx_equipment_stack name="Headgear"/>
+									</grid>
+									<grid name="inventory" pos="40,-110" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+										<smx_equipment_stack name="Eyewear"/>
+									</grid>
+									<grid name="inventory" pos="40,-190" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+										<smx_equipment_stack name="Face"/>
+									</grid>
+									<grid name="inventory" pos="40,-270" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+										<smx_equipment_stack name="Overcoat"/>
+									</grid>
+									<grid name="inventory" pos="40,-350" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+										<smx_equipment_stack name="Chestarmor"/>
+									</grid>
+									<grid name="inventory" pos="290,-30" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+										<smx_equipment_stack name="Shirt"/>
+									</grid>
+									<grid name="inventory" pos="290,-110" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+										<smx_equipment_stack name="Gloves"/>
+									</grid>
+									<grid name="inventory" pos="290,-190" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+										<smx_equipment_stack name="Legarmor"/>
+									</grid>
+									<grid name="inventory" pos="290,-270" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+										<smx_equipment_stack name="Pants"/>
+									</grid>
+									<grid name="inventory" pos="290,-350" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+										<smx_equipment_stack name="Footwear"/>
+									</grid>
+								</rect>
+							</panel>
+						</rect>
+
+						<rect visible="{showcharacter}" depth="2" pos="375,-74" width="220">
+							<rect pos="0,0" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerhealthtitle|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerhealth}/{playermaxhealth}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-30" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstaminatitle|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstamina}/{playermaxstamina}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+
+							<rect pos="0,-60" height="20">
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+							</rect>
+
+							<rect pos="0,-70" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerfoodtitle|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playermodifiedcurrentfood}/{playerfoodmax}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-100" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerwatertitle|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playermodifiedcurrentwater}/{playerwatermax}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-130" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playercoretemptitle|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playercoretemp}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+
+							<rect pos="0,-160" height="20">
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+							</rect>
+
+							<rect pos="0,-170" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerzombiekillstitle|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerzombiekills}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-200" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerpvpkillstitle|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerpvpkills}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-230" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerdeathstitle|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerdeaths}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+
+							<rect pos="0,-260" height="20">
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+							</rect>
+
+							<rect pos="0,-270" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playertravelledtitle|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playertravelled}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-300" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playeritemscraftedtitle|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playeritemscrafted}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-330" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerlongestlifetitle|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerlongestlife}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-360" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playercurrentlifetitle|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playercurrentlife}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+
+							<rect pos="0,-390" height="20">
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+							</rect>
+
+							<rect pos="0,-400" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerxptonextleveltitle|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerxptonextlevel}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+						</rect>
+						
+						<rect visible="{showcore}" depth="2" pos="375,-74" width="220">
+							<rect pos="0,0" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle1|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat1}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+
+							<rect pos="0,-30" height="20">
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+							</rect>
+
+							<rect pos="0,-40" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle2|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat2}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+							<rect pos="0,-70" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle3|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat3}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+							<rect pos="0,-100" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle4|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat4}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+
+							<rect pos="0,-130" height="20">
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+							</rect>
+
+							<rect pos="0,-140" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle5|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat5}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+							<rect pos="0,-170" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle6|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat6}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+
+							<rect pos="0,-200" height="20">
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+							</rect>
+
+							<rect pos="0,-210" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle7|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat7}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+							<rect pos="0,-240" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle8|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat8}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+							<rect pos="0,-270" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle9|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat9}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+
+							<rect pos="0,-300" height="20">
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+							</rect>
+
+							<rect pos="0,-310" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle10|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat10}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+							<rect pos="0,-340" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle11|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat11}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+							<rect pos="0,-370" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle12|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat12}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+
+							<rect pos="0,-400" height="20">
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+							</rect>
+
+							<rect pos="0,-410" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle13|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat13}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+							<rect pos="0,-440" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle14|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat14}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+							<rect pos="0,-470" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle15|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat15}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+							<rect pos="0,-500" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle16|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat16}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+							<rect pos="0,-530" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle17|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat17}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+							<rect pos="0,-560" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle18|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat18}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+							<rect pos="0,-590" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle19|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat19}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+							<rect pos="0,-610" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle20|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat20}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+							<rect pos="0,-640" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle21|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat21}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+							<rect pos="0,-670" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle22|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat22}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+							<rect pos="0,-700" height="33">
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstattitle23|once}" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" />
+								<label depth="3" pos="15,-3" width="220" font_size="22" text="{playerstat23}" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" />
+							</rect>
+						</rect>
+					</panel>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// SMX // Active Buffs Window -->
+
+		<remove xpath="/windows/window[@name='ActiveBuffsWindow']" />
+
+		<append xpath="/windows">
+			<window name="ActiveBuffsWindow" depth="9" Controller="ActiveBuffWindow" width="320" height="10" panel="Left" cursor_area="true">
+				<panel name="content" depth="0" pos="60,230" disableautobackground="true">
+					<grid name="buffs" rows="2" cols="4" pos="3,-3" cell_width="68" cell_height="68" repeat_content="true" controller="ActiveBuffList">
+						<smx_active_buff_entry />
+					</grid>
+
+					<rect name="pageControl" depth="4" pos="-29,-150" size="342,40">
+						<panel name="searchScroll" pos="119,2" size="98,43" disableautobackground="true">
+							<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+							<rect depth="4" pos="37,-7">
+								<label name="pageNumber" depth="5" pos="0,-5" size="30,28" text="1" font_size="26" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+							</rect>
+							<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+						</panel>
+					</rect>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// SMX // Loot Window --> <!-- Needs some work still, good enough for an initial release -->
+
+		<remove xpath="/windows/window[@name='windowLooting']" />
+
+		<append xpath="/windows">
+			<window name="windowLooting" pos="-50,-20" size="378,378" panel="Left" controller="LootWindow" anchor_side="bottomright" visible="false" cursor_area="true">
+				<panel name="header" style="smx_uipanel_header">
+					<sprite name="headerbackground" pos="99999,99999" style="smx_uipanel_header_background" />
+					<label name="lootName" pos="-30,-26" style="smx_uipanel_title" text="LOOT" text_key="xuiLoot" />
+					<button name="btnSort" depth="3" pos="41,-41" size="24,24" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_backpack_sort_icon" pivot="center" tooltip_key="lblSortContainer" sound="[paging_click]" />
+					<sprite name="takeAllIcon" depth="3" pos="210,-41" size="24,24" atlas="uiIcons" sprite="smx_ui_creative_pickup_icon" color="[mediumGrey]" pivot="center" />
+					<label name="takeAllLabel" depth="2" pos="250,-41" size="24,24" font_size="24" color="[mediumGrey]" justify="left" pivot="center" />
+				</panel>
+
+				<sprite name="gridBackground" depth="0" pos="-5,-5" width="100%" height="100%" style="smx_uipanel_background" globalopacity="true" on_press="true" />
+
+				<rect name="content" pos="20,-60">
+					<grid name="queue" depth="12" rows="10" cols="9" cell_width="68" cell_height="68" repeat_content="true" controller="LootContainer">
+						<smx_backpack_itemstack_65 name="0"/>
+					</grid>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Assemble Window --> <!-- 80% Done. Known issue: Reactiveness of the parts in the grid. -->
+
+		<remove xpath="/windows/window[@name='windowAssemble']" />
+
+		<append xpath="/windows">
+			<window name="windowAssemble" depth="1" size="350,750" panel="Left" controller="AssembleWindow" cursor_area="true" >
+
+				<panel name="SMXassemblyPanel" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smx_uipanel_header">
+						<sprite name="SMXuiPanelBG" size="350,750" style="smx_uipanel_background" />
+						<sprite name="SMXuiPanelHD" size="350,80" style="smx_uipanel_header_background" />
+						<sprite name="SMXsepLineHD" size="5,310" style="smx_uipanel_header_separation" />
+						<label name="windowName" pos="35,-24" size="280,40" style="smx_uipanel_title" text="{itemname}" overflow="ClampContent" /> <!-- OVERFLOW CODE -->
+						<sprite name="SMXhpDivider1" depth="4" pos="30,-305" size="5,280" style="smx_uipanel_header_separation" color="[white]" />
+						<sprite name="SMXhpDivider2" depth="4" pos="30,-545" size="5,280" style="smx_uipanel_header_separation" color="[white]" />
+					</panel>
+
+					<rect name="contentInfo" depth="1" pos="0,-46" height="346">
+						<rect name="preview" depth="1" pos="72,-25" size="165,165">
+							<sprite name="sprQuality" depth="9" pos="-25,-26" size="256,160" atlas="uiElements" sprite="smx_iteminfo_preview_background" type="sliced" color="{itemqualitycolor}" />
+							<sprite name="itemPreview" depth="10" pos="100,-106" size="165,165" style="smx_item_preview_icon" sprite="{itemicon}" color="{itemicontint}" />
+						</rect>
+
+						<rect name="stats" depth="3" pos="65,-270" size="230,228">
+							<rect pos="0,0" height="30">
+								<label depth="3" pos="0,-3" width="220" text="{itemstattitle1}" font_size="20" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="0,-3" width="220" text="{itemstat1}" font_size="20" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-30" height="30">
+								<label depth="3" pos="0,-3" width="220" text="{itemstattitle2}" font_size="20" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="0,-3" width="220" text="{itemstat2}" font_size="20" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-60" height="30">
+								<label depth="3" pos="0,-3" width="220" text="{itemstattitle3}" font_size="20" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="0,-3" width="220" text="{itemstat3}" font_size="20" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-90" height="30">
+								<label depth="3" pos="0,-3" width="220" text="{itemstattitle4}" font_size="20" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="0,-3" width="220" text="{itemstat4}" font_size="20" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-120" height="30">
+								<label depth="3" pos="0,-3" width="220" text="{itemstattitle5}" font_size="20" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="0,-3" width="220" text="{itemstat5}" font_size="20" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-150" height="30">
+								<label depth="3" pos="0,-3" width="220" text="{itemstattitle6}" font_size="20" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="0,-3" width="220" text="{itemstat6}" font_size="20" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+							<rect pos="0,-180" height="30">
+								<label depth="3" pos="0,-3" width="220" text="{itemstattitle7}" font_size="20" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="left" />
+								<label depth="3" pos="0,-3" width="220" text="{itemstat7}" font_size="20" color="[selectedColor]" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+							</rect>
+						</rect>
+								
+						<grid name="parts" pos="65,-510" rows="2" cols="3" cell_width="75" cell_height="75" repeat_content="true" controller="ItemPartStackGrid">
+							<smx_item_part_slot name="0" />
+						</grid>
+						
+						<grid name="cosmeticparts" pos="215,-585" rows="1" cols="1" cell_width="75" cell_height="75" repeat_content="true" controller="ItemCosmeticStackGrid">
+							<smx_item_part_slot_cosmetic />
+						</grid>
+					</rect>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// SMX // Keypad Code Set -->
+
+		<remove xpath="/windows/window[@name='windowKeypadEdit']" />
+
+		<append xpath="/windows">
+			<window name="windowKeypadEdit" pos="-225,400" size="450,450" panel="Center" controller="KeypadWindow" cursor_area="true">
+
+				<panel name="header" style="smx_uipanel_header">
+					<sprite name="SMXuiPanelBG" size="450,480" style="smx_uipanel_background" />
+					<sprite name="SMXuiPanelHD" size="450,80" style="smx_uipanel_header_background" />
+					<sprite name="SMXsepLineHD" size="5,410" style="smx_uipanel_header_separation" />
+					<label name="windowName" size="450,80" style="smx_uipanel_title" text_key="xuiKeypad" />
+					<sprite name="SMXhpDivider" pos="20,-285" size="5,410" style="smx_uipanel_header_separation" />
+				</panel>
+
+				<rect name="preview" depth="1" pos="130,-71" size="300,165">
+					<sprite name="itemSplash" depth="9" pos="-100,20" size="400,250" atlas="uiElements" sprite="smx_iteminfo_preview_background" type="sliced" color="[uiElementsRed]" />
+					<sprite name="itemPreview" depth="10" pos="100,-106" size="160,160" style="smx_item_preview_icon" atlas="uiIcons" sprite="smx_ui_general_padlock_icon" color="[white]" />
+				</rect>
+
+				<rect name="content" depth="3" pos="0,-295" height="120">
+					<smx_textfield name="txtPassword" depth="2" pos="25,-7" width="400" height="32" password_field="true" />
+				</rect>
+
+				<smx_uibutton_1 name="btnCancel" depth="5" pos="50,-445" width="160" height="60" font_size="32" font_face="AgencyB" crispness="Never" effect="outline" caption_key="xuiCancel" />
+				<smx_uibutton_1 name="btnOk" depth="5" pos="400,-445" width="160" height="60" font_size="32" font_face="AgencyB" crispness="Never" effect="outline" caption_key="xuiSubmit" pivot="right" />
+			</window>
+		</append>
+
+</configs>
