@@ -1062,7 +1062,7 @@
 							</rect>
 
 							<rect pos="0,-60" height="20">
-								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[uiElementsRed]" />
 							</rect>
 
 							<rect pos="0,-70" height="33">
@@ -1079,7 +1079,7 @@
 							</rect>
 
 							<rect pos="0,-160" height="20">
-								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[uiElementsRed]" />
 							</rect>
 
 							<rect pos="0,-170" height="33">
@@ -1096,7 +1096,7 @@
 							</rect>
 
 							<rect pos="0,-260" height="20">
-								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[uiElementsRed]" />
 							</rect>
 
 							<rect pos="0,-270" height="33">
@@ -1117,7 +1117,7 @@
 							</rect>
 
 							<rect pos="0,-390" height="20">
-								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[uiElementsRed]" />
 							</rect>
 
 							<rect pos="0,-400" height="33">
@@ -1133,7 +1133,7 @@
 							</rect>
 
 							<rect pos="0,-30" height="20">
-								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[uiElementsRed]" />
 							</rect>
 
 							<rect pos="0,-40" height="33">
@@ -1150,7 +1150,7 @@
 							</rect>
 
 							<rect pos="0,-130" height="20">
-								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[uiElementsRed]" />
 							</rect>
 
 							<rect pos="0,-140" height="33">
@@ -1163,7 +1163,7 @@
 							</rect>
 
 							<rect pos="0,-200" height="20">
-								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[uiElementsRed]" />
 							</rect>
 
 							<rect pos="0,-210" height="33">
@@ -1180,7 +1180,7 @@
 							</rect>
 
 							<rect pos="0,-300" height="20">
-								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[uiElementsRed]" />
 							</rect>
 
 							<rect pos="0,-310" height="33">
@@ -1197,7 +1197,7 @@
 							</rect>
 
 							<rect pos="0,-400" height="20">
-								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[menuElementsRed]" />
+								<sprite name="SMXhpDivider" pos="15,-2" size="4,220" style="smx_uipanel_tabs_separation" color="[uiElementsRed]" />
 							</rect>
 
 							<rect pos="0,-410" height="33">

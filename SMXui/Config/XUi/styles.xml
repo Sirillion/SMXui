@@ -113,7 +113,7 @@
 				<style_entry name="size" 							value="1230,52" />
 				<style_entry name="atlas" 							value="uiElements" />
 				<style_entry name="sprite" 							value="smx_uipanel_tabs_background" />
-				<style_entry name="color" 							value="[menuElementsBG]" />
+				<style_entry name="color" 							value="[uiElementsBG]" />
 				<style_entry name="globalopacitymod" 				value="1.5" />
 			</style>
 		</append>
