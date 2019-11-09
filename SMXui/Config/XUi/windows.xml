@@ -248,11 +248,11 @@
 
 					<rect name="pageControl" depth="4" pos="-213,-611" size="40,495">
 						<panel name="searchScroll" pos="396,2" size="98,43" disableautobackground="true">
-							<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+							<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
 							<rect depth="4" pos="37,-7">
 								<label name="pageNumber" depth="5" pos="0,-5" size="30,28" text="1" font_size="26" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
 							</rect>
-							<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+							<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
 						</panel>
 					</rect>
 
@@ -308,12 +308,12 @@
 						<sprite name="SMXsepLineHD" size="5,430" style="smx_uipanel_header_separation" />
 						<label name="windowName" size="470,80" style="smx_uipanel_title" text="INVENTORY" text_key="xuiInventory" />
 						<sprite name="SMXvpDivider" depth="4" pos="390,-90" size="5,620" style="smx_uipanel_header_separation" color="[white]" rotation="360" />
-						<button name="btnStashFillStacks" depth="3" pos="425,-140" size="60,60" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_backpack_dumpfill_icon" pivot="center" tooltip_key="lblStashFillStacks" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
-						<button name="btnStashSmart" depth="3" pos="425,-225" size="60,60" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_backpack_dumpsmart_icon" pivot="center" tooltip_key="lblStashSmart" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
-						<button name="btnStashAll" depth="3" pos="425,-310" size="60,60" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_backpack_dumpall_icon" pivot="center" tooltip_key="lblStashAll" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
+						<button name="btnStashFillStacks" depth="3" pos="425,-140" size="40,40" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_backpack_dumpfill_icon" pivot="center" tooltip_key="lblStashFillStacks" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
+						<button name="btnStashSmart" depth="3" pos="425,-225" size="40,40" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_backpack_dumpsmart_icon" pivot="center" tooltip_key="lblStashSmart" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
+						<button name="btnStashAll" depth="3" pos="425,-310" size="40,40" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_backpack_dumpall_icon" pivot="center" tooltip_key="lblStashAll" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
 						<smx_stashbuttons_combobox name="cbxLockedSlots" pos="430,-400" type="ComboBoxInt" value_min="0" value_max="45" value_wrap="true" value_increment="1" tooltip_key="xuiStashLockedSlots" visible="{lootingorvehiclestorage}" />
-						<button name="btnClearInventory" depth="3" pos="425,-550" size="40,40" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_backpack_trash_icon" pivot="center" tooltip_key="lblClearInventory" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
-						<button name="btnSort" depth="3" pos="425,-620" size="40,40" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_backpack_sort_icon" pivot="center" tooltip_key="lblSortInventory" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+						<button name="btnClearInventory" depth="3" pos="425,-550" size="40,40" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_backpack_trash_icon" pivot="center" tooltip_key="lblClearInventory" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+						<button name="btnSort" depth="3" pos="425,-620" size="40,40" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_sort_icon" pivot="center" tooltip_key="lblSortInventory" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
 					</panel>
 
 					<panel name="content" depth="1" pos="30,-60" size="630,730" disableautobackground="true">
@@ -323,7 +323,7 @@
 					</panel>
 
 					<panel name="SMXcurrency" depth="3" pos="0,-680" height="43" disableautobackground="true">
-						<sprite name="costIcon" depth="3" pos="75,-25" size="26,26" atlas="uiIcons" sprite="smx_backpack_currency_icon" color="[white]" pivot="center" forgroundlayer="true" />
+						<sprite name="costIcon" depth="3" pos="75,-25" size="26,26" atlas="uiIcons" sprite="smx_ui_general_currency_icon" color="[white]" pivot="center" forgroundlayer="true" />
 						<sprite depth="2" name="background" pos="107,-9" size="268,30" atlas="uiElements" sprite="smx_uipanel_searchinput_background" color="[black]" type="sliced" />
 						<sprite depth="3" name="frame" pos="107,-9" size="270,30" atlas="uiElements" sprite="smx_uipanel_searchinput_frame" color="[white]" type="sliced" />
 						<label name="currency" depth="3" pos="68,-9" size="300,28" text="{currencyamount}" color="[lightGrey]" justify="right" />
@@ -625,11 +625,11 @@
 
 						<rect name="pageControl" depth="4" pos="223,-630" size="495,40">
 							<panel name="searchScroll" size="98,43" disableautobackground="true">
-								<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+								<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
 								<rect depth="4" pos="37,-7">
 									<label name="pageNumber" depth="5" pos="0,-5" size="30,28" text="1" font_size="26" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
 								</rect>
-								<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+								<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
 							</panel>
 						</rect>
 
@@ -694,11 +694,11 @@
 
 						<rect name="pageControl" depth="4" pos="14,-526" size="342,40">
 							<panel name="searchScroll" pos="119,2" size="98,43" disableautobackground="true">
-								<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+								<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
 								<rect depth="4" pos="37,-7">
 									<label name="pageNumber" depth="5" pos="0,-5" size="30,28" text="1" font_size="26" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
 								</rect>
-								<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+								<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
 							</panel>
 						</rect>
 					</panel>
@@ -763,11 +763,11 @@
 
 						<rect name="pageControl" depth="4" pos="14,-453" size="342,40">
 							<panel name="searchScroll" pos="119,2" size="98,43" disableautobackground="true">
-								<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+								<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
 								<rect depth="4" pos="37,-7">
 									<label name="pageNumber" depth="5" pos="0,-5" size="30,28" text="1" font_size="26" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
 								</rect>
-								<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+								<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
 							</panel>
 						</rect>
 					</panel>
@@ -901,11 +901,11 @@
 
 						<rect name="pageControl" depth="4" pos="14,-453" size="342,40">
 							<panel name="searchScroll" pos="119,2" size="98,43" disableautobackground="true">
-								<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+								<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
 								<rect depth="4" pos="37,-7">
 									<label name="pageNumber" depth="5" pos="0,-5" size="30,28" text="1" font_size="26" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
 								</rect>
-								<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+								<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
 							</panel>
 						</rect>
 					</panel>
@@ -949,7 +949,7 @@
 
 						<rect name="content2" depth="0" pos="136,0" size="210,136" on_press="true">
 
-							<sprite name="SMXredArrow" depth="9" pos="-60,-25" size="60,91" atlas="uiIcons" sprite="smx_uipanel_arrowmax_icon_new" color="[uiElementsRed]" flip="horizontally" />
+							<sprite name="SMXredArrow" depth="9" pos="-60,-25" size="60,91" atlas="uiIcons" sprite="smx_ui_general_arrowmax_icon" color="[uiElementsRed]" flip="horizontally" />
 							
 							<grid pos="0,0" rows="2" cols="3" cell_width="68" cell_height="68"  repeat_content="false">
 								<smx_input_forge_material_1 name="Iron" />
@@ -1264,11 +1264,11 @@
 
 					<rect name="pageControl" depth="4" pos="-29,-150" size="342,40">
 						<panel name="searchScroll" pos="119,2" size="98,43" disableautobackground="true">
-							<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+							<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
 							<rect depth="4" pos="37,-7">
 								<label name="pageNumber" depth="5" pos="0,-5" size="30,28" text="1" font_size="26" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
 							</rect>
-							<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_uipanel_arrow_icon_new" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+							<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
 						</panel>
 					</rect>
 				</panel>
@@ -1284,8 +1284,8 @@
 			<window name="windowLooting" pos="-50,-20" size="378,378" panel="Left" controller="LootWindow" anchor_side="bottomright" visible="false" cursor_area="true">
 				<panel name="header" style="smx_uipanel_header">
 					<sprite name="headerbackground" pos="99999,99999" style="smx_uipanel_header_background" />
-					<label name="lootName" pos="-30,-26" style="smx_uipanel_title" text="LOOT" text_key="xuiLoot" />
-					<button name="btnSort" depth="3" pos="41,-41" size="24,24" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_backpack_sort_icon" pivot="center" tooltip_key="lblSortContainer" sound="[paging_click]" />
+					<label name="lootName" pos="-30,-26" style="smx_uipanel_title" text="LOOT" text_key="xuiLoot" justify="right" />
+					<button name="btnSort" depth="3" pos="41,-41" size="24,24" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_sort_icon" pivot="center" tooltip_key="lblSortContainer" sound="[paging_click]" />
 					<sprite name="takeAllIcon" depth="3" pos="210,-41" size="24,24" atlas="uiIcons" sprite="smx_ui_creative_pickup_icon" color="[mediumGrey]" pivot="center" />
 					<label name="takeAllLabel" depth="2" pos="250,-41" size="24,24" font_size="24" color="[mediumGrey]" justify="left" pivot="center" />
 				</panel>
@@ -1357,7 +1357,7 @@
 						</rect>
 								
 						<grid name="parts" pos="65,-510" rows="2" cols="3" cell_width="75" cell_height="75" repeat_content="true" controller="ItemPartStackGrid">
-							<smx_item_part_slot name="0" />
+							<smx_item_part_slot />
 						</grid>
 						
 						<grid name="cosmeticparts" pos="215,-585" rows="1" cols="1" cell_width="75" cell_height="75" repeat_content="true" controller="ItemCosmeticStackGrid">
@@ -1395,6 +1395,512 @@
 
 				<smx_uibutton_1 name="btnCancel" depth="5" pos="50,-445" width="160" height="60" font_size="32" font_face="AgencyB" crispness="Never" effect="outline" caption_key="xuiCancel" />
 				<smx_uibutton_1 name="btnOk" depth="5" pos="400,-445" width="160" height="60" font_size="32" font_face="AgencyB" crispness="Never" effect="outline" caption_key="xuiSubmit" pivot="right" />
+			</window>
+		</append>
+
+
+<!--	// SMX // Skill List Window -->
+
+		<remove xpath="/windows/window[@name='windowSkillList']" />
+
+		<append xpath="/windows">
+			<window name="windowSkillList" depth="1" size="1050,750" panel="Center" controller="SkillListWindow" cursor_area="true">
+
+				<panel name="SMXwindowSkillList" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smx_uipanel_header">
+						<sprite name="SMXuiPanelBG" size="1050,750" style="smx_uipanel_background" />
+						<sprite name="SMXuiPanelHD" size="1050,80" style="smx_uipanel_header_background" />
+						<sprite name="SMXsepLineHD" size="5,1010" style="smx_uipanel_header_separation" />
+						<sprite name="SMXuiPanelTabsBG" size="1030,52" style="smx_uipanel_tabs" />
+						<sprite name="SMXsepLineTB" size="5,1010" style="smx_uipanel_tabs_separation" />
+						<label name="windowName" size="1050,80" style="smx_uipanel_title" text_key="{titlename}" />
+					</panel>
+
+					<panel name="content" pos="-3,-55" height="669" disableautobackground="true">
+						<rect name="categoryHeader" pos="6,-3" size="1044,43">
+
+							<panel name="categoryIcons" depth="1" pos="80,-8" size="410,43" disableautobackground="true">
+								<grid name="categories" pos="-3,-6" size="625,34" rows="1" cols="6" cell_width="75" cell_height="43" repeat_content="false" controller="CategoryList">
+									<smx_skills_category_icon />
+									<smx_skills_category_icon />
+									<smx_skills_category_icon />
+									<smx_skills_category_icon />
+									<smx_skills_category_icon />
+									<smx_skills_category_icon />
+								</grid>
+							</panel>
+						</rect>
+
+						<panel name="skills" pos="100,-79" repeat_content="false" arrangement="vertical" disableautobackground="true" controller="SkillList">
+
+							<label name="SMXpointsAvailable" depth="9" pos="880,63" size="300,45" text="{skillpointsavailable}" color="[mediumGrey]" font_size="40" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" pivot="topright" justify="right" visible="{isnormal}" />
+
+							<rect visible="{isnormal}">
+
+								<grid name="SMXdummyAttribute" pos="99999,99999" rows="1" cols="1" cell_width="100" cell_height="100" repeat_content="true">
+									<smx_skill_entry_dummy_attributes name="dummyAttribute" />
+								</grid>
+
+								<grid name="attPerception" pos="-30,6" rows="1" cols="1" cell_width="100" cell_height="100" repeat_content="true">
+									<smx_skill_entry_attributes name="Perception" />
+								</grid>
+
+								<sprite name="SMXredArrowPER" depth="9" pos="62,-9" size="36,55" atlas="uiIcons" sprite="smx_ui_general_arrowmax_icon" color="[uiElementsRed]" flip="horizontally" />
+
+								<grid name="attStrength" pos="-30,-114" rows="1" cols="1" cell_width="100" cell_height="100" repeat_content="true">
+									<smx_skill_entry_attributes name="Strength" />
+								</grid>
+
+								<sprite name="SMXredArrowSTR" depth="9" pos="62,-129" size="36,55" atlas="uiIcons" sprite="smx_ui_general_arrowmax_icon" color="[uiElementsRed]" flip="horizontally" />
+
+								<grid name="attFortitude" pos="-30,-234" rows="1" cols="1" cell_width="100" cell_height="100" repeat_content="true">
+									<smx_skill_entry_attributes name="Fortitude" />
+								</grid>
+
+								<sprite name="SMXredArrowFRT" depth="9" pos="62,-249" size="36,55" atlas="uiIcons" sprite="smx_ui_general_arrowmax_icon" color="[uiElementsRed]" flip="horizontally" />
+								
+								<grid name="attAgility" pos="-30,-354" rows="1" cols="1" cell_width="100" cell_height="100" repeat_content="true">
+									<smx_skill_entry_attributes name="Agility" />
+								</grid>
+
+								<sprite name="SMXredArrowAGI" depth="9" pos="62,-369" size="36,55" atlas="uiIcons" sprite="smx_ui_general_arrowmax_icon" color="[uiElementsRed]" flip="horizontally" />
+
+								<grid name="attIntellect" pos="-30,-474" rows="1" cols="1" cell_width="100" cell_height="100" repeat_content="true">
+									<smx_skill_entry_attributes name="Intellect" />
+								</grid>
+
+								<sprite name="SMXredArrowINT" depth="9" pos="62,-489" size="36,55" atlas="uiIcons" sprite="smx_ui_general_arrowmax_icon" color="[uiElementsRed]" flip="horizontally" />
+
+								<sprite name="SMXvpDivider" depth="9" pos="106,6" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="106,6" size="35,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<label name="SMXskillDivider" depth="9" pos="106,6" size="223,28" text="PERCEPTION COMBAT" color="[uiElementsPerkCat]" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="294,6" size="35,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXvpDivider" depth="9" pos="329,6" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+
+								<grid name="perkDeadEye" pos="100,0" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="DeadEye" />
+								</grid>
+								<grid name="perkDemolitionsExpert" pos="180,0" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="DemolitionsExpert" />
+								</grid>
+								<grid name="perkJavelinMaster" pos="260,0" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="JavelinMaster" />
+								</grid>
+
+								<sprite name="SMXvpDivider" depth="9" pos="346,6" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="346,6" size="80,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<label name="SMXskillDivider" depth="9" pos="346,6" size="303,28" text="PERCEPTION GENERAL" color="[uiElementsPerkCat]" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="569,6" size="80,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXvpDivider" depth="9" pos="649,6" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+
+								<grid name="perkLockPicking" pos="340,0" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="LockPicking" />
+								</grid>
+								<grid name="perkInfiltrator" pos="420,0" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="Infiltrator" />
+								</grid>
+								<grid name="perkAnimalTracker" pos="500,0" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="AnimalTracker" />
+								</grid>
+								<grid name="perkPenetrator" pos="580,0" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="Penetrator" />
+								</grid>
+
+								<sprite name="SMXvpDivider" depth="9" pos="666,6" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="666,6" size="20,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<label name="SMXskillDivider" depth="9" pos="666,6" size="143,28" text="SCAVENGING" color="[uiElementsPerkCat]" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="789,6" size="20,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXvpDivider" depth="9" pos="809,6" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+
+								<grid name="perkLuckyLooter" pos="660,0" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="LuckyLooter" />
+								</grid>
+								<grid name="perkSalvageOperations" pos="740,0" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="SalvageOperations" />
+								</grid>
+
+								<sprite name="SMXvpDivider" depth="9" pos="106,-114" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="106,-114" size="45,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<label name="SMXskillDivider" depth="9" pos="106,-114" size="223,28" text="STRENGTH COMBAT" color="[uiElementsPerkCat]" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="284,-114" size="45,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXvpDivider" depth="9" pos="329,-114" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+
+								<grid name="perkBoomstick" pos="100,-120" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="BoomStick" />
+								</grid>
+								<grid name="perkPummelPete" pos="180,-120" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="PummelPete" />
+								</grid>
+								<grid name="perkSkullCrusher" pos="260,-120" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="SkullCrusher" />
+								</grid>
+
+								<sprite name="SMXvpDivider" depth="9" pos="346,-114" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="346,-114" size="40,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<label name="SMXskillDivider" depth="9" pos="346,-114" size="223,28" text="STRENGTH GENERAL" color="[uiElementsPerkCat]" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="529,-114" size="40,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXvpDivider" depth="9" pos="569,-114" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+
+								<grid name="perkSexualTrex" pos="340,-120" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="SexoSaurus" />
+								</grid>
+								<grid name="perkPackMule" pos="420,-120" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="PackMule" />
+								</grid>
+								<grid name="perkMasterChef" pos="500,-120" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="MasterChef" />
+								</grid>
+
+								<sprite name="SMXvpDivider" depth="9" pos="586,-114" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="586,-114" size="20,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<label name="SMXskillDivider" depth="9" pos="586,-114" size="143,28" text="CONSTRUCTION" color="[uiElementsPerkCat]" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="709,-114" size="20,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXvpDivider" depth="9" pos="729,-114" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+
+								<grid name="perkMiner69r" pos="580,-120" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="Miner69er" />
+								</grid>
+								<grid name="perkMotherLode" pos="660,-120" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="MotherLode" />
+								</grid>
+
+								<sprite name="SMXvpDivider" depth="9" pos="106,-234" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="106,-234" size="10,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<label name="SMXskillDivider" depth="9" pos="106,-234" size="143,28" text="FORTITUDE COMBAT" color="[uiElementsPerkCat]" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="239,-234" size="10,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXvpDivider" depth="9" pos="249,-234" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+
+								<grid name="perkBrawler" pos="100,-240" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="Brawler" />
+								</grid>
+								<grid name="perkMachineGunner" pos="180,-240" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="MachineGunner" />
+								</grid>
+
+								<sprite name="SMXvpDivider" depth="9" pos="266,-234" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="266,-234" size="120,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<label name="SMXskillDivider" depth="9" pos="266,-234" size="383,28" text="FORTITUDE GENERAL" color="[uiElementsPerkCat]" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="529,-234" size="120,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXvpDivider" depth="9" pos="649,-234" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+
+								<grid name="perkHeavyArmor" pos="260,-240" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="HeavyArmor" />
+								</grid>
+								<grid name="perkTheHuntsman" pos="340,-240" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="Huntsman" />
+								</grid>
+								<grid name="perkWellInsulated" pos="420,-240" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="WellInsulated" />
+								</grid>
+								<grid name="perkLivingOffTheLand" pos="500,-240" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="LivingoftheLand" />
+								</grid>
+								<grid name="perkPainTolerance" pos="580,-240" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="PainTolerance" />
+								</grid>
+
+								<sprite name="SMXvpDivider" depth="9" pos="666,-234" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="666,-234" size="65,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<label name="SMXskillDivider" depth="9" pos="666,-234" size="223,28" text="RECOVERY" color="[uiElementsPerkCat]" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="824,-234" size="65,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXvpDivider" depth="9" pos="889,-234" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+
+								<grid name="perkHealingFactor" pos="660,-240" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="HealingFactor" />
+								</grid>
+								<grid name="perkSlowMetabolism" pos="740,-240" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="SlowMetabolism" />
+								</grid>
+								<grid name="perkRuleOneCardio" pos="820,-240" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="Cardio" />
+								</grid>
+
+								<sprite name="SMXvpDivider" depth="9" pos="106,-354" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="106,-354" size="50,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<label name="SMXskillDivider" depth="9" pos="106,-354" size="223,28" text="AGILITY COMBAT" color="[uiElementsPerkCat]" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="279,-354" size="50,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXvpDivider" depth="9" pos="329,-354" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+
+								<grid name="perkArchery" pos="100,-360" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="Archery" />
+								</grid>
+								<grid name="perkGunslinger" pos="180,-360" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="GunSlinger" />
+								</grid>
+								<grid name="perkDeepCuts" pos="260,-360" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="DeepCuts" />
+								</grid>
+
+								<sprite name="SMXvpDivider" depth="9" pos="346,-354" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="346,-354" size="80,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<label name="SMXskillDivider" depth="9" pos="346,-354" size="303,28" text="AGILITY ATHLETICS" color="[uiElementsPerkCat]" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="569,-354" size="80,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXvpDivider" depth="9" pos="649,-354" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+
+								<grid name="perkRunAndGun" pos="340,-360" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="RundAndGun" />
+								</grid>
+								<grid name="perkFlurryOfBlows" pos="420,-360" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="FlurryofBlows" />
+								</grid>
+								<grid name="perkLightArmor" pos="500,-360" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="LightArmor" />
+								</grid>
+								<grid name="perkParkour" pos="580,-360" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="Parkour" />
+								</grid>
+
+								<sprite name="SMXvpDivider" depth="9" pos="666,-354" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="666,-354" size="35,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<label name="SMXskillDivider" depth="9" pos="666,-354" size="143,28" text="STEALTH" color="[uiElementsPerkCat]" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="774,-354" size="35,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXvpDivider" depth="9" pos="809,-354" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+
+								<grid name="perkHiddenStrike" pos="660,-360" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="HiddenStrike" />
+								</grid>
+								<grid name="perkFromTheShadows" pos="740,-360" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="FromTheShadows" />
+								</grid>
+
+								<sprite name="SMXvpDivider" depth="9" pos="106,-474" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="106,-474" size="10,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<label name="SMXskillDivider" depth="9" pos="106,-474" size="143,28" text="INTELLECT COMBAT" color="[uiElementsPerkCat]" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="239,-474" size="10,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXvpDivider" depth="9" pos="249,-474" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+
+								<grid name="perkElectrocutioner" pos="100,-480" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="Electrocutioner" />
+								</grid>
+								<grid name="perkTurrets" pos="180,-480" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="Turrets" />
+								</grid>
+
+								<sprite name="SMXvpDivider" depth="9" pos="266,-474" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="266,-474" size="80,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<label name="SMXskillDivider" depth="9" pos="266,-474" size="303,28" text="INTELLECT INFLUENCE" color="[uiElementsPerkCat]" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="489,-474" size="80,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXvpDivider" depth="9" pos="569,-474" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+
+								<grid name="perkBetterBarter" pos="260,-480" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="BetterBarter" />
+								</grid>
+								<grid name="perkDaringAdventurer" pos="340,-480" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="DaringAdventurer" />
+								</grid>
+								<grid name="perkCharismaticNature" pos="420,-480" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="CharismaticNature" />
+								</grid>
+								<grid name="perkPhysician" pos="500,-480" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="Physician" />
+								</grid>
+
+								<sprite name="SMXvpDivider" depth="9" pos="586,-474" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="586,-474" size="50,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<label name="SMXskillDivider" depth="9" pos="586,-474" size="223,28" text="CONSTRUCTION" color="[uiElementsPerkCat]" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
+								<sprite name="SMXhpDivider" depth="9" pos="759,-474" size="50,1" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+								<sprite name="SMXvpDivider" depth="9" pos="809,-474" size="1,10" color="[uiElementsPerkCat]" globalopacitymod="1.5" justify="center" />
+
+								<grid name="perkAdvancedEngineering" pos="580,-480" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="AdvancedEngineering" />
+								</grid>
+								<grid name="perkGreaseMonkey" pos="660,-480" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="GreaseMonkey" />
+								</grid>
+								<grid name="perkYeahScience" pos="740,-480" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true">
+									<smx_skill_entry_perks name="YeahScience" />
+								</grid>
+							</rect>
+
+							<rect visible="{isbook}">
+								<grid name="SMXdummyBook" pos="99999,99999" rows="1" cols="1" cell_width="100" cell_height="100" repeat_content="true">
+									<smx_skill_entry_dummy_attributes name="dummyBook" />
+								</grid>
+								<grid name="skillBooks" pos="-40,-20" rows="2" cols="8" cell_width="120" cell_height="290" repeat_content="true">
+									<smx_skill_entry_books name="0" />
+								</grid>
+							</rect>
+						</panel>
+
+						<rect name="pageControl" depth="4" pos="99999,-99999" size="495,40" controller="Paging" visible="false">
+							<panel name="searchScroll" size="98,43" disableautobackground="true">
+								<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />								
+								<rect depth="4" pos="37,-7">
+									<label name="pageNumber" depth="5" pos="0,-5" size="30,28" text="{pagenumber}" font_size="26" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+								</rect>
+								<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+							</panel>
+						</rect>
+					</panel>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// SMX // Attribute Info Window -->
+
+		<remove xpath="/windows/window[@name='windowSkillAttributeInfo']" />
+
+		<append xpath="/windows">
+			<window name="windowSkillAttributeInfo" depth="1" size="450,750" panel="Right" controller="SkillAttributeInfoWindow" cursor_area="true" hidden_entries_with_paging="0">
+
+				<panel name="SMXwindowSkillAttributeInfo" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smx_uipanel_header">
+						<sprite name="SMXuiPanelBG" size="450,750" style="smx_uipanel_background" />
+						<sprite name="SMXuiPanelHD" size="450,80" style="smx_uipanel_header_background" />
+						<sprite name="SMXsepLineHD" size="5,410" style="smx_uipanel_header_separation" />
+						<label name="windowName" size="450,80" style="smx_uipanel_title" text="{groupname}" />
+					</panel>
+
+					<rect name="content" depth="1" pos="0,-66" height="649">
+
+						<rect name="preview" depth="1" pos="127,0" size="450,165">
+							<sprite name="sprQuality" depth="9" pos="-25,-26" size="256,160" atlas="uiElements" sprite="smx_iteminfo_preview_background" type="sliced" color="[lightGrey]" />
+							<sprite name="itemPreview" depth="10" pos="100,-106" size="165,165" style="smx_item_preview_icon" atlas="ItemIconAtlas" sprite="{groupicon}" justify="center" />
+						</rect>
+
+						<sprite name="SMXsepLineSkills" depth="9" pos="20,-220" size="5,410" atlas="uiElements" sprite="smx_uipanel_separate_line" color="[uiElementsRed]" rotation="90" globalopacitymod="1.5" />
+
+						<rect name="descriptionBox" depth="2" pos="0,-230" size="450,80">
+							<label name="descriptionText" depth="3" pos="50,-8" size="350,500" text="{groupdescription}" font_size="18" font_face="AgencyB" crispness="Never" effect="outline" upper_case="false" />
+						</rect>
+
+						<rect name="pageControl" depth="4" pos="99999,99999" size="495,40" controller="Paging" visible="{showPaging}">
+							<panel name="searchScroll" size="98,43" disableautobackground="true">
+								<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />								
+								<rect depth="4" pos="37,-7">
+									<label name="pageNumber" depth="5" pos="0,-5" size="30,28" text="{pagenumber}" font_size="26" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+								</rect>
+								<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+							</panel>
+						</rect>
+					</rect>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// SMX // Perk Info Window -->
+
+		<remove xpath="/windows/window[@name='windowSkillPerkInfo']" />
+
+		<append xpath="/windows">
+			<window name="windowSkillPerkInfo" depth="1" size="450,750" panel="Right" controller="SkillPerkInfoWindow" cursor_area="true" hidden_entries_with_paging="0">
+
+				<panel name="SMXwindowSkillPerkInfo" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smx_uipanel_header">
+						<sprite name="SMXuiPanelBG" size="450,750" style="smx_uipanel_background" />
+						<sprite name="SMXuiPanelHD" size="450,80" style="smx_uipanel_header_background" />
+						<sprite name="SMXsepLineHD" size="5,410" style="smx_uipanel_header_separation" />
+						<sprite name="SMXuiPanelTabsBG" size="430,52" style="smx_uipanel_tabs" />
+						<sprite name="SMXsepLineTB" size="5,410" style="smx_uipanel_tabs_separation" />
+						<label name="windowName" size="450,80" style="smx_uipanel_title" text="{groupname}" />
+					</panel>
+
+					<rect name="content" depth="1" pos="0,-66" height="649">
+
+						<rect name="costBox" depth="1" pos="0,-5" size="450,52">
+							<label name="cost" depth="9" pos="40,0" size="225,50" text="Cost: {buycost}" color="[mediumGrey]" font_size="40" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" pivot="topleft" />
+							<label name="level" depth="9" pos="410,0" size="225,50" text="{currentlevel} {skillLevel} / {maxSkillLevel}" color="[mediumGrey]" font_size="40" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" pivot="topright" />
+						</rect>
+
+						<rect name="preview" depth="1" pos="127,-30" size="450,165">
+							<sprite name="sprQuality" depth="9" pos="-25,-26" size="256,160" atlas="uiElements" sprite="smx_iteminfo_preview_background" type="sliced" color="[lightGrey]" justify="center" />
+							<sprite name="itemPreview" depth="10" pos="100,-106" size="165,165" style="smx_item_preview_icon" atlas="ItemIconAtlas" sprite="{groupicon}" justify="center" />
+						</rect>
+
+						<sprite name="SMXsepLineSkills" depth="9" pos="20,-230" size="5,410" atlas="uiElements" sprite="smx_uipanel_separate_line" color="[uiElementsRed]" rotation="90" globalopacitymod="1.5" />
+
+						<rect name="descriptionBox" depth="2" pos="0,-240" size="450,80">
+							<label name="descriptionText" depth="3" pos="50,-8" size="350,80" text="{groupdescription}" font_size="18" font_face="AgencyB" crispness="Never" effect="outline" upper_case="false" />
+						</rect>
+
+						<sprite name="SMXsepLineSkills" depth="9" pos="20,-330" size="5,410" atlas="uiElements" sprite="smx_uipanel_separate_line" color="[uiElementsRed]" rotation="90" globalopacitymod="1.5" />
+
+						<rect name="detailsBox" depth="4" pos="0,-340" size="450,100" >
+							<label depth="2" name="descriptionText" pos="50,-8" size="350,90" text="{detailsdescription}" font_size="18" font_face="AgencyB" crispness="Never" effect="outline" />
+						</rect>
+
+						<sprite name="SMXsepLineSkills" depth="9" pos="20,-450" size="5,410" atlas="uiElements" sprite="smx_uipanel_separate_line" color="[uiElementsRed]" rotation="90" globalopacitymod="1.5" />
+
+						<rect name="tableBox" depth="1" pos="40,-460" size="450,200">
+							<grid pos="0,0" width="75" rows="2" cols="5" cell_width="75" cell_height="100" repeat_content="true" arrangement="horizontal">
+								<smx_skill_perk_level width="75" height="100" />
+							</grid>
+						</rect>
+
+						<rect name="pageControl" depth="4" pos="99999,99999" size="495,40" controller="Paging" visible="{showPaging}">
+							<panel name="searchScroll" size="98,43" disableautobackground="true">
+								<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />								
+								<rect depth="4" pos="37,-7">
+									<label name="pageNumber" depth="5" pos="0,-5" size="30,28" text="{pagenumber}" font_size="26" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+								</rect>
+								<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+							</panel>
+						</rect>
+					</rect>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// SMX // Book Info Window -->
+
+		<remove xpath="/windows/window[@name='windowSkillBookInfo']" />
+
+		<append xpath="/windows">
+			<window name="windowSkillBookInfo" depth="1" size="450,750" panel="Right" controller="SkillBookInfoWindow" cursor_area="true" hidden_entries_with_paging="0" >
+
+				<panel name="SMXwindowSkillPerkInfo" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smx_uipanel_header">
+						<sprite name="SMXuiPanelBG" size="450,750" style="smx_uipanel_background" />
+						<sprite name="SMXuiPanelHD" size="450,80" style="smx_uipanel_header_background" />
+						<sprite name="SMXsepLineHD" size="5,410" style="smx_uipanel_header_separation" />
+						<label name="windowName" size="450,80" style="smx_uipanel_title" text="{groupname}" />
+					</panel>
+
+					<rect name="content" depth="1" pos="0,-66" height="649">
+
+						<rect name="preview" depth="1" pos="127,0" size="450,165">
+							<sprite name="sprQuality" depth="9" pos="-25,-26" size="256,160" atlas="uiElements" sprite="smx_iteminfo_preview_background" type="sliced" color="[lightGrey]" />
+							<sprite name="itemPreview" depth="10" pos="100,-106" size="165,165" style="smx_item_preview_icon" atlas="ItemIconAtlas" sprite="{groupicon}" justify="center" />
+						</rect>
+
+						<sprite name="SMXsepLineSkills" depth="9" pos="20,-220" size="5,410" atlas="uiElements" sprite="smx_uipanel_separate_line" color="[uiElementsRed]" rotation="90" globalopacitymod="1.5" />
+
+						<rect name="descriptionBox" depth="2" pos="0,-230" size="450,80">
+							<label name="descriptionText" depth="3" pos="50,-8" size="350,80" text="{groupdescription}" font_size="18" font_face="AgencyB" crispness="Never" effect="outline" upper_case="false" />
+						</rect>
+
+						<sprite name="SMXsepLineSkills" depth="9" pos="20,-330" size="5,410" atlas="uiElements" sprite="smx_uipanel_separate_line" color="[uiElementsRed]" rotation="90" globalopacitymod="1.5" />
+
+						<rect name="detailsBox" depth="4" pos="0,-340" size="450,100" >
+							<label depth="2" name="descriptionText" pos="50,-8" size="350,90" text="{detailsdescription}" font_size="18" font_face="AgencyB" crispness="Never" effect="outline" />
+						</rect>
+
+						<sprite name="SMXsepLineSkills" depth="9" pos="20,-450" size="5,410" atlas="uiElements" sprite="smx_uipanel_separate_line" color="[uiElementsRed]" rotation="90" globalopacitymod="1.5" />
+
+						<rect name="tableBox" depth="1" pos="75,-460" size="450,200">
+							<grid pos="0,0" width="75" rows="2" cols="4" cell_width="75" cell_height="100" repeat_content="true" arrangement="horizontal">
+								<smx_skill_book_level width="75" height="100" />
+							</grid>
+						</rect>
+
+						<rect name="pageControl" depth="4" pos="99999,99999" size="495,40" controller="Paging" visible="{showPaging}">
+							<panel name="searchScroll" size="98,43" disableautobackground="true">
+								<button name="pageDown" depth="4" pos="10,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />								
+								<rect depth="4" pos="37,-7">
+									<label name="pageNumber" depth="5" pos="0,-5" size="30,28" text="{pagenumber}" font_size="26" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+								</rect>
+								<button name="pageUp" depth="4" pos="94,-22" size="14,26" style="press, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" flip="horizontally" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+							</panel>
+						</rect>
+					</rect>
+				</panel>
 			</window>
 		</append>
 

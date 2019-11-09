@@ -6,6 +6,7 @@
 			<style_entry name="uiElementsBG"						value="0,0,0" />
 			<style_entry name="uiElementsHDR"						value="175,30,25" />
 			<style_entry name="uiElementsBTN"						value="175,30,25" />
+			<style_entry name="uiElementsPerkCat"					value="96,96,96" />
 			<style_entry name="uiElementsRed"						value="175,30,25" />
 			<style_entry name="uiElementsIcon"						value="255,255,255" />
 			<style_entry name="uiElementsLabel"						value="255,255,255" />
@@ -274,7 +275,7 @@
 				<style_entry name="pos" 							value="41,-11" />
 				<style_entry name="size" 							value="30,30" />
 				<style_entry name="atlas" 							value="uiIcons" />
-				<style_entry name="sprite" 							value="smx_crafting_basics_icon" />
+				<style_entry name="sprite" 							value="smx_ui_crafting_basics_icon" />
 				<style_entry name="tooltip" 						value="CRAFTING" />
 				<style_entry name="tooltip_key" 					value="xuiCrafting" />
 				<style_entry name="hoverscale" 						value="1.25" />
@@ -428,11 +429,11 @@
 <!--	// SMX // Item Stacks Layout -->
 
 		<append xpath="/styles">
-			<style name="smx_itemstack_65">
+			<style name="smx_itemstack_50">
 				<style_entry name="background_color" 				value="[darkGrey]"/>
 				<style_entry name="highlight_color" 				value="[mediumGrey]"/>
-				<style_entry name="width" 							value="65"/>
-				<style_entry name="height" 							value="65"/>
+				<style_entry name="width" 							value="50"/>
+				<style_entry name="height" 							value="50"/>
 				<style_entry name="hover_icon_grow" 				value="1.5"/>
 				<style_entry name="on_press" 						value="true"/>
 				<style_entry name="sound_volume" 					value="0.75"/>
@@ -442,11 +443,11 @@
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_itemstack_50">
+			<style name="smx_itemstack_65">
 				<style_entry name="background_color" 				value="[darkGrey]"/>
 				<style_entry name="highlight_color" 				value="[mediumGrey]"/>
-				<style_entry name="width" 							value="50"/>
-				<style_entry name="height" 							value="50"/>
+				<style_entry name="width" 							value="65"/>
+				<style_entry name="height" 							value="65"/>
 				<style_entry name="hover_icon_grow" 				value="1.5"/>
 				<style_entry name="on_press" 						value="true"/>
 				<style_entry name="sound_volume" 					value="0.75"/>

@@ -15,7 +15,7 @@
 
 <!--	// SMX // Workbench Crafting Categories -->
 
-		<!--set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='workbench']/crafting_category[@name='Basics']/@icon">smx_crafting_basics_icon</set-->
+		<!--set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='workbench']/crafting_category[@name='Basics']/@icon">smx_ui_crafting_basics_icon</set-->
 		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='workbench']/crafting_category[@name='Building']/@icon">smx_ui_crafting_building_icon</set>
 		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='workbench']/crafting_category[@name='Resources']/@icon">smx_ui_crafting_resources_icon</set>
 		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='workbench']/crafting_category[@name='Ammo/Weapons']/@icon">smx_ui_crafting_weapons_icon</set>

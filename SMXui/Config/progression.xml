@@ -1,0 +1,428 @@
+<configs>
+
+<!--	// SMX // Parent Skill Attribute Injection -->
+
+		<insertBefore xpath="/progression/attributes/attribute[@name='attBooks']">
+			<attribute name="attSkills" name_key="attSkillsName" desc_key="attSkillsDesc" icon="smx_ui_attribute_dummy_icon" min_level="0" max_level="0" base_skill_point_cost="0" />
+		</insertBefore>
+
+
+<!--	// SMX // Attribute Removal -->
+
+		<remove xpath="/progression/attributes/attribute[@name='attPerception']" />
+		<remove xpath="/progression/attributes/attribute[@name='attStrength']" />
+		<remove xpath="/progression/attributes/attribute[@name='attFortitude']" />
+		<remove xpath="/progression/attributes/attribute[@name='attAgility']" />
+		<remove xpath="/progression/attributes/attribute[@name='attIntellect']" />
+
+
+<!--	// SMX // Attribute > Perk Injection -->
+
+		<insertBefore xpath="/progression/perks/perk[@name='perkDeadEye']">
+			<perk name="attPerception" parent="attSkills" name_key="attperception" desc_key="attPerceptionDesc" icon="smx_ui_attribute_perception_icon" min_level="1" max_level="10" base_skill_point_cost="1" cost_multiplier_per_level="1.14">
+				<level_requirements level="1"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="2"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="3"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="4"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="5"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="6"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02" /></level_requirements>
+				<level_requirements level="7"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02" /></level_requirements>
+				<level_requirements level="8"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02" /></level_requirements>
+				<level_requirements level="9"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03" /></level_requirements>
+				<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03" /></level_requirements>
+				<effect_group>
+					<requirement name="HoldingItemHasTags" tags="attPerception" />
+						<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head" />
+						<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head" />
+						<passive_effect name="DismemberChance" operation="base_add" level="2,10" value=".05,.45" />
+
+					<effect_description level="1"  desc_key="attPerceptionRank01Desc" long_desc_key="attPerceptionRank01LongDesc" />
+					<effect_description level="2"  desc_key="attPerceptionRank02Desc" long_desc_key="attPerceptionRank02LongDesc" />
+					<effect_description level="3"  desc_key="attPerceptionRank03Desc" long_desc_key="attPerceptionRank03LongDesc" />
+					<effect_description level="4"  desc_key="attPerceptionRank04Desc" long_desc_key="attPerceptionRank04LongDesc" />
+					<effect_description level="5"  desc_key="attPerceptionRank05Desc" long_desc_key="attPerceptionRank05LongDesc" />
+					<effect_description level="6"  desc_key="attPerceptionRank06Desc" long_desc_key="attPerceptionRank06LongDesc" />
+					<effect_description level="7"  desc_key="attPerceptionRank07Desc" long_desc_key="attPerceptionRank07LongDesc" />
+					<effect_description level="8"  desc_key="attPerceptionRank08Desc" long_desc_key="attPerceptionRank08LongDesc" />
+					<effect_description level="9"  desc_key="attPerceptionRank09Desc" long_desc_key="attPerceptionRank09LongDesc" />
+					<effect_description level="10" desc_key="attPerceptionRank10Desc" long_desc_key="attPerceptionRank10LongDesc" />
+				</effect_group>
+			</perk>
+
+			<perk name="attStrength" parent="attSkills" name_key="attstrength" desc_key="attStrengthDesc" icon="smx_ui_attribute_strength_icon" min_level="1" max_level="10" base_skill_point_cost="1" cost_multiplier_per_level="1.14">
+				<level_requirements level="1"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="2"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="3"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="4"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="5"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="6"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02" /></level_requirements>
+				<level_requirements level="7"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02" /></level_requirements>
+				<level_requirements level="8"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02" /></level_requirements>
+				<level_requirements level="9"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03" /></level_requirements>
+				<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03" /></level_requirements>
+				<effect_group>
+					<requirement name="HoldingItemHasTags" tags="attStrength" />
+						<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head" />
+						<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head" />
+						<passive_effect name="DismemberChance" operation="base_add" level="2,10" value=".05,.45" />
+
+					<effect_description level="1" desc_key="attStrengthRank01Desc" long_desc_key="attStrengthRank01LongDesc" />
+					<effect_description level="2" desc_key="attStrengthRank02Desc" long_desc_key="attStrengthRank02LongDesc" />
+					<effect_description level="3" desc_key="attStrengthRank03Desc" long_desc_key="attStrengthRank03LongDesc" />
+					<effect_description level="4" desc_key="attStrengthRank04Desc" long_desc_key="attStrengthRank04LongDesc" />
+					<effect_description level="5" desc_key="attStrengthRank05Desc" long_desc_key="attStrengthRank05LongDesc" />
+					<effect_description level="6" desc_key="attStrengthRank06Desc" long_desc_key="attStrengthRank06LongDesc" />
+					<effect_description level="7" desc_key="attStrengthRank07Desc" long_desc_key="attStrengthRank07LongDesc" />
+					<effect_description level="8" desc_key="attStrengthRank08Desc" long_desc_key="attStrengthRank08LongDesc" />
+					<effect_description level="9" desc_key="attStrengthRank09Desc" long_desc_key="attStrengthRank09LongDesc" />
+					<effect_description level="10" desc_key="attStrengthRank10Desc" long_desc_key="attStrengthRank10LongDesc" />
+				</effect_group>
+			</perk>
+
+			<perk name="attFortitude" parent="attSkills" name_key="attfortitude" desc_key="attFortitudeDesc" icon="smx_ui_attribute_fortitude_icon" min_level="1" max_level="10" base_skill_point_cost="1" cost_multiplier_per_level="1.14">
+				<level_requirements level="1"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="2"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="3"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="4"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="5"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="6"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02" /></level_requirements>
+				<level_requirements level="7"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02" /></level_requirements>
+				<level_requirements level="8"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02" /></level_requirements>
+				<level_requirements level="9"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03" /></level_requirements>
+				<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03" /></level_requirements>
+
+				<effect_group>
+					<requirement name="HoldingItemHasTags" tags="attFortitude" />
+						<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head" />
+						<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head" />
+						<passive_effect name="DismemberChance" operation="base_add" level="2,10" value=".05,.45" />
+				</effect_group>
+
+				<effect_group>
+					<effect_description level="1" desc_key="attFortitudeRank01Desc" long_desc_key="attFortitudeRank01LongDesc" />
+					<effect_description level="2" desc_key="attFortitudeRank02Desc" long_desc_key="attFortitudeRank02LongDesc" />
+					<effect_description level="3" desc_key="attFortitudeRank03Desc" long_desc_key="attFortitudeRank03LongDesc" />
+					<effect_description level="4" desc_key="attFortitudeRank04Desc" long_desc_key="attFortitudeRank04LongDesc" />
+					<effect_description level="5" desc_key="attFortitudeRank05Desc" long_desc_key="attFortitudeRank05LongDesc" />
+					<effect_description level="6" desc_key="attFortitudeRank06Desc" long_desc_key="attFortitudeRank06LongDesc" />
+					<effect_description level="7" desc_key="attFortitudeRank07Desc" long_desc_key="attFortitudeRank07LongDesc" />
+					<effect_description level="8" desc_key="attFortitudeRank08Desc" long_desc_key="attFortitudeRank08LongDesc" />
+					<effect_description level="9" desc_key="attFortitudeRank09Desc" long_desc_key="attFortitudeRank09LongDesc" />
+					<effect_description level="10" desc_key="attFortitudeRank10Desc" long_desc_key="attFortitudeRank10LongDesc" />
+				</effect_group>
+			</perk>
+
+			<perk name="attAgility" parent="attSkills" name_key="attagility" desc_key="attAgilityDesc" icon="smx_ui_attribute_agility_icon" min_level="1" max_level="10" base_skill_point_cost="1" cost_multiplier_per_level="1.14">
+				<level_requirements level="1"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="2"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="3"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="4"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="5"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="6"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02" /></level_requirements>
+				<level_requirements level="7"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02" /></level_requirements>
+				<level_requirements level="8"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02" /></level_requirements>
+				<level_requirements level="9"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03" /></level_requirements>
+				<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03" /></level_requirements>
+				<effect_group>
+					<requirement name="HoldingItemHasTags" tags="attAgility" />
+						<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head" />
+						<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head" />
+						<passive_effect name="DismemberChance" operation="base_add" level="2,10" value=".05,.45" />
+				</effect_group>
+				<effect_group>
+					<effect_description level="1" desc_key="attAgilityRank01Desc" long_desc_key="attAgilityRank01LongDesc" />
+					<effect_description level="2" desc_key="attAgilityRank02Desc" long_desc_key="attAgilityRank02LongDesc" />
+					<effect_description level="3" desc_key="attAgilityRank03Desc" long_desc_key="attAgilityRank03LongDesc" />
+					<effect_description level="4" desc_key="attAgilityRank04Desc" long_desc_key="attAgilityRank04LongDesc" />
+					<effect_description level="5" desc_key="attAgilityRank05Desc" long_desc_key="attAgilityRank05LongDesc" />
+					<effect_description level="6" desc_key="attAgilityRank06Desc" long_desc_key="attAgilityRank06LongDesc" />
+					<effect_description level="7" desc_key="attAgilityRank07Desc" long_desc_key="attAgilityRank07LongDesc" />
+					<effect_description level="8" desc_key="attAgilityRank08Desc" long_desc_key="attAgilityRank08LongDesc" />
+					<effect_description level="9" desc_key="attAgilityRank09Desc" long_desc_key="attAgilityRank09LongDesc" />
+					<effect_description level="10" desc_key="attAgilityRank10Desc" long_desc_key="attAgilityRank10LongDesc" />
+				</effect_group>
+			</perk>
+
+			<perk name="attIntellect" parent="attSkills" name_key="attintellect" desc_key="attIntellectDesc" icon="smx_ui_attribute_intellect_icon" min_level="1" max_level="10" base_skill_point_cost="1" cost_multiplier_per_level="1.14">
+				<level_requirements level="1"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="2"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="3"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="4"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="5"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01" /></level_requirements>
+				<level_requirements level="6"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02" /></level_requirements>
+				<level_requirements level="7"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02" /></level_requirements>
+				<level_requirements level="8"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02" /></level_requirements>
+				<level_requirements level="9"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03" /></level_requirements>
+				<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03" /></level_requirements>
+				<effect_group>
+					<requirement name="HoldingItemHasTags" tags="attIntellect" />
+						<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head" />
+						<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head" />
+						<passive_effect name="DismemberChance" operation="base_add" level="2,10" value=".05,.45" />
+
+					<effect_description level="1" desc_key="attIntellectRank1Desc" long_desc_key="attIntellectRank1LongDesc" />
+					<effect_description level="2" desc_key="attIntellectRank2Desc" long_desc_key="attIntellectRank2LongDesc" />
+					<effect_description level="3" desc_key="attIntellectRank3Desc" long_desc_key="attIntellectRank3LongDesc" />
+					<effect_description level="4" desc_key="attIntellectRank4Desc" long_desc_key="attIntellectRank4LongDesc" />
+					<effect_description level="5" desc_key="attIntellectRank5Desc" long_desc_key="attIntellectRank5LongDesc" />
+					<effect_description level="6" desc_key="attIntellectRank6Desc" long_desc_key="attIntellectRank6LongDesc" />
+					<effect_description level="7" desc_key="attIntellectRank7Desc" long_desc_key="attIntellectRank7LongDesc" />
+					<effect_description level="8" desc_key="attIntellectRank8Desc" long_desc_key="attIntellectRank8LongDesc" />
+					<effect_description level="9" desc_key="attIntellectRank9Desc" long_desc_key="attIntellectRank9LongDesc" />
+					<effect_description level="10" desc_key="attIntellectRank10Desc" long_desc_key="attIntellectRank10LongDesc" />
+				</effect_group>
+			</perk>
+		</insertBefore>
+
+
+<!--	// SMX // "Unused" Skills Removal -->
+
+		<remove xpath="/progression/skills/skill[@name='skillPerceptionCombat']" />
+		<remove xpath="/progression/skills/skill[@name='skillPerceptionGeneral']" />
+		<remove xpath="/progression/skills/skill[@name='skillScavenging']" />
+
+		<remove xpath="/progression/skills/skill[@name='skillStrengthCombat']" />
+		<remove xpath="/progression/skills/skill[@name='skillStrengthGeneral']" />
+		<remove xpath="/progression/skills/skill[@name='skillConstruction']" />
+
+		<remove xpath="/progression/skills/skill[@name='skillFortitudeCombat']" />
+		<remove xpath="/progression/skills/skill[@name='skillSurvival']" />
+		<remove xpath="/progression/skills/skill[@name='skillRecovery']" />
+
+		<remove xpath="/progression/skills/skill[@name='skillAgilityCombat']" />
+		<remove xpath="/progression/skills/skill[@name='skillAthletics']" />
+		<remove xpath="/progression/skills/skill[@name='skillStealth']" />
+
+		<remove xpath="/progression/skills/skill[@name='skillIntellectCombat']" />
+		<remove xpath="/progression/skills/skill[@name='skillInfluence']" />
+		<remove xpath="/progression/skills/skill[@name='skillCraftsmanship']" />
+
+
+<!--	// SMX // Perception Tweaks -->
+
+		<set xpath="/progression/perks/perk[@name='perkDeadEye']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkDeadEye']/@icon">smx_ui_skills_deadeye_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkDemolitionsExpert']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkDemolitionsExpert']/@icon">smx_ui_skills_explosiveweapons_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkJavelinMaster']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkJavelinMaster']/@icon">smx_ui_skills_javelinmaster_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkLockPicking']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkLockPicking']/@icon">smx_ui_skills_lockpicking_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkInfiltrator']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkInfiltrator']/@icon">smx_ui_skills_infiltrator_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkAnimalTracker']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkAnimalTracker']/@icon">smx_ui_skills_animaltracker_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkPenetrator']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkPenetrator']/@icon">smx_ui_skills_penetrator_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkLuckyLooter']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkLuckyLooter']/@icon">smx_ui_skills_luckylooter_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkSalvageOperations']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkSalvageOperations']/@icon">smx_ui_skills_salvageoperations_icon</set>
+
+
+<!--	// SMX // Strength Tweaks -->
+
+		<set xpath="/progression/perks/perk[@name='perkBoomstick']/@parent">attStrength</set>
+		<set xpath="/progression/perks/perk[@name='perkBoomstick']/@icon">smx_ui_skills_shotgunmessiah_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkPummelPete']/@parent">attStrength</set>
+		<set xpath="/progression/perks/perk[@name='perkPummelPete']/@icon">smx_ui_skills_pummelpete_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkSkullCrusher']/@parent">attStrength</set>
+		<set xpath="/progression/perks/perk[@name='perkSkullCrusher']/@icon">smx_ui_skills_skullcrusher_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkSexualTrex']/@parent">attStrength</set>
+		<set xpath="/progression/perks/perk[@name='perkSexualTrex']/@icon">smx_ui_skills_sexosaurus_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkPackMule']/@parent">attStrength</set>
+		<set xpath="/progression/perks/perk[@name='perkPackMule']/@icon">smx_ui_skills_packmule_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkMasterChef']/@parent">attStrength</set>
+		<set xpath="/progression/perks/perk[@name='perkMasterChef']/@icon">smx_ui_crafting_cooking_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkMiner69r']/@parent">attStrength</set>
+		<set xpath="/progression/perks/perk[@name='perkMiner69r']/@icon">smx_ui_skills_miner69_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkMotherLode']/@parent">attStrength</set>
+		<set xpath="/progression/perks/perk[@name='perkMotherLode']/@icon">smx_ui_skills_motherlode_icon</set>
+
+
+<!--	// SMX // Fortitude Tweaks -->
+
+		<set xpath="/progression/perks/perk[@name='perkBrawler']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkBrawler']/@icon">smx_ui_skills_staydown_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkMachineGunner']/@parent">attfortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkMachineGunner']/@icon">smx_ui_skills_automaticweapons_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkHeavyArmor']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkHeavyArmor']/@icon">smx_ui_skills_heavyarmor_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkTheHuntsman']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkTheHuntsman']/@icon">smx_ui_skills_thehuntsman_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkWellInsulated']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkWellInsulated']/@icon">smx_ui_skills_wellinsulated_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkLivingOffTheLand']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkLivingOffTheLand']/@icon">smx_ui_skills_livingofftheland_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkPainTolerance']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkPainTolerance']/@icon">smx_ui_skills_paintolerance_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkHealingFactor']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkHealingFactor']/@icon">smx_ui_skills_healingfactor_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkSlowMetabolism']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkSlowMetabolism']/@icon">smx_ui_skills_slowmetabolism_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkRuleOneCardio']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkRuleOneCardio']/@icon">smx_ui_skills_rule1cardio_icon</set>
+
+
+<!--	// SMX // Agility Tweaks -->
+
+		<set xpath="/progression/perks/perk[@name='perkArchery']/@parent">attagility</set>
+		<set xpath="/progression/perks/perk[@name='perkArchery']/@icon">smx_ui_skills_archery_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkGunslinger']/@parent">attagility</set>
+		<set xpath="/progression/perks/perk[@name='perkGunslinger']/@icon">smx_ui_skills_gunslinger_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkDeepCuts']/@parent">attagility</set>
+		<set xpath="/progression/perks/perk[@name='perkDeepCuts']/@icon">smx_ui_skills_deepcuts_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkRunAndGun']/@parent">attagility</set>
+		<set xpath="/progression/perks/perk[@name='perkRunAndGun']/@icon">smx_ui_skills_runandgun_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkFlurryOfBlows']/@parent">attagility</set>
+		<set xpath="/progression/perks/perk[@name='perkFlurryOfBlows']/@icon">smx_ui_skills_flurryofblows_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkLightArmor']/@parent">attAgility</set>
+		<set xpath="/progression/perks/perk[@name='perkLightArmor']/@icon">smx_ui_skills_lightarmor_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkParkour']/@parent">attAgility</set>
+		<set xpath="/progression/perks/perk[@name='perkParkour']/@icon">smx_ui_skills_parkour_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkHiddenStrike']/@parent">attAgility</set>
+		<set xpath="/progression/perks/perk[@name='perkHiddenStrike']/@icon">smx_ui_skills_hiddenstrike_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkFromTheShadows']/@parent">attAgility</set>
+		<set xpath="/progression/perks/perk[@name='perkFromTheShadows']/@icon">smx_ui_skills_fromtheshadows_icon</set>
+
+
+<!--	// SMX // Intellect Tweaks -->
+
+		<set xpath="/progression/perks/perk[@name='perkElectrocutioner']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkElectrocutioner']/@icon">smx_ui_skills_electrocutioner_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkTurrets']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkTurrets']/@icon">smx_ui_skills_turrets_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkBetterBarter']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkBetterBarter']/@icon">smx_ui_skills_betterbarter_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkDaringAdventurer']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkDaringAdventurer']/@icon">smx_ui_skills_daringadventurer_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkCharismaticNature']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkCharismaticNature']/@icon">smx_ui_skills_charismaticnature_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkGreaseMonkey']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkGreaseMonkey']/@icon">smx_ui_skills_greasemonkey_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/@icon">smx_ui_skills_advancedengineering_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkYeahScience']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkYeahScience']/@icon">smx_ui_crafting_science_icon</set>
+
+		<set xpath="/progression/perks/perk[@name='perkPhysician']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkPhysician']/@icon">smx_ui_skills_physician_icon</set>
+
+
+<!--	// SMX // Book Tweaks -->
+
+		<set xpath="/progression/attributes/attribute[@name='attBooks']/@icon">smx_ui_skills_perkbooks_icon</set>
+		<set xpath="/progression/attributes/attribute[@name='attBooks']/@name_key">attbooks</set>
+
+		<insertBefore xpath="/progression/skills/skill[@name='skillFiremansAlmanac']">
+			<skill name="skillBooksDummy" parent="attBooks" name_key="attBooksName" desc_key="attBooksDesc" long_desc_key="perkBookGroupLongDesc" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller01" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller02" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller03" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller04" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller05" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller06" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller07" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller08" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller09" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller10" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller11" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller12" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller13" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller14" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller15" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller16" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller17" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller18" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller19" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller20" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller21" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller22" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller23" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller24" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller25" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller26" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller27" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller28" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller29" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller30" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller31" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller32" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller33" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller34" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller35" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller36" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller37" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller38" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller39" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller40" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller41" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller42" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller43" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller44" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller45" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller46" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller47" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller48" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller49" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller50" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+			<skill name="skillBooksDummyFiller51" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smx_ui_skills_perkbooks_icon"><effect_group/></skill>
+		</insertBefore>
+
+		<set xpath="/progression/skills/skill[@name='skillFiremansAlmanac']/@icon">bookFiremansAlmanacHeat</set>
+		<set xpath="/progression/skills/skill[@name='skillGreatHeist']/@icon">bookTheGreatHeistSafes</set>
+		<set xpath="/progression/skills/skill[@name='skillLuckyLooter']/@icon">bookLuckyLooterDukes</set>
+		<set xpath="/progression/skills/skill[@name='skillNeedleAndThread']/@icon">bookNeedleAndThreadWinterWear</set>
+		<set xpath="/progression/skills/skill[@name='skillNightStalker']/@icon">bookNightStalkerStealthDamage</set>
+		<set xpath="/progression/skills/skill[@name='skillEnforcer']/@icon">bookEnforcerDamage</set>
+		<set xpath="/progression/skills/skill[@name='skillBatterUp']/@icon">bookBatterUpBigHits</set>
+		<set xpath="/progression/skills/skill[@name='skillWasteTreasures']/@icon">bookWasteTreasuresHoney</set>
+		<set xpath="/progression/skills/skill[@name='skillHuntingJournal']/@icon">bookHuntingJournalBears</set>
+		<set xpath="/progression/skills/skill[@name='skillArtOfMining']/@icon">bookArtOfMiningLuckyStrike</set>
+		<set xpath="/progression/skills/skill[@name='skillArchery']/@icon">bookRangersArrowRecovery</set>
+		<set xpath="/progression/skills/skill[@name='skillPistolPete']/@icon">bookPistolPeteTakeAim</set>
+		<set xpath="/progression/skills/skill[@name='skillShotguns']/@icon">bookShotgunMessiahDamage</set>
+		<set xpath="/progression/skills/skill[@name='skillSniper']/@icon">bookSniperDamage</set>
+		<set xpath="/progression/skills/skill[@name='skillAutoWeapons']/@icon">bookAutoWeaponsDamage</set>
+		<set xpath="/progression/skills/skill[@name='skillUrbanCombat']/@icon">bookUrbanCombatLanding</set>
+
+</configs>

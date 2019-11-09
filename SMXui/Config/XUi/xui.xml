@@ -4,17 +4,17 @@
 
 		// EAC:				Friendly
 
-		// VERSION:			A18b152r1
+		// VERSION:			18.r2
 
-		// BUILD:			A18b152
+		// BUILD:			A18b155
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
 							and you can verify this by looking at the date of the standard files when an update have occured.
 
 		// MOD DESCRIPTION:	The purpose of this modlet is to enhance the ingame UI. Please note that this modlet will change the UI only. If you want a
-							total UI conversion you need to add the SMXhud modlet also. You can also opt to supplement this modlet with the new SMXmenu
-							modlet(available now) for the full experience.
+							total UI conversion you need to add the SMXhud modlet also. You can also opt to supplement this modlet with the SMXmenu
+							modlet for the full experience.
 
 		// DEPENDENCIES:	None.
 
