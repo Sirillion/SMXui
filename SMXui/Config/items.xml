@@ -1,0 +1,7 @@
+<configs>
+
+<!--	// SMX // Skill Window: Attribute > Perk Buff Change - Buff Items -->
+
+	<set xpath="/items/item/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+
+</configs>

@@ -469,10 +469,10 @@
 
 		<append xpath="/controls">
 			<smx_crafting_recipe_entry>
-				<rect controller="RecipeEntry" size="68,68" style="press, hover, scroll, smx_backpack_itemstack_65" disabled_font_color="[disabledLabelColor]" enabled_font_color="[labelColor]" sound="[recipe_click]" tooltip="{recipename}">
+				<rect controller="RecipeEntry" size="68,68" style="press, hover, scroll, smx_backpack_itemstack_65" disabled_font_color="[darkGrey]" enabled_font_color="[white]" sound="[recipe_click]" tooltip="{recipename}">
 					<sprite name="background" depth="2" pos="-2,-38" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
-					<sprite name="background2" depth="2" pos="-2,-38" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
-					<sprite name="backgroundMain" depth="3" pos="1,-1" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" color="[white]" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="background2" depth="2" pos="-2,-38" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" visible="{hasrecipe}" />
+					<sprite name="backgroundMain" depth="3" pos="1,-1" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" color="{hasingredientsstatecolor}" type="sliced" fillcenter="false" globalopacity="true" visible="{hasrecipe}" />
 
 					<sprite name="Icon" depth="4" pos="34,-34" size="40,40" atlas="itemiconatlas" sprite="{recipeicon}" color="{recipeicontint}" pivot="center" foregroundlayer="true" />
 					<sprite name="itemtypeicon" depth="8" pos="6,-6" size="18,18" sprite="ui_game_symbol_{itemtypeicon}" color="{itemtypeicontint}" foregroundlayer="true" visible="{hasitemtypeicon}" />

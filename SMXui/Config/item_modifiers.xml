@@ -1,0 +1,9 @@
+<configs>
+
+<!--	// SMX // Skill Window: Attribute > Perk Buff Change - "Cheat" Modifiers -->
+
+	<insertAfter xpath="/item_modifiers/item_modifier[@name='modGunButtkick4000']/effect_group/passive_effect[@name='PerkLevel']">
+		<passive_effect name="PerkLevel" tags="attPerception,attStrength,attFortitude,attAgility,attIntellect" operation="base_set" value="10" />
+	</insertAfter>
+
+</configs>

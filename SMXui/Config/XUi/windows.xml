@@ -1432,7 +1432,7 @@
 							</panel>
 						</rect>
 
-						<panel name="skills" pos="100,-79" repeat_content="false" arrangement="vertical" disableautobackground="true" controller="SkillList">
+						<panel name="skills" pos="100,-79" repeat_content="false" arrangement="horizontal" disableautobackground="true" controller="SkillList">
 
 							<label name="SMXpointsAvailable" depth="9" pos="880,63" size="300,45" text="{skillpointsavailable}" color="[mediumGrey]" font_size="40" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" pivot="topright" justify="right" visible="{isnormal}" />
 

@@ -1,0 +1,61 @@
+<configs>
+
+<!--	// SMX // Skill Window: Attribute > Perk Buff Change - "Cheat" Buffs -->
+
+	<insertAfter xpath="/buffs/buff[@name='maxedout']/effect_group/passive_effect[@name='PerkLevel']">
+		<passive_effect name="PerkLevel" tags="attPerception,attStrength,attFortitude,attAgility,attIntellect" operation="base_set" value="10" />
+	</insertAfter>
+
+	<insertAfter xpath="/buffs/buff[@name='buffme']/effect_group/passive_effect[@name='PerkLevel']">
+		<passive_effect name="PerkLevel" tags="attPerception,attStrength,attFortitude,attAgility,attIntellect" operation="base_set" value="10" />
+	</insertAfter>
+
+	<insertAfter xpath="/buffs/buff[@name='nerfme']/effect_group/passive_effect[@name='PerkLevel']">
+		<passive_effect name="PerkLevel" tags="attPerception,attStrength,attFortitude,attAgility,attIntellect" operation="base_set" value="1" />
+	</insertAfter>
+
+
+<!--	// SMX // Skill Window: Attribute > Perk Buff Change - Perk Buffs -->
+
+	<set xpath="/buffs/buff[@name='buffPerkCharismaticNature']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set> <!-- Doesn't seem to work, tested in vanilla also -->
+
+
+<!--	// SMX // Skill Window: Attribute > Perk Buff Change - Injuries -->
+
+	<set xpath="/buffs/buff[@name='buffLegSprained']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+	<set xpath="/buffs/buff[@name='buffLegBroken']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+	<set xpath="/buffs/buff[@name='buffArmSprained']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+	<set xpath="/buffs/buff[@name='buffArmBroken']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+	<set xpath="/buffs/buff[@name='buffInjuryConcussion']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+
+
+<!--	// SMX // Skill Window: Attribute > Perk Buff Change - Diseases -->
+
+	<set xpath="/buffs/buff[@name='buffIllPneumonia01']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+
+	<set xpath="/buffs/buff[@name='buffInfection03Untreated']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+	<setattribute xpath="/buffs/buff[@name='buffInfection03Untreated']/effect_group/passive_effect[@name='PerkLevel']" name="tags">attPerception,attStrength,attFortitude,attAgility,attIntellect</setattribute>
+
+	<set xpath="/buffs/buff[@name='buffInfection03GetBetter']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+	<setattribute xpath="/buffs/buff[@name='buffInfection03GetBetter']/effect_group/passive_effect[@name='PerkLevel']" name="tags">attPerception,attStrength,attFortitude,attAgility,attIntellect</setattribute>
+
+
+<!--	// SMX // Skill Window: Attribute > Perk Buff Change - Hunger States -->
+
+	<set xpath="/buffs/buff[@name='buffStatusHungry02']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+	<set xpath="/buffs/buff[@name='buffStatusThirsty02']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+	<set xpath="/buffs/buff[@name='buffDrunkGrandpasMoonshine']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+	<set xpath="/buffs/buff[@name='buffShamChowder']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+
+
+<!--	// SMX // Skill Window: Attribute > Perk Buff Change - Drugs -->
+
+	<set xpath="/buffs/buff[@name='buffDrugSteroids']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+	<set xpath="/buffs/buff[@name='buffDrugSteroidsSideEffect']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+	<set xpath="/buffs/buff[@name='buffDrugRecog']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+	<set xpath="/buffs/buff[@name='buffDrugRecogSideEffect']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+	<set xpath="/buffs/buff[@name='buffDrugFortBites']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+	<set xpath="/buffs/buff[@name='buffDrugFortBitesSideEffect']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+	<set xpath="/buffs/buff[@name='buffDrugDiazepam']/effect_group/passive_effect[@name='AttributeLevel']/@name">PerkLevel</set>
+
+</configs>

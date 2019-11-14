@@ -3,8 +3,8 @@
 		<author>Sirillion</author>
 		<name>SMXui</name>
 		<description>SMXui is a UI conversion modlet for 7 Days To Die.</description>
-		<mod_version>18.r2</mod_version>
-		<game_version>18.0</game_version>
+		<mod_version>18.1.r3</mod_version>
+		<game_version>18.1</game_version>
 		<launcher_version>0.0.0</launcher_version>
 	</info>
 	<dependencies>
