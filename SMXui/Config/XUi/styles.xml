@@ -9,7 +9,12 @@
 			<style_entry name="uiElementsPerkCat"					value="96,96,96" />
 			<style_entry name="uiElementsRed"						value="175,30,25" />
 			<style_entry name="uiElementsIcon"						value="255,255,255" />
-			<style_entry name="uiElementsLabel"						value="255,255,255" />
+
+			<style_entry name="uiElementsLBLPri"					value="255,255,255" />
+			<style_entry name="uiElementsLBLSec"					value="128,128,128" />
+
+			<style_entry name="uiElementsTipBRDR"					value="255,0,0" />
+			<style_entry name="uiElementsTipBG"						value="0,0,0" />
 		</append>
 
 
@@ -38,8 +43,8 @@
 				<style_entry name="depth" 							value="2" />
 				<style_entry name="pos" 							value="0,0" />
 				<style_entry name="size" 							value="866,780" />
-				<style_entry name="atlas" 							value="uiElements" />
-				<style_entry name="sprite" 							value="smx_uipanel_background" />
+				<style_entry name="atlas" 							value="uiAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_background" />
 				<style_entry name="color" 							value="[uiElementsBG]" />
 				<style_entry name="globalopacitymod" 				value="1.5" />
 			</style>
@@ -59,8 +64,8 @@
 				<style_entry name="depth" 							value="4" />
 				<style_entry name="pos" 							value="0,0" />
 				<style_entry name="size" 							value="859,99" />
-				<style_entry name="atlas" 							value="uiElements" />
-				<style_entry name="sprite" 							value="smx_uipanel_header" />
+				<style_entry name="atlas" 							value="uiAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_header" />
 				<style_entry name="color" 							value="[uiElementsHDR]" />
 				<style_entry name="globalopacitymod" 				value="1.8" />
 			</style>
@@ -69,13 +74,14 @@
 		<append xpath="/styles">
 			<style name="smx_uipanel_title" 						type="label">
 				<style_entry name="depth" 							value="6" />
-				<style_entry name="pos" 							value="0,-26" />
+				<style_entry name="pos" 							value="0,-20" />
 				<style_entry name="size" 							value="0,0" />
 				<style_entry name="font_size" 						value="36" />
-				<style_entry name="font_face" 						value="AgencyB" />
 				<style_entry name="crispness"						value="Never" />
 				<style_entry name="effect" 							value="outline" />
+				<style_entry name="effect_distance" 				value="1,1" />
 				<style_entry name="justify" 						value="center" />
+				<style_entry name="pivot" 							value="center" />
 				<style_entry name="foregroundlayer" 				value="true" />
 				<style_entry name="upper_case" 						value="true" />
 			</style>
@@ -86,8 +92,8 @@
 				<style_entry name="depth" 							value="5" />
 				<style_entry name="pos" 							value="20,-65" />
 				<style_entry name="size" 							value="5,693" />
-				<style_entry name="atlas" 							value="uiElements" />
-				<style_entry name="sprite" 							value="smx_uipanel_separate_line" />
+				<style_entry name="atlas" 							value="uiAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_separate_line" />
 				<style_entry name="color" 							value="[white]" />
 				<style_entry name="rotation" 						value="90" />
 				<style_entry name="globalopacitymod" 				value="1.5" />
@@ -99,8 +105,8 @@
 				<style_entry name="depth" 							value="5" />
 				<style_entry name="pos" 							value="20,-117" />
 				<style_entry name="size" 							value="5,1210" />
-				<style_entry name="atlas" 							value="uiElements" />
-				<style_entry name="sprite" 							value="smx_uipanel_separate_line" />
+				<style_entry name="atlas" 							value="uiAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_separate_line" />
 				<style_entry name="color" 							value="[white]" />
 				<style_entry name="rotation" 						value="90" />
 				<style_entry name="globalopacitymod" 				value="1.5" />
@@ -112,8 +118,8 @@
 				<style_entry name="depth" 							value="4" />
 				<style_entry name="pos" 							value="15,-65" />
 				<style_entry name="size" 							value="1230,52" />
-				<style_entry name="atlas" 							value="uiElements" />
-				<style_entry name="sprite" 							value="smx_uipanel_tabs_background" />
+				<style_entry name="atlas" 							value="uiAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_tabs_background" />
 				<style_entry name="color" 							value="[uiElementsBG]" />
 				<style_entry name="globalopacitymod" 				value="1.5" />
 			</style>
@@ -124,8 +130,8 @@
 				<style_entry name="depth" 							value="4" />
 				<style_entry name="pos" 							value="0,0" />
 				<style_entry name="size" 							value="483,181" />
-				<style_entry name="atlas" 							value="uiElements" />
-				<style_entry name="sprite" 							value="smx_uipanel_accent" />
+				<style_entry name="atlas" 							value="uiAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_accent" />
 				<style_entry name="globalopacitymod" 				value="1.8" />
 			</style>
 		</append>
@@ -135,8 +141,8 @@
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="0,0" />
 				<style_entry name="size" 							value="395,137" />
-				<style_entry name="atlas" 							value="uiElements" />
-				<style_entry name="sprite" 							value="smx_uipanel_accent_glow" />
+				<style_entry name="atlas" 							value="uiAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_accent_glow" />
 				<style_entry name="globalopacitymod" 				value="1.8" />
 			</style>
 		</append>
@@ -145,24 +151,24 @@
 <!--	// SMX // Conversation -->
 
 		<append xpath="/styles">
-			<style name="smx_con_player_background" 				type="sprite">
+			<style name="smx_ui_con_player_background" 				type="sprite">
 				<style_entry name="depth" 							value="2" />
 				<style_entry name="pos" 							value="0,0" />
 				<style_entry name="size" 							value="856,200" />
-				<style_entry name="atlas" 							value="uiElements" />
-				<style_entry name="sprite" 							value="smx_con_player_background" />
+				<style_entry name="atlas" 							value="uiAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_con_player_background" />
 				<style_entry name="color" 							value="[uiElementsBG]" />
 				<style_entry name="globalopacitymod" 				value="0.8" />
 			</style>
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_con_trader_background" 				type="sprite">
+			<style name="smx_ui_con_trader_background" 				type="sprite">
 				<style_entry name="depth" 							value="2" />
 				<style_entry name="pos" 							value="0,0" />
 				<style_entry name="size" 							value="856,100" />
-				<style_entry name="atlas" 							value="uiElements" />
-				<style_entry name="sprite" 							value="smx_con_trader_background" />
+				<style_entry name="atlas" 							value="uiAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_con_trader_background" />
 				<style_entry name="color" 							value="[uiElementsBG]" />
 				<style_entry name="globalopacitymod" 				value="0.8" />
 			</style>
@@ -176,8 +182,8 @@
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="40,-2" />
 				<style_entry name="size" 							value="143,143" />
-				<style_entry name="atlas" 							value="uiElements" />
-				<style_entry name="sprite" 							value="smx_uipanel_slot_frame" />
+				<style_entry name="atlas" 							value="uiAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_slot_frame" />
 				<style_entry name="color" 							value="[mediumGrey]" />
 			</style>
 		</append>
@@ -187,8 +193,8 @@
 				<style_entry name="depth" 							value="2" />
 				<style_entry name="pos" 							value="30,-89" />
 				<style_entry name="size" 							value="138,94" />
-				<style_entry name="atlas" 							value="uiElements" />
-				<style_entry name="sprite" 							value="smx_uipanel_slot_background" />
+				<style_entry name="atlas" 							value="uiAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_slot_background" />
 				<style_entry name="color" 							value="[mediumGrey]" />
 				<style_entry name="rotation" 						value="45" />
 			</style>
@@ -199,7 +205,7 @@
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="116,-77" />
 				<style_entry name="size" 							value="110,110" />
-				<style_entry name="atlas" 							value="itemiconatlas" />
+				<style_entry name="atlas" 							value="ItemIconAtlas" />
 				<style_entry name="pivot" 							value="center" />
 				<style_entry name="foregroundlayer" 				value="true" />
 			</style>
@@ -224,9 +230,9 @@
 				<style_entry name="height" 							value="760" />
 				<style_entry name="valid_color"						value="[green]" />
 				<style_entry name="invalid_color"					value="[red]" />
-				<style_entry name="atlas"							value="uiIcons" />
-				<style_entry name="valid_sprite"					value="smx_uipanel_checkmark_icon" />
-				<style_entry name="invalid_sprite"					value="smx_uipanel_cancel_icon" />
+				<style_entry name="atlas"							value="ItemIconAtlas" />
+				<style_entry name="valid_sprite"					value="smx_ui_general_checkmark_icon" />
+				<style_entry name="invalid_sprite"					value="smx_ui_general_cancel_icon" />
 			</style>
 		</append>
 
@@ -247,8 +253,8 @@
 				<style_entry name="depth" 							value="0" />
 				<style_entry name="pos" 							value="-90,12" />
 				<style_entry name="size" 							value="689,145" />
-				<style_entry name="atlas" 							value="uiElements" />
-				<style_entry name="sprite" 							value="smx_paging_background" />
+				<style_entry name="atlas" 							value="uiAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_paging_background" />
 				<style_entry name="color" 							value="[uiElementsBG]" />
 				<style_entry name="globalopacitymod"				value="1.2" />
 			</style>
@@ -258,10 +264,11 @@
 			<style name="smx_paging_windows_title"					type="label">
 				<style_entry name="name" 							value="lblWindowName" />
 				<style_entry name="depth" 							value="4" />
-				<style_entry name="pos" 							value="300,-12" />
+				<style_entry name="pos" 							value="300,-10" />
 				<style_entry name="font_size" 						value="36" />
-				<style_entry name="font_face" 						value="AgencyB" />
 				<style_entry name="crispness" 						value="Never" />
+				<style_entry name="effect" 							value="outline" />
+				<style_entry name="effect_distance" 				value="1,1" />
 				<style_entry name="pivot" 							value="center" />
 				<style_entry name="justify" 						value="center" />
 				<style_entry name="upper_case" 						value="true" />
@@ -274,7 +281,7 @@
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="41,-11" />
 				<style_entry name="size" 							value="30,30" />
-				<style_entry name="atlas" 							value="uiIcons" />
+				<style_entry name="atlas" 							value="ItemIconAtlas" />
 				<style_entry name="sprite" 							value="smx_ui_crafting_basics_icon" />
 				<style_entry name="tooltip" 						value="CRAFTING" />
 				<style_entry name="tooltip_key" 					value="xuiCrafting" />
@@ -291,8 +298,8 @@
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="91,-11" />
 				<style_entry name="size" 							value="44,42" />
-				<style_entry name="atlas" 							value="uiIcons" />
-				<style_entry name="sprite" 							value="smx_paging_player_icon" />
+				<style_entry name="atlas" 							value="ItemIconAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_paging_player_icon" />
 				<style_entry name="tooltip" 						value="CHARACTER" />
 				<style_entry name="tooltip_key" 					value="xuiCharacter" />
 				<style_entry name="hoverscale" 						value="1.25" />
@@ -308,8 +315,8 @@
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="141,-11" />
 				<style_entry name="size" 							value="40,40" />
-				<style_entry name="atlas" 							value="uiIcons" />
-				<style_entry name="sprite" 							value="smx_paging_map_icon" />
+				<style_entry name="atlas" 							value="ItemIconAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_paging_map_icon" />
 				<style_entry name="tooltip" 						value="MAP" />
 				<style_entry name="tooltip_key" 					value="xuiMap" />
 				<style_entry name="hoverscale" 						value="1.25" />
@@ -325,8 +332,8 @@
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="191,-11" />
 				<style_entry name="size" 							value="40,40" />
-				<style_entry name="atlas" 							value="uiIcons" />
-				<style_entry name="sprite" 							value="smx_paging_skills_icon" />
+				<style_entry name="atlas" 							value="ItemIconAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_paging_skills_icon" />
 				<style_entry name="tooltip" 						value="SKILLS" />
 				<style_entry name="tooltip_key" 					value="xuiSkills" />
 				<style_entry name="hoverscale" 						value="1.25" />
@@ -342,8 +349,8 @@
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="406,-11" />
 				<style_entry name="size" 							value="30,30" />
-				<style_entry name="atlas" 							value="uiIcons" />
-				<style_entry name="sprite" 							value="smx_paging_quests_icon" />
+				<style_entry name="atlas" 							value="ItemIconAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_paging_quests_icon" />
 				<style_entry name="tooltip" 						value="QUESTS" />
 				<style_entry name="tooltip_key" 					value="xuiQuests" />
 				<style_entry name="hoverscale" 						value="1.25" />
@@ -359,8 +366,8 @@
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="456,-11" />
 				<style_entry name="size" 							value="32,32" />
-				<style_entry name="atlas" 							value="uiIcons" />
-				<style_entry name="sprite" 							value="smx_paging_journal_icon" />
+				<style_entry name="atlas" 							value="ItemIconAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_paging_journal_icon" />
 				<style_entry name="tooltip" 						value="JOURNAL" />
 				<style_entry name="tooltip_key" 					value="xuiJournal" />
 				<style_entry name="hoverscale" 						value="1.25" />
@@ -376,8 +383,8 @@
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="506,-11" />
 				<style_entry name="size" 							value="42,42" />
-				<style_entry name="atlas" 							value="uiIcons" />
-				<style_entry name="sprite" 							value="smx_paging_players_icon" />
+				<style_entry name="atlas" 							value="ItemIconAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_paging_players_icon" />
 				<style_entry name="tooltip" 						value="PLAYERS" />
 				<style_entry name="tooltip_key" 					value="xuiPlayers" />
 				<style_entry name="hoverscale" 						value="1.25" />
@@ -393,8 +400,8 @@
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="556,-11" />
 				<style_entry name="size" 							value="32,32" />
-				<style_entry name="atlas" 							value="uiIcons" />
-				<style_entry name="sprite" 							value="smx_paging_creative_icon" />
+				<style_entry name="atlas" 							value="ItemIconAtlas" />
+				<style_entry name="sprite" 							value="smx_ui_paging_creative_icon" />
 				<style_entry name="tooltip" 						value="CREATIVE" />
 				<style_entry name="tooltip_key" 					value="xuiCreative" />
 				<style_entry name="hoverscale" 						value="1.25" />
@@ -453,6 +460,24 @@
 				<style_entry name="sound_volume" 					value="0.75"/>
 				<style_entry name="pickup_sound" 					value="[pickup_click]"/>
 				<style_entry name="place_sound" 					value="[place_click]"/>
+			</style>
+		</append>
+
+		<append xpath="/styles">
+			<style name="smx_itemstack_85">
+				<style_entry name="select_color"					value="[lightGrey]" />
+				<style_entry name="press_color" 					value="[white]" />
+				<style_entry name="final_pressed_color" 			value="[lightGrey]" />
+				<style_entry name="background_color" 				value="[uiElementsRed]" />
+				<style_entry name="highlight_color" 				value="[white]" />
+				<style_entry name="holding_color" 					value="[white]" />
+				<style_entry name="width" 							value="82" />
+				<style_entry name="height" 							value="82" />
+				<style_entry name="hover_icon_grow" 				value="1.5" />
+				<style_entry name="on_press" 						value="true" />
+				<style_entry name="sound_volume" 					value="0.75" />
+				<style_entry name="pickup_sound" 					value="[pickup_click]" />
+				<style_entry name="place_sound" 					value="[place_click]" />
 			</style>
 		</append>
 

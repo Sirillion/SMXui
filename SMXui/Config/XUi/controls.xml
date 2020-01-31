@@ -13,8 +13,8 @@
 						enabled_font_color="${enabled_font_color|[labelColor]}"
 						disabled_font_color="${disabled_font_color|[disabledLabelColor]}"
 						visible="${visible|true}">
-					<button name="clickable" pos="0,${Round(-height/2,0)|-16}" atlas="uiElements" sprite="smx_ui_button_1" defaultcolor="${defaultcolor|[uiElementsBTN]}" disabledcolor="[darkGrey]" hovercolor="${hovercolor|[lightGrey]}" foregroundlayer="${foregroundlayer|true}" type="sliced" hoverscale="1.0" pivot="${pivot|left}" tooltip_key="${tooltip_key|}" sound_play_on_hover="[default_uihover]" sound="${sound|[default_click]}" /> 
-					<label name="btnLabel" depth="2" pos="0,${Round(-height/2,0)|-16}" width="${width|200}" height="${height-2|30}" text="${caption|}" text_key="${caption_key|}" font_size="${font_size|28}" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" pivot="${pivot|left}" justify="${justify|center}" />
+					<button name="clickable" pos="0,${Round(-height/2,0)|-16}" atlas="uiAtlas" sprite="smx_ui_button_1" defaultcolor="${defaultcolor|[uiElementsBTN]}" disabledcolor="[darkGrey]" hovercolor="${hovercolor|[lightGrey]}" foregroundlayer="${foregroundlayer|true}" type="sliced" hoverscale="1.0" pivot="${pivot|left}" tooltip_key="${tooltip_key|}" sound_play_on_hover="[default_uihover]" sound="${sound|[default_click]}" /> 
+					<label name="btnLabel" depth="2" pos="0,${Round(-height/2,0)|-16}" width="${width|200}" height="${height-2|30}" text="${caption|}" text_key="${caption_key|}" font_size="${font_size|28}" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" pivot="${pivot|left}" justify="${justify|center}" parse_actions="${parse_actions|false}" />
 				</rect>
 			</smx_uibutton_1>
 		</append>
@@ -33,8 +33,8 @@
 						hover_color="[lightGrey]"
 						sound="[recipe_click]"
 						visible="{showresponse}">
-					<sprite name="Icon" depth="5" pos="20,-5" size="20,20" atlas="uiIcons" sprite="smx_ui_general_response_icon" color="{rowstatecolor}" foregroundlayer="true" />
-					<label name="Text" depth="4" pos="47,-3" size="300,40" text="{response}" font_size="24" color="{rowstatecolor}" font_face="AgencyB" crispness="Never" effect="outline" />
+					<sprite name="Icon" depth="5" pos="20,-5" size="20,20" atlas="ItemIconAtlas" sprite="smx_ui_general_response_icon" color="{rowstatecolor}" foregroundlayer="true" />
+					<label name="Text" depth="4" pos="47,-3" size="300,40" text="{response}" font_size="22" color="{rowstatecolor}" crispness="Never" effect="outline" effect_distance="1,1" />
 				</rect>
 			</smx_response_entry>
 		</append>
@@ -47,9 +47,9 @@
 				<rect pos="-43,43" size="86,86" controller="ItemStack" disableautobackground="true">
 					<sprite name="background" depth="2" size="1,1" color="[transparent]" type="sliced" globalopacity="true" />
 					<sprite name="itemIcon" depth="4" pos="0,10" size="86,86" atlas="ItemIconAtlas" sprite="{itemicon}" color="{iconcolor}" pivot="topleft" foregroundlayer="true" />
-					<sprite name="durabilityBackground" depth="3" pos="5,-74" size="73,7" atlas="uiElements" sprite="smx_iteminfo_durability_bar" color="[uiElementsBG]" type="sliced" foregroundlayer="true" />
-					<sprite name="durability" depth="4" pos="5,-74" size="73,7" atlas="uiElements" sprite="smx_iteminfo_durability_bar" color="[transparent]" type="filled" foregroundlayer="true" />
-					<label name="stackValue" depth="5" pos="3,-55" size="73,28" text="{itemcount}" font_size="22" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
+					<sprite name="durabilityBackground" depth="3" pos="5,-74" size="73,7" atlas="uiAtlas" sprite="smx_ui_iteminfo_durability_bar" color="[uiElementsBG]" type="sliced" foregroundlayer="true" />
+					<sprite name="durability" depth="4" pos="5,-74" size="73,7" atlas="uiAtlas" sprite="smx_ui_iteminfo_durability_bar" color="[transparent]" type="filled" foregroundlayer="true" />
+					<label name="stackValue" depth="5" pos="3,-58" size="73,28" text="{itemcount}" font_size="20" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
 				</rect>
 			</smx_drag_item_stack>
 		</append>
@@ -76,16 +76,16 @@
 						virtual_keyboard_prompt="vkPromptSignText">
 					<sprite name="background" depth="2" size="400,120" color="[darkGrey]" type="sliced" />
 					<sprite name="frame" depth="3" size="400,120" sprite="menu_empty2px" color="[mediumGrey]" type="sliced" fillcenter="false" globalopacitymod="1.8" />
-					<label name="text" depth="4" pos="0,-8" font_size="46" font_face="AgencyB" crispness="Never" effect="outline" upper_case="false" justify="center" pivot="topleft" />
+					<label name="text" depth="4" size="380,110" pos="10,-5" font_size="32" crispness="Never" effect="outline" effect_distance="1,1" upper_case="false" justify="center" pivot="topleft" />
 				</rect>
 			</smx_sign_text_area>
 		</append>
 
 
-<!--	// SMX // Sign Text Entry -->
+<!--	// SMX // Text Field Design -->
 
 		<append xpath="/controls">
-			<smx_textfield>
+			<smx_textfield_keypad>
 				<panel	name="${name}"
 						depth="${depth|3}"
 						pos="${pos|0,0}"
@@ -111,14 +111,14 @@
 						on_return="${on_return|submit}">
 					<sprite name="background" depth="0" width="${Defined(password_field) and password_field ? width-height-10 : width|200}" color="${backgroundcolor|[darkGrey]}" type="sliced" pivot="${pivot|topleft}" foregroundlayer="${foregroundlayer|false}" />
 					<sprite name="frame" depth="3" width="${Defined(password_field) and password_field ? width-height-10 : width|200}" sprite="menu_empty2px" color="[mediumGrey]" type="sliced" fillcenter="false" globalopacitymod="1.8" />
-					<label name="text" depth="1" width="${Defined(password_field) and password_field ? width-height-10 : width|200}" font_size="${Defined(font_size) ? font_size : height|32}" font_face="${font_face|AgencyB_32p}" crispness="${crispness|Always}" pivot="${pivot|topleft}" justify="${justify|center}" overflow="${overflow|ShrinkContent}" max_line_count="${max_line_count|0}" />
-					<button name="btnShowPassword" pos="${width-height/2-5|180},-${height/2|-16}" width="${height-2}" height="${height-2}" sprite="ui_game_symbol_stealth" defaultcolor="180,180,180" hovercolor="[white]" selectedcolor="[selectedColor]" foregroundlayer="true" type="simple" hoverscale="1.1" pivot="center" tooltip_key="xuiShowPassword" selected="{showpassword}" visible="{passwordfield}" />
+					<label name="text" depth="1" pos="0,2" width="${Defined(password_field) and password_field ? width-height-10 : width|200}" font_size="${Defined(font_size) ? font_size : height|32}" font_face="${font_face|ReferenceFont}" crispness="${crispness|Always}" pivot="${pivot|topleft}" justify="${justify|center}" overflow="${overflow|ShrinkContent}" max_line_count="${max_line_count|0}" />
+					<button name="btnShowPassword" depth="9" pos="${width-height/2-5|180},-${height/2|-16}" width="${height-2}" height="${height-2}" sprite="ui_game_symbol_stealth" defaultcolor="180,180,180" hovercolor="[white]" selectedcolor="[selectedColor]" foregroundlayer="true" type="simple" hoverscale="1.1" pivot="center" tooltip_key="xuiShowPassword" selected="{showpassword}" visible="{passwordfield}" />
 				</panel>
-			</smx_textfield>
+			</smx_textfield_keypad>
 		</append>
 
 
-<!--	// SMX // Sign Text Entry -->
+<!--	// SMX // Journal Entry Design -->
       
 		<append xpath="/controls">
 			<smx_journal_entry>
@@ -132,10 +132,10 @@
 						hover_color="[mediumGrey]"
 						sound="[recipe_click]"
 						failed_icon="ui_game_symbol_x">
-				  <sprite name="background" depth="1" pos="-1,1" size="446,55" atlas="uiElements" sprite="smx_uipanel_list_background" color="{rowstatecolor}" type="sliced" sound_on_hover="default_uihover" />
-				  <sprite name="backgroundIcon" depth="2" pos="-3,10" size="68,68" atlas="uiElements" sprite="smx_uipanel_icon_background" color="[uiElementsBG]" globalopacitymod="1.1" foregroundlayer="true" />
-				  <sprite name="Icon" depth="5" pos="13,-3" size="40,40" atlas="uiIcons" sprite="smx_paging_journal_icon" color="{iconcolor}" foregroundlayer="true" />
-				  <label name="Name" depth="4" pos="70,-10" size="330,40" text="{entrytitle}" color="{textstatecolor}" font_size="32" font_face="AgencyB" crispness="Never" effect="outline" />
+				  <sprite name="background" depth="1" pos="-1,1" size="446,55" atlas="uiAtlas" sprite="smx_ui_list_background" color="{rowstatecolor}" type="sliced" sound_on_hover="default_uihover" />
+				  <sprite name="backgroundIcon" depth="2" pos="-3,10" size="68,68" atlas="uiAtlas" sprite="smx_ui_icon_background" color="[uiElementsBG]" globalopacitymod="1.1" foregroundlayer="true" />
+				  <sprite name="Icon" depth="5" pos="13,-3" size="40,40" atlas="ItemIconAtlas" sprite="smx_ui_paging_journal_icon" color="{iconcolor}" foregroundlayer="true" />
+				  <label name="Name" depth="4" pos="70,-7" size="330,40" text="{entrytitle}" color="{textstatecolor}" font_size="28" crispness="Never" effect="outline" effect_distance="1,1" />
 				</rect>
 			</smx_journal_entry>
 		</append>
@@ -161,9 +161,10 @@
 						snapCursor="true"
 						virtual_keyboard_prompt="vkPromptSearchTerm"
 						search_field="true">
-					<sprite name="background" depth="0" size="240,30" atlas="uiElements" sprite="smx_uipanel_searchinput_background" color="[black]" type="sliced" />
-					<sprite name="frame" depth="1" size="240,30" atlas="uiElements" sprite="smx_uipanel_searchinput_frame" color="[white]" type="sliced" />
-					<label name="text" depth="1" pos="0,-5" font_size="22" font_face="AgencyB" crispness="Never" effect="outline" upper_case="false" justify="center" pivot="topleft" />
+					<sprite name="searchIcon" depth="1" pos="-30,-15" size="26,26" atlas="ItemIconAtlas" sprite="smx_ui_general_search_icon" pivot="center" />
+					<sprite name="background" depth="0" size="240,30" atlas="uiAtlas" sprite="smx_ui_searchinput_background" color="[black]" type="sliced" />
+					<sprite name="frame" depth="1" size="240,30" atlas="uiAtlas" sprite="smx_ui_searchinput_frame" color="[white]" type="sliced" />
+					<label name="text" depth="1" pos="0,-3" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" upper_case="false" justify="center" pivot="topleft" />
 				</panel>
 			</smx_journal_search>
 		</append>
@@ -189,9 +190,9 @@
 						snapCursor="true"
 						virtual_keyboard_prompt="vkPromptSearchTerm"
 						search_field="true">
-					<sprite name="background" depth="0" size="240,30" atlas="uiElements" sprite="smx_uipanel_searchinput_background" color="[black]" type="sliced" />
-					<sprite name="frame" depth="1" size="240,30" atlas="uiElements" sprite="smx_uipanel_searchinput_frame" color="[white]" type="sliced" />
-					<label name="text" depth="1" pos="0,-5" font_size="22" font_face="AgencyB" crispness="Never" effect="outline" upper_case="false" justify="center" pivot="topleft" />
+					<sprite name="background" depth="0" size="240,30" atlas="uiAtlas" sprite="smx_ui_searchinput_background" color="[black]" type="sliced" />
+					<sprite name="frame" depth="1" size="240,30" atlas="uiAtlas" sprite="smx_ui_searchinput_frame" color="[white]" type="sliced" />
+					<label name="text" depth="1" pos="0,-3" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" upper_case="false" justify="center" pivot="topleft" />
 				</panel>
 			</smx_creative_search>
 		</append>
@@ -201,7 +202,7 @@
 
 		<append xpath="/controls">
 			<smx_recipe_search>
-				<panel	depth="1"
+				<panel	depth="5"
 						pos="22,-7"
 						size="240,30"
 						style="select"
@@ -217,10 +218,10 @@
 						snapCursor="true"
 						virtual_keyboard_prompt="vkPromptSearchTerm"
 						search_field="true" >
-					<sprite name="searchIcon" depth="1" pos="-30,-15" size="26,26" atlas="uiIcons" sprite="smx_uipanel_search_icon" pivot="center" />
-					<sprite name="background" depth="0" size="240,30" atlas="uiElements" sprite="smx_uipanel_searchinput_background" color="[black]" type="sliced"/>
-					<sprite name="frame" depth="1" size="240,30" atlas="uiElements" sprite="smx_uipanel_searchinput_frame" color="[white]" type="sliced"/>
-					<label name="text" depth="1" pos="0,-5" font_size="22" font_face="AgencyB" crispness="Never" effect="outline" upper_case="false" justify="center" pivot="topleft" />
+					<sprite name="searchIcon" depth="1" pos="-30,-15" size="26,26" atlas="ItemIconAtlas" sprite="smx_ui_general_search_icon" pivot="center" />
+					<sprite name="background" depth="0" size="240,30" atlas="uiAtlas" sprite="smx_ui_searchinput_background" color="[black]" type="sliced"/>
+					<sprite name="frame" depth="1" size="240,30" atlas="uiAtlas" sprite="smx_ui_searchinput_frame" color="[white]" type="sliced"/>
+					<label name="text" depth="1" pos="0,-3" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" upper_case="false" justify="center" pivot="topleft" />
 				</panel>
 			</smx_recipe_search>
 		</append>
@@ -248,14 +249,49 @@
 						disabled_color="${disabled_color|[lightGrey]}"
 						pivot="left"
 						visible="${visible|true}">
-					<button name="back" depth="${1+depth|4}" pos="-6,-75" size="10,18" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" pivot="center" disabledcolor="[disabledColor]" sound_play_on_hover="[default_uihover]" sound="[paging_click]" tooltip_key="${tooltip_key|}" rotation="90" />
-					<sprite name="background" depth="${1+depth|4}" pos="-8,15" width="6" height="75" atlas="uiElements" sprite="smx_uipanel_combobox_vline" color="[uiElementsBG]" type="sliced" pivot="topleft" foregroundlayer="${foregroundlayer|false}" />
-					<sprite name="fill" depth="${2+depth|5}" pos="-8,15" width="6" height="75" atlas="uiElements" sprite="smx_uipanel_combobox_vline" color="[white]" type="filled" fill="{fillvalue}" filldirection="vertical" visible="{isnumber}" pivot="topleft" foregroundlayer="true" />
-					<label name="currentValue" depth="${3+depth|6}" pos="-15,-100" width="20" height="20" text="{val|always}" font_size="22" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="center" pivot="left" effect_color="[black]" effect_distance="1,1" />
-					<button name="forward" depth="${1+depth|4}" pos="-6,30" size="10,18" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" pivot="center" disabledcolor="[disabledColor]" sound_play_on_hover="[default_uihover]" sound="[paging_click]" tooltip_key="${tooltip_key|}" rotation="-90" />
+					<button name="back" depth="${1+depth|4}" pos="-6,-75" size="10,18" style="press, hover, smx_ui_icon_colors" atlas="ItemIconAtlas" sprite="smx_ui_general_arrow_icon" pivot="center" disabledcolor="[disabledColor]" sound_play_on_hover="[default_uihover]" sound="[paging_click]" tooltip_key="${tooltip_key|}" rotation="90" />
+					<sprite name="background" depth="${1+depth|4}" pos="-8,15" width="6" height="75" atlas="uiAtlas" sprite="smx_ui_combobox_vline" color="[uiElementsBG]" type="sliced" pivot="topleft" foregroundlayer="${foregroundlayer|false}" />
+					<sprite name="fill" depth="${2+depth|5}" pos="-8,15" width="6" height="75" atlas="uiAtlas" sprite="smx_ui_combobox_vline" color="[white]" type="filled" fill="{fillvalue}" filldirection="vertical" visible="{isnumber}" pivot="topleft" foregroundlayer="true" />
+					<label name="currentValue" depth="${3+depth|6}" pos="-15,-100" width="20" height="20" text="{val|always}" font_size="22" color="[uiElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" effect_color="[black]" />
+					<button name="forward" depth="${1+depth|4}" pos="-6,30" size="10,18" style="press, hover, smx_ui_icon_colors" atlas="ItemIconAtlas" sprite="smx_ui_general_arrow_icon" pivot="center" disabledcolor="[disabledColor]" sound_play_on_hover="[default_uihover]" sound="[paging_click]" tooltip_key="${tooltip_key|}" rotation="-90" />
 					<panel name="directvalue" pos="-18,15" width="20" height="75" style="press, scroll, hover, drag" pivot="topleft" disableautobackground="true" tooltip_key="${tooltip_key|}" />
 				</rect>
 			</smx_stashbuttons_combobox>
+		</append>
+
+
+<!--	// SMX // Map Combobox -->
+
+		<append xpath="/controls">
+			<smx_map_combobox_1>
+				<rect	name="${name}"
+						controller="${type}"
+						depth="${depth|3}"
+						pos="${pos|0,0}"
+						width="${width|200}"
+						height="${height|30}"
+						value_min="${value_min|@DEF}"
+						value_max="${value_max|@DEF}"
+						value_wrap="${value_wrap|@DEF}"
+						value_increment="${value_increment|@DEF}"
+						values="${values|@DEF}"
+						reverse_list="${reverse_list|@DEF}"
+						localization_prefix="${localization_prefix|}"
+						format_string="${format_string|}"
+						enabled_color="${enabled_color|[white]}"
+						disabled_color="${disabled_color|[lightGrey]}"
+						pivot="left"
+						visible="${visible|true}">
+					<button name="back"        depth="${1+depth|4}" style="press, hover, smx_ui_icon_colors" pos="${height/2|15},${-height/2|-15}" size="14,26" pivot="center" atlas="ItemIconAtlas" sprite="smx_ui_general_arrow_icon" disabledcolor="[disabledColor]" sound="[paging_click]" tooltip_key="${tooltip_key|}" />
+					<!--sprite name="frame" depth="9" pos="32,0" size="240,32" atlas="menuElements" sprite="smx_menu_searchinput_frame" color="[white]" type="sliced" /-->
+					<sprite name="background"  depth="${1+depth|4}" style="icon30px" pos="${2+height|32},0" width="${width-height*2-4|136}" height="${height|30}" pivot="topleft" color="[black]" type="sliced" foregroundlayer="${foregroundlayer|false}" />
+					<!--sprite name="fillBG"  depth="${2+depth|5}" pos="${2+height|32},-25" width="${width-height*2-4|136}" height="4" atlas="menuElements" sprite="smx_menu_combobox_bar" pivot="topleft" color="[darkGrey]" type="sliced" visible="{isnumber}" foregroundlayer="true" />
+					<sprite name="fill"  depth="${3+depth|5}" pos="${2+height|32},-25" width="${width-height*2-4|136}" height="4" atlas="menuElements" sprite="smx_menu_combobox_bar" pivot="topleft" color="[white]" fill="{fillvalue}" filldirection="horizontal" type="filled" visible="{isnumber}" foregroundlayer="true" /-->
+					<label name="currentValue" depth="${3+depth|6}" pos="${2+height|32},${-height/2|-15}" width="${width-height*2-4|136}" height="${height-2|28}" pivot="left" text="{val|always}" font_size="22" justify="center" color="[white]" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" effect_color="[black]" />
+					<button name="forward"     depth="${1+depth|4}" style="press, hover, smx_ui_icon_colors" pos="${width-height/2|185},${-height/2|-15}" size="14,26" pivot="center" atlas="ItemIconAtlas" sprite="smx_ui_general_arrow_icon" disabledcolor="[disabledColor]" sound="[paging_click]" tooltip_key="${tooltip_key|}" flip="Horizontally" />
+					<panel name="directvalue" style="press, scroll, hover, drag" pos="${2+height|32},0" width="${width-height*2-4|136}" height="${height|30}" pivot="topleft" disableautobackground="true" sound="[paging_click]" tooltip_key="${tooltip_key|}" />
+				</rect>
+			</smx_map_combobox_1>
 		</append>
 
 
@@ -264,24 +300,24 @@
 		<append xpath="/controls">
 			<smx_backpack_itemstack_65>
 				<rect style="hover, smx_backpack_itemstack_65" controller="ItemStack" collider_scale="1.0">
-					<sprite name="backgroundMain" depth="2" pos="2,-42" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
-					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="backgroundMain" depth="2" pos="2,-42" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
+					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" type="sliced" fillcenter="false" globalopacity="true" />
 					<sprite name="highlightOverlay" depth="2" pos="5,-5" size="0,0" color="[darkGrey]" type="sliced" globalopacity="true" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
 
-					<sprite name="itemIcon" depth="4" pos="38,-35" size="40,40" atlas="itemiconatlas" sprite="{itemicon}" color="{iconcolor}" pivot="center" foregroundlayer="true" />
-					<sprite name="lockTypeIcon" depth="8" pos="6,-6" size="18,18" sprite="" foregroundlayer="true" />
-					<sprite name="itemtypeicon" depth="8" pos="6,-6" size="18,18" sprite="ui_game_symbol_{itemtypeicon}" color="{itemtypeicontint}" foregroundlayer="true" visible="{hasitemtypeicon}" />
+					<sprite name="itemIcon" depth="4" pos="38,-35" size="40,40" atlas="ItemIconAtlas" sprite="{itemicon}" color="{iconcolor}" pivot="center" foregroundlayer="true" />
+					<sprite name="lockTypeIcon" depth="8" pos="8,-8" size="18,18" sprite="" foregroundlayer="true" />
+					<sprite name="itemtypeicon" depth="8" pos="8,-8" size="18,18" sprite="ui_game_symbol_{itemtypeicon}" color="{itemtypeicontint}" foregroundlayer="true" visible="{hasitemtypeicon}" />
 
-					<sprite name="durabilityBackground" depth="3" pos="10,-62" size="56,5" atlas="uiElements" sprite="smx_iteminfo_durability_bar" color="[uiElementsBG]" type="sliced" foregroundlayer="true" />
-					<sprite name="durability" depth="4" pos="10,-62" size="56,5" atlas="uiElements" sprite="smx_iteminfo_durability_bar" color="[transparent]" type="filled" foregroundlayer="true" />
+					<sprite name="durabilityBackground" depth="3" pos="10,-62" size="56,5" atlas="uiAtlas" sprite="smx_ui_iteminfo_durability_bar" color="[uiElementsBG]" type="sliced" foregroundlayer="true" />
+					<sprite name="durability" depth="4" pos="10,-62" size="56,5" atlas="uiAtlas" sprite="smx_ui_iteminfo_durability_bar" color="[transparent]" type="filled" foregroundlayer="true" />
 
 					<sprite name="disabledOverlay" depth="5" pos="5,-5" size="64,64" color="[darkGrey_half_alpha]" type="sliced" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
 
-					<label name="stackValue" depth="7" pos="10,-54" size="56,24" text="{itemcount}" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
-					<label name="timer" depth="7" pos="38,-38" size="62,24" font_size="16" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="center" pivot="center" />
-					<sprite name="cancel" depth="9" pos="38,-35" size="45,45" atlas="uiIcons" sprite="smx_uipanel_cancel_icon" type="sliced" color="[uiElementsRed]" visible="false" foregroundlayer="true" pivot="center" />
+					<label name="stackValue" depth="7" pos="10,-50" size="56,24" text="{itemcount}" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
+					<label name="timer" depth="7" pos="38,-38" size="62,24" font_size="16" color="[uiElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" />
+					<sprite name="cancel" depth="9" pos="38,-35" size="45,45" atlas="ItemIconAtlas" sprite="smx_ui_general_cancel_icon" type="sliced" color="[uiElementsRed]" visible="false" foregroundlayer="true" pivot="center" />
 
-					<label name="itemName" depth="12" pos="36,-30" size="0,0" text="" font_size="24" font_face="AgencyB" crispness="Never" effect="outline" justify="center" pivot="center" overflow="resizefreely" above_soft_cursor="true" />
+					<label name="itemName" depth="12" pos="36,-30" size="0,0" text="" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" overflow="resizefreely" above_soft_cursor="true" />
 
 					<sprite name="assembleIcon" depth="13" pos="38,-38" size="45,45" sprite="{stacklockicon}" color="{stacklockcolor}" visible="{isassemblelocked}" pivot="center" foregroundlayer="true" />
 				</rect>
@@ -294,20 +330,20 @@
 		<append xpath="/controls">
 			<smx_creative_stack>
 				<rect style="hover, scroll, smx_backpack_itemstack_65" controller="CreativeStack" collider_scale="1.0">
-					<sprite name="backgroundMain" depth="2" pos="2,-42" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
-					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="backgroundMain" depth="2" pos="2,-42" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
+					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" type="sliced" fillcenter="false" globalopacity="true" />
 					<sprite name="highlightOverlay" depth="2" pos="5,-5" size="0,0" color="[darkGrey]" type="sliced" globalopacity="true" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
 
-					<sprite name="itemIcon" depth="4" pos="38,-35" size="40,40" atlas="itemiconatlas" sprite="campfire" pivot="center" foregroundlayer="true" />
-					<sprite name="favoriteIcon" depth="8" pos="6,-6" size="18,18" atlas="uiIcons" sprite="smx_ui_general_favorite_icon" foregroundlayer="true" visible="{isfavorite}"/>
-					<sprite name="lockTypeIcon" depth="8" pos="6,-6" size="18,18" sprite="" foregroundlayer="true" />
-					<sprite name="itemtypeicon" depth="8" pos="6,-6" size="18,18" sprite="ui_game_symbol_{itemtypeicon}" color="{itemtypeicontint}" foregroundlayer="true" visible="{hasitemtypeicon}" />
+					<sprite name="itemIcon" depth="4" pos="38,-35" size="40,40" atlas="ItemIconAtlas" sprite="campfire" pivot="center" foregroundlayer="true" />
+					<sprite name="favoriteIcon" depth="8" pos="8,-8" size="18,18" atlas="ItemIconAtlas" sprite="smx_ui_general_favorite_icon" foregroundlayer="true" visible="{isfavorite}"/>
+					<sprite name="lockTypeIcon" depth="8" pos="8,-8" size="18,18" sprite="" foregroundlayer="true" />
+					<sprite name="itemtypeicon" depth="8" pos="8,-8" size="18,18" sprite="ui_game_symbol_{itemtypeicon}" color="{itemtypeicontint}" foregroundlayer="true" visible="{hasitemtypeicon}" />
 
-					<sprite name="durabilityBackground" depth="3" pos="10,-62" size="56,5" atlas="uiElements" sprite="smx_iteminfo_durability_bar" color="[uiElementsBG]" type="sliced" foregroundlayer="true" />
-					<sprite name="durability" depth="4" pos="10,-62" size="56,5" atlas="uiElements" sprite="smx_iteminfo_durability_bar" color="[transparent]" type="filled" foregroundlayer="true" />
+					<sprite name="durabilityBackground" depth="3" pos="10,-62" size="56,5" atlas="uiAtlas" sprite="smx_ui_iteminfo_durability_bar" color="[uiElementsBG]" type="sliced" foregroundlayer="true" />
+					<sprite name="durability" depth="4" pos="10,-62" size="56,5" atlas="uiAtlas" sprite="smx_ui_iteminfo_durability_bar" color="[transparent]" type="filled" foregroundlayer="true" />
 
-					<label name="stackValue" depth="7" pos="10,-49" size="56,24" text="Test" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
-					<label name="itemName" depth="12" pos="36,-30" size="0,0" text="" font_size="24" font_face="AgencyB" crispness="Never" effect="outline" justify="center" pivot="center" overflow="resizefreely" above_soft_cursor="true" />
+					<label name="stackValue" depth="7" pos="10,-50" size="56,24" text="Test" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
+					<label name="itemName" depth="12" pos="36,-30" size="0,0" text="" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" overflow="resizefreely" above_soft_cursor="true" />
 				</rect>
 			</smx_creative_stack>
 		</append>
@@ -318,7 +354,7 @@
 		<append xpath="/controls">
 			<smx_creative_category_icon>
 				<rect depth="1" size="40,40" controller="CategoryEntry" >
-					<button name="categoryIcon" depth="1" pos="20,-20" size="28,28" sprite="{categoryicon|once}" tooltip="{categorydisplayname|once}" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" collider_scale="1.5" />
+					<button name="categoryIcon" depth="1" pos="20,-20" size="28,28" style="smx_ui_icon_colors" sprite="{categoryicon|once}" tooltip="{categorydisplayname|once}" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" collider_scale="1.5" />
 				</rect>
 			</smx_creative_category_icon>
 		</append>
@@ -331,9 +367,9 @@
 				<rect height="68" controller="ItemActionEntry" disabled_font_color="[disabledLabelColor]" default_font_color="[labelColor]" default_background_color="0,0,0,1">
 					<sprite name="Icon" depth="3" pos="38,-35" size="40,40" sprite="{actionicon}" color="{statuscolor}" pivot="center" foregroundlayer="true" tooltip_key="{actionname}" sound_play_on_hover="[default_uihover]" sound="[paging_click]" /> <!-- CHEEZY HACK TO KEEP ICON IF DISABLED ICON IS CLICKED -->
 					<sprite name="background" depth="4" pos="38,-35" size="40,40" sprite="{actionicon}" color="{statuscolor}" pivot="center" foregroundlayer="true" on_press="true" tooltip_key="{actionname}" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
-					<label name="Name" depth="4" pos="99999,99999" size="78,26" text="{actionname}" font_size="24" color="{statuscolor}" font_face="AgencyB" crispness="Never" effect="outline" pivot="center" justify="center" upper_case="true" />
+					<label name="Name" depth="4" pos="99999,99999" size="78,26" text="{actionname}" font_size="24" color="{statuscolor}" crispness="Never" effect="outline" effect_distance="1,1" pivot="center" justify="center" upper_case="true" />
 					<gamepad_icon name="gamepadIcon" depth="4" pos="100,-40" pivot="Right" />
-					<label name="keyboardButton" depth="4" pos="100,-40" size="36,26" text="&lt;W&gt;" font_size="20" color="{statuscolor}" font_face="AgencyB" crispness="Never" effect="shadow" pivot="right" justify="center" upper_case="true" />
+					<label name="keyboardButton" depth="4" pos="100,-40" size="36,26" text="&lt;W&gt;" font_size="20" color="{statuscolor}" crispness="Never" effect="shadow" pivot="right" justify="center" upper_case="true" />
 				</rect>
 			</smx_item_action_entry>
 		</append>
@@ -346,9 +382,9 @@
 				<rect height="68" controller="ItemActionEntry" disabled_font_color="[disabledLabelColor]" default_font_color="[labelColor]" default_background_color="0,0,0,1">
 					<sprite name="Icon" depth="3" pos="38,-35" size="40,40" sprite="{actionicon}" color="{statuscolor}" pivot="center" foregroundlayer="true" tooltip_key="{actionname}" sound_play_on_hover="[default_uihover]" sound="[paging_click]" /> <!-- CHEEZY HACK TO KEEP ICON IF DISABLED ICON IS CLICKED -->
 					<sprite name="background" depth="4" pos="38,-35" size="40,40" sprite="{actionicon}" color="{statuscolor}" pivot="center" foregroundlayer="true" on_press="true" tooltip_key="{actionname}" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
-					<label name="Name" depth="4" pos="99999,99999" size="78,26" text="{actionname}" font_size="24" color="{statuscolor}" font_face="AgencyB" crispness="Never" effect="outline" pivot="center" justify="center" upper_case="true" />
+					<label name="Name" depth="4" pos="99999,99999" size="78,26" text="{actionname}" font_size="24" color="{statuscolor}" crispness="Never" effect="outline" effect_distance="1,1" pivot="center" justify="center" upper_case="true" />
 					<gamepad_icon name="gamepadIcon" depth="4" pos="100,-40" pivot="Right" />
-					<label name="keyboardButton" depth="4" pos="100,-40" size="36,26" text="&lt;W&gt;" font_size="20" color="{statuscolor}" font_face="AgencyB" crispness="Never" effect="shadow" pivot="right" justify="center" upper_case="true" />
+					<label name="keyboardButton" depth="4" pos="100,-40" size="36,26" text="&lt;W&gt;" font_size="20" color="{statuscolor}" crispness="Never" effect="shadow" pivot="right" justify="center" upper_case="true" />
 				</rect>
 			</smx_buff_item_action_entry>
 		</append>
@@ -359,24 +395,24 @@
 		<append xpath="/controls">
 			<smx_partlist_itemstack_65>
 				<rect style="hover, smx_backpack_itemstack_65" controller="ItemStack" collider_scale="1.0">
-					<sprite name="backgroundMain" depth="2" pos="2,-42" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
-					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="backgroundMain" depth="2" pos="2,-42" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
+					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" type="sliced" fillcenter="false" globalopacity="true" />
 					<sprite name="highlightOverlay" depth="2" pos="5,-5" size="0,0" color="[darkGrey]" type="sliced" globalopacity="true" visible="false" />  <!-- MANDATORY ASSET, OR IT BLOWS UP -->
 
-					<sprite name="itemIcon" depth="4" pos="38,-35" size="40,40" atlas="itemiconatlas" sprite="{itemicon}" color="{iconcolor}" pivot="center" foregroundlayer="true" />
+					<sprite name="itemIcon" depth="4" pos="38,-35" size="40,40" atlas="ItemIconAtlas" sprite="{itemicon}" color="{iconcolor}" pivot="center" foregroundlayer="true" />
 					<sprite name="lockTypeIcon" depth="8" pos="6,-6" size="18,18" sprite="" foregroundlayer="true" />
 					<sprite name="itemtypeicon" depth="8" pos="6,-6" size="18,18" sprite="ui_game_symbol_{itemtypeicon}" color="{itemtypeicontint}" foregroundlayer="true" visible="{hasitemtypeicon}" />
 
-					<sprite name="durabilityBackground" depth="3" pos="10,-62" size="56,5" atlas="uiElements" sprite="smx_iteminfo_durability_bar" color="[uiElementsBG]" type="sliced" foregroundlayer="true" />
-					<sprite name="durability" depth="4" pos="10,-62" size="56,5" atlas="uiElements" sprite="smx_iteminfo_durability_bar" color="[transparent]" type="filled" foregroundlayer="true" />
+					<sprite name="durabilityBackground" depth="3" pos="10,-62" size="56,5" atlas="uiAtlas" sprite="smx_ui_iteminfo_durability_bar" color="[uiElementsBG]" type="sliced" foregroundlayer="true" />
+					<sprite name="durability" depth="4" pos="10,-62" size="56,5" atlas="uiAtlas" sprite="smx_ui_iteminfo_durability_bar" color="[transparent]" type="filled" foregroundlayer="true" />
 
 					<sprite name="disabledOverlay" depth="5" pos="5,-5" size="64,64" color="[darkGrey_half_alpha]" type="sliced" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
 
-					<label name="stackValue" depth="7" pos="10,-45" size="56,24" text="{itemcount}" font_size="20" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
-					<label name="timer" depth="7" pos="38,-35" size="62,24" font_size="24" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="center" pivot="center" />
-					<sprite name="cancel" depth="9" pos="38,-35" size="45,45" atlas="uiIcons" sprite="smx_uipanel_cancel_icon" type="sliced" color="[uiElementsRed]" visible="false" foregroundlayer="true" pivot="center" />
+					<label name="stackValue" depth="7" pos="10,-45" size="56,24" text="{itemcount}" font_size="20" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
+					<label name="timer" depth="7" pos="38,-35" size="62,24" font_size="24" color="[uiElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" />
+					<sprite name="cancel" depth="9" pos="38,-35" size="45,45" atlas="ItemIconAtlas" sprite="smx_ui_general_cancel_icon" type="sliced" color="[uiElementsRed]" visible="false" foregroundlayer="true" pivot="center" />
 
-					<label name="itemName" depth="12" pos="36,-30" size="0,0" text="" font_size="24" font_face="AgencyB" crispness="Never" effect="outline" justify="center" pivot="center" overflow="resizefreely" above_soft_cursor="true" />
+					<label name="itemName" depth="12" pos="36,-30" size="0,0" text="" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" overflow="resizefreely" above_soft_cursor="true" />
 
 					<sprite name="assembleIcon" depth="13" pos="38,-38" size="45,45" sprite="{stacklockicon}" color="{stacklockcolor}" visible="{isassemblelocked}" pivot="center" foregroundlayer="true" />
 				</rect>
@@ -405,7 +441,7 @@
 						virtual_keyboard_prompt="vkPromptCount">
 					<sprite name="background" depth="1" pos="3,-3" size="41,29" color="[darkGrey]" type="sliced"/>
 					<sprite name="frame" depth="1" size="47,35" sprite="menu_empty2px" color="[mediumGrey]" type="sliced" fillcenter="false" globalopacitymod="1.8" />
-					<label name="text" depth="2" pos="-1,-9" font_size="24" font_face="AgencyB" crispness="Never" effect="outline" justify="center" pivot="topleft" />
+					<label name="text" depth="2" pos="-1,-5" font_size="24" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="topleft" />
 				</panel>
 			</smx_counter_control_input>
 		</append>
@@ -417,9 +453,9 @@
 			<smx_counter_control>
 				<rect name="SMXcounterControl" depth="3" pos="0,-15" size="65,120">
 					<smx_counter_control_input name="count_input" depth="2" />
-					<button name="countMax" depth="3" pos="0,80" size="26,50" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrowmax_icon" pivot="center" disabledcolor="[disabledColor]" sound_play_on_hover="[default_uihover]" sound="[paging_click]" tooltip_key="${tooltip_key|}" rotation="-90" />
-					<button name="countUp" depth="3" pos="0,45" size="24,50" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" pivot="center" disabledcolor="[disabledColor]" sound_play_on_hover="[default_uihover]" sound="[paging_click]" tooltip_key="${tooltip_key|}" rotation="-90" />
-					<button name="countDown" depth="3" pos="0,-35" size="24,50" style="press, hover, smx_ui_icon_colors" atlas="uiIcons" sprite="smx_ui_general_arrow_icon" pivot="center" disabledcolor="[disabledColor]" sound_play_on_hover="[default_uihover]" sound="[paging_click]" tooltip_key="${tooltip_key|}" rotation="90" />
+					<button name="countMax" depth="3" pos="0,80" size="26,50" style="press, hover, smx_ui_icon_colors" atlas="ItemIconAtlas" sprite="smx_ui_general_arrowmax_icon" pivot="center" disabledcolor="[disabledColor]" sound_play_on_hover="[default_uihover]" sound="[paging_click]" tooltip_key="${tooltip_key|}" rotation="-90" />
+					<button name="countUp" depth="3" pos="0,45" size="24,50" style="press, hover, smx_ui_icon_colors" atlas="ItemIconAtlas" sprite="smx_ui_general_arrow_icon" pivot="center" disabledcolor="[disabledColor]" sound_play_on_hover="[default_uihover]" sound="[paging_click]" tooltip_key="${tooltip_key|}" rotation="-90" />
+					<button name="countDown" depth="3" pos="0,-35" size="24,50" style="press, hover, smx_ui_icon_colors" atlas="ItemIconAtlas" sprite="smx_ui_general_arrow_icon" pivot="center" disabledcolor="[disabledColor]" sound_play_on_hover="[default_uihover]" sound="[paging_click]" tooltip_key="${tooltip_key|}" rotation="90" />
 				</rect>
 			</smx_counter_control>
 		</append>
@@ -430,12 +466,12 @@
 		<append xpath="/controls">
 			<smx_ingredient_row>
 				<rect name="row" style="hover, smx_backpack_itemstack_65" controller="IngredientEntry" tooltip="{itemname}" collider_scale="1.1">
-					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" color="[mediumGrey]" type="sliced" fillcenter="false" globalopacity="true" />
-					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
-					<sprite name="icon" depth="4" pos="38,-35" size="40,40" atlas="itemiconatlas" sprite="{itemicon}" color="{itemicontint}" pivot="center" foregroundlayer="true" />
-					<label name="needCount" depth="7" pos="10,-48" size="56,24" text="{needcount}" font_size="20" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
-					<label name="haveCount" depth="7" pos="10,-70" width="56" height="24" text="( {havecount} )" color="[mediumGrey]" font_size="20" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
-					<!--label depth="12" name="itemName" pos="36,-30" width="0" height="0" text="" font_size="24" justify="center" overflow="resizefreely" effect="outline" pivot="center" above_soft_cursor="true"/-->
+					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" color="[mediumGrey]" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
+					<sprite name="icon" depth="4" pos="38,-35" size="40,40" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pivot="center" foregroundlayer="true" />
+					<label name="needCount" depth="7" pos="10,-48" size="56,24" text="{needcount}" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
+					<label name="haveCount" depth="7" pos="10,-70" width="56" height="24" text="( {havecount} )" color="[mediumGrey]" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
+					<!--label depth="12" name="itemName" pos="36,-30" width="0" height="0" text="" font_size="24" justify="center" overflow="resizefreely" effect="outline" effect_distance="1,1" pivot="center" above_soft_cursor="true"/-->
 				</rect>
 			</smx_ingredient_row>
 		</append>
@@ -459,7 +495,7 @@
 		<append xpath="/controls">
 			<smx_crafting_category_icon>
 				<rect depth="1" size="44,40" controller="CategoryEntry">
-					<button name="categoryIcon" depth="1" pos="22,-20" size="28,28" style="smx_ui_icon_colors" atlas="uiIcons" sprite="{categoryicon|once}" tooltip="{categorydisplayname|once}" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" collider_scale="1.5" />
+					<button name="categoryIcon" depth="1" pos="22,-20" size="28,28" style="smx_ui_icon_colors" atlas="ItemIconAtlas" sprite="{categoryicon|once}" tooltip="{categorydisplayname|once}" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" collider_scale="1.5" />
 				</rect>
 			</smx_crafting_category_icon>
 		</append>
@@ -470,14 +506,14 @@
 		<append xpath="/controls">
 			<smx_crafting_recipe_entry>
 				<rect controller="RecipeEntry" size="68,68" style="press, hover, scroll, smx_backpack_itemstack_65" disabled_font_color="[darkGrey]" enabled_font_color="[white]" sound="[recipe_click]" tooltip="{recipename}">
-					<sprite name="background" depth="2" pos="-2,-38" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
-					<sprite name="background2" depth="2" pos="-2,-38" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" visible="{hasrecipe}" />
-					<sprite name="backgroundMain" depth="3" pos="1,-1" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" color="{hasingredientsstatecolor}" type="sliced" fillcenter="false" globalopacity="true" visible="{hasrecipe}" />
+					<sprite name="background" depth="2" pos="-2,-38" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
+					<sprite name="background2" depth="2" pos="-2,-38" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" visible="{hasrecipe}" />
+					<sprite name="backgroundMain" depth="3" pos="1,-1" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" color="{hasingredientsstatecolor}" type="sliced" fillcenter="false" globalopacity="true" visible="{hasrecipe}" />
 
 					<sprite name="Icon" depth="4" pos="34,-34" size="40,40" atlas="itemiconatlas" sprite="{recipeicon}" color="{recipeicontint}" pivot="center" foregroundlayer="true" />
 					<sprite name="itemtypeicon" depth="8" pos="6,-6" size="18,18" sprite="ui_game_symbol_{itemtypeicon}" color="{itemtypeicontint}" foregroundlayer="true" visible="{hasitemtypeicon}" />
 
-					<sprite name="Favorite" depth="5" pos="6,-6" size="18,18" atlas="uiIcons" sprite="smx_ui_general_favorite_icon" foregroundlayer="true" visible="{isfavorite}"/>
+					<sprite name="Favorite" depth="5" pos="6,-6" size="18,18" atlas="ItemIconAtlas" sprite="smx_ui_general_favorite_icon" foregroundlayer="true" visible="{isfavorite}"/>
 					<sprite name="Unlocked" depth="5" pos="50,-50" size="18,18" sprite="{unlockicon}" color="{unlockstatecolor}" foregroundlayer="true" visible="{isunlockable}" />
 				</rect>
 			</smx_crafting_recipe_entry>
@@ -489,17 +525,17 @@
 		<append xpath="/controls">
 			<smx_crafting_recipe_stack>
 				<rect controller="RecipeStack" size="68,68" collider_scale="1.0">
-					<sprite name="background" depth="2" pos="-2,-38" size="59,41" style="press" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" on_hover="true" />
-					<sprite name="backgroundMain" depth="3" pos="1,-1" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" type="sliced" fillcenter="false" globalopacity="true" color="[darkGrey]" />
+					<sprite name="background" depth="2" pos="-2,-38" size="59,41" style="press" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" on_hover="true" />
+					<sprite name="backgroundMain" depth="3" pos="1,-1" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" type="sliced" fillcenter="false" globalopacity="true" color="[darkGrey]" />
 
 					<sprite name="itemIcon" depth="4" pos="34,-34" size="40,40" atlas="itemiconatlas" sprite="" pivot="center" foregroundlayer="true" />
 					<sprite name="lockIcon" depth="5" pos="6,-6" size="18,18" sprite="ui_game_symbol_hammer" foregroundlayer="true" visible="false" />
 
-					<label name="count" depth="5" pos="0,-47" size="56,24" text="Test" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
-					<label name="timer" depth="5" pos="34,-34" size="62,24" font_size="20" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" justify="center" pivot="center" />
+					<label name="count" depth="5" pos="0,-47" size="56,24" text="Test" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
+					<label name="timer" depth="5" pos="34,-34" size="62,24" font_size="20" color="[white]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" />
 
 					<sprite name="overlay" depth="2" size="68,68" color="32,32,32,128" type="sliced" />
-					<sprite name="cancel" depth="9" pos="0,0" size="68,68" atlas="uiIcons" sprite="smx_uipanel_cancel_icon" color="255,0,0,0" type="sliced" foregroundlayer="true" visible="false" />
+					<sprite name="cancel" depth="9" pos="0,0" size="68,68" atlas="ItemIconAtlas" sprite="smx_ui_general_cancel_icon" color="255,0,0,0" type="sliced" foregroundlayer="true" visible="false" />
 				</rect>
 			</smx_crafting_recipe_stack>
 		</append>
@@ -510,23 +546,23 @@
 		<append xpath="/controls">
 			<smx_fuel_stack_50>
 				<rect controller="ItemStack" style="hover, smx_itemstack_50" collider_scale="1.0">
-					<sprite name="backgroundMain" depth="2" pos="2,-32" size="43,30" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
-					<sprite name="background" depth="3" pos="2,-2" size="50,50" atlas="uiElements" sprite="smx_uipanel_slot_frame" type="sliced" fillcenter="false" globalopacity="true" />
-					<sprite name="highlightOverlay" depth="2" pos="2,-2" size="0,0" color="[darkGrey]" type="sliced" globalopacity="true" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
+					<sprite name="backgroundMain" depth="2" pos="2,-32" size="43,30" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
+					<sprite name="background" depth="3" pos="2,-2" size="50,50" atlas="uiAtlas" sprite="smx_ui_slot_frame" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="highlightOverlay" depth="2" pos="99999,-99999" size="0,0" color="[darkGrey]" type="sliced" globalopacity="true" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
 
 					<sprite name="itemIcon" depth="4" pos="28,-25" size="30,30" atlas="itemiconatlas" sprite="{itemicon}" color="{iconcolor}" pivot="center" foregroundlayer="true" />
 					<sprite name="lockTypeIcon" depth="8" pos="3,-3" size="16,16" sprite="" foregroundlayer="true" />
 					
-					<sprite name="durabilityBackground" depth="3" pos="8,-45" size="38,5" atlas="uiElements" sprite="smx_iteminfo_durability_bar" color="[uiElementsBG]" type="sliced" foregroundlayer="true" />
-					<sprite name="durability" depth="4" pos="8,-45" size="38,5" atlas="uiElements" sprite="smx_iteminfo_durability_bar" color="[transparent]" type="filled" foregroundlayer="true" />
+					<sprite name="durabilityBackground" depth="3" pos="8,-45" size="38,5" atlas="uiAtlas" sprite="smx_ui_iteminfo_durability_bar" color="[uiElementsBG]" type="sliced" foregroundlayer="true" />
+					<sprite name="durability" depth="4" pos="8,-45" size="38,5" atlas="uiAtlas" sprite="smx_ui_iteminfo_durability_bar" color="[transparent]" type="filled" foregroundlayer="true" />
 
 					<sprite name="disabledOverlay" depth="5" pos="2,-2" size="49,49" color="[darkGrey_half_alpha]" type="sliced" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
 					
-					<label name="stackValue" depth="7" pos="7,-38" size="41,24" text="{itemcount}" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
-					<label name="timer" depth="7" pos="28,-25" size="47,24" font_size="16" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="center" pivot="center" />
-					<sprite name="cancel" depth="9" pos="28,-25" size="45,45" atlas="uiIcons" sprite="smx_uipanel_cancel_icon" type="sliced" color="[uiElementsRed]" visible="false" foregroundlayer="true" pivot="center" />
+					<label name="stackValue" depth="7" pos="7,-32" size="41,24" text="{itemcount}" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
+					<label name="timer" depth="7" pos="28,-25" size="47,24" font_size="16" color="[uiElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" />
+					<sprite name="cancel" depth="9" pos="28,-25" size="45,45" atlas="ItemIconAtlas" sprite="smx_ui_general_cancel_icon" type="sliced" color="[uiElementsRed]" visible="false" foregroundlayer="true" pivot="center" />
 					
-					<label name="itemName" depth="12" pos="25,-25" size="0,0" text="" font_size="24" font_face="AgencyB" crispness="Never" effect="outline" justify="center" pivot="center" overflow="resizefreely" above_soft_cursor="true" />
+					<label name="itemName" depth="12" pos="25,-25" size="0,0" text="" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" overflow="resizefreely" above_soft_cursor="true" />
 
 					<sprite name="assembleIcon" depth="13" pos="38,-38" size="45,45" sprite="{stacklockicon}" color="{stacklockcolor}" visible="{isassemblelocked}" pivot="center" foregroundlayer="true" />
 				</rect>
@@ -539,23 +575,23 @@
 		<append xpath="/controls">
 			<smx_tools_stack_50>
 				<rect controller="RequiredItemStack" style="hover, smx_itemstack_50">
-					<sprite name="backgroundMain" depth="2" pos="2,-32" size="43,30" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
-					<sprite name="background" depth="3" pos="2,-2" size="50,50" atlas="uiElements" sprite="smx_uipanel_slot_frame" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="backgroundMain" depth="2" pos="2,-32" size="43,30" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
+					<sprite name="background" depth="3" pos="2,-2" size="50,50" atlas="uiAtlas" sprite="smx_ui_slot_frame" type="sliced" fillcenter="false" globalopacity="true" />
 					<sprite name="highlightOverlay" depth="2" pos="2,-2" size="0,0" color="[darkGrey]" type="sliced" globalopacity="true" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
 
 					<sprite name="itemIcon" depth="4" pos="28,-25" size="30,30" atlas="itemiconatlas" sprite="{itemicon}" color="{iconcolor}" pivot="center" foregroundlayer="true" />
 					<sprite name="lockTypeIcon" depth="8" pos="3,-3" size="16,16" sprite="" foregroundlayer="true" />
 					
-					<sprite name="durabilityBackground" depth="3" pos="8,-45" size="38,5" atlas="uiElements" sprite="smx_iteminfo_durability_bar" color="[uiElementsBG]" type="sliced" foregroundlayer="true" />
-					<sprite name="durability" depth="4" pos="8,-45" size="38,5" atlas="uiElements" sprite="smx_iteminfo_durability_bar" color="[transparent]" type="filled" foregroundlayer="true" />
+					<sprite name="durabilityBackground" depth="3" pos="8,-45" size="38,5" atlas="uiAtlas" sprite="smx_ui_iteminfo_durability_bar" color="[uiElementsBG]" type="sliced" foregroundlayer="true" />
+					<sprite name="durability" depth="4" pos="8,-45" size="38,5" atlas="uiAtlas" sprite="smx_ui_iteminfo_durability_bar" color="[transparent]" type="filled" foregroundlayer="true" />
 
 					<sprite name="disabledOverlay" depth="5" pos="2,-2" size="49,49" color="[darkGrey_half_alpha]" type="sliced" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
 					
-					<label name="stackValue" depth="7" pos="7,-38" size="41,24" text="{itemcount}" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
-					<label name="timer" depth="7" pos="28,-25" size="47,24" font_size="16" color="[uiElementsLabel]" font_face="AgencyB" crispness="Never" effect="outline" justify="center" pivot="center" />
-					<sprite name="cancel" depth="9" pos="28,-25" size="45,45" atlas="uiIcons" sprite="smx_uipanel_cancel_icon" type="sliced" color="[uiElementsRed]" visible="false" foregroundlayer="true" pivot="center" />
+					<label name="stackValue" depth="7" pos="7,-32" size="41,24" text="{itemcount}" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
+					<label name="timer" depth="7" pos="28,-25" size="47,24" font_size="16" color="[uiElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" />
+					<sprite name="cancel" depth="9" pos="28,-25" size="45,45" atlas="ItemIconAtlas" sprite="smx_ui_general_cancel_icon" type="sliced" color="[uiElementsRed]" visible="false" foregroundlayer="true" pivot="center" />
 					
-					<label name="itemName" depth="12" pos="25,-25" size="0,0" text="" font_size="24" font_face="AgencyB" crispness="Never" effect="outline" justify="center" pivot="center" overflow="resizefreely" above_soft_cursor="true" />
+					<label name="itemName" depth="12" pos="25,-25" size="0,0" text="" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" overflow="resizefreely" above_soft_cursor="true" />
 
 					<sprite name="assembleIcon" depth="13" pos="50,-50" size="18,18" sprite="{stacklockicon}" color="{stacklockcolor}" pivot="center" visible="{isassemblelocked}" foregroundlayer="true" />
 					<!--sprite name="assembleIcon" depth="13" pos="38,-38" size="45,45" sprite="{stacklockicon}" color="{stacklockcolor}" visible="{isassemblelocked}" pivot="center" foregroundlayer="true" /-->
@@ -569,63 +605,93 @@
 		<append xpath="/controls">
 			<smx_input_forge_material_1>
 				<rect name="row" style="hover, smx_itemstack_65" controller="IngredientEntry" tooltip_key="{itemname}" collider_scale="1.1">
-					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" color="[uiElementsRed]" type="sliced" fillcenter="false" globalopacity="true" />
-					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
+					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" color="255,165,0,158" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
 					<sprite name="icon" depth="4" size="40,40" pos="38,-35" atlas="itemiconatlas" sprite="resourceScrapIron" color="{itemicontint}" pivot="center" foregroundlayer="true" />
 					<label name="material" depth="2" pos="99999,99999" style="workstation.reserve.name" />
-					<label name="weight" depth="5" pos="-11,-54" style="workstation.reserve.weight" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+					<label name="weight" depth="5" pos="-11,-50" style="workstation.reserve.weight" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
 				</rect>
 			</smx_input_forge_material_1>
 
 			<smx_input_forge_material_2>
 				<rect name="row" style="hover, smx_itemstack_65" controller="IngredientEntry" tooltip_key="{itemname}" collider_scale="1.1">
-					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" color="[uiElementsRed]" type="sliced" fillcenter="false" globalopacity="true" />
-					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
+					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" color="255,165,0,158" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
 					<sprite name="icon" depth="4" size="40,40" pos="38,-35" atlas="itemiconatlas" sprite="resourceScrapBrass" color="{itemicontint}" pivot="center" foregroundlayer="true" />
 					<label name="material" depth="2" pos="99999,99999" style="workstation.reserve.name" />
-					<label name="weight" depth="5" pos="-11,-54" style="workstation.reserve.weight" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+					<label name="weight" depth="5" pos="-11,-50" style="workstation.reserve.weight" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
 				</rect>
 			</smx_input_forge_material_2>
 
 			<smx_input_forge_material_3>
 				<rect name="row" style="hover, smx_itemstack_65" controller="IngredientEntry" tooltip_key="{itemname}" collider_scale="1.1">
-					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" color="[uiElementsRed]" type="sliced" fillcenter="false" globalopacity="true" />
-					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
+					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" color="255,165,0,158" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
 					<sprite name="icon" depth="4" size="40,40" pos="38,-35" atlas="itemiconatlas" sprite="resourceScrapLead" color="{itemicontint}" pivot="center" foregroundlayer="true" />
 					<label name="material" depth="2" pos="99999,99999" style="workstation.reserve.name" />
-					<label name="weight" depth="5" pos="-11,-54" style="workstation.reserve.weight" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+					<label name="weight" depth="5" pos="-11,-50" style="workstation.reserve.weight" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
 				</rect>
 			</smx_input_forge_material_3>
 
 			<smx_input_forge_material_4>
 				<rect name="row" style="hover, smx_itemstack_65" controller="IngredientEntry" tooltip_key="{itemname}" collider_scale="1.1">
-					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" color="[uiElementsRed]" type="sliced" fillcenter="false" globalopacity="true" />
-					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
-					<sprite name="icon" depth="4" size="40,40" pos="38,-35" atlas="itemiconatlas" sprite="resourceBrokenGlass" color="{itemicontint}" pivot="center" foregroundlayer="true" />
+					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" color="255,165,0,158" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
+					<sprite name="icon" depth="4" size="40,40" pos="38,-35" atlas="itemiconatlas" sprite="resourceCrushedSand" color="{itemicontint}" pivot="center" foregroundlayer="true" />
 					<label name="material" depth="2" pos="99999,99999" style="workstation.reserve.name" />
-					<label name="weight" depth="5" pos="-11,-54" style="workstation.reserve.weight" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+					<label name="weight" depth="5" pos="-11,-50" style="workstation.reserve.weight" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
 				</rect>
 			</smx_input_forge_material_4>
 
 			<smx_input_forge_material_5>
 				<rect name="row" style="hover, smx_itemstack_65" controller="IngredientEntry" tooltip_key="{itemname}" collider_scale="1.1">
-					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" color="[uiElementsRed]" type="sliced" fillcenter="false" globalopacity="true" />
-					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
+					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" color="255,165,0,158" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
 					<sprite name="icon" depth="4" size="40,40" pos="38,-35" atlas="itemiconatlas" sprite="resourceRockSmall" color="{itemicontint}" pivot="center" foregroundlayer="true" />
 					<label name="material" depth="2" pos="99999,99999" style="workstation.reserve.name" />
-					<label name="weight" depth="5" pos="-11,-54" style="workstation.reserve.weight" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+					<label name="weight" depth="5" pos="-11,-50" style="workstation.reserve.weight" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
 				</rect>
 			</smx_input_forge_material_5>
 
 			<smx_input_forge_material_6>
 				<rect name="row" style="hover, smx_itemstack_65" controller="IngredientEntry" tooltip_key="{itemname}" collider_scale="1.1">
-					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" color="[uiElementsRed]" type="sliced" fillcenter="false" globalopacity="true" />
-					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
+					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" color="255,165,0,158" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
 					<sprite name="icon" depth="4" size="40,40" pos="38,-35" atlas="itemiconatlas" sprite="resourceClayLump" color="{itemicontint}" pivot="center" foregroundlayer="true" />
 					<label name="material" depth="2" pos="99999,99999" style="workstation.reserve.name" />
-					<label name="weight" depth="5" pos="-11,-54" style="workstation.reserve.weight" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+					<label name="weight" depth="5" pos="-11,-50" style="workstation.reserve.weight" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
 				</rect>
 			</smx_input_forge_material_6>
+		</append>
+
+
+<!--	// SMX // Forge Input Design -->
+
+		<append xpath="/controls">
+			<smx_forgeinput_itemstack_85>
+				<rect style="hover, smx_itemstack_85" controller="ItemStack" collider_scale="1.1">
+					<sprite name="backgroundMain" depth="2" pos="-2,-45" size="74,54" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[hudElementsBG]" type="sliced" globalopacitymod="0.8" rotation="45" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
+					<sprite name="background" depth="3" pos="0,0" size="83,83" atlas="uiAtlas" sprite="smx_ui_slot_frame" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="highlightOverlay" depth="2" pos="0,0" size="82,82" color="[darkGrey]" type="sliced" globalopacity="true" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
+
+					<sprite name="itemIcon" depth="4" pos="40,-39" size="70,70" atlas="ItemIconAtlas" sprite="{itemicon}" color="{iconcolor}" foregroundlayer="true" pivot="center" />
+					<sprite name="lockTypeIcon" depth="8" pos="4,-4" size="20,20" sprite="" foregroundlayer="true" />
+					<sprite name="itemtypeicon" depth="8" pos="4,-4" size="20,20" sprite="ui_game_symbol_{itemtypeicon}" color="{itemtypeicontint}" foregroundlayer="true" visible="{hasitemtypeicon}" />
+
+					<sprite name="durabilityBackground" depth="3" pos="5,-74" size="73,7" atlas="uiAtlas" sprite="smx_ui_iteminfo_durability" color="[hudElementsBG]" type="sliced" foregroundlayer="true" />
+					<sprite name="durability" depth="4" pos="5, -74" size="73,7" atlas="uiAtlas" sprite="smx_ui_iteminfo_durability" color="[transparent]" type="filled" foregroundlayer="true" />
+
+					<sprite name="disabledOverlay" depth="5" pos="1,-1" size="82,82" color="[darkGrey_half_alpha]" type="sliced" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
+
+					<label name="stackValue" depth="7" pos="3,-60" size="73,28" text="{itemcount}" font_size="16" color="[hudElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" justify="center" />
+					<label name="timer" depth="7" pos="42,-92" size="83,24" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" color="[beige]" justify="center" pivot="center" />
+					<sprite name="cancel" depth="9" size="40,40" atlas="itemiconatlas" sprite="smx_ui_general_cancel_icon" type="sliced" foregroundlayer="true" visible="false" />
+
+					<label name="itemName" depth="12" pos="42,-35" size="0,0" text="" font_size="22" color="[hudElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" overflow="resizefreely" justify="center" pivot="center" above_soft_cursor="true" />
+
+					<sprite name="assembleIcon" depth="13" pos="19,-19" size="40,40" sprite="{stacklockicon}" visible="{isassemblelocked}" foregroundlayer="true" />
+				</rect>
+			</smx_forgeinput_itemstack_85>
 		</append>
 
 
@@ -634,10 +700,10 @@
 		<append xpath="/controls">
 			<smx_active_buff_entry>
 				<panel controller="ActiveBuffEntry" size="65,65" style="press" sound="[recipe_click]" on_hover="true" on_scroll="true" disableautobackground="true">
-					<sprite name="backgroundMain" depth="2" pos="2,-42" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
-					<sprite name="backgroundFrame" depth="3" pos="5,-5" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" color="[darkGrey]" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="backgroundMain" depth="2" pos="2,-42" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
+					<sprite name="backgroundFrame" depth="3" pos="5,-5" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" color="[darkGrey]" type="sliced" fillcenter="false" globalopacity="true" />
 					<sprite name="background" depth="4" pos="38,-35" size="40,40" sprite="{bufficon|once}" color="{buffcolor}" tooltip_key="{buffname}" type="sliced" pivot="center" />
-					<label name="SMXbuffTimer" depth="5" pos="0,-55" size="65,30" text="{buffdisplayinfo}" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" justify="right" />
+					<label name="SMXbuffTimer" depth="5" pos="0,-50" size="65,30" text="{buffdisplayinfo}" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
 				</panel>
 			</smx_active_buff_entry>
 		</append>
@@ -648,14 +714,14 @@
 		<append xpath="/controls">
 			<smx_equipment_stack>
 				<rect depth="1" controller="EquipmentStack" style="hover, smx_itemstack_65" tooltip="test">
-					<sprite name="backgroundMain" depth="2" pos="2,-42" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
-					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="backgroundMain" depth="2" pos="2,-42" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
+					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" type="sliced" fillcenter="false" globalopacity="true" />
 					<sprite name="highlightOverlay" depth="2" pos="99999,99999" size="0,0" color="[darkGrey]" type="sliced" globalopacity="true" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
 					<sprite name="itemIcon" depth="4" pos="38,-35" size="40,40" atlas="itemiconatlas" sprite="campfire" pivot="center" foregroundlayer="true" />
-					<sprite name="durabilityBackground" depth="3" pos="10,-62" size="56,5" atlas="uiElements" sprite="smx_iteminfo_durability_bar" color="[uiElementsBG]" type="sliced" foregroundlayer="true" />
-					<sprite name="durability" depth="4" pos="10,-62" size="56,5" atlas="uiElements" sprite="smx_iteminfo_durability_bar" color="[transparent]" type="filled" foregroundlayer="true" />
-					<label name="stackValue" depth="7" pos="10,-45" size="56,24" text="" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" justify="center" />
-					<label name="itemName" depth="12" pos="0,0" size="0,0" text="" font_size="24" font_face="AgencyB" crispness="Never" effect="outline" justify="center" overflow="resizefreely" above_soft_cursor="true" />
+					<sprite name="durabilityBackground" depth="3" pos="10,-62" size="56,5" atlas="uiAtlas" sprite="smx_ui_iteminfo_durability_bar" color="[uiElementsBG]" type="sliced" foregroundlayer="true" />
+					<sprite name="durability" depth="4" pos="10,-62" size="56,5" atlas="uiAtlas" sprite="smx_ui_iteminfo_durability_bar" color="[transparent]" type="filled" foregroundlayer="true" />
+					<label name="stackValue" depth="7" pos="10,-47" size="56,24" text="" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
+					<label name="itemName" depth="12" pos="0,0" size="0,0" text="" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" justify="center" overflow="resizefreely" above_soft_cursor="true" />
 				</rect>
 			</smx_equipment_stack>
 		</append>
@@ -666,8 +732,8 @@
 		<append xpath="/controls">
 			<smx_item_part_slot>
 				<panel size="65,65" style="hover, smx_itemstack_65" controller="ItemPartStack" disableautobackground="true">
-					<sprite name="backgroundMain" depth="2" pos="2,-42" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
-					<sprite name="backgroundFrame" depth="3" pos="5,-5" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="backgroundMain" depth="2" pos="2,-42" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
+					<sprite name="backgroundFrame" depth="3" pos="5,-5" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" type="sliced" fillcenter="false" globalopacity="true" />
 					<sprite name="itemIcon" depth="4" pos="38,-35" size="40,40" atlas="{partatlas}" sprite="{particon}" color="{particoncolor}" type="sliced" pivot="center" foregroundlayer="true" visible="{partvisible}" />
 					<sprite name="background" depth="5" pos="38,-35" size="0,0" atlas="{partatlas}" sprite="{particon}" color="{particoncolor}" type="sliced" pivot="center" foregroundlayer="true" visible="{partvisible}" />
 				</panel>
@@ -680,8 +746,8 @@
 		<append xpath="/controls">
 			<smx_item_part_slot_cosmetic>
 				<rect size="65,65" style="hover, smx_itemstack_65" controller="ItemCosmeticStack" disableautobackground="true">
-					<sprite name="backgroundMain" depth="2" pos="2,-42" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
-					<sprite name="backgroundFrame" depth="3" pos="5,-5" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" color="[uiElementsRed]" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="backgroundMain" depth="2" pos="2,-42" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
+					<sprite name="backgroundFrame" depth="3" pos="5,-5" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" color="[uiElementsRed]" type="sliced" fillcenter="false" globalopacity="true" />
 					<sprite name="itemIcon" depth="4" pos="38,-35" size="40,40" atlas="{partatlas}" sprite="{particon}" color="{particoncolor}" type="sliced" pivot="center" foregroundlayer="true" visible="{partvisible}" />
 					<sprite name="background" depth="5" pos="38,-35" size="0,0" atlas="{partatlas}" sprite="{particon}" color="{particoncolor}" type="sliced" pivot="center" foregroundlayer="true" visible="{partvisible}" />
 				</rect>
@@ -705,8 +771,8 @@
 		<append xpath="/controls">
 			<smx_skill_entry_dummy_attributes>
 				<panel depth="3" size="80,80" style="press, hover, scroll" controller="SkillEntry" disableautobackground="true" enabled_color="[iconColor]" disabled_color="[disabledLabelColor]" row_color="[lightGrey]" hover_color="[mediumGrey]" sound="[recipe_click]" tooltip="{groupname}" visible="{hasskill}">
-					<sprite name="backgroundMain" depth="3" pos="5,-5" size="80,80" atlas="uiElements" sprite="smx_uipanel_slot_frame" color="{rowstatecolor}" type="sliced" />
-					<sprite name="backgroundMain2" depth="2" pos="2,-52" size="74,52" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
+					<sprite name="backgroundMain" depth="3" pos="5,-5" size="80,80" atlas="uiAtlas" sprite="smx_ui_slot_frame" color="{rowstatecolor}" type="sliced" />
+					<sprite name="backgroundMain2" depth="2" pos="2,-52" size="74,52" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
 					<sprite name="groupIcon" depth="4" pos="19,-19" size="52,52" atlas="ItemIconAtlas" sprite="{groupicon}" color="{statuscolor}" foregroundlayer="true" />
 					<label name="groupName" depth="2" pos="99999,99999" width="90" text="" color="{statuscolor}" />
 				</panel>
@@ -719,13 +785,13 @@
 		<append xpath="/controls">
 			<smx_skill_entry_attributes>
 				<panel depth="3" size="80,80" style="press, hover, scroll" controller="SkillEntry" disableautobackground="true" enabled_color="[iconColor]" disabled_color="[disabledLabelColor]" row_color="[lightGrey]" hover_color="[mediumGrey]" sound="[recipe_click]" tooltip="{groupname}" visible="{hasskill}">
-					<sprite name="backgroundMain" depth="3" pos="5,-5" size="80,80" atlas="uiElements" sprite="smx_uipanel_slot_frame" color="{rowstatecolor}" type="sliced" />
-					<sprite name="backgroundMain2" depth="2" pos="2,-52" size="74,52" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
+					<sprite name="backgroundMain" depth="3" pos="5,-5" size="80,80" atlas="uiAtlas" sprite="smx_ui_slot_frame" color="{rowstatecolor}" type="sliced" />
+					<sprite name="backgroundMain2" depth="2" pos="2,-52" size="74,52" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
 					<sprite name="groupIcon" depth="4" pos="-45,-15" size="52,52" atlas="ItemIconAtlas" sprite="{groupicon}" color="{statuscolor}" foregroundlayer="true" />
 					<label name="groupName" depth="2" pos="99999,99999" width="90" text="" color="{statuscolor}" />
-					<sprite depth="4" pos="83,-77" size="24,24" atlas="uiIcons" sprite="smx_uipanel_checkmark_icon" color="[green]" pivot="center" foregroundlayer="true" visible="{cannotpurchase}" />
-					<sprite depth="4" pos="83,-80" size="24,24" atlas="uiIcons" sprite="smx_ui_general_padlock_icon" color="[red]" pivot="center" foregroundlayer="true" visible="{islocked}" />
-					<label depth="2" pos="45,-100" width="85" text="{grouplevel}" font_size="24" font_face="AgencyB" crispness="Never" effect="outline" pivot="center" justify="center" color="{statuscolor}" visible="{isnotlocked}" />
+					<sprite depth="4" pos="83,-77" size="24,24" atlas="ItemIconAtlas" sprite="smx_ui_general_checkmark_icon" color="[green]" pivot="center" foregroundlayer="true" visible="{cannotpurchase}" />
+					<sprite depth="4" pos="83,-80" size="24,24" atlas="ItemIconAtlas" sprite="smx_ui_general_padlock_icon" color="[red]" pivot="center" foregroundlayer="true" visible="{islocked}" />
+					<label depth="2" pos="45,-100" width="85" text="{grouplevel}" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" pivot="center" justify="center" color="{statuscolor}" visible="{isnotlocked}" />
 				</panel>
 			</smx_skill_entry_attributes>
 		</append>
@@ -736,14 +802,14 @@
 		<append xpath="/controls">
 			<smx_skill_entry_perks>
 				<panel depth="3" size="70,70" style="press, hover, scroll" controller="SkillEntry" disableautobackground="true" enabled_color="[iconColor]" disabled_color="[disabledLabelColor]" row_color="[lightGrey]" hover_color="[mediumGrey]" sound="[recipe_click]" tooltip="{groupname}" visible="{hasskill}">
-					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" color="{rowstatecolor}" type="sliced" />
-					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
+					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" color="{rowstatecolor}" type="sliced" />
+					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
 					<sprite name="groupIcon" depth="4" pos="-47,-14" size="40,40" atlas="ItemIconAtlas" sprite="{groupicon}" color="{statuscolor}" foregroundlayer="true" />
 					<label name="groupName" depth="2" pos="52,-13" width="90" text="" color="{statuscolor}" />
-					<sprite depth="4" pos="68,-62" size="20,20" atlas="uiIcons" sprite="smx_uipanel_checkmark_icon" color="[green]" pivot="center" foregroundlayer="true" visible="{cannotpurchase}" />
-					<sprite depth="4" pos="68,-65" size="20,20" atlas="uiIcons" sprite="smx_ui_general_padlock_icon" color="[red]" pivot="center" foregroundlayer="true" visible="{islocked}" />
-					<label depth="2" pos="37,-82" width="85" text="{grouplevel}" color="{statuscolor}" font_size="20" font_face="AgencyB" crispness="Never" effect="outline" pivot="center" justify="center" visible="{isnotlocked}" />
-					<label depth="2" pos="37,-82" width="85" text="{grouppointcost}" color="{statuscolor}" font_size="20" font_face="AgencyB" crispness="Never" effect="outline" pivot="center" justify="center" visible="{isbook}" />
+					<sprite depth="4" pos="68,-62" size="20,20" atlas="ItemIconAtlas" sprite="smx_ui_general_checkmark_icon" color="[green]" pivot="center" foregroundlayer="true" visible="{cannotpurchase}" />
+					<sprite depth="4" pos="68,-65" size="20,20" atlas="ItemIconAtlas" sprite="smx_ui_general_padlock_icon" color="[red]" pivot="center" foregroundlayer="true" visible="{islocked}" />
+					<label depth="2" pos="37,-82" width="85" text="{grouplevel}" color="{statuscolor}" font_size="18" crispness="Never" effect="outline" effect_distance="1,1" pivot="center" justify="center" visible="{isnotlocked}" />
+					<label depth="2" pos="37,-82" width="85" text="{grouppointcost}" color="{statuscolor}" font_size="18" crispness="Never" effect="outline" effect_distance="1,1" pivot="center" justify="center" visible="{isbook}" />
 				</panel>
 			</smx_skill_entry_perks>
 		</append>
@@ -754,13 +820,13 @@
 		<append xpath="/controls">
 			<smx_skill_entry_books>
 				<panel depth="3" size="110,250" style="press, hover, scroll" controller="SkillEntry" disableautobackground="true" enabled_color="[iconColor]" disabled_color="[disabledLabelColor]" row_color="[lightGrey]" hover_color="[mediumGrey]" sound="[recipe_click]" tooltip="{groupname}" visible="{hasskill}">
-					<sprite name="backgroundMain" depth="3" pos="0,0" width="100%" height="100%" atlas="uiElements" sprite="smx_uipanel_background" color="{rowstatecolor}" type="sliced" flip="vertically" globalopacitymod="0.3" />
-					<sprite name="backgroundMain2" depth="2" pos="2,-52" size="96,67" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
+					<sprite name="backgroundMain" depth="3" pos="0,0" width="100%" height="100%" atlas="uiAtlas" sprite="smx_ui_background" color="{rowstatecolor}" type="sliced" flip="vertically" globalopacitymod="0.3" />
+					<sprite name="backgroundMain2" depth="2" pos="2,-52" size="96,67" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
 					<sprite name="groupIcon" depth="4" pos="5,15" size="100,100" atlas="ItemIconAtlas" sprite="{groupicon}" color="{statuscolor}" foregroundlayer="true" />
-					<label name="groupName" depth="2" pos="10,-150" width="90" text="{groupname}" color="{statuscolor}" font_size="16" font_face="AgencyB" crispness="Never" effect="outline" justify="center" overflow="shrinkcontent" />
-					<sprite name="SMXredArrow" depth="9" pos="82,-90" size="36,55" atlas="uiIcons" sprite="smx_ui_general_arrowmax_icon" color="[uiElementsRed]" flip="horizontally" rotation="-90" />
-					<sprite name="SMXsepLineBook" pos="10,-200" size="3,90" atlas="uiElements" sprite="smx_uipanel_separate_line" color="[uiElementsRed]" rotation="90" globalopacitymod="1.5" />
-					<label depth="2" pos="0,-210" width="110" text="{grouppointcost}" color="{statuscolor}" font_size="40" font_face="AgencyB" crispness="Never" effect="outline" justify="center" visible="{isbook}" />
+					<label name="groupName" depth="2" pos="10,-140" width="90" text="{groupname}" color="{statuscolor}" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" justify="center" overflow="shrinkcontent" />
+					<sprite name="SMXredArrow" depth="9" pos="82,-90" size="36,55" atlas="ItemIconAtlas" sprite="smx_ui_general_arrowmax_icon" color="[uiElementsRed]" flip="horizontally" rotation="-90" />
+					<sprite name="SMXsepLineBook" pos="10,-200" size="3,90" atlas="uiAtlas" sprite="smx_ui_separate_line" color="[uiElementsRed]" rotation="90" globalopacitymod="1.5" />
+					<label depth="2" pos="0,-200" width="110" text="{grouppointcost}" color="{statuscolor}" font_size="40" crispness="Never" effect="outline" effect_distance="1,1" justify="center" visible="{isbook}" />
 				</panel>
 			</smx_skill_entry_books>
 		</append>
@@ -771,11 +837,11 @@
 		<append xpath="/controls">
 			<smx_skill_perk_level>
 				<panel width="${width}" height="${height}" style="hover, scroll" controller="SkillPerkLevel" disableautobackground="true" color_bg_bought="140,130,100,255" color_bg_available="[lightGrey]" color_bg_locked="[darkGrey]" color_lbl_available="[white]" color_lbl_locked="[lightGrey]" color_lbl_nerfed="204,17,17" color_lbl_buffed="17,204,17" visible="{nothiddenbypager}">
-					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" color="{color_fg}" type="sliced" visible="{hasentry}" />
-					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" visible="{hasentry}" />
-					<sprite name="groupIcon" depth="4" pos="18,-18" size="40,40" atlas="uiIcons" sprite="{groupicon}" color="{color_fg}" visible="{hasentry}" />
+					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" color="{color_fg}" type="sliced" visible="{hasentry}" />
+					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" visible="{hasentry}" />
+					<sprite name="groupIcon" depth="4" pos="18,-18" size="40,40" atlas="ItemIconAtlas" sprite="{groupicon}" color="{color_fg}" visible="{hasentry}" />
 					<button name="btnBuy" depth="9" pos="68,-65" style="icon22px, press, hover" sprite="{buyicon}" defaultcolor="{buycolor}" manualcolors="true" pivot="center" tooltip="{buytooltip}" sound="[paging_click]" visible="{buyvisible}" />
-					<label depth="5" pos="37,-82" width="65" text="{level}" color="{color_fg}" font_size="24" font_face="AgencyB" crispness="Never" effect="outline" upper_case="false" pivot="center" justify="center" visible="{hasentry}" />
+					<label depth="5" pos="37,-82" width="65" text="{level}" color="{color_fg}" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" upper_case="false" pivot="center" justify="center" visible="{hasentry}" />
 				</panel>
 			</smx_skill_perk_level>
 		</append>
@@ -786,14 +852,128 @@
 		<append xpath="/controls">
 			<smx_skill_book_level>
 				<panel width="${width}" height="${height}" style="hover" controller="SkillBookLevel" disableautobackground="true" color_bg_bought="140,130,100,255" color_bg_available="[lightGrey]" color_bg_locked="[darkGrey]" color_lbl_available="[white]" color_lbl_locked="[lightGrey]" color_lbl_nerfed="204,17,17" color_lbl_buffed="17,204,17" >
-					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiElements" sprite="smx_uipanel_slot_frame" color="{color_fg}" type="sliced" visible="{hasentry}" />
-					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiElements" sprite="smx_uipanel_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" visible="{hasentry}" />
+					<sprite name="background" depth="3" pos="5,-5" size="65,65" atlas="uiAtlas" sprite="smx_ui_slot_frame" color="{color_fg}" type="sliced" visible="{hasentry}" />
+					<sprite name="background2" depth="2" pos="2,-42" size="59,41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" visible="{hasentry}" />
 					<sprite name="groupIcon" depth="4" pos="18,-18" size="40,40" atlas="ItemIconAtlas" sprite="{groupicon}" color="{color_fg}" visible="{hasentry}" />
 					<button name="btnBuy" depth="9" pos="68,-65" style="icon22px, press, hover" sprite="{buyicon}" defaultcolor="{buycolor}" manualcolors="true" pivot="center" tooltip="{buytooltip}" sound="[paging_click]" visible="{buyvisible}" />
-					<label depth="5" pos="37,-82" width="65" text="{level}" color="{color_fg}" font_size="24" font_face="AgencyB" crispness="Never" effect="outline" upper_case="false" pivot="center" justify="center" visible="{hasentry}" />
+					<label depth="5" pos="37,-82" width="65" text="{level}" color="{color_fg}" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" upper_case="false" pivot="center" justify="center" visible="{hasentry}" />
 					<sprite depth="5" pos="37,-86" style="icon30px" sprite="ui_game_symbol_perk" color="{color_fg}" pivot="center" visible="{iscomplete}" />
 				</panel>
 			</smx_skill_book_level>
+		</append>
+
+
+<!--	// SMX // Block Shape Selection Grid -->
+
+		<append xpath="/controls">
+			<smx_shape_stack>
+				<rect style="hover, scroll, smx_itemstack_85" collider_scale="1.0" controller="ShapeStack" sound_play_on_hover="[default_hover]">
+					<sprite name="backgroundMain" depth="2" pos="-2,-2" size="85,85" atlas="uiAtlas" sprite="smx_ui_icon_background" color="[uiElementsBG]" type="sliced" globalopacitymod="0.6" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
+					<sprite name="background" depth="3" pos="0,0" size="83,83" atlas="uiAtlas" sprite="smx_ui_slot_frame" type="sliced" fillcenter="false" globalopacity="true" visible="false" />
+					<sprite name="highlightOverlay" depth="2" pos="0,0" size="82,82" color="[darkGrey]" type="sliced" globalopacity="true" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
+					<sprite name="itemIcon" depth="4" pos="40,-39" size="80,80" atlas="ItemIconAtlas" sprite="{itemicon}" color="{iconcolor}" foregroundlayer="true" pivot="center" />
+					<label name="itemName" depth="12" pos="42,-35" size="0,0" text="" font_size="22" color="[hudElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" overflow="resizefreely" justify="center" pivot="center" above_soft_cursor="true" />
+				</rect>
+			</smx_shape_stack>
+		</append>
+
+
+<!--	// SMX // Player Stats Core -->
+
+		<append xpath="/controls">
+			<smx_player_stats_entry_1>
+				<rect height="33">
+					<label depth="3" pos="15,-3" width="220" font_size="20" text="${textcontent}" color="[uiElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" upper_case="false" justify="left" />
+					<label depth="3" pos="15,-3" width="220" font_size="20" text="${valuecontent}" color="[selectedColor]" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
+				</rect>
+			</smx_player_stats_entry_1>
+		</append>
+
+
+<!--	// SMX // Player Stats Generic -->
+
+		<append xpath="/controls">
+			<smx_player_stats_generic_entry_1>
+				<smx_player_stats_entry_1 textcontent="{playerstattitle${index}|once}" valuecontent="{playerstat${index}}" />
+			</smx_player_stats_generic_entry_1>
+		</append>
+
+
+<!--	// SMX // Map Waypoints -->
+
+		<append xpath="/controls">
+			<smx_waypoint_entry>
+				<rect size="65,65" controller="MapWaypointListEntry">
+					<sprite name="backgroundMain" depth="2" pos="5,-5" width="65" height="65" atlas="uiAtlas" sprite="smx_ui_slot_frame" type="sliced" fillcenter="false" />
+					<sprite name="background2" depth="2" pos="2,-42" width="59" height="41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
+					<sprite name="background" depth="1" pos="14,-46" width="45" height="25" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" on_hover="true" style="press,scroll" sound="[recipe_click]" globalopacitymod="0.1" />
+
+					<sprite depth="4" name="Icon" sprite="" size="28,28" pos="38,-38" pivot="center" foregroundlayer="true" />
+					<label name="Name" depth="4" pos="38,-18" width="60" height="20" text="" font_size="16" justify="center" pivot="center" crispness="Never" effect="outline" effect_distance="1,1" />
+
+					<sprite name="Tracking" depth="2" pos="5,-5" width="65" height="65" atlas="uiAtlas" sprite="smx_ui_slot_frame" foregroundlayer="true" color="[green]" />
+					<label depth="4" name="Distance" pos="35,-60" width="60" height="20" text="" font_size="16" justify="right" pivot="center"/>
+				</rect>
+			</smx_waypoint_entry>
+		</append>
+
+
+<!--	// SMX // Map Shared Waypoints -->
+
+		<append xpath="/controls">
+			<smx_invites_entry>
+				<rect size="65,65" controller="MapInvitesListEntry">
+					<sprite name="backgroundMain" depth="2" pos="5,-5" width="65" height="65" atlas="uiAtlas" sprite="smx_ui_slot_frame" type="sliced" fillcenter="false" />
+					<sprite name="background2" depth="2" pos="2,-42" width="59" height="41" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" />
+					<sprite name="background" depth="1" pos="14,-46" width="45" height="25" atlas="uiAtlas" sprite="smx_ui_slot_background" color="[uiElementsBG]" type="sliced" rotation="45" on_hover="true" style="press,scroll" sound="[recipe_click]" globalopacitymod="0.1" />
+
+					<sprite depth="4" name="Icon" sprite="" size="28,28" pos="38,-38" pivot="center" foregroundlayer="true" />
+					<label name="Name" depth="4" pos="38,-18" width="60" height="20" text="" font_size="16" justify="center" pivot="center" crispness="Never" effect="outline" effect_distance="1,1" />
+					<label depth="4" name="Distance" pos="35,-60" width="60" height="20" text="" font_size="16" justify="right" pivot="center"/>
+				</rect>
+			</smx_invites_entry>	
+		</append>
+
+
+<!--	// SMX // Choose Waypoint -->
+
+		<append xpath="/controls">
+			<smx_map_popup_sub_line>	
+				<rect depth="3" height="43">
+					<sprite name="SMXwaypointBG" depth="2" pos="20,-20" size="30,30" style="press" color="0,0,0,1" type="sliced" on_hover="true" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapSubPopupEntry" pivot="center" sound="[craft_click]" sound_play_on_hover="[default_hover]" globalopacitymod="0.1" />
+					<sprite name="SMXbuffBG" depth="3" pos="20,-20" size="60,60" atlas="uiAtlas" sprite="smx_hud_icon_background" color="[hudElementsBG]" pivot="center" globalopacitymod="0.8" />
+					<sprite name="Icon" depth="4" pos="8,-3" size="28,28" sprite="ui_game_symbol_map_waypoint_set" />
+				</rect>
+			</smx_map_popup_sub_line>
+		</append>
+
+
+<!--	// SMX // Waypoint Name Input -->
+
+		<append xpath="/controls">
+			<smx_waypoint_input>
+				<panel
+					controller="TextInput"
+					pos="0,0"
+					width="140"
+					height="30"
+					value="SEARCH"
+					active_text_color="[white]"
+					caret_color="[darkGrey]"
+					selection_color="[mediumGrey_half_alpha]"
+					character_limit="13"
+					validation="none"
+					backgroundcolor="[black]"
+					on_press="true"
+					style="select"
+					snapCursor="true"
+					virtual_keyboard_prompt="vkPromptWaypointName">
+
+					<sprite name="background" depth="0" pos="2,0" size="132,30" atlas="uiAtlas" sprite="smx_ui_searchinput_background" color="[black]" type="sliced" />
+					<sprite name="frame" depth="1" pos="1,0" size="134,30" atlas="uiAtlas" sprite="smx_ui_searchinput_frame" color="[white]" type="sliced" />
+					<label name="text" depth="1" pos="0,-2" font_size="22" color="[uiElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="topleft" />
+				</panel>
+			</smx_waypoint_input>
 		</append>
 
 </configs>

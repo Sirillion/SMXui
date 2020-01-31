@@ -65,38 +65,4 @@
 
 		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='AttributeLevel']/@name">PerkLevel</set>
 
-<!--	// SMX // Item Info Icons -->
-<!--
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[starts-with(@name, 'EntityDamage')][not(contains(@tags, 'secondary'))]/@title_key">smx_iteminfo_ndamage_icon</set>
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[starts-with(@name, 'EntityDamage')][contains(@tags, 'secondary')]/@title_key">smx_iteminfo_pdamage_icon</set>
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='dExDamageEntity']/@title_key">smx_iteminfo_explosione_icon</set>
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='dExDamageBlock']/@title_key">smx_iteminfo_explosionb_icon</set>
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='BlockDamage']/@title_key">smx_iteminfo_bdamage_icon</set>
-
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='dExRadius']/@title_key">smx_iteminfo_explosionradius_icon</set>
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='MagazineSize']/@title_key">smx_iteminfo_magsize_icon</set>
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='RoundsPerMinute']/@title_key">smx_iteminfo_rpm_icon</set>
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='RoundRayCount']/@title_key">smx_iteminfo_raycount_icon</set>
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='DamageFalloffRange']/@title_key">smx_iteminfo_dropoff_icon</set>
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='ProjectileVelocity']/@title_key">smx_iteminfo_pvelocity2_icon</set>
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='dRecoil']/@title_key">smx_iteminfo_recoil_icon</set>
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='WeaponHandling']/@title_key">smx_skills_runandgun_icon</set>
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='DegradationMax']/@title_key">smx_iteminfo_durability_icon</set>
-
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='dBleeding']/@title_key">smx_iteminfo_bleeding_icon</set>
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='MaxRange']/@title_key">smx_iteminfo_maxrange_icon</set>
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='AttacksPerMinute']/@title_key">smx_iteminfo_punchpmin_icon</set>
-		
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='dTargetArmor']/@title_key">smx_iteminfo_tarmor_icon</set>
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='dTargetPenetration']/@title_key">smx_iteminfo_penetration_icon</set>
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='DegradationPerUse']/@title_key">smx_iteminfo_degradation_icon</set>
-
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='HypothermalResist']/@title_key">smx_iteminfo_hypotermresist_icon</set>
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='HyperthermalResist']/@title_key">smx_iteminfo_hypertermresist_icon</set>
-
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='StaminaLoss']/@title_key">smx_iteminfo_staminaloss_icon</set>
-
-
-		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='$waterAmountAdd']/@title_key">smx_iteminfo_wateradd_icon</set>
--->
 </configs>
