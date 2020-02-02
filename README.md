@@ -1,11 +1,11 @@
 # SMXui - A18
 
 <p align="center">
-  <img src="https://i.imgur.com/F5FgOYM.jpg" width="700" title="SMXui - NPC Conversation - A18">
-  <img src="https://i.imgur.com/7u4ybzC.jpg" width="700" title="SMXui - Forge Workstation - A18">
-  <img src="https://i.imgur.com/Q2pkjXP.jpg" width="700" title="SMXui - Stash Buttons - A18">
-  <img src="https://i.imgur.com/F0sM9Fb.jpg" width="700" title="SMXui - Item Assembly - A18">
-  <img src="https://i.imgur.com/pgNHPRz.jpg" width="700" title="SMXui - Perks Screen - A18">
+  <img src="https://staticdelivery.nexusmods.com/mods/1059/images/22/22-1580463978-1874509795.jpeg" width="700" title="SMXui - NPC Conversation - A18">
+  <img src="https://staticdelivery.nexusmods.com/mods/1059/images/22/22-1580463744-1998419612.jpeg" width="700" title="SMXui - Forge Workstation - A18">
+  <img src="https://staticdelivery.nexusmods.com/mods/1059/images/22/22-1580465099-1740336722.jpeg" width="700" title="SMXui - Character Screen - A18">
+  <img src="https://staticdelivery.nexusmods.com/mods/1059/images/22/22-1580465193-52460857.jpeg" width="700" title="SMXui - Item Assembly - A18">
+  <img src="https://staticdelivery.nexusmods.com/mods/1059/images/22/22-1580465316-911150295.jpeg" width="700" title="SMXui - Perks Screen - A18">
 </p>
 
 **Description:**
