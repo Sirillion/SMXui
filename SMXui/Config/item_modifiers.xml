@@ -1,4 +1,4 @@
-<configs>
+<SMXui name="item_modifiers.xml">
 
 <!--	// SMX // Skill Window: Attribute > Perk Buff Change - "Cheat" Modifiers -->
 
@@ -6,4 +6,4 @@
 		<passive_effect name="PerkLevel" tags="attPerception,attStrength,attFortitude,attAgility,attIntellect" operation="base_set" value="10" />
 	</insertAfter>
 
-</configs>
+</SMXui>

@@ -1,22 +1,4 @@
-<configs>
-
-<!--	// SMX // Global Colors -->
-
-		<append xpath="/styles/global">
-			<style_entry name="uiElementsBG"						value="0,0,0" />
-			<style_entry name="uiElementsHDR"						value="175,30,25" />
-			<style_entry name="uiElementsBTN"						value="175,30,25" />
-			<style_entry name="uiElementsPerkCat"					value="96,96,96" />
-			<style_entry name="uiElementsRed"						value="175,30,25" />
-			<style_entry name="uiElementsIcon"						value="255,255,255" />
-
-			<style_entry name="uiElementsLBLPri"					value="255,255,255" />
-			<style_entry name="uiElementsLBLSec"					value="128,128,128" />
-
-			<style_entry name="uiElementsTipBRDR"					value="255,0,0" />
-			<style_entry name="uiElementsTipBG"						value="0,0,0" />
-		</append>
-
+<SMXui name="styles.xml">
 
 <!--	// SMX // Global Sounds -->
 
@@ -28,30 +10,30 @@
 <!--	// SMX // Defined Icon Colors -->
 
 		<append xpath="/styles">
-			<style name="smx_ui_icon_colors">
+			<style name="smxui_icon_colors_targeting">
 				<style_entry name="color" 							value="[white]" />				
 				<style_entry name="hovercolor" 						value="[mediumGrey]" />				
-				<style_entry name="selectedcolor" 					value="[lightGrey]" />				
+				<style_entry name="selectedcolor" 					value="[red]" />				
 			</style>
 		</append>
 
 
-<!--	// SMX // UI Panels -->
+<!--	// SMX // Window Designs -->
 
 		<append xpath="/styles">
-			<style name="smx_uipanel_background" 					type="sprite">
+			<style name="smxui_window_background" 					type="sprite">
 				<style_entry name="depth" 							value="2" />
 				<style_entry name="pos" 							value="0,0" />
 				<style_entry name="size" 							value="866,780" />
-				<style_entry name="atlas" 							value="uiAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_background" />
-				<style_entry name="color" 							value="[uiElementsBG]" />
+				<style_entry name="sprite" 							value="smxlib_ui_game_element_panel_background_dense" />
+				<style_entry name="color" 							value="[SMXlibElementsBG]" />
+				<style_entry name="globalopacity" 					value="false" />
 				<style_entry name="globalopacitymod" 				value="1.5" />
 			</style>
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_uipanel_header" 						type="panel">
+			<style name="smxui_window_header" 						type="panel">
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="0,5" />
 				<style_entry name="height" 							value="80" />
@@ -60,19 +42,18 @@
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_uipanel_header_background" 			type="sprite">
+			<style name="smxui_window_header_background" 			type="sprite">
 				<style_entry name="depth" 							value="4" />
 				<style_entry name="pos" 							value="0,0" />
 				<style_entry name="size" 							value="859,99" />
-				<style_entry name="atlas" 							value="uiAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_header" />
-				<style_entry name="color" 							value="[uiElementsHDR]" />
+				<style_entry name="sprite" 							value="smxlib_ui_game_element_panel_header" />
+				<style_entry name="color" 							value="[SMXlibElementsHDR]" />
 				<style_entry name="globalopacitymod" 				value="1.8" />
 			</style>
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_uipanel_title" 						type="label">
+			<style name="smxui_window_title" 						type="label">
 				<style_entry name="depth" 							value="6" />
 				<style_entry name="pos" 							value="0,-20" />
 				<style_entry name="size" 							value="0,0" />
@@ -88,61 +69,56 @@
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_uipanel_header_separation" 			type="sprite">
+			<style name="smxui_window_header_separation" 			type="sprite">
 				<style_entry name="depth" 							value="5" />
 				<style_entry name="pos" 							value="20,-65" />
 				<style_entry name="size" 							value="5,693" />
-				<style_entry name="atlas" 							value="uiAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_separate_line" />
-				<style_entry name="color" 							value="[white]" />
+				<style_entry name="sprite" 							value="smxlib_ui_element_vertical_separation_line" />
+				<style_entry name="color" 							value="[SMXlibElementsLine]" />
 				<style_entry name="rotation" 						value="90" />
-				<style_entry name="globalopacitymod" 				value="1.5" />
+				<style_entry name="globalopacitymod" 				value="1.2" />
 			</style>
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_uipanel_tabs_separation" 				type="sprite">
-				<style_entry name="depth" 							value="5" />
-				<style_entry name="pos" 							value="20,-117" />
-				<style_entry name="size" 							value="5,1210" />
-				<style_entry name="atlas" 							value="uiAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_separate_line" />
-				<style_entry name="color" 							value="[white]" />
-				<style_entry name="rotation" 						value="90" />
-				<style_entry name="globalopacitymod" 				value="1.5" />
-			</style>
-		</append>
-
-		<append xpath="/styles">
-			<style name="smx_uipanel_tabs" 							type="sprite">
+			<style name="smxui_window_tabs" 						type="sprite">
 				<style_entry name="depth" 							value="4" />
 				<style_entry name="pos" 							value="15,-65" />
 				<style_entry name="size" 							value="1230,52" />
-				<style_entry name="atlas" 							value="uiAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_tabs_background" />
-				<style_entry name="color" 							value="[uiElementsBG]" />
+				<style_entry name="sprite" 							value="smxlib_ui_game_element_tabs_background" />
+				<style_entry name="color" 							value="[SMXlibElementsBG]" />
 				<style_entry name="globalopacitymod" 				value="1.5" />
 			</style>
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_uipanel_accent" 						type="sprite">
+			<style name="smxui_window_tabs_separation" 				type="sprite">
+				<style_entry name="depth" 							value="5" />
+				<style_entry name="pos" 							value="20,-117" />
+				<style_entry name="size" 							value="5,1210" />
+				<style_entry name="sprite" 							value="smxlib_ui_element_vertical_separation_line" />
+				<style_entry name="color" 							value="[SMXlibElementsLine]" />
+				<style_entry name="rotation" 						value="90" />
+				<style_entry name="globalopacitymod" 				value="1.2" />
+			</style>
+		</append>
+
+		<append xpath="/styles">
+			<style name="smxui_window_accent" 						type="sprite">
 				<style_entry name="depth" 							value="4" />
 				<style_entry name="pos" 							value="0,0" />
 				<style_entry name="size" 							value="483,181" />
-				<style_entry name="atlas" 							value="uiAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_accent" />
+				<style_entry name="sprite" 							value="smxlib_ui_game_element_window_accent" />
 				<style_entry name="globalopacitymod" 				value="1.8" />
 			</style>
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_uipanel_accent_glow" 					type="sprite">
+			<style name="smxui_window_accent_glow" 					type="sprite">
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="0,0" />
 				<style_entry name="size" 							value="395,137" />
-				<style_entry name="atlas" 							value="uiAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_accent_glow" />
+				<style_entry name="sprite" 							value="smxlib_ui_game_element_window_accent_glow" />
 				<style_entry name="globalopacitymod" 				value="1.8" />
 			</style>
 		</append>
@@ -151,25 +127,23 @@
 <!--	// SMX // Conversation -->
 
 		<append xpath="/styles">
-			<style name="smx_ui_con_player_background" 				type="sprite">
+			<style name="smxui_talkPlayer_background" 				type="sprite">
 				<style_entry name="depth" 							value="2" />
 				<style_entry name="pos" 							value="0,0" />
 				<style_entry name="size" 							value="856,200" />
-				<style_entry name="atlas" 							value="uiAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_con_player_background" />
-				<style_entry name="color" 							value="[uiElementsBG]" />
+				<style_entry name="sprite" 							value="smxlib_ui_game_element_conversation_player_background" />
+				<style_entry name="color" 							value="[SMXlibElementsBG]" />
 				<style_entry name="globalopacitymod" 				value="0.8" />
 			</style>
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_ui_con_trader_background" 				type="sprite">
+			<style name="smxui_talkNPC_background"	 				type="sprite">
 				<style_entry name="depth" 							value="2" />
 				<style_entry name="pos" 							value="0,0" />
 				<style_entry name="size" 							value="856,100" />
-				<style_entry name="atlas" 							value="uiAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_con_trader_background" />
-				<style_entry name="color" 							value="[uiElementsBG]" />
+				<style_entry name="sprite" 							value="smxlib_ui_game_element_conversation_trader_background" />
+				<style_entry name="color" 							value="[SMXlibElementsBG]" />
 				<style_entry name="globalopacitymod" 				value="0.8" />
 			</style>
 		</append>
@@ -178,30 +152,28 @@
 <!--	// SMX // Item Preview -->
 
 		<append xpath="/styles">
-			<style name="smx_item_preview_frame" 					type="sprite">
+			<style name="smxui_item_preview_frame" 					type="sprite">
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="40,-2" />
 				<style_entry name="size" 							value="143,143" />
-				<style_entry name="atlas" 							value="uiAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_slot_frame" />
+				<style_entry name="sprite" 							value="smxlib_ui_element_slot_frame_wide" />
 				<style_entry name="color" 							value="[mediumGrey]" />
 			</style>
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_item_preview_background" 				type="sprite">
+			<style name="smxui_item_preview_background" 			type="sprite">
 				<style_entry name="depth" 							value="2" />
 				<style_entry name="pos" 							value="30,-89" />
 				<style_entry name="size" 							value="138,94" />
-				<style_entry name="atlas" 							value="uiAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_slot_background" />
+				<style_entry name="sprite" 							value="smxlib_ui_element_slot_background" />
 				<style_entry name="color" 							value="[mediumGrey]" />
 				<style_entry name="rotation" 						value="45" />
 			</style>
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_item_preview_icon" 					type="sprite">
+			<style name="smxui_item_preview_icon" 					type="sprite">
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="116,-77" />
 				<style_entry name="size" 							value="110,110" />
@@ -212,7 +184,7 @@
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_buff_preview_icon" 					type="sprite">
+			<style name="smxui_buff_preview_icon" 					type="sprite">
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="116,-77" />
 				<style_entry name="size" 							value="110,110" />
@@ -225,23 +197,21 @@
 <!--	// SMX // Crafting Info Window -->
 
 		<append xpath="/styles">
-			<style name="smx_crafting_info_window" 					type="window">
+			<style name="smxui_crafting_info_window" 				type="window">
 				<style_entry name="width" 							value="450" />
 				<style_entry name="height" 							value="760" />
 				<style_entry name="valid_color"						value="[green]" />
 				<style_entry name="invalid_color"					value="[red]" />
-				<style_entry name="atlas"							value="ItemIconAtlas" />
-				<style_entry name="valid_sprite"					value="smx_ui_general_checkmark_icon" />
-				<style_entry name="invalid_sprite"					value="smx_ui_general_cancel_icon" />
+				<style_entry name="valid_sprite"					value="ui_game_symbol_check" />
+				<style_entry name="invalid_sprite"					value="ui_game_symbol_x" />
 			</style>
 		</append>
-
 
 
 <!--	// SMX // Paging Windows -->
 
 		<append xpath="/styles">
-			<style name="smx_paging_windows" 						type="window">
+			<style name="smxui_paging_windows" 						type="window">
 				<style_entry name="depth" 							value="1" />
 				<style_entry name="pos" 							value="-300,-9" />
 				<style_entry name="size" 							value="600,43" />
@@ -249,19 +219,18 @@
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_paging_windows_background" 			type="sprite">
+			<style name="smxui_paging_windows_background" 			type="sprite">
 				<style_entry name="depth" 							value="0" />
 				<style_entry name="pos" 							value="-90,12" />
 				<style_entry name="size" 							value="689,145" />
-				<style_entry name="atlas" 							value="uiAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_paging_background" />
-				<style_entry name="color" 							value="[uiElementsBG]" />
-				<style_entry name="globalopacitymod"				value="1.2" />
+				<style_entry name="sprite" 							value="smxlib_ui_game_element_compass_background" />
+				<style_entry name="color" 							value="[SMXlibElementsBG]" />
+				<style_entry name="globalopacitymod"				value="1.5" />
 			</style>
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_paging_windows_title"					type="label">
+			<style name="smxui_paging_windows_title"				type="label">
 				<style_entry name="name" 							value="lblWindowName" />
 				<style_entry name="depth" 							value="4" />
 				<style_entry name="pos" 							value="300,-10" />
@@ -276,13 +245,12 @@
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_paging_window_icon_crafting" 			type="button">
+			<style name="smxui_paging_window_icon_crafting" 		type="button">
 				<style_entry name="name" 							value="Crafting" />
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="41,-11" />
-				<style_entry name="size" 							value="30,30" />
-				<style_entry name="atlas" 							value="ItemIconAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_crafting_basics_icon" />
+				<style_entry name="size" 							value="32,32" />
+				<style_entry name="sprite" 							value="ui_game_symbol_hammer" />
 				<style_entry name="tooltip" 						value="CRAFTING" />
 				<style_entry name="tooltip_key" 					value="xuiCrafting" />
 				<style_entry name="hoverscale" 						value="1.25" />
@@ -293,13 +261,12 @@
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_paging_window_icon_character" 			type="button">
+			<style name="smxui_paging_window_icon_character" 		type="button">
 				<style_entry name="name" 							value="Character" />
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="91,-11" />
-				<style_entry name="size" 							value="44,42" />
-				<style_entry name="atlas" 							value="ItemIconAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_paging_player_icon" />
+				<style_entry name="size" 							value="32,32" />
+				<style_entry name="sprite" 							value="ui_game_symbol_character" />
 				<style_entry name="tooltip" 						value="CHARACTER" />
 				<style_entry name="tooltip_key" 					value="xuiCharacter" />
 				<style_entry name="hoverscale" 						value="1.25" />
@@ -310,13 +277,12 @@
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_paging_window_icon_map" 				type="button">
+			<style name="smxui_paging_window_icon_map" 				type="button">
 				<style_entry name="name" 							value="Map" />
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="141,-11" />
-				<style_entry name="size" 							value="40,40" />
-				<style_entry name="atlas" 							value="ItemIconAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_paging_map_icon" />
+				<style_entry name="size" 							value="32,32" />
+				<style_entry name="sprite" 							value="ui_game_symbol_map" />
 				<style_entry name="tooltip" 						value="MAP" />
 				<style_entry name="tooltip_key" 					value="xuiMap" />
 				<style_entry name="hoverscale" 						value="1.25" />
@@ -327,13 +293,12 @@
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_paging_window_icon_skills" 			type="button">
+			<style name="smxui_paging_window_icon_skills" 			type="button">
 				<style_entry name="name" 							value="Skills" />
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="191,-11" />
-				<style_entry name="size" 							value="40,40" />
-				<style_entry name="atlas" 							value="ItemIconAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_paging_skills_icon" />
+				<style_entry name="size" 							value="32,32" />
+				<style_entry name="sprite" 							value="ui_game_symbol_skills" />
 				<style_entry name="tooltip" 						value="SKILLS" />
 				<style_entry name="tooltip_key" 					value="xuiSkills" />
 				<style_entry name="hoverscale" 						value="1.25" />
@@ -344,13 +309,12 @@
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_paging_window_icon_quests" 			type="button">
+			<style name="smxui_paging_window_icon_quests" 			type="button">
 				<style_entry name="name" 							value="Quests" />
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="406,-11" />
-				<style_entry name="size" 							value="30,30" />
-				<style_entry name="atlas" 							value="ItemIconAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_paging_quests_icon" />
+				<style_entry name="size" 							value="32,32" />
+				<style_entry name="sprite" 							value="ui_game_symbol_quest" />
 				<style_entry name="tooltip" 						value="QUESTS" />
 				<style_entry name="tooltip_key" 					value="xuiQuests" />
 				<style_entry name="hoverscale" 						value="1.25" />
@@ -361,13 +325,12 @@
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_paging_window_icon_journal" 			type="button">
+			<style name="smxui_paging_window_icon_journal" 			type="button">
 				<style_entry name="name" 							value="Journal" />
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="456,-11" />
 				<style_entry name="size" 							value="32,32" />
-				<style_entry name="atlas" 							value="ItemIconAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_paging_journal_icon" />
+				<style_entry name="sprite" 							value="ui_game_symbol_pen" />
 				<style_entry name="tooltip" 						value="JOURNAL" />
 				<style_entry name="tooltip_key" 					value="xuiJournal" />
 				<style_entry name="hoverscale" 						value="1.25" />
@@ -378,13 +341,12 @@
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_paging_window_icon_players" 			type="button">
+			<style name="smxui_paging_window_icon_players" 			type="button">
 				<style_entry name="name" 							value="Players" />
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="506,-11" />
-				<style_entry name="size" 							value="42,42" />
-				<style_entry name="atlas" 							value="ItemIconAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_paging_players_icon" />
+				<style_entry name="size" 							value="32,32" />
+				<style_entry name="sprite" 							value="ui_game_symbol_players" />
 				<style_entry name="tooltip" 						value="PLAYERS" />
 				<style_entry name="tooltip_key" 					value="xuiPlayers" />
 				<style_entry name="hoverscale" 						value="1.25" />
@@ -395,13 +357,12 @@
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_paging_window_icon_creative" 			type="button">
+			<style name="smxui_paging_window_icon_creative" 		type="button">
 				<style_entry name="name" 							value="Creative" />
 				<style_entry name="depth" 							value="3" />
 				<style_entry name="pos" 							value="556,-11" />
 				<style_entry name="size" 							value="32,32" />
-				<style_entry name="atlas" 							value="ItemIconAtlas" />
-				<style_entry name="sprite" 							value="smx_ui_paging_creative_icon" />
+				<style_entry name="sprite" 							value="ui_game_symbol_lightbulb" />
 				<style_entry name="tooltip" 						value="CREATIVE" />
 				<style_entry name="tooltip_key" 					value="xuiCreative" />
 				<style_entry name="hoverscale" 						value="1.25" />
@@ -412,10 +373,46 @@
 		</append>
 
 
-<!--	// SMX // Backpack Layout -->
+<!--	// SMX // Backpack & Looting ItemStack Layouts -->
 
 		<append xpath="/styles">
-			<style name="smx_backpack_itemstack_65">
+			<style name="smxui_backpack_itemstack_72">
+				<style_entry name="select_color" 					value="[lightGrey]"/>
+				<style_entry name="press_color" 					value="[white]"/>
+				<style_entry name="final_pressed_color" 			value="[lightGrey]"/>
+				<style_entry name="background_color" 				value="[darkGrey]"/>
+				<style_entry name="highlight_color" 				value="[white]"/>
+				<style_entry name="holding_color" 					value="[white]"/>
+				<style_entry name="width" 							value="72"/>
+				<style_entry name="height" 							value="72"/>
+				<style_entry name="hover_icon_grow" 				value="1.5"/>
+				<style_entry name="on_press" 						value="true"/>
+				<style_entry name="sound_volume" 					value="0.75"/>
+				<style_entry name="pickup_sound" 					value="[pickup_click]"/>
+				<style_entry name="place_sound" 					value="[place_click]"/>
+			</style>
+		</append>
+
+		<append xpath="/styles">
+			<style name="smxui_crafting_itemstack_72">
+				<style_entry name="select_color" 					value="[lightGrey]"/>
+				<style_entry name="press_color" 					value="[white]"/>
+				<style_entry name="final_pressed_color" 			value="[lightGrey]"/>
+				<style_entry name="background_color" 				value="[darkGrey]"/>
+				<style_entry name="highlight_color" 				value="[white]"/>
+				<style_entry name="holding_color" 					value="[white]"/>
+				<style_entry name="width" 							value="72"/>
+				<style_entry name="height" 							value="72"/>
+				<style_entry name="hover_icon_grow" 				value="1.5"/>
+				<style_entry name="on_press" 						value="true"/>
+				<style_entry name="sound_volume" 					value="0.75"/>
+				<style_entry name="pickup_sound" 					value="[pickup_click]"/>
+				<style_entry name="place_sound" 					value="[place_click]"/>
+			</style>
+		</append>
+
+		<append xpath="/styles">
+			<style name="smxui_lootwindow_itemstack_65">
 				<style_entry name="select_color" 					value="[lightGrey]"/>
 				<style_entry name="press_color" 					value="[white]"/>
 				<style_entry name="final_pressed_color" 			value="[lightGrey]"/>
@@ -436,9 +433,13 @@
 <!--	// SMX // Item Stacks Layout -->
 
 		<append xpath="/styles">
-			<style name="smx_itemstack_50">
+			<style name="smxui_itemstack_50">
+				<style_entry name="select_color" 					value="[lightGrey]"/>
+				<style_entry name="press_color" 					value="[white]"/>
+				<style_entry name="final_pressed_color" 			value="[lightGrey]"/>
 				<style_entry name="background_color" 				value="[darkGrey]"/>
-				<style_entry name="highlight_color" 				value="[mediumGrey]"/>
+				<style_entry name="highlight_color" 				value="[white]"/>
+				<style_entry name="holding_color" 					value="[white]"/>
 				<style_entry name="width" 							value="50"/>
 				<style_entry name="height" 							value="50"/>
 				<style_entry name="hover_icon_grow" 				value="1.5"/>
@@ -450,7 +451,7 @@
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_itemstack_65">
+			<style name="smxui_itemstack_65">
 				<style_entry name="background_color" 				value="[darkGrey]"/>
 				<style_entry name="highlight_color" 				value="[mediumGrey]"/>
 				<style_entry name="width" 							value="65"/>
@@ -464,11 +465,25 @@
 		</append>
 
 		<append xpath="/styles">
-			<style name="smx_itemstack_85">
+			<style name="smxui_itemstack_72">
+				<style_entry name="background_color" 				value="[darkGrey]"/>
+				<style_entry name="highlight_color" 				value="[mediumGrey]"/>
+				<style_entry name="width" 							value="72"/>
+				<style_entry name="height" 							value="72"/>
+				<style_entry name="hover_icon_grow" 				value="1.5"/>
+				<style_entry name="on_press" 						value="true"/>
+				<style_entry name="sound_volume" 					value="0.75"/>
+				<style_entry name="pickup_sound" 					value="[pickup_click]"/>
+				<style_entry name="place_sound" 					value="[place_click]"/>
+			</style>
+		</append>
+
+		<append xpath="/styles">
+			<style name="smxui_itemstack_85">
 				<style_entry name="select_color"					value="[lightGrey]" />
 				<style_entry name="press_color" 					value="[white]" />
 				<style_entry name="final_pressed_color" 			value="[lightGrey]" />
-				<style_entry name="background_color" 				value="[uiElementsRed]" />
+				<style_entry name="background_color" 				value="[SMXlibElementsAccentColor1]" />
 				<style_entry name="highlight_color" 				value="[white]" />
 				<style_entry name="holding_color" 					value="[white]" />
 				<style_entry name="width" 							value="82" />
@@ -481,4 +496,4 @@
 			</style>
 		</append>
 
-</configs>
+</SMXui>

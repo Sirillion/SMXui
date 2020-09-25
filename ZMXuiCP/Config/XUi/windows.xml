@@ -1,0 +1,47 @@
+<ZMXuiCP name="windows.xml">
+
+<!--	// SMX // Backpack Window -->
+
+		<remove xpath="/windows/window[@name='windowBackpack']" />
+
+		<append xpath="/windows">
+			<window name="windowBackpack" depth="1" size="470,750" anchor="CenterCenter" panel="Right" controller="BackpackWindow" cursor_area="true">
+
+				<panel name="SMXuiWindowBackpack" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smxui_window_header">
+						<sprite name="SMXuiWindowBackground" size="470,750" style="smxui_window_background" />
+						<sprite name="SMXuiWindowHeader" size="470,80" style="smxui_window_header_background" />
+						<sprite name="SMXuiSeparationLineHeader" size="5,430" style="smxui_window_header_separation" />
+						<label name="windowName" pos="235,-38" size="470,80" style="smxui_window_title" text="INVENTORY" text_key="xuiInventory" overflow="ShrinkContent" />
+						<sprite name="SMXuiVerticalDivider" depth="4" pos="390,-90" size="5,620" style="smxui_window_header_separation" color="[white]" rotation="360" />
+
+						<rect name="containerControl" depth="3" pos="425,0" size="60,600" controller="ContainerStandardControls" move_start_bottom_left="true">
+							<button name="btnMoveFillStacks" depth="3" pos="0,-140" size="40,40" style="press, hover, smxlib_icon_colors" sprite="smxlib_ui_game_symbol_dumpfill" pivot="center" tooltip_key="lblStashFillStacks" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
+							<button name="btnMoveSmart" depth="3" pos="0,-225" size="40,40" style="press, hover, smxlib_icon_colors" sprite="smxlib_ui_game_symbol_dumpsmart" pivot="center" tooltip_key="lblStashSmart" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
+							<button name="btnMoveAll" depth="3" pos="0,-310" size="40,40" style="press, hover, smxlib_icon_colors" sprite="smxlib_ui_game_symbol_dumpall" pivot="center" tooltip_key="lblStashAll" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
+
+							<smxui_stashbuttons_combobox name="cbxLockedSlots" pos="5,-400" type="ComboBoxInt" value_min="0" value_max="45" value_wrap="true" value_increment="1" tooltip_key="xuiStashLockedSlots" visible="{lootingorvehiclestorage}" />
+
+							<button name="btnClearInventory" depth="3" pos="0,-550" size="40,40" style="press, hover, smxlib_icon_colors" sprite="ui_game_symbol_trash" pivot="center" tooltip_key="lblClearInventory" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{creativewindowopen}" />
+							<button name="btnSort" depth="3" pos="0,-620" size="40,40" style="press, hover, smxlib_icon_colors" sprite="smxlib_ui_game_symbol_sort" pivot="center" tooltip_key="lblSortContainer" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+						</rect>
+					</panel>
+
+					<panel name="content" depth="1" pos="30,-60" size="630,730" disableautobackground="true">
+						<grid name="inventory" depth="10" pos="43,-43" rows="9" cols="5" cell_width="68" cell_height="68" controller="Backpack" repeat_content="true" pivot="topleft">
+							<smxui_backpack_itemstack_72 name="0" />
+						</grid>
+					</panel>
+
+					<panel name="SMXuiCurrency" depth="3" pos="0,-680" height="43" disableautobackground="true">
+						<sprite name="costIcon" depth="3" pos="75,-25" size="26,26" sprite="ui_game_symbol_coin" color="[white]" pivot="center" forgroundlayer="true" />
+						<sprite name="background" depth="2" pos="107,-9" size="268,30" sprite="smxlib_ui_game_element_searchinput_background" color="[black]" type="sliced" />
+						<sprite name="frame" depth="3" pos="107,-9" size="270,30" sprite="smxlib_ui_game_element_searchinput_frame" color="[white]" type="sliced" />
+						<label name="currency" depth="3" pos="68,-9" size="300,28" text="{currencyamount}" color="[lightGrey]" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
+					</panel>
+				</panel>
+			</window>
+		</append>
+
+</ZMXuiCP>

@@ -1,68 +1,8 @@
-<configs>
-
-<!--	// SMX // Basic Crafting Categories -->
-
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='']/crafting_category[@name='Basics']/@icon">smx_ui_crafting_basics_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='']/crafting_category[@name='Building']/@icon">smx_ui_crafting_building_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='']/crafting_category[@name='Resources']/@icon">smx_ui_crafting_resources_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='']/crafting_category[@name='Ammo/Weapons']/@icon">smx_ui_crafting_weapons_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='']/crafting_category[@name='Tools/Traps']/@icon">smx_ui_crafting_tools_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='']/crafting_category[@name='Food/Cooking']/@icon">smx_ui_crafting_cooking_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='']/crafting_category[@name='Science']/@icon">smx_ui_crafting_science_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='']/crafting_category[@name='Clothing']/@icon">smx_ui_crafting_clothing_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='']/crafting_category[@name='Decor/Miscellaneous']/@icon">smx_ui_crafting_decor_icon</set>
-
-
-<!--	// SMX // Workbench Crafting Categories -->
-
-		<!--set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='workbench']/crafting_category[@name='Basics']/@icon">smx_ui_crafting_basics_icon</set-->
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='workbench']/crafting_category[@name='Building']/@icon">smx_ui_crafting_building_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='workbench']/crafting_category[@name='Resources']/@icon">smx_ui_crafting_resources_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='workbench']/crafting_category[@name='Ammo/Weapons']/@icon">smx_ui_crafting_weapons_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='workbench']/crafting_category[@name='Mods']/@icon">smx_ui_crafting_mods</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='workbench']/crafting_category[@name='Tools/Traps']/@icon">smx_ui_crafting_tools_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='workbench']/crafting_category[@name='Food/Cooking']/@icon">smx_ui_crafting_cooking_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='workbench']/crafting_category[@name='Science']/@icon">smx_ui_crafting_science_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='workbench']/crafting_category[@name='Clothing']/@icon">smx_ui_crafting_clothing_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='workbench']/crafting_category[@name='Decor/Miscellaneous']/@icon">smx_ui_crafting_decor_icon</set>
-
-
-<!--	// SMX // Tablesaw Crafting Categories -->
-
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='tableSaw']/crafting_category[@name='Building']/@icon">smx_ui_crafting_building_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='tableSaw']/crafting_category[@name='Decor/Miscellaneous']/@icon">smx_ui_crafting_decor_icon</set>
-
-
-<!--	// SMX // Cement Mixer Crafting Categories -->
-
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='cementMixer']/crafting_category[@name='']/@icon">smx_ui_crafting_cementmixer_icon</set>
-
-
-<!--	// SMX // Campfire Crafting Categories -->
-
-		<!--set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='campfire']/crafting_category[@name='']/@icon">smx_ui_crafting_campfire_icon</set-->
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='campfire']/crafting_category[@name='CFFood/Cooking']/@icon">smx_ui_crafting_food_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='campfire']/crafting_category[@name='CFDrink/Cooking']/@icon">smx_ui_crafting_drink_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='campfire']/crafting_category[@name='CFChemicals']/@icon">smx_ui_crafting_chemicals_icon</set>
-
-
-<!--	// SMX // Forge Crafting Categories -->
-
-		<!--set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='forge']/crafting_category[@name='']/@icon">smx_crafting_campfire_icon</set-->
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='forge']/crafting_category[@name='Resources']/@icon">smx_ui_crafting_resources_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='forge']/crafting_category[@name='Building']/@icon">smx_ui_crafting_building_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='forge']/crafting_category[@name='Ammo/Weapons']/@icon">smx_ui_crafting_weapons_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='forge']/crafting_category[@name='Tools/Traps']/@icon">smx_ui_crafting_traps_icon</set>
-
-
-<!--	// SMX // Chemistry Station Crafting Categories -->
-
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='chemistryStation']/crafting_category[@name='Chemicals']/@icon">smx_ui_crafting_science_icon</set>
-		<set xpath="/ui_display_info/crafting_category_display/crafting_category_list[@display_type='chemistryStation']/crafting_category[@name='Medical']/@icon">smx_ui_crafting_medical_icon</set>
+<SMXui name="ui_display.xml">
 
 
 <!--	// SMX // Skill Window: Attribute > Perk Buff Change - Buff Item Descriptions -->
 
 		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='AttributeLevel']/@name">PerkLevel</set>
 
-</configs>
+</SMXui>

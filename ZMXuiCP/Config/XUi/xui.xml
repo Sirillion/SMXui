@@ -1,0 +1,417 @@
+<ZMXuiCP name="xui.xml">
+
+<!--	// MODLET:			ZMXuiCP
+
+		// EAC:				Friendly
+
+		// VERSION:			19.1.Release1
+
+		// BUILD:			A19.1
+
+		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
+							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
+							and you can verify this by looking at the date of the standard files when an update have occured.
+
+		// MOD DESCRIPTION:	The purpose of this modlet is to ensure that modlets that load AFTER SMXui will achieve a higher chance for compatibility and get
+							patched to fit the SMXui design. Please note that this modlet is also mandatory for SMXui to work as I did not want to add
+							redundant code and rather have it all handled within this one modlet.
+
+		// DEPENDENCIES:	SMXui, SMXlib.
+
+		// TERMS OF USE:	You are allowed to use this modlet as is for your own personal use and/or on a server you run and/or administrate.
+		
+							You are under no circumstance allowed to distribute any SMX and/or ZMX branded modlets without written consent from the developer.
+
+							If you wish to distribute SMX and/or ZMX branded modlets as part of your own project and consent have been given you are required
+							to do so in such a way so that all the files of the SMX and/or ZMX modlet or modlets in question remain unaltered and you cannot
+							under any circumstance claim credit for creating the modlet or modlets or any of the files provided with it/them.
+							
+							If consent is given you are required to make the changes as a new modlet that injects into the modlet in question and
+							keeping load order in mind it is to be named so that it loads AFTER the original modlet. The original modlet shall be distributed
+							as is with no change to its files what so ever.
+
+							If consent is given it is only given on a case to case basis and those that receive consent cannot pass that consent on to another
+							party or project. Nor will the consent pass on to other creators that opt to include consented work into their project.
+
+							You are not allowed to use any of the assets bundled with SMX and/or ZMX branded modlets in other projects. This restriction
+							applies to all files that the SMX and/or ZMX modlets consist of.
+
+							You are required to seek special consent from the developer should you wish to make changes to any asset files provided with the
+							SMX and/or ZMX branded modlets.
+
+							You are required to inform the developer when your project that contains any SMX and/or ZMX modlet or modlets have been	made
+							available to the public.
+
+		// CREDITS:			Sirillion (developer, author)
+-->
+
+<!--	// SMX // Tip Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='tipWindow']">
+			<window name="windowTip" />
+		</set>
+
+
+<!--	// SMX // Tooltip Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='toolTip']">
+			<window name="toolTip" />
+			<window name="popupMenu" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='toolTip']" name="actionSet">false</setattribute>
+
+
+<!--	// SMX // Drag & Drop Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='dragAndDrop']">
+			<window name="dragAndDropItemStack" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='dragAndDrop']" name="actionSet">false</setattribute>
+
+
+<!--	// SMX // Window Paging Header -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='windowpaging']">
+			<window name="windowPagingHeader" anchor="CenterTop" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='windowpaging']" name="actionSet">false</setattribute>
+
+
+<!--	// SMX // Conversation Dialog Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='dialog']">
+			<window name="windowRespondentName" anchor="CenterTop" />
+			<window name="windowStatement" anchor="CenterTop" />
+			<window name="windowResponses" anchor="CenterBottom" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='dialog']" name="controller">XUiC_DialogWindowGroup</setattribute>
+
+
+<!--	// SMX // Quest Offer Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='questOffer']">
+			<window name="windowQuestOffer" />
+		</set>
+
+
+<!--	// SMX // Backpack Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='backpack']">
+			<window name="itemInfoPanel" />
+			<window name="emptyInfoPanel" />
+			<window name="windowBackpack" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='backpack']" name="actionSet">false</setattribute>
+
+
+<!--	// SMX // Loot Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='looting']">
+			<window name="windowLooting" />
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+			<window name="windowNonPagingHeader" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='looting']" name="left_panel_valign_top">false</setattribute>
+		<setattribute xpath="/xui//window_group[@name='looting']" name="controller">XUiC_LootWindowGroup</setattribute>
+
+
+<!--	// SMX // Crafting Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='crafting']">
+			<window name="windowCraftingList" />
+			<window name="craftingInfoPanel" />
+			<window name="windowCraftingQueue" />
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='crafting']" name="controller">XUiC_CraftingWindowGroup</setattribute>
+
+
+<!--	// SMX // Workstation Compatibility Measures -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'orkstation') and not (contains (@name, 'orge'))]/window[1]/@name">windowWorkstationCraftingList</set>
+		<set xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'orkstation') and (contains (@name, 'orge'))]/window[1]/@name">windowCraftingListForge</set>
+		<set xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'orkstation')]/window[3]/@name">windowWorkstationCraftingQueue</set>
+
+		<remove xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'orkstation')]/window[@name='windowOutput']" />
+
+		<insertAfter xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'orkstation')]/window[3]">
+			<window name="windowOutputWorkStation" />
+		</insertAfter>
+
+		<insertAfter xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'orkstation') and (contains (@name, 'hemi'))]/window[4]">
+			<window name="SMXuiEmptyFillerWindow10px" />
+		</insertAfter>
+
+
+<!--	// SMX // Campfire Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_campfire']">
+			<window name="windowWorkstationCraftingList" />
+			<window name="craftingInfoPanel" />
+			<window name="windowWorkstationCraftingQueue" />
+			<window name="windowOutputWorkStation" />
+			<window name="windowToolsCampfire" />
+			<window name="windowFuel" />
+			<window name="windowNonPagingHeader" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='workstation_campfire']" name="controller">XUiC_WorkstationWindowGroup</setattribute>
+
+
+<!--	// SMX // Forge Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_forge']">
+			<window name="windowCraftingListForge" />
+			<window name="craftingInfoPanel" />
+			<window name="windowWorkstationCraftingQueue" />
+			<window name="windowOutputWorkStation" />
+			<window name="windowToolsForge" />
+			<window name="windowFuel" />
+			<window name="windowForgeInput" />
+			<window name="windowNonPagingHeader" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='workstation_forge']" name="controller">XUiC_WorkstationWindowGroup</setattribute>
+
+
+<!--	// SMX // Cement Mixer Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_cementMixer']">
+			<window name="windowWorkstationCraftingList" />
+			<window name="craftingInfoPanel" />
+			<window name="windowWorkstationCraftingQueue" />
+			<window name="windowOutputWorkStation" />
+			<window name="windowNonPagingHeader" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='workstation_cementMixer']" name="controller">XUiC_WorkstationWindowGroup</setattribute>
+
+
+<!--	// SMX // Workbench Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_workbench']">
+			<window name="windowWorkstationCraftingList" />
+			<window name="craftingInfoPanel" />
+			<window name="windowWorkstationCraftingQueue" />
+			<window name="windowOutputWorkStation" />
+			<window name="windowNonPagingHeader" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='workstation_workbench']" name="controller">XUiC_WorkstationWindowGroup</setattribute>
+
+
+<!--	// SMX // Chemistry Station Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_chemistryStation']">
+			<window name="windowWorkstationCraftingList" />
+			<window name="craftingInfoPanel" />
+			<window name="windowWorkstationCraftingQueue" />
+			<window name="windowOutputWorkStation" />
+			<window name="SMXuiEmptyFillerWindow10px" />
+			<window name="windowFuel" />
+			<window name="windowNonPagingHeader" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='workstation_chemistryStation']" name="controller">XUiC_WorkstationWindowGroup</setattribute>
+
+
+<!--	// SMX // Trader Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='trader']">
+			<window name="windowTrader" />
+			<window name="windowNonPagingHeader" />
+			<window name="serviceInfoPanel" />
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='trader']" name="controller">XUiC_TraderWindowGroup</setattribute>
+
+
+<!--	// SMX // Assemble Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='assemble']">
+			<window name="windowAssemble" />
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+			<window name="windowNonPagingHeader" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='assemble']" name="controller">XUiC_AssembleWindowGroup</setattribute>
+
+
+<!--	// SMX // Creative Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='creative']">
+			<window name="windowCreative" />
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='creative']" name="controller">XUiC_CreativeWindowGroup</setattribute>
+
+
+<!--	// SMX // Journal Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='journal']">
+			<window name="windowJournalList" />
+			<window name="windowJournalEntryDescription" />
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='journal']" name="controller">XUiC_JournalWindowGroup</setattribute>
+
+
+<!--	// SMX // Skill Windows -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='skills']">
+			<window name="windowSkillList" />
+			<window name="windowSkillInfo" />
+			<window name="windowSkillAttributeInfo" />
+			<window name="windowSkillSkillInfo" />
+			<window name="windowSkillPerkInfo" />
+			<window name="windowSkillBookInfo" />
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='skills']" name="controller">XUiC_SkillWindowGroup</setattribute>
+
+
+<!--	// SMX // Map Windows -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='map']">
+			<window name="mapTrackingPopup" />
+			<window name="mapAreaSetWaypoint" />
+			<window name="mapAreaChooseWaypoint" />
+			<window name="mapAreaEnterWaypointName" />
+			<window name="mapArea" />
+			<window name="mapTracking" />
+			<window name="mapInvites" />
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</set>
+
+
+<!--	// SMX // Sign Edit -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='sign']">
+			<window name="windowSignEdit" />
+		</set>
+
+
+<!--	// SMX // Keypad Edit -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='keypadEdit']">
+			<window name="windowKeypadEdit" />
+		</set>
+
+
+<!--	// SMX // Shape Selector -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='shapes']">
+			<window name="windowShapeBlocks" />
+			<window name="windowShapeInfo" />
+		</set>
+
+
+<!--	// SMX // Character Frame Window -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='character']">
+			<window name="CharacterFrameWindow" />
+			<window name="buffInfoPanel" />
+			<window name="ActiveBuffsWindow" />
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='character']" name="controller">XUiC_CharacterSheetWindowGroup</setattribute>
+
+
+<!--	// SMX // Power Source -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='powersource']">
+			<window name="windowPowerSourceStats" />
+			<window name="windowPowerSourceSlots" />
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+			<window name="windowNonPagingHeader" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='powersource']" name="controller">XUiC_PowerSourceWindowGroup</setattribute>
+
+
+<!--	// SMX // Ranged Traps - Powered -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='powerrangedtrap']">
+			<window name="windowPowerTrapSlots" />
+			<window name="windowPowerRangedTrapOptions" />
+			<window name="windowPowerCameraControlPreview" />
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+			<window name="windowNonPagingHeader" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='powerrangedtrap']" name="controller">XUiC_PowerRangedTrapWindowGroup</setattribute>
+
+
+<!--	// SMX // Trigger - Powered -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='powertrigger']">
+			<window name="windowPowerTriggerOptions" />
+			<window name="SMXuiEmptyFillerWindow10px" />
+			<window name="windowPowerCameraControlPreview" />
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+			<window name="windowNonPagingHeader" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='powertrigger']" name="controller">XUiC_PowerTriggerWindowGroup</setattribute>
+
+
+<!--	// SMX // Camera - Powered -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='powercamera']">
+			<window name="windowPowerCameraControl" />
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+			<window name="windowNonPagingHeader" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='powercamera']" name="controller">XUiC_PowerCameraWindowGroup</setattribute>
+		<setattribute xpath="/xui//window_group[@name='powercamera']" name="actionSet">controller</setattribute>
+
+
+<!--	// SMX // Spotlight - Powered -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='powerspotlight']">
+			<window name="SMXuiBackgroundFillerWindow750px" />
+			<window name="SMXuiEmptyFillerWindow10px" />
+			<window name="windowPowerCameraControlPreview" />
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+			<window name="windowNonPagingHeader" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='powerspotlight']" name="controller">XUiC_PoweredSpotlightWindowGroup</setattribute>
+
+
+<!--	// SMX // Vehicle -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='vehicle']">
+			<window name="windowVehicle" />
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+			<window name="windowNonPagingHeader" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='vehicle']" name="controller">XUiC_VehicleWindowGroup</setattribute>
+
+
+<!--	// SMX // Time Display UI -->
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'workstation')]">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+
+<!--	// SMX // Window NON Paging Header -->
+
+		<setattribute xpath="/xui/ruleset[@name='default']/window_group/window[@name='windowNonPagingHeader']" name="anchor">CenterTop</setattribute>
+
+</ZMXuiCP>
