@@ -4,7 +4,7 @@
 
 		// EAC:				Friendly
 
-		// VERSION:			19.1.Release1
+		// VERSION:			19.1.Release2
 
 		// BUILD:			A19.1
 
@@ -1291,7 +1291,7 @@
 		<append xpath="/windows">
 			<window name="windowJournalList" width="450" height="10" panel="Center" controller="JournalEntryListWindow" cursor_area="true" >
 
-				<rect name="content" depth="0" pos="70,-85" height="464">
+				<rect name="content" depth="0" pos="76,-65" height="464">
 					<rect name="searchControls" depth="6" pos="0,4" size="40,495">
 						<smxui_journal_search name="searchInput" depth="5" pos="40,-22" size="250,30" pivot="center" />
 					</rect>
@@ -1321,24 +1321,28 @@
 		<append xpath="/windows">
 			<window name="windowJournalEntryDescription" width="1250" height="600" panel="Center" controller="JournalEntryDescriptionWindow" cursor_area="true" >
 
-				<panel name="header" style="smxui_window_header">
-					<sprite name="SMXuiWindowBackground" size="1250,750" style="smxui_window_background" />
-					<sprite name="SMXuiWindowHeader" size="1250,80" style="smxui_window_header_background" />
-					<sprite name="SMXuiSeparationLineHeader" size="5,1210" style="smxui_window_header_separation" />
-					<sprite name="SMXuiTabsBackground" size="1230,52" style="smxui_window_tabs" />
-					<sprite name="SMXuiSeparationLineTabs" size="5,1210" style="smxui_window_tabs_separation" />
-					<sprite name="SMXuiVerticalDivider" pos="540,-720" size="5,600" style="smxui_window_header_separation" rotation="180" />
-					<label name="windowName" pos="625,-38" size="1250,80" style="smxui_window_title" text="{entrytitle}" overflow="ShrinkContent" />
-					<label name="SMXuiLogTime" depth="9" pos="880,-67" size="300,40" text="{timestamp}" color="[lightGrey]" font_size="40" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" justify="right" />
-				</panel>
+				<panel name="SMXuiWindowSkillList" pos="6,20" disableautobackground="true">
 
-				<rect name="content" depth="4" pos="550,-125" size="630,550">
-					<label name="descriptionText" depth="5" pos="8,-8" size="630,550" text="{entrydescription}" font_size="28" crispness="Never" effect="outline" effect_distance="1,1" />
-					<rect visible="{showempty}">
-						<sprite name="SMXuiDescriptionIcon" depth="3" pos="215,-120" size="200,200" sprite="ui_game_symbol_pen" color="[red]" justify="center" />
-						<label name="descriptionText" depth="3" pos="0,-360" width="100%" height="65" text="DESCRIPTION NOT AVAILABLE AT THIS TIME." text_key="xuiDescriptionNotAvailable" font_size="28" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
+					<panel name="header" style="smxui_window_header">
+						<sprite name="SMXuiWindowBackground" size="1250,750" style="smxui_window_background" />
+						<sprite name="SMXuiWindowHeader" size="1250,80" style="smxui_window_header_background" />
+						<sprite name="SMXuiSeparationLineHeader" size="5,1210" style="smxui_window_header_separation" />
+						<sprite name="SMXuiTabsBackground" size="1230,52" style="smxui_window_tabs" />
+						<sprite name="SMXuiSeparationLineTabs" size="5,1210" style="smxui_window_tabs_separation" />
+						<sprite name="SMXuiVerticalDivider" pos="540,-720" size="5,600" style="smxui_window_header_separation" rotation="180" />
+						<label name="windowName" pos="625,-38" size="1250,80" style="smxui_window_title" text="{entrytitle}" overflow="ShrinkContent" />
+						<label name="SMXuiLogTime" depth="9" pos="880,-67" size="300,40" text="{timestamp}" color="[lightGrey]" font_size="40" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" justify="right" />
+					</panel>
+
+					<rect name="content" depth="4" pos="550,-125" size="630,550">
+						<label name="descriptionText" depth="5" pos="8,-8" size="630,550" text="{entrydescription}" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" />
+						<rect visible="{showempty}">
+							<sprite name="SMXuiDescriptionIcon" depth="3" pos="215,-120" size="200,200" sprite="ui_game_symbol_pen" color="[red]" justify="center" />
+							<label name="descriptionText" depth="3" pos="0,-360" width="100%" height="65" text="DESCRIPTION NOT AVAILABLE AT THIS TIME." text_key="xuiDescriptionNotAvailable" font_size="28" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
+						</rect>
 					</rect>
-				</rect>
+
+				</panel>
 			</window>
 		</append>
 
@@ -1859,7 +1863,7 @@
 		<append xpath="/windows">
 			<window name="mapArea" width="1250" height="830" panel="Center" controller="MapArea" cursor_area="true" >
 
-				<panel name="header" pos="-53,-20" style="smxui_window_header">
+				<panel name="header" pos="6,10" style="smxui_window_header">
 					<sprite name="SMXuiWindowBackground" size="1250,810" style="smxui_window_background" />
 					<sprite name="SMXuiWindowHeader" size="1250,80" style="smxui_window_header_background" />
 					<sprite name="SMXuiSeparationLineHeader" size="5,1210" style="smxui_window_header_separation" />
@@ -1873,7 +1877,7 @@
 					<smxui_map_combobox_1 name="cbxStaticMapType" pos="820,-25" width="210" height="30" type="ComboBoxEnum`1[XUiC_MapArea+EStaticMapOverlay]" value_wrap="true" localization_prefix="xuiStaticMapType" />
 				</panel>
 
-				<panel name="content" depth="9" pos="420,-65" height="712" disableautobackground="true">
+				<panel name="content" depth="9" pos="476,-35" height="712" disableautobackground="true">
 					<rect name="toolbar" depth="5" pos="12,-30" size="712,43">
 
 						<sprite name="SMXuimapToolbarBackground" depth="1" pos="356,-45" size="680,120" style="smxui_talkNPC_background" pivot="center" />
@@ -1928,7 +1932,7 @@
 
 		<append xpath="/windows">
 			<window name="mapTracking" depth="8" width="354" height="10" panel="Center" controller="MapWaypoint" cursor_area="true">
-				<rect name="content" depth="3" pos="-3,760" height="464">
+				<rect name="content" depth="3" pos="56,790" height="464">
 
 					<sprite name="SMXuiWaypointBackground" depth="1" pos="-15,-63" size="450,400" style="smxui_window_background" color="[darkGrey]" globalopacitymod="0.5" />
 
@@ -1958,6 +1962,8 @@
 					<grid name="waypointList" pos="30,-120" width="68" height="68" rows="4" cols="4" cell_width="68" cell_height="68" controller="MapWaypointList" repeat_content="true" arrangement="horizontal" normal_color="[white]" disabled_color="[mediumGrey]">
 						<smxui_waypoint_entry name="0" />
 					</grid>
+
+					<sprite name="SMXuiSeparationLine" pos="0,-480" size="5,420" style="smxui_window_tabs_separation" color="[red]" />
 				</rect>
 			</window>
 		</append>
@@ -1969,7 +1975,7 @@
 
 		<append xpath="/windows">
 			<window name="mapInvites" depth="9" width="354" height="10" panel="Center" cursor_area="true" >
-				<rect name="content" depth="3" pos="-3,760" height="464">
+				<rect name="content" depth="3" pos="56,790" height="464">
 
 					<sprite name="SMXuiSharedWaypointBackground" depth="1" pos="-12,-473" size="450,220" style="smxui_window_background" color="[darkGrey]" globalopacitymod="0.5" flip="horizontally" />
 
@@ -2738,6 +2744,225 @@
 						</rect>
 					</panel>
 				</panel>
+			</window>
+		</append>
+
+
+<!--	// SMX // Quest List -->
+
+		<remove xpath="/windows/window[@name='windowQuestList']" />
+
+		<append xpath="/windows">
+			<window name="windowQuestList" width="450" height="420" panel="Left" controller="QuestListWindow" cursor_area="true">
+				<rect name="content" depth="0" pos="285,-50" height="464">
+					<sprite name="SMXuiQuestBackground" depth="1" pos="-15,-63" size="450,400" style="smxui_window_background" color="[darkGrey]" globalopacitymod="0.5" />
+					<label name="SMXuiQuestTitle" depth="5" pos="-55,-80" width="100%" height="30" text="QUESTS" text_key="xuiQuests" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" upper_case="true" />
+
+					<panel name="searchControls" depth="4" pos="65,-9" width="348" disableautobackground="true" console_enabled="false">
+						<smxui_quest_search name="searchInput" depth="1" />
+					</panel>
+
+					<rect depth="2" name="toolbar" pos="6,-16" size="43,348">
+						<button name="trackBtn" depth="2" pos="380,-100" size="40,40" style="press, hover, smxlib_icon_colors" sprite="ui_game_symbol_compass" pivot="center" tooltip="Toggle Active" tooltip_key="lblToggleActive" sound="[paging_click]" />
+						<button name="showOnMapBtn" depth="2" pos="380,-160" size="40,40" style="press, hover, smxlib_icon_colors" sprite="ui_game_symbol_map" pivot="center" tooltip="Show on Map" tooltip_key="lblShowOnMap" sound="[paging_click]" />
+						<button name="questRemoveBtn" depth="2" pos="380,-220" size="40,40" style="hover, smxlib_icon_colors" sprite="ui_game_symbol_quest_remove" on_press="true" pivot="center" tooltip="Remove Quest" tooltip_key="lblRemoveQuest"  />
+						<button name="questShareBtn" depth="2" pos="380,-280" size="40,40" style="press, hover, smxlib_icon_colors" sprite="ui_game_symbol_players" pivot="center" tooltip="Share Quest" tooltip_key="lblShareQuest" sound="[paging_click]" />
+					</rect>
+
+					<rect name="searchControls" depth="3" pos="130,-420" size="100,43">
+						<panel name="pagerBox" pos="-14,10" size="100,43" disableautobackground="true">
+							<button name="pageDown" depth="4" pos="10,-22" size="26,26" style="press, smxlib_icon_colors" sprite="ui_game_symbol_arrow_left" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />								
+							<rect depth="4" pos="37,-7">
+								<label name="pageNumber" depth="5" pos="0,-2" size="30,28" text="1" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
+							</rect>
+							<button name="pageUp" depth="4" pos="94,-22" size="26,26" style="press, smxlib_icon_colors" sprite="ui_game_symbol_arrow_right" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+						</panel>
+					</rect>
+
+					<grid name="questList" rows="4" cols="4" pos="30,-120" width="68" height="68" cell_width="68" cell_height="68" controller="QuestList" repeat_content="true" arrangement="horizontal" normal_color="[white]" disabled_color="[mediumGrey]" >
+						<smxui_quest_entry name="0" />
+					</grid>
+
+					<sprite name="SMXuiSeparationLine" pos="0,-480" size="5,420" style="smxui_window_tabs_separation" color="[red]" />
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Shared Quest List -->
+
+		<remove xpath="/windows/window[@name='windowQuestSharedList']" />
+
+		<append xpath="/windows">
+			<window name="windowQuestSharedList" width="450" height="213" panel="Left" cursor_area="true" controller="QuestSharedListWindow">
+				<rect name="content" depth="0" pos="285,-50" height="264">
+
+					<sprite name="SMXuiSharedQuestBackground" depth="1" pos="-12,-63" size="450,220" style="smxui_window_background" color="[darkGrey]" globalopacitymod="0.5" flip="horizontally" />
+					<label name="SMXuiSharedQuestTitle" depth="5" pos="-55,-80" width="100%" height="30" text="SHARED QUESTS" text_key="xuiSharedQuests" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" upper_case="true" />
+
+					<rect name="toolbar" depth="1" pos="6,-16" size="43,348">
+						<button name="acceptBtn" depth="2" pos="380,-100" size="40,40" style="press, hover, smxlib_icon_colors" pivot="center" sprite="ui_game_symbol_check" tooltip="Accept Quest" tooltip_key="lblAcceptQuest" sound="[paging_click]" />
+						<button name="showOnMapBtn" depth="2" pos="380,-160" size="40,40" style="press, hover, smxlib_icon_colors" pivot="center" sprite="ui_game_symbol_map" tooltip="Show on Map" tooltip_key="lblShowOnMap" sound="[paging_click]" />
+						<button name="questRemoveBtn" depth="2" pos="380,-220" size="40,40" style="hover, smxlib_icon_colors" on_press="true" pivot="center" sprite="ui_game_symbol_x" tooltip="Cancel Quest" tooltip_key="lblCancelQuest" sound="[paging_click]" />
+					</rect>
+
+					<!--rect name="searchControls" depth="3" pos="-15,-185" width="450" height="43">
+						<panel name="searchControls" depth="4" pos="65,-9" width="348" disableautobackground="true" console_enabled="false">
+							<smxui_quest_search name="searchInput" depth="1" />
+						</panel>
+					</rect-->
+
+					<rect name="searchControls" depth="3" pos="130,-240" size="100,43">
+						<panel name="pagerBox" pos="-14,10" size="100,43" disableautobackground="true">
+							<button name="pageDown" depth="4" pos="10,-22" size="26,26" style="press, smxlib_icon_colors" sprite="ui_game_symbol_arrow_left" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />								
+							<rect depth="4" pos="37,-7">
+								<label name="pageNumber" depth="5" pos="0,-2" size="30,28" text="1" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
+							</rect>
+							<button name="pageUp" depth="4" pos="94,-22" size="26,26" style="press, smxlib_icon_colors" sprite="ui_game_symbol_arrow_right" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+						</panel>
+					</rect>
+
+					<grid name="questList" rows="1" cols="4" pos="30,-120" width="68" height="68" cell_width="68" cell_height="68" controller="QuestSharedList" repeat_content="true" arrangement="horizontal" normal_color="[white]" disabled_color="[mediumGrey]" >
+						<smxui_quest_entry name="0" />
+					</grid>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Quest Description -->
+
+		<remove xpath="/windows/window[@name='windowQuestDescription']" />
+
+		<append xpath="/windows">
+			<window name="windowQuestDescription" width="1250" height="830" panel="Center" controller="QuestDescriptionWindow" cursor_area="true" >
+				<panel name="header" pos="-222,10" style="smxui_window_header">
+					<sprite name="SMXuiWindowBackground" size="1250,810" style="smxui_window_background" />
+					<sprite name="SMXuiWindowHeader" size="1250,80" style="smxui_window_header_background" />
+					<sprite name="SMXuiSeparationLineHeader" size="5,1210" style="smxui_window_header_separation" />
+					<label name="windowName" pos="625,-38" size="1250,80" style="smxui_window_title" text="QUESTS" text_key="xuiQuests" />
+					<sprite name="SMXuiTabsBackground" pos="35,-65" size="450,52" style="smxui_window_tabs" />
+					<sprite name="SMXuiSeparationLineTabs" pos="35,-117" size="5,440" style="smxui_window_tabs_separation" />
+					<sprite name="SMXuiVerticalDivider" depth="4" pos="390,-135" size="5,370" style="smxui_window_header_separation" color="[white]" rotation="360" />
+					<sprite name="SMXuiVerticalDivider" depth="4" pos="390,-565" size="5,190" style="smxui_window_header_separation" color="[white]" rotation="360" />
+					<sprite name="SMXuiVerticalDivider" depth="4" pos="480,-135" size="5,630" style="smxui_window_header_separation" color="[white]" rotation="360" />
+				</panel>
+
+				<rect name="content" depth="9" pos="320,-105" size="650,240">
+					<sprite name="windowIcon" depth="3" pos="-40,40" size="32,32" sprite="ui_game_symbol_quest" />
+					<label name="descriptionHeader" depth="3" pos="8,40" size="650,38" text="{questtitle}" font_size="30" crispness="Never" effect="outline" effect_distance="1,1" />
+					<label name="sharedBy" depth="3" pos="8,34" size="630,38" text="{sharedbyname}" color="[lightGrey]" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
+					<label name="descriptionText" depth="3" pos="8,-8" size="630,255" text="{questdescription}" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" />
+
+					<rect visible="{showempty}">
+						<label name="descriptionText" depth="3" pos="0,-100" width="100%" height="255" text="DESCRIPTION NOT AVAILABLE AT THIS TIME." text_key="xuiDescriptionNotAvailable" font_size="28" color="[red]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<sprite name="SMXuiSeparationLine" pos="0,-260" size="5,650" style="smxui_window_tabs_separation" color="[red]" />
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Quest Objectives -->
+
+		<remove xpath="/windows/window[@name='windowQuestObjectives']" />
+
+		<append xpath="/windows">
+			 <window name="windowQuestObjectives" depth="2" width="650" height="10" panel="Center" controller="QuestObjectivesWindow" cursor_area="true" >
+				<rect name="content" depth="9" pos="320,420" size="650,180">
+					<sprite name="windowIcon" depth="3" pos="-40,40" size="32,32" sprite="ui_game_symbol_quest" />
+					<label name="descriptionHeader" depth="3" pos="8,40" size="650,38" text="OBJECTIVES" text_key="xuiObjectives" font_size="30" crispness="Never" effect="outline" effect_distance="1,1" />
+
+					<rect visible="{showquest}">
+						<grid name="objectiveList" pos="12,-10" rows="5" cols="2" width="300" height="180" cell_width="320" cell_height="30" repeat_content="true" arrangement="vertical" controller="QuestObjectiveList">
+							<smxui_quest_objective_entry name="0" />
+						</grid>
+
+						<label depth="3" pos="8,-165" width="590" height="30" text="{questrequirementstitle}: {questrequirements}" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" visible="{showrequirements}" />
+					</rect>
+
+					<rect visible="{showempty}">
+						<label name="descriptionText" depth="3" pos="0,-55" width="100%" height="65" text="OBJECTIVES NOT AVAILABLE AT THIS TIME." text_key="xuiObjectivesNotAvailable" font_size="28" color="[red]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
+					</rect>
+
+					<sprite name="SMXuiSeparationLineTabs" pos="0,-200" size="5,650" style="smxui_window_tabs_separation" color="[red]" />
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Quest Rewards -->
+
+		<remove xpath="/windows/window[@name='windowQuestRewards']" />
+
+		<append xpath="/windows">
+			<window name="windowQuestRewards" depth="2" width="650" height="10" panel="Center" controller="QuestRewardsWindow" cursor_area="true" >
+				<rect name="content" depth="2" pos="320,180" size="650,130">
+					<sprite name="windowIcon" depth="3" pos="-40,40" size="32,32" sprite="ui_game_symbol_treasure" />
+					<label name="descriptionHeader" depth="3" pos="8,40" size="650,38" text="REWARDS" text_key="xuiRewards" font_size="30" crispness="Never" effect="outline" effect_distance="1,1" />
+					<label name="finishedBy" depth="3" pos="8,34" size="630,38" text="{finishtime}" color="[lightGrey]" justify="right" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" />
+
+					<rect visible="{showquest}">
+						<label name="descriptionText" depth="3" pos="8,-6" size="648,145" text="{commontitle}{commonrewards}" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" />
+						<label name="descriptionText" depth="3" pos="8,-28" size="648,145" text="{chaintitle}{chainrewards}" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" />
+					</rect>
+					<rect visible="{showempty}">
+						<label name="descriptionText" depth="3" pos="0,-30" width="100%" height="145" text="REWARDS NOT AVAILABLE AT THIS TIME." text_key="xuiRewardsNotAvailable" font_size="28" color="[red]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Players Window -->
+
+		<remove xpath="/windows/window[@name='players']" />
+
+		<append xpath="/windows">
+			<window name="players" width="1250" height="830" panel="Center" cursor_area="true" >
+				<panel name="header" pos="6,10" style="smxui_window_header">
+					<sprite name="SMXuiWindowBackground" pos="-150,0" size="1550,810" style="smxui_window_background" />
+					<sprite name="SMXuiWindowHeader" pos="-150,0" size="1550,80" style="smxui_window_header_background" />
+					<sprite name="SMXuiSeparationLineHeader" pos="-130,-65" size="5,1510" style="smxui_window_header_separation" />
+					<label name="windowName" pos="625,-38" size="1250,80" style="smxui_window_title" text="PLAYERS" text_key="xuiPlayers" />
+					<label name="numberOfPlayersHeader" depth="5" pos="1130,-26" size="130,32" text="CONNECTED:" font_size="26" color="[lightGrey]" crispness="Never" effect="outline" effect_distance="1,1" justify="left" />
+					<label name="numberOfPlayers" depth="5" pos="1130,-26" size="130,32" text="1/1" font_size="26" color="[lightGrey]" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
+					<sprite name="SMXuiTabsBackground" pos="-130,-65" size="1510,52" style="smxui_window_tabs" />
+					<sprite name="SMXuiSeparationLineTabs" pos="-130,-117" size="5,1510" style="smxui_window_tabs_separation" />
+					<sprite name="SMXuiVerticalDivider" depth="9" pos="160,-115" size="5,470" style="smxui_window_header_separation" color="[white]" rotation="360" />
+					<sprite name="SMXuiVerticalDivider" depth="9" pos="220,-115" size="5,470" style="smxui_window_header_separation" color="[white]" rotation="360" />
+					<sprite name="SMXuiVerticalDivider" depth="9" pos="335,-115" size="5,470" style="smxui_window_header_separation" color="[white]" rotation="360" />
+					<sprite name="SMXuiVerticalDivider" depth="9" pos="420,-115" size="5,470" style="smxui_window_header_separation" color="[white]" rotation="360" />
+					<sprite name="SMXuiVerticalDivider" depth="9" pos="495,-115" size="5,470" style="smxui_window_header_separation" color="[white]" rotation="360" />
+					<sprite name="SMXuiVerticalDivider" depth="9" pos="595,-115" size="5,470" style="smxui_window_header_separation" color="[white]" rotation="360" />
+					<sprite name="SMXuiVerticalDivider" depth="9" pos="635,-115" size="5,470" style="smxui_window_header_separation" color="[white]" rotation="360" />
+					<sprite name="SMXuiVerticalDivider" depth="9" pos="735,-115" size="5,470" style="smxui_window_header_separation" color="[white]" rotation="360" />
+					<sprite name="SMXuiVerticalDivider" depth="9" pos="865,-115" size="5,470" style="smxui_window_header_separation" color="[white]" rotation="360" />
+					<sprite name="SMXuiVerticalDivider" depth="9" pos="1025,-115" size="5,470" style="smxui_window_header_separation" color="[white]" rotation="360" />
+					<sprite name="SMXuiVerticalDivider" depth="9" pos="1100,-115" size="5,470" style="smxui_window_header_separation" color="[white]" rotation="360" />
+					<sprite name="SMXuiVerticalDivider" depth="9" pos="1200,-115" size="5,470" style="smxui_window_header_separation" color="[white]" rotation="360" />
+				</panel>
+
+				<smxui_players_header depth="9" />
+
+				<grid name="playersList" depth="7" rows="10" cols="1" pos="-60,-110" width="1285" height="724" cell_width="1856" cell_height="46" repeat_content="true" arrangement="vertical" controller="PlayersList">
+					<smxui_players_entry name="0"/>
+				</grid>
+
+				<rect name="SMXuiServerBanner1" depth="7" pos="32,-595" width="1200" height="130" pivot="center">
+					<texture name="SMXuiServerBanner" depth="2" width="100%" height="100%" texture="@modfolder(SMXlib):Textures/smxlib_ui_game_element_server_banner.png" globalopacity="false" />
+				</rect>
+
+				<rect name="searchControls" depth="3" pos="593,-750" size="100,43" pivot="center">
+					<panel name="pagerBox" pos="-14,10" size="100,43" disableautobackground="true">
+						<button name="pageDown" depth="4" pos="10,-22" size="26,26" style="press, smxlib_icon_colors" sprite="ui_game_symbol_arrow_left" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />								
+						<rect depth="4" pos="37,-7">
+							<label name="pageNumber" depth="5" pos="0,-2" size="30,28" text="1" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
+						</rect>
+						<button name="pageUp" depth="4" pos="94,-22" size="26,26" style="press, smxlib_icon_colors" sprite="ui_game_symbol_arrow_right" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+					</panel>
+				</rect>
 			</window>
 		</append>
 

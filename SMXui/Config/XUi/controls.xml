@@ -163,8 +163,8 @@
 						hover_color="[mediumGrey]"
 						sound="[recipe_click]"
 						failed_icon="ui_game_symbol_x">
-				  <sprite name="background" depth="1" pos="-1,1" size="446,55" sprite="smxlib_ui_game_element_objective_background" color="{rowstatecolor}" type="sliced" sound_on_hover="default_uihover" />
-				  <sprite name="backgroundIcon" depth="2" pos="-3,10" size="68,68" sprite="smxlib_ui_game_element_icon_background" color="[SMXlibElementsBG]" globalopacitymod="1.1" foregroundlayer="true" />
+				  <sprite name="background" depth="1" pos="-1,20" size="446,90" sprite="smxlib_ui_game_element_conversation_trader_background" color="{rowstatecolor}" type="sliced" sound_on_hover="default_uihover" />
+				  <sprite name="backgroundIcon" depth="2" pos="-3,10" size="68,68" sprite="smxlib_ui_game_element_icon_background" color="[SMXlibElementsBG]" globalopacitymod="1.8" foregroundlayer="true" />
 				  <sprite name="Icon" depth="5" pos="13,-3" size="40,40" sprite="ui_game_symbol_pen" color="{iconcolor}" foregroundlayer="true" />
 				  <label name="Name" depth="4" pos="70,-7" size="330,40" text="{entrytitle}" color="{textstatecolor}" font_size="28" crispness="Never" effect="outline" effect_distance="1,1" />
 				</rect>
@@ -255,6 +255,35 @@
 					<label name="text" depth="1" pos="0,-3" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" upper_case="false" justify="center" pivot="topleft" />
 				</panel>
 			</smxui_recipe_search>
+		</append>
+
+
+<!--	// SMX // Quest Search -->
+
+		<append xpath="/controls">
+			<smxui_quest_search>
+				<panel	depth="5"
+						pos="22,-7"
+						size="240,30"
+						controller="TextInput"
+						value="SEARCH"
+						active_text_color="[white]"
+						caret_color="[white]"
+						selection_color="[mediumGrey_half_alpha]"
+						character_limit="30"
+						validation="none"
+						backgroundcolor="[black]"
+						on_press="true"
+						style="select"
+						snapCursor="true"
+						virtual_keyboard_prompt="vkPromptSearchTerm"
+						search_field="true">
+					<sprite name="searchIcon" depth="1" pos="-30,-15" size="26,26" sprite="ui_game_symbol_search" pivot="center" />
+					<sprite name="background" depth="0" size="240,30" sprite="smxlib_ui_game_element_searchinput_background" color="[black]" type="sliced"/>
+					<sprite name="frame" depth="1" size="240,30" sprite="smxlib_ui_game_element_searchinput_frame" color="[white]" type="sliced"/>
+					<label name="text" depth="1" pos="0,-3" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" upper_case="false" justify="center" pivot="topleft" />
+				</panel>
+			</smxui_quest_search>
 		</append>
 
 
@@ -1041,11 +1070,11 @@
 					<sprite name="background2" depth="2" pos="2,-42" width="59" height="41" sprite="smxlib_ui_element_slot_background" color="[SMXlibElementsBG]" type="sliced" rotation="45" />
 					<sprite name="background" depth="1" pos="14,-46" width="45" height="25" sprite="smxlib_ui_element_slot_background" color="[SMXlibElementsBG]" type="sliced" rotation="45" on_hover="true" style="press,scroll" sound="[recipe_click]" globalopacitymod="0.1" />
 
-					<sprite depth="4" name="Icon" sprite="" size="28,28" pos="38,-38" pivot="center" foregroundlayer="true" />
-					<label name="Name" depth="4" pos="38,-18" width="60" height="20" text="" font_size="16" justify="center" pivot="center" crispness="Never" effect="outline" effect_distance="1,1" />
+					<sprite name="Icon" depth="4" pos="38,-38" size="28,28" sprite="" pivot="center" foregroundlayer="true" />
+					<label name="Name" depth="4" pos="38,-16" width="60" height="20" text="" font_size="14" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" />
 
 					<sprite name="Tracking" depth="2" pos="5,-5" width="65" height="65" sprite="smxlib_ui_element_slot_frame_narrow" foregroundlayer="true" color="[green]" />
-					<label depth="4" name="Distance" pos="35,-60" width="60" height="20" text="" font_size="16" justify="right" pivot="center"/>
+					<label name="Distance" depth="4" pos="35,-60" width="60" height="20" text="" font_size="14" crispness="Never" effect="outline" effect_distance="1,1" justify="right" pivot="center" />
 				</rect>
 			</smxui_waypoint_entry>
 		</append>
@@ -1061,8 +1090,8 @@
 					<sprite name="background" depth="1" pos="14,-46" width="45" height="25" sprite="smxlib_ui_element_slot_background" color="[SMXlibElementsBG]" type="sliced" rotation="45" on_hover="true" style="press,scroll" sound="[recipe_click]" globalopacitymod="0.1" />
 
 					<sprite name="Icon" depth="4" sprite="" size="28,28" pos="38,-38" pivot="center" foregroundlayer="true" />
-					<label name="Name" depth="4" pos="38,-18" width="60" height="20" text="" font_size="16" justify="center" pivot="center" crispness="Never" effect="outline" effect_distance="1,1" />
-					<label name="Distance" depth="4" pos="35,-60" width="60" height="20" text="" font_size="16" justify="right" pivot="center"/>
+					<label name="Name" depth="4" pos="38,-16" width="60" height="20" text="" font_size="14" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" />
+					<label name="Distance" depth="4" pos="35,-60" width="60" height="20" text="" font_size="14" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" />
 				</rect>
 			</smxui_invites_entry>	
 		</append>
@@ -1206,6 +1235,182 @@
 					<button name="categoryIcon" depth="1" pos="22,-20" size="28,28" style="smxlib_icon_colors" sprite="{categoryicon|once}" tooltip="{categorydisplayname|once}" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" collider_scale="1.5" />
 				</rect>
 			</smxui_trader_category_icon>
+		</append>
+
+
+<!--	// SMX // Quest Objective -->
+
+		<append xpath="/controls">
+			<smxui_quest_objective_entry>
+				<rect width="300" height="43" controller="QuestObjectiveEntry" complete_icon="ui_game_symbol_check" incomplete_icon="ui_game_symbol_x" notstarted_icon="ui_game_symbol_quest" complete_color="[green]" incomplete_color="[red]" notstarted_color="[white]" visible="{hasobjective}" >
+					<sprite name="iconTrack" depth="2" pos="4,2" size="24,24" sprite="{objectivecompletesprite}" color="{objectivecompletecolor}" />
+					<label name="Description" depth="4" pos="30,2" size="250,28" text="{objectiveoptional}{objectivedescription}" color="{objectivephasecolor}" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" />
+					<label name="Description" depth="4" pos="30,2" size="250,28" text=" [808080]{objectivestate}[-]" color="{objectivephasecolor}" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
+				</rect>
+			</smxui_quest_objective_entry>
+		</append>
+
+
+<!--	// SMX // Quest List -->
+
+		<append xpath="/controls">
+			<smxui_quest_entry>
+				<rect 	width="65"
+						height="65"
+						controller="QuestEntry"
+						style="press, hover, scroll"
+						enabled_color="[iconColor]"
+						disabled_color="[disabledLabelColor]"
+						row_color="[lightGrey]"
+						hover_color="[mediumGrey]"
+						sound="[recipe_click]"
+						failed_color="255,0,0,255"
+						complete_color="[disabledLabelColor]"
+						finished_color="0,255,0,255"
+						shared_color="[iconColor]"
+						failed_icon="ui_game_symbol_x"
+						complete_icon="ui_game_symbol_check"
+						finished_icon="ui_game_symbol_check"
+						shared_icon="ui_game_symbol_players"
+						sound_play_on_hover="[default_hover]"
+						tooltip="{questname}">
+					<sprite name="background" depth="2" pos="5,-5" size="65,65" sprite="smxlib_ui_element_slot_frame_narrow" color="{rowstatecolor}" type="sliced" fillcenter="false" />
+					<sprite name="backgroundMain" depth="1" pos="2,-42" width="59" height="41" sprite="smxlib_ui_element_slot_background" color="[SMXlibElementsBG]" type="sliced" rotation="45" sound="[recipe_click]" />
+					<sprite name="Icon" depth="4" pos="38,-38" size="26,26" sprite="{questicon}" pivot="center" foregroundlayer="true" />
+					<sprite name="Tracking" depth="2" pos="5,-5" size="65,65" sprite="smxlib_ui_element_slot_frame_narrow" color="[green]" foregroundlayer="true" visible="{istracking}" />
+					<label name="Name" depth="4" pos="38,-16" width="60" height="20" text="{questname}" font_size="14" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" />
+					<label name="Distance" depth="4" pos="35,-60" width="60" height="20" text="{distance}" font_size="14" crispness="Never" effect="outline" effect_distance="1,1" justify="right" pivot="center" />
+				</rect>
+			</smxui_quest_entry>
+		</append>
+
+
+<!--	// SMX // Players Header -->
+
+		<append xpath="/controls">
+			<smxui_players_header>
+				<panel name="header" depth="7" pos="-60,-8" height="746" disableautobackground="true">
+					<rect name="steamId" depth="1" pos="6,-6" width="204" height="46">
+						<label name="text" depth="1" pos="4,-63" height="42" text="STEAM ID" text_key="xuiSteamID" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" pivot="left" />
+					</rect>
+
+					<rect name="level" depth="1" pos="223,-6" width="70" height="46">
+						<label name="text" depth="1" pos="0,-63" height="42" text="LEVEL" text_key="xuiLevel" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="gamestage" depth="1" pos="293,-6" width="100" height="46">
+						<label name="text" depth="1" pos="0,-63" height="42" text="GAME STAGE" text_key="xuiGameStage" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="party" depth="1" pos="411,-6" width="70" height="46">
+						<label name="text" depth="1" pos="0,-63" height="42" text="PARTY" text_key="xuiParty" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="allies" depth="1" pos="489,-6" width="70" height="46">
+						<label name="text" depth="1" pos="0,-63" height="42" text="ALLIES" text_key="xuiAllies" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="voice" depth="1" pos="572,-6" width="80" height="46">
+						<label name="text" depth="1" pos="0,-63" height="42" text="VOICE" text_key="xuiVoice" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="km" depth="1" pos="658,-6" width="50" height="46">
+						<label name="text" depth="1" pos="0,-63" height="42" text="KM" text_key="xuiKM" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="map" depth="1" pos="711,-6" width="80" height="86">
+						<label name="text" depth="1" pos="0,-63" height="42" text="MAP" text_key="xuiMap" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="zombieKills" depth="1" pos="795,-6" width="140" height="46">
+						<label name="text" depth="1" pos="0,-63" height="42" text="ZOMBIE KILLS" text_key="xuiEnemyKills" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="playerKills" depth="1" pos="943,-6" width="140" height="46">
+						<label name="text" depth="1" pos="0,-63" height="42" text="PLAYER KILLS" text_key="xuiPlayerKills" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="deaths" depth="1" pos="1086,-6" width="90" height="86">
+						<label name="text" depth="1" pos="0,-63" height="42" text="DEATHS" text_key="xuiDeaths" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="ping" depth="1" pos="1179,-6" width="80" height="46">
+						<label name="text" depth="1" pos="0,-63" height="42" text="PING" text_key="xuiPing" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="reportheader" depth="1" pos="1262,-6" width="80" height="46" color="[darkGrey]" type="sliced">
+						<label name="text" depth="1" pos="0,-63" height="42" text_key="xuiPlayersReportPlayerCol" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+				</panel>
+			</smxui_players_header>
+		</append>
+
+
+<!--	// SMX // Players Entry -->
+
+		<append xpath="/controls">
+			<smxui_players_entry>
+				<rect depth="1" pos="-3,-6" width="1290" height="43" disabled_color="[disabledLabelColor]" alternating_color="[darkestGrey]" controller="PlayersListEntry">
+					<sprite name="background" pos="-55,20" width="1500" height="90" color="[darkGrey]" sprite="smxlib_ui_game_element_conversation_trader_background" type="sliced" />
+
+					<rect name="steamId" depth="1" pos="6,-6" width="204" height="46">
+						<label name="steamIdText" depth="1" pos="4, -15" width="186" height="38" text="" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" pivot="left" />
+						<sprite name="admin" pos="200,-18" width="28" height="28" sprite="ui_game_symbol_star" color="[red]" pivot="center" tooltip_key="xuiIsAdmin" />
+					</rect>
+
+					<rect name="level" depth="1" pos="223,-6" width="70" height="46">
+						<label name="levelText" depth="1" pos="0,-15" height="38" text="" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="gamestage" depth="1" pos="293,-6" width="100" height="46">
+						<label name="gamestageText" depth="1" pos="0,-15" height="38" text="" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="party" depth="1" pos="411,-6" width="70" height="46">
+						<label name="labelPartyIcon" depth="1" pos="0,-15" height="38" text="--" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+						<button name="iconPartyIcon" depth="1" pos="34,-16" style="icon32px, press, hover" sprite="ui_game_symbol_party" color="[lightGrey]" disabledcolor="[disabledLabelColor]" pivot="center" sound="[craft_click]" />
+					</rect>
+
+					<rect name="allies" depth="1" pos="489,-6" width="70" height="46">
+						<label name="labelAllyIcon" depth="1" pos="0,-15" height="38" text="--" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+						<button name="iconAllyIcon" depth="1" pos="34,-16" style="icon32px, press, hover" sprite="ui_game_symbol_players" color="[lightGrey]" disabledcolor="[disabledLabelColor]" pivot="center" sound="[craft_click]" />
+					</rect>
+
+					<rect name="voice" depth="1" pos="572,-6" width="80" height="46">
+						<sprite name="iconVoice" depth="1" pos="40,-16" style="icon32px" sprite="ui_game_symbol_mic" color="[lightGrey]" pivot="center" />
+					</rect>
+
+					<rect name="km" depth="1" pos="658,-6" width="50" height="46">
+						<label name="labelDistanceWalked" depth="1" pos="0,-15" height="38" text="-" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="map" depth="1" pos="711,-6" width="80" height="86">
+						<label name="labelShowOnMap" depth="0" pos="0,-15" height="38" text="--" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+						<button name="iconShowOnMap" depth="1" pos="40,-16" style="icon32px, press, hover" pivot="center" sprite="ui_game_symbol_map" color="[lightGrey]" disabledcolor="[disabledLabelColor]" sound="[craft_click]" tooltip="Show on Map" tooltip_key="lblShowOnMap" />
+					</rect>
+
+					<rect name="zombieKills" depth="1" pos="795,-6" width="140" height="46">
+						<label name="zombieKillsText" depth="1" pos="0,-15" height="38" text="" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="playerKills" depth="1" pos="943,-6" width="140" height="46">
+						<label name="playerKillsText" depth="1" pos="0,-15" height="38" text="" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="deaths" depth="1" pos="1086,-6" width="90" height="86">
+						<label name="deathsText" depth="1" pos="0,-15" height="38" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="ping" depth="1" pos="1179,-6" width="80" height="46">
+						<label name="pingText" depth="1" pos="0,-15" height="38" text="--" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+					</rect>
+
+					<rect name="reportheader" depth="1" pos="1262,-6" width="80" height="46" color="[darkGrey]" type="sliced">
+						<label name="labelReportPlayer" depth="0" pos="0,-15" height="38" text="--" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
+						<button name="iconReportPlayer" depth="1" pos="40,-16" style="icon32px, press, hover" sprite="ui_game_symbol_quest" color="[lightGrey]" pivot="center" sound="[craft_click]" tooltip_key="xuiPlayersReportPlayer" />
+					</rect>
+				</rect>
+			</smxui_players_entry>
 		</append>
 
 </SMXui>
