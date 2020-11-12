@@ -4,9 +4,9 @@
 
 		// EAC:				Friendly
 
-		// VERSION:			19.1.Release2
+		// VERSION:			19.2.Release1
 
-		// BUILD:			A19.1
+		// BUILD:			A19.2
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -312,8 +312,16 @@
 <!--	// SMX // Shape Selector -->
 
 		<set xpath="/xui/ruleset[@name='default']/window_group[@name='shapes']">
-			<window name="windowShapeBlocks" />
 			<window name="windowShapeInfo" />
+			<window name="windowShapeBlocks" />
+		</set>
+
+
+<!--	// SMX // Material Selector -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='materials']">
+			<window name="windowMaterialInfo" />
+			<window name="windowMaterials" />
 		</set>
 
 

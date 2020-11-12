@@ -3,6 +3,8 @@
 <!--	// SMX // Global Colors -->
 
 		<append xpath="/styles/global">
+			<style_entry name="SMXlibElementsSlotBackground"			value="56,62,66,128" />
+
 			<style_entry name="SMXlibElementsBG"						value="0,0,0" />
 			<style_entry name="SMXlibElementsHDR"						value="175,30,25" />
 			<style_entry name="SMXlibElementsLine"						value="255,255,255" />

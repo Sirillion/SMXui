@@ -34,12 +34,12 @@
 						</grid>
 					</panel>
 
-					<panel name="SMXuiCurrency" depth="3" pos="0,-680" height="43" disableautobackground="true">
+					<rect name="SMXuiCurrency" depth="4" pos="0,-680" height="43">
 						<sprite name="costIcon" depth="3" pos="75,-25" size="26,26" sprite="ui_game_symbol_coin" color="[white]" pivot="center" forgroundlayer="true" />
-						<sprite name="background" depth="2" pos="107,-9" size="268,30" sprite="smxlib_ui_game_element_searchinput_background" color="[black]" type="sliced" />
-						<sprite name="frame" depth="3" pos="107,-9" size="270,30" sprite="smxlib_ui_game_element_searchinput_frame" color="[white]" type="sliced" />
-						<label name="currency" depth="3" pos="68,-9" size="300,28" text="{currencyamount}" color="[lightGrey]" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
-					</panel>
+						<sprite name="background" depth="2" pos="107,-9" size="268,30" sprite="menu_empty" color="[SMXlibElementsSlotBackground]" type="sliced" globalopacitymod="0.8" />
+						<sprite name="frame" depth="3" pos="107,-9" size="270,30" sprite="smxlib_ui_game_element_searchinput_frame" color="[white]" />
+						<label name="currency" depth="3" pos="68,-10" size="300,28" text="{currencyamount}" font_size="24" color="[white]" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
+					</rect>
 				</panel>
 			</window>
 		</append>

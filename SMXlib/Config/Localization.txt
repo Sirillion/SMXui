@@ -1,6 +1,0 @@
-Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
-xuiMenuChangeLogHeader,UI,Menu,x,,ChangeLog...
-xuiMenuChangeLog1,UI,Menu,x,,[AF1E19]*[-] SMXui: Added modded quest window.\n[AF1E19]*[-] SMXui: Adjusted positions for the map window.\n[AF1E19]*[-] SMXui: Adjusted positions for the journal window.\n[AF1E19]*[-] SMXui: Added modded players window.\n[AF1E19]*[-] SMXui: Did some minor changes to asset use in the journal window.,,,,,
-xuiMenuChangeLog2,UI,Menu,x,,[AF1E19]*[-] SMXmenu: Moved changelog localization file over to SMXlib.\n,,,,,
-smxCurrentVersionBranch,UI,Menu,x,,CURRENT STABLE VERSION
-smxCurrentVersionNumber,UI,Menu,x,,A19.1.Release2

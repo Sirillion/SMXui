@@ -5,3 +5,5 @@ attSkillsDesc,progression,Attribute,,,"[AF1E19]Perception[-]: Governs your skill
 attbooks,progression,Attribute,,,Perk Books,,,,,
 attBooksName,progression,Attribute,,,Perk Books,,,,,
 attBooksDesc,progression,Attribute,,,"In the old world, before the ... 'incident', experts in their field would create books, manuals or other instructions that could be used to study and gain greater insight into the fields in question. Now a days, these books are considered a rare commodity.",,,,,
+xuiChangeLogHeaderUI,UI,Menu,x,,ChangeLog - SMXui...
+xuiChangeLogUI,UI,Menu,x,,[AF1E19]*[-] Added a backdrop to most slots.\n[AF1E19]*[-] Fixed a bug in the turret ammo slots.\n[AF1E19]*[-] Fixed a bug in the trigger options.(Pressure plate) \n[AF1E19]*[-] A lot of minor fixes to sizes and positions.\n[AF1E19]*[-] New shape and material selection windows.\n,,,,,

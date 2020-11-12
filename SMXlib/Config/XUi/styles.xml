@@ -4,9 +4,9 @@
 
 		// EAC:				Friendly
 
-		// VERSION:			19.1.Release2
+		// VERSION:			19.2.Release1
 
-		// BUILD:			A19.1
+		// BUILD:			A19.2
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -47,6 +47,8 @@
 <!--	// SMX // Global Colors -->
 
 		<append xpath="/styles/global">
+			<style_entry name="SMXlibElementsSlotBackground"			value="56,62,66,128" />
+
 			<style_entry name="SMXlibElementsBG"						value="0,0,0" />
 			<style_entry name="SMXlibElementsHDR"						value="175,30,25" />
 			<style_entry name="SMXlibElementsLine"						value="255,255,255" />

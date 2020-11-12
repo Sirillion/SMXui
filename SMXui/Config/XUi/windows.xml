@@ -4,9 +4,9 @@
 
 		// EAC:				Friendly
 
-		// VERSION:			19.1.Release2
+		// VERSION:			19.2.Release1
 
-		// BUILD:			A19.1
+		// BUILD:			A19.2
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -193,7 +193,7 @@
 		<remove xpath="/windows/window[@name='windowLooting']" />
 
 		<append xpath="/windows">
-			<window name="windowLooting" width="{windowWidth}" height="378" panel="Left" controller="LootWindow" anchor_side="bottomright" visible="false" cursor_area="true" window_grid_width_difference="42">
+			<window name="windowLooting" depth="2" width="{windowWidth}" height="378" panel="Left" controller="LootWindow" anchor_side="bottomright" visible="false" cursor_area="true" window_grid_width_difference="42">
 				<panel name="header" style="smxui_window_header" anchor_left="queue,0,-3" anchor_right="queue,1,0">
 					<sprite name="headerbackground" height="80" style="smxui_window_header_background" anchor_left="queue,0,-30" anchor_right="queue,1,33" />
 					<sprite name="SMXuiSeparationLineHeader" depth="6" pos="20,-60" height="4" sprite="smxlib_ui_game_element_horizontal_separation_line" color="[white]" anchor_left="queue,0,-10" anchor_right="queue,1,13" globalopacitymod="1.5" />
@@ -216,7 +216,7 @@
 
 				<rect name="content" pos="3,-115">
 					<sprite name="bg" depth="0" pos="-25,10" style="smxui_window_background" type="sliced" anchor_left="queue,0,-30" anchor_bottom="queue,0,-30" anchor_right="queue,1,33" anchor_top="queue,1,115" globalopacity="true" on_press="true" />
-					<grid name="queue" depth="12" rows="10" cols="9" cell_width="68" cell_height="68" repeat_content="true" controller="LootContainer">
+					<grid name="queue" depth="12" rows="10" cols="9" cell_width="66" cell_height="66" repeat_content="true" controller="LootContainer">
 						<smxui_lootwindow_itemstack_65 name="0"/>
 					</grid>
 				</rect>
@@ -252,7 +252,7 @@
 
 				<rect name="content" pos="3,-115">
 					<sprite name="bg" depth="0" pos="-25,10" style="smxui_window_background" type="sliced" anchor_left="queue,0,-30" anchor_bottom="queue,0,-30" anchor_right="queue,1,33" anchor_top="queue,1,115" globalopacity="true" on_press="true" />
-					<grid name="queue" depth="12" rows="10" cols="9" cell_width="68" cell_height="68" repeat_content="true">
+					<grid name="queue" depth="12" rows="10" cols="9" cell_width="66" cell_height="66" repeat_content="true">
 						<smxui_lootwindow_itemstack_65 name="0"/>
 					</grid>
 				</rect>
@@ -389,7 +389,7 @@
 							<label name="descriptionText" depth="3" width="270" text="{itemdescription}" font_size="20" crispness="Never" effect="outline" effect_distance="1,1" upper_case="false" parse_actions="true" />
 						</rect>
 
-						<grid name="parts" depth="3" pos="210,-625" rows="2" cols="3" cell_width="75" cell_height="75" repeat_content="false" controller="PartList" arrangement="horizontal" visible="{isnotcomparing}" pivot="center">
+						<grid name="parts" depth="4" pos="210,-625" rows="2" cols="3" cell_width="75" cell_height="75" repeat_content="false" controller="PartList" arrangement="horizontal" visible="{isnotcomparing}" pivot="center">
 							<smxui_partlist_itemstack_65 name="0" />
 							<smxui_partlist_itemstack_65 name="0" />
 							<smxui_partlist_itemstack_65 name="0" />
@@ -473,7 +473,7 @@
 							<label name="have" pos="0,-94" text="HAVE" font_size="12" color="[darkGrey]" crispness="Never" effect="outline" effect_distance="1,1" />
 						</rect>
 
-						<grid name="ingredients" depth="3" pos="210,-630" rows="2" cols="3" cell_height="95" cell_width="75" controller="IngredientList" arrangement="horizontal" repeat_content="true" pivot="center">
+						<grid name="ingredients" depth="4" pos="210,-630" rows="2" cols="3" cell_height="95" cell_width="75" controller="IngredientList" arrangement="horizontal" repeat_content="true" pivot="center">
 							<smxui_ingredient_row name="0" />
 						</grid>
 					</rect>
@@ -608,7 +608,7 @@
 							</panel>
 						</rect>
 
-						<grid name="recipes" depth="2" pos="15,-110" size="68,68" rows="6" cols="5" cell_width="68" cell_height="68" controller="RecipeList" repeat_content="true" arrangement="horizontal">
+						<grid name="recipes" depth="2" pos="48,-140" size="68,68" rows="6" cols="5" cell_width="68" cell_height="68" controller="RecipeList" repeat_content="true" arrangement="horizontal">
 							<smxui_crafting_recipe_entry name="0" />
 						</grid>
 
@@ -677,7 +677,7 @@
 							</panel>
 						</rect>
 
-						<grid name="recipes" depth="2" pos="15,-110" size="68,68" rows="5" cols="5" cell_width="68" cell_height="68" controller="RecipeList" repeat_content="true" arrangement="horizontal">
+						<grid name="recipes" depth="2" pos="218,-310" size="68,68" rows="5" cols="5" cell_width="68" cell_height="68" controller="RecipeList" repeat_content="true" arrangement="horizontal" pivot="center">
 							<smxui_crafting_recipe_entry name="0" />
 						</grid>
 
@@ -815,7 +815,7 @@
 							</panel>
 						</rect>
 
-						<grid name="recipes" depth="2" pos="15,-246" size="68,68" rows="3" cols="5" cell_width="68" cell_height="68" controller="RecipeList" repeat_content="true" arrangement="horizontal">
+						<grid name="recipes" depth="2" pos="49,-276" size="68,68" rows="3" cols="5" cell_width="68" cell_height="68" controller="RecipeList" repeat_content="true" arrangement="horizontal">
 							<smxui_crafting_recipe_entry name="0" />
 						</grid>
 
@@ -2265,26 +2265,20 @@
 		<remove xpath="/windows/window[@name='windowShapeBlocks']" />
 
 		<append xpath="/windows">
-			<window name="windowShapeBlocks" depth="0" width="604" height="730" controller="ShapesWindow" panel="Center" anchor_side="bottomright" normal_color="[iconColor]" cursor_area="true" >
-
-				<sprite name="SMXuiWindowDimBackground" depth="0" pos="0,0" size="20000,10000" sprite="menu_empty3px" color="0,0,0,255" type="sliced" pivot="center" globalopacity="true" globalopacitymod="1.3" />
-
+			<window name="windowShapeBlocks" depth="2" width="450" height="750" controller="ShapesWindow" panel="Center" anchor_side="bottomright" normal_color="[iconColor]" cursor_area="true">
 				<rect pos="5,0">
 					<panel name="header" depth="0" height="43" disableautobackground="true">
 						<sprite name="windowicon" depth="2" pos="99999,99999" style="icon32px" sprite="ui_game_symbol_lightbulb"/>
 						<label name="windowName" pos="298,-260" size="400,80" style="smxui_window_title" text="" text_key="" overflow="ShrinkContent" />
-						<label name="resultCount" depth="2" size="100,32" text="" color="[lightGrey]" font_size="32" justify="right" anchor_side="right" pivot="right" anchor_run_once="false" anchor_offset="-10,0"/>
+						<label name="resultCount" depth="9" pos="405,-308" size="100,32" text="" color="[white]" font_size="24" justify="right" pivot="right" />
 					</panel>
 
-					<rect name="searchControls" depth="2" pos="0,-380" size="597,43">
-						<sprite name="SMXuiStatsBackground" depth="2" pos="-70,8" size="305,50" sprite="smxlib_ui_element_unit_frame_background" type="sliced" globalopacitymod="1.5" color="[SMXlibElementsBG]" flip="horizontally" />
-						<sprite name="SMXuiStatsBackground" depth="2" pos="382,8" size="305,50" sprite="smxlib_ui_element_unit_frame_background" type="sliced" globalopacitymod="1.5" color="[SMXlibElementsBG]" />
-
+					<rect name="searchControls" depth="2" pos="80,-290" size="450,43">
 						<panel pos="-30,4" width="200" disableautobackground="true">
 							<smxui_recipe_search name="searchInput" depth="5" />
 						</panel>
 
-						<panel name="searchScroll" pos="500,4" size="98,43" disableautobackground="true">
+						<panel name="searchScroll" pos="93,-365" size="98,43" disableautobackground="true">
 							<button name="pageDown" depth="4" pos="10,-22" size="26,26" style="press, smxlib_icon_colors" sprite="ui_game_symbol_arrow_left" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />								
 							<rect depth="4" pos="37,-7">
 								<label name="pageNumber" depth="5" pos="0,0" size="30,28" text="{pagenumber}" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
@@ -2294,53 +2288,8 @@
 					</rect>
 
 					<rect controller="ShapeStackGrid">
-						<grid name="shapes" depth="10" pos="0,-290" rows="1" cols="1" cell_width="85" cell_height="85" repeat_content="false">
-							<smxui_shape_stack name="UL1"/>
-						</grid>
-						<grid name="shapes" depth="10" pos="45,-215" rows="1" cols="1" cell_width="85" cell_height="85" repeat_content="false">
-							<smxui_shape_stack name="UL2"/>
-						</grid>
-						<grid name="shapes" depth="10" pos="115,-155" rows="1" cols="1" cell_width="85" cell_height="85" repeat_content="false">
-							<smxui_shape_stack name="UL3"/>
-						</grid>
-						<grid name="shapes" depth="10" pos="200,-100" rows="1" cols="1" cell_width="85" cell_height="85" repeat_content="false">
-							<smxui_shape_stack name="UL4"/>
-						</grid>
-						<grid name="shapes" depth="10" pos="322,-100" rows="1" cols="1" cell_width="85" cell_height="85" repeat_content="false">
-							<smxui_shape_stack name="UR1"/>
-						</grid>
-						<grid name="shapes" depth="10" pos="407,-155" rows="1" cols="1" cell_width="85" cell_height="85" repeat_content="false">
-							<smxui_shape_stack name="UR2"/>
-						</grid>
-						<grid name="shapes" depth="10" pos="477,-215" rows="1" cols="1" cell_width="85" cell_height="85" repeat_content="false">
-							<smxui_shape_stack name="UR3"/>
-						</grid>
-						<grid name="shapes" depth="10" pos="522,-290" rows="1" cols="1" cell_width="85" cell_height="85" repeat_content="false">
-							<smxui_shape_stack name="UR4"/>
-						</grid>
-						<grid name="shapes" depth="10" pos="522,-412" rows="1" cols="1" cell_width="85" cell_height="85" repeat_content="false">
-							<smxui_shape_stack name="LR1"/>
-						</grid>
-						<grid name="shapes" depth="10" pos="477,-487" rows="1" cols="1" cell_width="85" cell_height="85" repeat_content="false">
-							<smxui_shape_stack name="LR2"/>
-						</grid>
-						<grid name="shapes" depth="10" pos="407,-547" rows="1" cols="1" cell_width="85" cell_height="85" repeat_content="false">
-							<smxui_shape_stack name="LR3"/>
-						</grid>
-						<grid name="shapes" depth="10" pos="322,-602" rows="1" cols="1" cell_width="85" cell_height="85" repeat_content="false">
-							<smxui_shape_stack name="LR4"/>
-						</grid>
-						<grid name="shapes" depth="10" pos="200,-602" rows="1" cols="1" cell_width="85" cell_height="85" repeat_content="false">
-							<smxui_shape_stack name="LL1"/>
-						</grid>
-						<grid name="shapes" depth="10" pos="115,-547" rows="1" cols="1" cell_width="85" cell_height="85" repeat_content="false">
-							<smxui_shape_stack name="LL2"/>
-						</grid>
-						<grid name="shapes" depth="10" pos="45,-487" rows="1" cols="1" cell_width="85" cell_height="85" repeat_content="false">
-							<smxui_shape_stack name="LL3"/>
-						</grid>
-						<grid name="shapes" depth="10" pos="0,-412" rows="1" cols="1" cell_width="85" cell_height="85" repeat_content="false">
-							<smxui_shape_stack name="LL4"/>
+						<grid name="shapes" depth="10" pos="50,-332" rows="4" cols="5" cell_width="68" cell_height="68" repeat_content="true">
+							<smxui_shape_stack name="0"/>
 						</grid>
 					</rect>
 				</rect>
@@ -2353,11 +2302,114 @@
 		<remove xpath="/windows/window[@name='windowShapeInfo']" />
 
 		<append xpath="/windows">
-			<window name="windowShapeInfo" depth="1" width="350" height="10" controller="ShapeInfoWindow" panel="Center" normal_color="[iconColor]" cursor_area="true">
-				<rect pos="308,340">
-					<sprite name="background" depth="8" size="250,250" sprite="smxlib_ui_game_element_icon_background" color="[SMXlibElementsBG]" pivot="center" globalopacitymod="1.4" />
-					<sprite name="itemPreview" depth="9" pos="0,5" size="200,200" atlas="ItemIconAtlas" sprite="{blockicon}" color="{blockicontint}" pivot="center" foregroundlayer="true" />
+			<window name="windowShapeInfo" depth="1" width="450" height="10" controller="ShapeInfoWindow" panel="Center" normal_color="[iconColor]" cursor_area="true">
+
+				<panel name="SMXuiShapeInfo" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smxui_window_header">
+						<sprite name="SMXuiWindowBackground" size="450,750" style="smxui_window_background" />
+						<sprite name="SMXuiWindowHeader" size="450,80" style="smxui_window_header_background" />
+						<sprite name="SMXuiSeparationLineHeader" size="5,410" style="smxui_window_header_separation" />
+						<label name="windowName" pos="225,-38" width="380" height="40" style="smxui_window_title" text="{blockname}" overflow="ShrinkContent" />
+						<sprite name="SMXuiHorizontalDivider" depth="4" pos="20,-305" size="5,410" style="smxui_window_header_separation" color="[white]" />
+					</panel>
+
+					<rect name="contentInfo" depth="1" pos="57,-46" height="346">
+						<rect name="preview" depth="1" pos="72,-25" size="165,165">
+							<sprite name="sprQuality" depth="9" pos="-25,-26" size="256,160" sprite="smxlib_ui_game_element_iteminfo_preview_background" type="sliced" color="[white]" />
+							<sprite name="itemPreview" depth="10" pos="100,-106" size="165,165" style="smxui_item_preview_icon" atlas="ItemIconAtlas" sprite="{blockicon}" color="{blockicontint}" />
+						</rect>
+					</rect>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// SMX // Material Selection Window -->
+
+		<remove xpath="/windows/window[@name='windowMaterials']" />
+
+		<append xpath="/windows">
+			<window name="windowMaterials" depth="2" width="450" height="750" controller="MaterialWindow" panel="Center" normal_color="[iconColor]" cursor_area="true">
+				<rect pos="5,0">
+					<panel name="header" depth="0" height="43" disableautobackground="true">
+						<sprite name="windowicon" depth="2" pos="99999,99999" style="icon32px" sprite="ui_game_symbol_paint_bucket"/>
+						<label name="windowName" pos="298,-260" size="400,80" style="smxui_window_title" text="" text_key="" overflow="ShrinkContent" />
+						<label name="resultCount" depth="9" pos="405,-308" size="100,32" text="64/256 MATERIALS" color="[white]" font_size="24" justify="right" pivot="right" />
+					</panel>
+
+
+				<rect name="searchControls" depth="2" pos="80,-290" size="450,43">
+					<button name="paintbrush" depth="4" pos="280,230" size="20,20" style="press, smxlib_icon_colors" sprite="ui_game_symbol_paint_brush" pivot="center" tooltip_key="xuiPaintBrush" sound="[paging_click]" selected="true" />
+					<button name="paintroller" depth="4" pos="315,230" size="20,20" style="press, smxlib_icon_colors" sprite="ui_game_symbol_paint_roller" pivot="center" tooltip_key="xuiPaintRoller" sound="[paging_click]" />
+
+					<!--sprite name="SMXdividerV1" depth="10" pos="260,225" size="1,10" color="[SMXlibElementsPerkLine]" globalopacitymod="1.5" justify="center" />
+					<sprite name="SMXdividerV2" depth="10" pos="334,225" size="1,10" color="[SMXlibElementsPerkLine]" globalopacitymod="1.5" justify="center" />
+					<sprite name="SMXdividerH1" depth="11" pos="260,215" size="76,1" color="[SMXlibElementsPerkLine]" globalopacitymod="1.5" justify="center" />
+					<sprite name="SMXdividerV3" depth="10" pos="298,215" size="1,35" color="[SMXlibElementsPerkLine]" globalopacitymod="1.5" justify="center" />
+					<label name="SMXuiTools" depth="10" pos="290,140" size="30,28" text="TOOLS" font_size="18" crispness="Never" effect="outline" effect_distance="1,1" justify="center" rotation="90" /-->
+
+					<panel pos="-30,4" width="200" disableautobackground="true">
+						<smxui_recipe_search name="searchInput" depth="5" />
+					</panel>
+
+					<panel size="98,43" pos="93,-365" disableautobackground="true">
+						<button name="pageDown" depth="4" pos="10,-22" size="26,26" style="press, smxlib_icon_colors" sprite="ui_game_symbol_arrow_left" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />								
+						<rect depth="4" pos="37,-7">
+							<label name="pageNumber" depth="5" pos="0,0" size="30,28" text="{pagenumber}" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
+						</rect>
+						<button name="pageUp" depth="4" pos="94,-22" size="26,26" style="press, smxlib_icon_colors" sprite="ui_game_symbol_arrow_right" pivot="center" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+					</panel>
 				</rect>
+
+				<grid name="queue" depth="10" pos="50,-332" rows="4" cols="5" cell_width="68" cell_height="68" repeat_content="true" controller="MaterialStackGrid">
+					<smxui_material_stack name="0"/>
+				</grid>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Material Selection Info -->
+
+		<remove xpath="/windows/window[@name='windowMaterialInfo']" />
+
+		<append xpath="/windows">
+			<window name="windowMaterialInfo" depth="1" width="450" height="10" controller="MaterialInfoWindow" panel="Center" normal_color="[iconColor]" cursor_area="true">
+
+				<panel name="SMXuiMaterialInfo" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smxui_window_header">
+						<sprite name="SMXuiWindowBackground" size="450,750" style="smxui_window_background" />
+						<sprite name="SMXuiWindowHeader" size="450,80" style="smxui_window_header_background" />
+						<sprite name="SMXuiSeparationLineHeader" size="5,410" style="smxui_window_header_separation" />
+						<label name="windowName" pos="225,-38" width="380" height="40" style="smxui_window_title" text="{materialname}" overflow="ShrinkContent" />
+						<sprite name="SMXuiHorizontalDivider" depth="4" pos="20,-305" size="5,410" style="smxui_window_header_separation" color="[white]" />
+					</panel>
+
+					<rect name="contentInfo" depth="1" pos="57,-46" height="346">
+						<rect name="preview" depth="1" pos="72,-25" size="165,165">
+							<sprite name="sprQuality" depth="9" pos="-25,-26" size="256,160" sprite="smxlib_ui_game_element_iteminfo_preview_background" type="sliced" color="[white]" />
+							<texture name="textMaterial" depth="10" pos="20,-25" size="165,165" material="Materials/Transparent Colored" globalopacity="false" />
+						</rect>
+					</rect>
+
+					<rect depth="10" height="40" width="340" pos="20,-265">
+						<sprite depth="1" name="windowIcon" size="20,20" pos="12,-2" sprite="ui_game_symbol_paint_brush"/>
+						<label depth="1" width="275" pos="40,-2" font_size="18" text="{grouptitle}: [808080]{group}[-] " />
+					</rect>
+
+					<rect depth="10" height="40" width="340" pos="240,-265">
+						<sprite depth="1" name="windowIcon" size="20,20" pos="12,-2" sprite="ui_game_symbol_paint_bucket"/>
+						<label depth="1" width="275" pos="40,-2" font_size="18" text="{paintcosttitle}: [808080]{paintcost} {paintunit}[-] " />
+					</rect>
+
+					<rect depth="10" height="40" width="340" pos="20,-65" visible="{hasperklock}" >
+						<sprite depth="1" name="windowIcon" size="20,20" pos="12,-2" sprite="ui_game_symbol_perk"/>
+						<label depth="1" width="275" pos="40,-2" font_size="18" text="{requiredtitle}: [808080]{perk} {perklevel}[-]" />
+					</rect>
+
+				</panel>
 			</window>
 		</append>
 
@@ -2435,8 +2487,8 @@
 					</panel>
 
 					<panel name="SMXuiPoweredTrapSlots" pos="0,-560" disableautobackground="true">
-						<rect name="content" depth="0" pos="0,0" width="100%" height="128" on_press="true" disablefallthrough="true">
-							<grid name="inventory" depth="3" pos="175,-30" rows="1" cols="3" cell_width="75" cell_height="75" repeat_content="true" controller="PowerRangedAmmoSlots" pivot="center">
+						<rect name="content" depth="0" pos="0,0" width="100%" height="128" disablefallthrough="true">
+							<grid name="inventory" depth="4" pos="175,-30" rows="1" cols="3" cell_width="75" cell_height="75" repeat_content="true" controller="PowerRangedAmmoSlots" pivot="center">
 								<smxui_required_item_stack name="0"/>
 							</grid>
 						</rect>
@@ -2472,7 +2524,7 @@
 						<sprite name="SMXuiHorizontalDivider" depth="4" pos="20,-545" size="5,310" style="smxui_window_header_separation" color="[white]" />
 					</panel>
 
-					<rect name="content" depth="1" pos="0,-350" size="350,128">
+					<rect name="pnlTargeting" depth="1" pos="0,-350" size="350,128">
 
 						<sprite name="SMXuiHorizontalDivider" depth="4" pos="175,-70" size="3,200" style="smxui_window_header_separation" color="[white]" pivot="center" />
 						<sprite name="SMXuiHorizontalDivider" depth="4" pos="175,-70" size="3,200" style="smxui_window_header_separation" color="[white]" pivot="center" rotation="180" />
