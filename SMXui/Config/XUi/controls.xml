@@ -895,114 +895,6 @@
 		</append>
 
 
-<!--	// SMX // Skill List Categories -->
-
-		<append xpath="/controls">
-			<smxui_skills_category_icon>
-				<rect depth="3" size="43,43" controller="CategoryEntry" >
-					<button name="categoryIcon" depth="3" pos="21,-14" size="40,40" sprite="{categoryicon|once}" hovercolor="[mediumGrey]" selectedcolor="[lightGrey]" tooltip="{categorydisplayname|once}" pivot="center" collider_scale="1.5" sound="[paging_click]" />
-				</rect>
-			</smxui_skills_category_icon>
-		</append>
-
-
-<!--	// SMX // Dummy Attributes (Divide Helper) -->
-
-		<append xpath="/controls">
-			<smxui_skill_entry_dummy_attributes>
-				<panel depth="3" size="80,80" style="press, hover, scroll" controller="SkillEntry" disableautobackground="true" enabled_color="[iconColor]" disabled_color="[disabledLabelColor]" row_color="[lightGrey]" hover_color="[mediumGrey]" sound="[recipe_click]" tooltip="{groupname}" visible="{hasskill}">
-					<sprite name="backgroundMain" depth="4" pos="5,-5" size="80,80" sprite="smxlib_ui_element_slot_frame_narrow" color="{rowstatecolor}" type="sliced" />
-					<sprite name="backgroundMain2" depth="3" pos="2,-52" size="74,52" sprite="smxlib_ui_element_slot_background" color="[SMXlibElementsBG]" type="sliced" rotation="45" />
-					<sprite name="groupIcon" depth="5" pos="19,-19" size="52,52" sprite="{groupicon}" color="{statuscolor}" foregroundlayer="true" />
-					<label name="groupName" depth="3" pos="99999,99999" width="90" text="" color="{statuscolor}" />
-				</panel>
-			</smxui_skill_entry_dummy_attributes>
-		</append>
-
-
-<!--	// SMX // Attribute List -->
-
-		<append xpath="/controls">
-			<smxui_skill_entry_attributes>
-				<panel depth="3" size="80,80" style="press, hover, scroll" controller="SkillEntry" disableautobackground="true" enabled_color="[iconColor]" disabled_color="[disabledLabelColor]" row_color="[lightGrey]" hover_color="[mediumGrey]" sound="[recipe_click]" tooltip="{groupname}" visible="{hasskill}">
-					<sprite name="backgroundMain" depth="4" pos="5,-5" size="80,80" sprite="smxlib_ui_element_slot_frame_narrow" color="{rowstatecolor}" type="sliced" />
-					<sprite name="backgroundMain2" depth="3" pos="2,-52" size="74,52" sprite="smxlib_ui_element_slot_background" color="[SMXlibElementsBG]" type="sliced" rotation="45" />
-					<sprite name="groupIcon" depth="5" pos="-49,-11" size="60,60" sprite="{groupicon}" color="{statuscolor}" foregroundlayer="true" />
-					<label name="groupName" depth="3" pos="99999,99999" width="90" text="" color="{statuscolor}" />
-					<sprite depth="5" pos="83,-77" size="24,24" sprite="ui_game_symbol_check" color="[green]" pivot="center" foregroundlayer="true" visible="{cannotpurchase}" />
-					<sprite depth="5" pos="83,-80" size="24,24" sprite="ui_game_symbol_lock" color="[red]" pivot="center" foregroundlayer="true" visible="{islocked}" />
-					<label depth="3" pos="45,-100" width="85" text="{grouplevel}" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" pivot="center" justify="center" color="{statuscolor}" visible="{isnotlocked}" />
-				</panel>
-			</smxui_skill_entry_attributes>
-		</append>
-
-
-<!--	// SMX // Perk List -->
-
-		<append xpath="/controls">
-			<smxui_skill_entry_perks>
-				<panel depth="3" size="70,70" style="press, hover, scroll" controller="SkillEntry" disableautobackground="true" enabled_color="[iconColor]" disabled_color="[disabledLabelColor]" row_color="[lightGrey]" hover_color="[mediumGrey]" sound="[recipe_click]" tooltip="{groupname}" visible="{hasskill}">
-					<sprite name="background" depth="4" pos="5,-5" size="65,65" sprite="smxlib_ui_element_slot_frame_narrow" color="{rowstatecolor}" type="sliced" />
-					<sprite name="background2" depth="3" pos="2,-42" size="59,41" sprite="smxlib_ui_element_slot_background" color="[SMXlibElementsBG]" type="sliced" rotation="45" />
-					<sprite name="groupIcon" depth="5" pos="-52,-8" size="50,50" sprite="{groupicon}" color="{statuscolor}" foregroundlayer="true" />
-					<label name="groupName" depth="3" pos="52,-13" width="90" text="" color="{statuscolor}" />
-					<sprite depth="5" pos="68,-62" size="20,20" sprite="ui_game_symbol_check" color="[green]" pivot="center" foregroundlayer="true" visible="{cannotpurchase}" />
-					<sprite depth="5" pos="68,-65" size="20,20" sprite="ui_game_symbol_lock" color="[red]" pivot="center" foregroundlayer="true" visible="{islocked}" />
-					<label depth="3" pos="37,-82" width="85" text="{grouplevel}" color="{statuscolor}" font_size="18" crispness="Never" effect="outline" effect_distance="1,1" pivot="center" justify="center" visible="{isnotlocked}" />
-					<label depth="3" pos="37,-82" width="85" text="{grouppointcost}" color="{statuscolor}" font_size="18" crispness="Never" effect="outline" effect_distance="1,1" pivot="center" justify="center" visible="{isbook}" />
-				</panel>
-			</smxui_skill_entry_perks>
-		</append>
-
-
-<!--	// SMX // Book List -->
-
-		<append xpath="/controls">
-			<smxui_skill_entry_books>
-				<panel depth="3" size="110,165" style="press, hover, scroll" controller="SkillEntry" disableautobackground="true" enabled_color="[iconColor]" disabled_color="[disabledLabelColor]" row_color="[lightGrey]" hover_color="[mediumGrey]" sound="[recipe_click]" tooltip="{groupname}" visible="{hasskill}">
-					<sprite name="backgroundMain" depth="4" pos="0,0" width="100%" height="100%" sprite="smxlib_ui_game_element_panel_background_dense" color="{rowstatecolor}" type="sliced" flip="vertically" globalopacitymod="0.3" />
-					<sprite name="backgroundMain2" depth="3" pos="2,-52" size="96,67" sprite="smxlib_ui_element_slot_background" color="[SMXlibElementsBG]" type="sliced" rotation="45" />
-					<sprite name="groupIcon" depth="5" pos="15,15" size="80,80" atlas="ItemIconAtlas" sprite="{groupicon}" color="{statuscolor}" foregroundlayer="true" />
-					<label name="groupName" depth="5" pos="99999,99999" width="90" text="{groupname}" color="{statuscolor}" font_size="16" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" overflow="ShrinkContent" />
-					<sprite name="SMXuiRedArrow" depth="9" pos="82,-60" size="55,55" sprite="ui_game_symbol_arrow_max" color="[SMXlibElementsAccentColor1]" rotation="-90" />
-					<sprite name="SMXuiSeparationLineBook" depth="4" pos="10,-115" size="90,3" sprite="smxlib_ui_game_element_horizontal_separation_line" color="[SMXlibElementsAccentColor1]" globalopacitymod="1.5" />
-					<label depth="3" pos="0,-125" width="110" text="{grouppointcost}" color="{statuscolor}" font_size="30" crispness="Never" effect="outline" effect_distance="1,1" justify="center" visible="{isbook}" />
-				</panel>
-			</smxui_skill_entry_books>
-		</append>
-
-
-<!--	// SMX // Skill Perk Levels -->
-
-		<append xpath="/controls">
-			<smxui_skill_perk_level>
-				<panel width="${width}" height="${height}" style="hover, scroll" controller="SkillPerkLevel" disableautobackground="true" color_bg_bought="140,130,100,255" color_bg_available="[lightGrey]" color_bg_locked="[darkGrey]" color_lbl_available="[white]" color_lbl_locked="[lightGrey]" color_lbl_nerfed="204,17,17" color_lbl_buffed="17,204,17" visible="{nothiddenbypager}">
-					<sprite name="background" depth="3" pos="5,-5" size="65,65" sprite="smxlib_ui_element_slot_frame_narrow" color="{color_fg}" type="sliced" visible="{hasentry}" />
-					<sprite name="background2" depth="2" pos="2,-42" size="59,41" sprite="smxlib_ui_element_slot_background" color="[SMXlibElementsBG]" type="sliced" rotation="45" visible="{hasentry}" />
-					<sprite name="groupIcon" depth="4" pos="18,-18" size="40,40" sprite="{groupicon}" color="{color_fg}" visible="{hasentry}" />
-					<button name="btnBuy" depth="9" pos="68,-65" style="icon22px, press, hover" sprite="{buyicon}" defaultcolor="{buycolor}" manualcolors="true" pivot="center" tooltip="{buytooltip}" sound="[paging_click]" visible="{buyvisible}" />
-					<label depth="5" pos="37,-82" width="65" text="{level}" color="{color_fg}" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" upper_case="false" pivot="center" justify="center" visible="{hasentry}" />
-				</panel>
-			</smxui_skill_perk_level>
-		</append>
-
-
-<!--	// SMX // Skill Book Levels -->
-
-		<append xpath="/controls">
-			<smxui_skill_book_level>
-				<panel width="${width}" height="${height}" style="hover" controller="SkillBookLevel" disableautobackground="true" color_bg_bought="140,130,100,255" color_bg_available="[lightGrey]" color_bg_locked="[darkGrey]" color_lbl_available="[white]" color_lbl_locked="[lightGrey]" color_lbl_nerfed="204,17,17" color_lbl_buffed="17,204,17" >
-					<sprite name="background" depth="4" pos="5,-5" size="65,65" sprite="smxlib_ui_element_slot_frame_narrow" color="{color_fg}" type="sliced" visible="{hasentry}" />
-					<sprite name="background2" depth="3" pos="2,-42" size="59,41" sprite="smxlib_ui_element_slot_background" color="[SMXlibElementsBG]" type="sliced" rotation="45" visible="{hasentry}" />
-					<sprite name="groupIcon" depth="5" pos="8,-8" size="60,60" atlas="ItemIconAtlas" sprite="{groupicon}" color="{color_fg}" visible="{hasentry}" />
-					<button name="btnBuy" depth="9" pos="68,-65" style="icon22px, press, hover" sprite="{buyicon}" defaultcolor="{buycolor}" manualcolors="true" pivot="center" tooltip="{buytooltip}" sound="[paging_click]" visible="{buyvisible}" />
-					<label depth="6" pos="37,-82" width="65" text="{level}" color="{color_fg}" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" upper_case="false" pivot="center" justify="center" visible="{hasentry}" />
-					<sprite depth="6" pos="37,-86" style="icon30px" sprite="ui_game_symbol_perk" color="{color_fg}" pivot="center" visible="{iscomplete}" />
-				</panel>
-			</smxui_skill_book_level>
-		</append>
-
-
 <!--	// SMX // Block Shape Selection Grid -->
 
 		<append xpath="/controls">
@@ -1353,31 +1245,31 @@
 						<label name="text" depth="1" pos="0,-63" height="42" text="VOICE" text_key="xuiVoice" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
 					</rect>
 
-					<rect name="km" depth="1" pos="658,-6" width="50" height="46">
+					<rect name="km" depth="1" pos="658,-6" width="70" height="46">
 						<label name="text" depth="1" pos="0,-63" height="42" text="KM" text_key="xuiKM" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
 					</rect>
 
-					<rect name="map" depth="1" pos="711,-6" width="80" height="86">
+					<rect name="map" depth="1" pos="731,-6" width="80" height="86">
 						<label name="text" depth="1" pos="0,-63" height="42" text="MAP" text_key="xuiMap" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
 					</rect>
 
-					<rect name="zombieKills" depth="1" pos="795,-6" width="140" height="46">
+					<rect name="zombieKills" depth="1" pos="815,-6" width="140" height="46">
 						<label name="text" depth="1" pos="0,-63" height="42" text="ZOMBIE KILLS" text_key="xuiEnemyKills" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
 					</rect>
 
-					<rect name="playerKills" depth="1" pos="943,-6" width="140" height="46">
+					<rect name="playerKills" depth="1" pos="960,-6" width="140" height="46">
 						<label name="text" depth="1" pos="0,-63" height="42" text="PLAYER KILLS" text_key="xuiPlayerKills" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
 					</rect>
 
-					<rect name="deaths" depth="1" pos="1086,-6" width="90" height="86">
+					<rect name="deaths" depth="1" pos="1106,-6" width="90" height="86">
 						<label name="text" depth="1" pos="0,-63" height="42" text="DEATHS" text_key="xuiDeaths" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
 					</rect>
 
-					<rect name="ping" depth="1" pos="1179,-6" width="80" height="46">
+					<rect name="ping" depth="1" pos="1195,-6" width="80" height="46">
 						<label name="text" depth="1" pos="0,-63" height="42" text="PING" text_key="xuiPing" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
 					</rect>
 
-					<rect name="reportheader" depth="1" pos="1262,-6" width="80" height="46" color="[darkGrey]" type="sliced">
+					<rect name="reportheader" depth="1" pos="1282,-6" width="80" height="46" color="[darkGrey]" type="sliced">
 						<label name="text" depth="1" pos="0,-63" height="42" text_key="xuiPlayersReportPlayerCol" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
 					</rect>
 				</panel>
@@ -1419,32 +1311,32 @@
 						<sprite name="iconVoice" depth="1" pos="40,-16" style="icon32px" sprite="ui_game_symbol_mic" color="[lightGrey]" pivot="center" />
 					</rect>
 
-					<rect name="km" depth="1" pos="658,-6" width="50" height="46">
+					<rect name="km" depth="1" pos="668,-6" width="50" height="46">
 						<label name="labelDistanceWalked" depth="1" pos="0,-15" height="38" text="-" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
 					</rect>
 
-					<rect name="map" depth="1" pos="711,-6" width="80" height="86">
+					<rect name="map" depth="1" pos="731,-6" width="80" height="86">
 						<label name="labelShowOnMap" depth="0" pos="0,-15" height="38" text="--" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
 						<button name="iconShowOnMap" depth="1" pos="40,-16" style="icon32px, press, hover" pivot="center" sprite="ui_game_symbol_map" color="[lightGrey]" disabledcolor="[disabledLabelColor]" sound="[craft_click]" tooltip="Show on Map" tooltip_key="lblShowOnMap" />
 					</rect>
 
-					<rect name="zombieKills" depth="1" pos="795,-6" width="140" height="46">
+					<rect name="zombieKills" depth="1" pos="815,-6" width="140" height="46">
 						<label name="zombieKillsText" depth="1" pos="0,-15" height="38" text="" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
 					</rect>
 
-					<rect name="playerKills" depth="1" pos="943,-6" width="140" height="46">
+					<rect name="playerKills" depth="1" pos="960,-6" width="140" height="46">
 						<label name="playerKillsText" depth="1" pos="0,-15" height="38" text="" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
 					</rect>
 
-					<rect name="deaths" depth="1" pos="1086,-6" width="90" height="86">
+					<rect name="deaths" depth="1" pos="1106,-6" width="90" height="86">
 						<label name="deathsText" depth="1" pos="0,-15" height="38" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
 					</rect>
 
-					<rect name="ping" depth="1" pos="1179,-6" width="80" height="46">
+					<rect name="ping" depth="1" pos="1195,-6" width="80" height="46">
 						<label name="pingText" depth="1" pos="0,-15" height="38" text="--" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
 					</rect>
 
-					<rect name="reportheader" depth="1" pos="1262,-6" width="80" height="46" color="[darkGrey]" type="sliced">
+					<rect name="reportheader" depth="1" pos="1282,-6" width="80" height="46" color="[darkGrey]" type="sliced">
 						<label name="labelReportPlayer" depth="0" pos="0,-15" height="38" text="--" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="left" />
 						<button name="iconReportPlayer" depth="1" pos="40,-16" style="icon32px, press, hover" sprite="ui_game_symbol_quest" color="[lightGrey]" pivot="center" sound="[craft_click]" tooltip_key="xuiPlayersReportPlayer" />
 					</rect>

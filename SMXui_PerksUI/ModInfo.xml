@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<xml>
+	<ModInfo>
+		<Name value="SMXui_PerksUI" />
+		<Description value="An extension modlet module for SMXui that adds the skills and attributes conversion UI." />
+		<Author value="Sirillion" />
+		<Version value="19.3.Release1" />
+		<Website value="http://www.nexusmods.com/7daystodie/mods/22/?" />
+	</ModInfo>
+</xml>

@@ -4,9 +4,9 @@
 
 		// EAC:				Friendly
 
-		// VERSION:			19.2.Release1
+		// VERSION:			19.3.Release1
 
-		// BUILD:			A19.2
+		// BUILD:			A19.3
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -56,6 +56,7 @@
 
 			<style_entry name="SMXlibElementsButtons"					value="175,30,25" />
 			<style_entry name="SMXlibElementsAccentColor1"				value="175,30,25" />
+			<style_entry name="SMXlibElementsAccentColor2"				value="46,69,36" />
 
 			<style_entry name="SMXlibElementsIcon"						value="255,255,255" />
 			<style_entry name="SMXlibElementsLBLPri"					value="255,255,255" />

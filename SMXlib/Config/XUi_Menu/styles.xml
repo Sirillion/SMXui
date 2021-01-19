@@ -12,6 +12,7 @@
 
 			<style_entry name="SMXlibElementsButtons"					value="175,30,25" />
 			<style_entry name="SMXlibElementsAccentColor1"				value="175,30,25" />
+			<style_entry name="SMXlibElementsAccentColor2"				value="46,69,36" />
 
 			<style_entry name="SMXlibElementsIcon"						value="255,255,255" />
 			<style_entry name="SMXlibElementsLBLPri"					value="255,255,255" />

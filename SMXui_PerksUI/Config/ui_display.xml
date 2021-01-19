@@ -1,0 +1,8 @@
+<SMXui_PerksUI name="ui_display.xml">
+
+
+<!--	// SMX // Skill Window: Attribute > Perk Buff Change - Buff Item Descriptions -->
+
+		<set xpath="/ui_display_info/item_display/item_display_info/display_entry[@name='AttributeLevel']/@name">PerkLevel</set>
+
+</SMXui_PerksUI>
