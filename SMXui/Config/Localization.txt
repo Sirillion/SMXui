@@ -1,3 +1,3 @@
 Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
 xuiChangeLogHeaderUI,UI,Menu,x,,ChangeLog - SMXui...
-xuiChangeLogUI,UI,Menu,x,,[AF1E19]*[-] Change: Moved the Perks UI to a separate modlet.\n[AF1E19]*[-] Change: Adjusted the width of the distance column by 20px.\n[AF1E19]*[-] Fixed: A small bug in the itemInfoPanel window.\n[AF1E19]*[-] Fixed: Two bugs with the perks/buffs. Thanks Napalm91!\n[AF1E19]*[-] Fixed: A layering issue in the books window.\n,,,,,
+xuiChangeLogUI,UI,Menu,x,,[AF1E19]*[-] Stepped away from build numbers in version numbering.\n[AF1E19]*[-] Fixed: Twitch Integration changes added.\n,,,,,

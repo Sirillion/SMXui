@@ -1285,8 +1285,16 @@
 					<sprite name="background" pos="-55,20" width="1500" height="90" color="[darkGrey]" sprite="smxlib_ui_game_element_conversation_trader_background" type="sliced" />
 
 					<rect name="steamId" depth="1" pos="6,-6" width="204" height="46">
-						<label name="steamIdText" depth="1" pos="4, -15" width="186" height="38" text="" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" pivot="left" />
-						<sprite name="admin" pos="200,-18" width="28" height="28" sprite="ui_game_symbol_star" color="[red]" pivot="center" tooltip_key="xuiIsAdmin" />
+						<label name="steamIdText" depth="1" pos="4, -15" width="186" height="38" text="" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" pivot="left" overflow="ShrinkContent" />
+						<grid depth="2" pos="170,-18" cols="2" cell_width="30" cell_height="30" repeat_content="false" arrangement="horizontal">
+							<sprite name="admin" width="28" height="28" sprite="ui_game_symbol_star" color="[red]" pivot="center" tooltip_key="xuiIsAdmin" />
+							<sprite name="twitch" width="28" height="28" sprite="smxlib_ui_game_symbol_twitch_logo" color="[SMXlibElementsTwitchLogo]" pivot="center" tooltip_key="xuiTwitchEnabled" />
+							<sprite name="twitchDisabled" width="28" height="28" sprite="smxlib_ui_game_symbol_twitch_logo_disabled" color="[white]" pivot="center" tooltip_key="xuiTwitchDisabled" />
+						</grid>
+
+						<!--sprite name="admin" pos="200,-18" width="28" height="28" sprite="ui_game_symbol_star" color="[red]" pivot="center" tooltip_key="xuiIsAdmin" />
+						<sprite name="twitch" pos="170,-18" width="28" height="28" sprite="ui_game_symbol_twitch_actions" color="100,65,164" pivot="center" tooltip_key="xuiTwitchEnabled" />
+						<sprite name="twitchDisabled" pos="170,-18" width="28" height="28" sprite="ui_game_symbol_twitch_action_disabled" color="[mediumGrey]" pivot="center" tooltip_key="xuiTwitchDisabled" /-->
 					</rect>
 
 					<rect name="level" depth="1" pos="223,-6" width="70" height="46">
@@ -1308,7 +1316,7 @@
 					</rect>
 
 					<rect name="voice" depth="1" pos="572,-6" width="80" height="46">
-						<sprite name="iconVoice" depth="1" pos="40,-16" style="icon32px" sprite="ui_game_symbol_mic" color="[lightGrey]" pivot="center" />
+						<sprite name="iconVoice" depth="1" pos="40,-18" size="28,28" sprite="ui_game_symbol_mic" color="[lightGrey]" pivot="center" />
 					</rect>
 
 					<rect name="km" depth="1" pos="668,-6" width="50" height="46">
