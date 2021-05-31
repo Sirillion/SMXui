@@ -1286,7 +1286,11 @@
 
 					<rect name="steamId" depth="1" pos="6,-6" width="204" height="46">
 						<label name="steamIdText" depth="1" pos="4, -15" width="186" height="38" text="" font_size="26" crispness="Never" effect="outline" effect_distance="1,1" pivot="left" />
-						<sprite name="admin" pos="200,-18" width="28" height="28" sprite="ui_game_symbol_star" color="[red]" pivot="center" tooltip_key="xuiIsAdmin" />
+						<grid depth="0" pos="200, -18" cols="2" cell_width="28" cell_height="28" repeat_content="false" arrangement="horizontal">
+							<sprite name="admin" width="28" height="28" sprite="ui_game_symbol_star" color="[red]" pivot="center" tooltip_key="xuiIsAdmin" />
+							<sprite name="twitch" width="28" height="28" color="[selectedColor]" sprite="ui_game_symbol_twitch_actions" tooltip_key="xuiTwitchEnabled" />
+							<sprite name="twitchDisabled" width="28" height="28" color="[selectedColor]" sprite="ui_game_symbol_twitch_action_disabled" tooltip_key="xuiTwitchDisabled" />
+						</grid>
 					</rect>
 
 					<rect name="level" depth="1" pos="223,-6" width="70" height="46">
