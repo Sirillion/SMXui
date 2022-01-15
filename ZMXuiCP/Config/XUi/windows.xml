@@ -1,46 +1,424 @@
-<ZMXuiCP name="windows.xml">
+<ZMXuiCP name="XUi/windows.xml">
 
 <!--	// SMX // Backpack Window -->
 
 		<remove xpath="/windows/window[@name='windowBackpack']" />
 
 		<append xpath="/windows">
-			<window name="windowBackpack" depth="1" size="470,750" anchor="CenterCenter" panel="Right" controller="BackpackWindow" cursor_area="true">
+			<window name="windowBackpack" depth="1" width="470" height="800" anchor="CenterCenter" panel="Right" controller="BackpackWindow" cursor_area="true">
+				<smxlib_window_design name="windowName" depth="1" width="470" height="800" text="INVENTORY" text_key="xuiInventory" />
+				<smxui_window_design_content_inventory depth="3" pos="43,-43" width="360" height="700" rows="9" cols="5" cell_width="68" cell_height="68" />
+				<smxui_window_design_menu_right depth="3" width="470" height="800" />
+				<smxui_window_design_menu_right_inventory depth="3" width="470" height="800" />
+			</window>
+		</append>
 
-				<panel name="SMXuiWindowBackpack" pos="0,0" disableautobackground="true">
 
-					<panel name="header" style="smxui_window_header">
-						<sprite name="SMXuiWindowBackground" size="470,750" style="smxui_window_background" />
-						<sprite name="SMXuiWindowHeader" size="470,80" style="smxui_window_header_background" />
-						<sprite name="SMXuiSeparationLineHeader" size="5,430" style="smxui_window_header_separation" />
-						<label name="windowName" pos="235,-38" size="470,80" style="smxui_window_title" text="INVENTORY" text_key="xuiInventory" overflow="ShrinkContent" />
-						<sprite name="SMXuiVerticalDivider" depth="4" pos="390,-90" size="5,620" style="smxui_window_header_separation" color="[white]" rotation="360" />
+<!--	// SMX // Empty Info Window -->
 
-						<rect name="containerControl" depth="3" pos="425,0" size="60,600" controller="ContainerStandardControls" move_start_bottom_left="true">
-							<button name="btnMoveFillStacks" depth="3" pos="0,-140" size="40,40" style="press, hover, smxlib_icon_colors" sprite="smxlib_ui_game_symbol_dumpfill" pivot="center" tooltip_key="lblStashFillStacks" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
-							<button name="btnMoveSmart" depth="3" pos="0,-225" size="40,40" style="press, hover, smxlib_icon_colors" sprite="smxlib_ui_game_symbol_dumpsmart" pivot="center" tooltip_key="lblStashSmart" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
-							<button name="btnMoveAll" depth="3" pos="0,-310" size="40,40" style="press, hover, smxlib_icon_colors" sprite="smxlib_ui_game_symbol_dumpall" pivot="center" tooltip_key="lblStashAll" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
+		<remove xpath="/windows/window[@name='emptyInfoPanel']" />
 
-							<smxui_stashbuttons_combobox name="cbxLockedSlots" pos="5,-400" type="ComboBoxInt" value_min="0" value_max="45" value_wrap="true" value_increment="1" tooltip_key="xuiStashLockedSlots" visible="{lootingorvehiclestorage}" />
+		<append xpath="/windows">
+			<window name="emptyInfoPanel" depth="1" width="450" height="800" anchor="CenterCenter" panel="Center" controller="InfoWindow" cursor_area="true" >
 
-							<button name="btnClearInventory" depth="3" pos="0,-550" size="40,40" style="press, hover, smxlib_icon_colors" sprite="ui_game_symbol_trash" pivot="center" tooltip_key="lblClearInventory" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{creativewindowopen}" />
-							<button name="btnSort" depth="3" pos="0,-620" size="40,40" style="press, hover, smxlib_icon_colors" sprite="smxlib_ui_game_symbol_sort" pivot="center" tooltip_key="lblSortContainer" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+				<smxlib_window_design name="windowName" depth="1" width="450" height="800" text="INSPECT" text_key="xuiInspect" />
+
+				<rect name="smxui_window_content" depth="3" pos="0,-70" height="730">
+
+					<sprite name="backdropWindow" depth="1" pos="25,-15" width="400" height="690" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />
+
+					<rect name="smxui_instruction_labels" pos="35,-35" width="380" height="690">
+
+						<!-- SMX DEV: Revisit after release. Remake this into smxui_window_design_module_title version. -->
+						<sprite name="smxui_module_separation" depth="3" pos="40,-15" width="300" height="5" sprite="smxlib_separation_line_1" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
+						<sprite name="smxui_module_title_background" depth="4" pos="70,-5" width="240" height="30" sprite="smxlib_window_statsentry_background" rotation="2" color="[smxui_element_module_title_background]" globalopacitymod="1.8" />
+						<label name="smxui_module_title" depth="5" pos="70,-10" width="240" height="30" style="smxlib_label_normal" text="INSTRUCTIONS" spacing_x="6" font_size="22" justify="center" rotation="2" color="[smxui_element_labelcolor_1]" />
+
+						<rect name="smxui_instruction_labels" pos="0,-50" width="380" height="90">
+							<smxlib_modular_frame name="smxui_emptyinfo_instructions" depth="2" pos="10,-10" width="360" height="190" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
+							<sprite name="frameSeparator" depth="4" pos="75,-30" width="130" height="3" sprite="smxlib_separation_line_1" rotation="-90" globalopacitymod="1.8" />
+
+							<label name="smxui_hid_mlc" depth="4" pos="45,-45" text="[action:local:Primary] " font_size="35" pivot="center" justify="center" parse_actions="true" max_line_count="1" />
+							<label name="descriptionText" depth="5" pos="225,-45" size="270,90" style="smxlib_label_normal" text="TO INSPECT AN ITEM, RECIPE OR ACTIVE EFFECT" text_key="" font_size="20" pivot="center" justify="left" upper_case="true" color="[smxui_element_labelcolor_1]" />
+							<label name="descriptionText" depth="5" pos="225,-105" size="270,90" style="smxlib_label_normal" text="HOLD AND DRAG TO TAKE A STACK" text_key="" font_size="20" pivot="center" justify="left" upper_case="true" color="[smxui_element_labelcolor_1]" />
+							<label name="descriptionText" depth="5" pos="225,-175" size="270,90" style="smxlib_label_normal" text="TO DROP OR SWAP A STACK" text_key="" font_size="20" pivot="center" justify="left" upper_case="true" color="[smxui_element_labelcolor_1]" />
 						</rect>
-					</panel>
 
-					<panel name="content" depth="1" pos="30,-60" size="630,730" disableautobackground="true">
-						<grid name="inventory" depth="10" pos="43,-43" rows="9" cols="5" cell_width="68" cell_height="68" controller="Backpack" repeat_content="true" pivot="topleft">
-							<smxui_backpack_itemstack_72 name="0" />
-						</grid>
-					</panel>
+						<rect name="smxui_instruction_labels" pos="0,-280" width="380" height="90">
+							<smxlib_modular_frame name="smxui_emptyinfo_instructions" depth="2" pos="10,-10" width="360" height="130" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
+							<sprite name="frameSeparator" depth="4" pos="75,-30" width="70" height="3" sprite="smxlib_separation_line_1" rotation="-90" globalopacitymod="1.8" />
 
-					<rect name="SMXuiCurrency" depth="4" pos="0,-680" height="43">
-						<sprite name="costIcon" depth="3" pos="75,-25" size="26,26" sprite="ui_game_symbol_coin" color="[white]" pivot="center" forgroundlayer="true" />
-						<sprite name="background" depth="2" pos="107,-9" size="268,30" sprite="menu_empty" color="[SMXlibElementsSlotBackground]" type="sliced" globalopacitymod="0.8" />
-						<sprite name="frame" depth="3" pos="107,-9" size="270,30" sprite="smxlib_ui_game_element_searchinput_frame" color="[white]" />
-						<label name="currency" depth="3" pos="68,-10" size="300,28" text="{currencyamount}" font_size="24" color="[white]" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
+							<label name="smxui_hid_mrc" depth="4" pos="45,-45" text="[action:local:Secondary] " font_size="35" pivot="center" justify="center" parse_actions="true" max_line_count="1" />
+							<label name="descriptionText" depth="5" pos="225,-45" size="270,90" style="smxlib_label_normal" text="HOLD AND DRAG TO TAKE A HALF STACK" text_key="" font_size="20" pivot="center" justify="left" upper_case="true" color="[smxui_element_labelcolor_1]" />
+							<label name="descriptionText" depth="5" pos="225,-105" size="270,90" style="smxlib_label_normal" text="TO DROP ONE ITEM AT A TIME" text_key="" font_size="20" pivot="center" justify="left" upper_case="true" color="[smxui_element_labelcolor_1]" />
+						</rect>
+
+						<rect name="smxui_instruction_labels" pos="0,-450" width="380" height="90">
+							<smxlib_modular_frame name="smxui_emptyinfo_instructions" depth="2" pos="10,-10" width="360" height="70" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
+							<sprite name="frameSeparator" depth="4" pos="75,-30" width="30" height="3" sprite="smxlib_separation_line_1" rotation="-90" globalopacitymod="1.8" />
+
+							<label name="smxui_hid_mlc" depth="4" pos="45,-45" text="[action:local:Primary] " font_size="35" pivot="center" justify="center" parse_actions="true" max_line_count="1" />
+							<label name="descriptionText" depth="5" pos="225,-45" size="270,90" style="smxlib_label_normal" text="TO MOVE A STACK BETWEEN AREAS" text_key="" font_size="20" pivot="center" justify="left" upper_case="true" color="[smxui_element_labelcolor_1]" />
+
+							<rect name="smxui_window_shift_button" depth="2">
+								<sprite name="smxui_shift_background" depth="4" pos="43,-80" width="45" height="25" sprite="ui_game_header_fill" type="sliced" color="[white]" pivot="center" />
+								<sprite name="smxui_shift_foreground" depth="5" pos="43,-80" width="43" height="23" sprite="ui_game_header_fill" type="sliced" color="[black]" pivot="center" globalopacitymod="1.8" />
+								<label name="smxui_shift_label" depth="6" pos="43,-81" width="43" height="23" style="smxlib_label_normal" text="SHIFT" font_size="16" pivot="center" justify="center" upper_case="true" color="[white]" /> 
+							</rect>
+						</rect>
+
+						<rect name="smxui_instruction_labels" pos="0,-560" width="380" height="90">
+							<smxlib_modular_frame name="smxui_emptyinfo_instructions" depth="2" pos="10,-10" width="360" height="70" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
+							<sprite name="frameSeparator" depth="4" pos="75,-30" width="30" height="3" sprite="smxlib_separation_line_1" rotation="-90" globalopacitymod="1.8" />
+
+							<label name="smxui_hid_kReload" depth="5" pos="38,-45" style="smxlib_label_normal" text=" [action:permanent:Reload]" font_size="35" pivot="center" justify="center" parse_actions="true" max_line_count="1" />
+							<label name="descriptionText" depth="5" pos="225,-45" size="270,90" style="smxlib_label_normal" text="TO TAKE EVERYTHING FROM A CONTAINER" text_key="" font_size="20" pivot="center" justify="left" upper_case="true" color="[smxui_element_labelcolor_1]" />
+						</rect>
 					</rect>
-				</panel>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Item Info Window -->
+
+		<remove xpath="/windows/window[@name='itemInfoPanel']" />
+
+		<append xpath="/windows">
+			<window name="itemInfoPanel" depth="1" width="450" height="800" anchor="CenterCenter" panel="Center" controller="ItemInfoWindow" cursor_area="true">
+
+				<smxlib_window_design name="windowName" depth="1" width="450" height="800" text="{itemname}" text_key="" />
+				<smxui_window_design_menu_right depth="3" width="450" height="800" />
+
+				<rect name="smxui_window_content" depth="3" pos="20,-80" width="340" height="700">
+
+					<sprite name="backdropWindow" depth="1" pos="0,-5" width="340" height="690" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />
+
+					<rect name="smxui_preview_module" depth="5" pos="0,0" width="340" height="230">
+
+						<sprite name="iconBackground" depth="8" pos="365,20" width="80" height="170" sprite="smxlib_window_pricetag" rotation="-90" color="[smxui_element_accentcolor_1]" globalopacitymod="1.8" />
+						<label name="priceIndex" depth="9" pos="285,-21" width="120" height="36" style="smxlib_label_normal" text=" [808080]$[-]" font_size="36" pivot="center" justify="left" visible="false" />
+						<label name="price" depth="10" pos="295,-21" width="100" height="36" style="smxlib_label_normal" text=" {itemcost}{markup}" font_size="36" pivot="center" justify="right" overflow="ShrinkContent" color="{pricecolor}" visible="false" />
+
+						<sprite name="backdropModule" depth="2" pos="20,-20" width="300" height="195" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_background]" globalopacitymod="1.1" />
+						<sprite name="frameLeft" depth="3" pos="20,-11" width="215" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+						<sprite name="frameTop" depth="4" pos="10,-20" width="320" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+						<sprite name="frameRight" depth="3" pos="320,-11" width="215" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+						<sprite name="frameBottom" depth="4" pos="10,-215" width="320" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+
+						<sprite name="qualityBackground" depth="2" pos="175,-110" width="301" height="160" sprite="smxlib_item_preview_background" pivot="center" justify="center" color="{durabilitycolor}" />
+						<sprite name="itemPreview" depth="5" pos="120,-106" size="165,165" atlas="ItemIconAtlas" sprite="{itemicon}" pivot="center" color="{itemicontint}" foregroundlayer="true" />
+						<sprite name="itemtypeicon" depth="6" pos="0,0" size="40,40" sprite="ui_game_symbol_{itemtypeicon}" color="{itemtypeicontint}" foregroundlayer="true" visible="{hasitemtypeicon}" />
+
+						<sprite name="durabilityBackground" depth="3" pos="30,-190" width="275" height="14" sprite="smxlib_item_durability_bar" color="[smxui_item_durability_background]" visible="{hasdurability}" />
+						<sprite name="durabilityBar" depth="4" pos="30,-190" width="275" height="14" sprite="smxlib_item_durability_bar" type="filled" fill="{durabilityfill}" color="{durabilitycolor}" visible="{hasdurability}" />
+
+						<!--label name="itemAmmoName" depth="7" pos="10,0" width="200" height="16" style="smxlib_label_normal" text="{itemammoname}" font_size="16" justify="right" color="[smxui_element_labelcolor_2]" /--> <!-- BUGGED: Do NOT enable! -->
+						<label name="durabilityValue" depth="7" pos="112,-170" width="200" height="52" style="smxlib_label_normal" text="{durabilitytext}" font_size="50" justify="{durabilityjustify}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
+					</rect>
+
+					<rect name="smxui_menu_module_items" depth="5" pos="365,-55" width="46" height="555" visible="{shownormaloptions}">
+						<grid name="itemActions" pos="0,0" width="46" height="60" rows="5" cols="1" cell_width="46" cell_height="70" controller="ItemActionList" repeat_content="true" visible="false">
+							<smxui_item_action_entry width="46" height="46" />
+						</grid>
+
+						<rect name="searchControls" pos="0,-510" width="46" height="46" visible="{showstatanddescription}">
+							<button name="statButton" depth="4" pos="23,-23" size="40,40" style="press, smxlib_icon_colors" sprite="smxlib_ui_game_symbol_swap" pivot="center" selected="true" tooltip="Stats" sound_play_on_hover="[default_hover]" sound="[paging_click]" visible="{showdescription}" />
+							<button name="descriptionButton" depth="4" pos="23,-23" size="40,40" style="press, smxlib_icon_colors" sprite="smxlib_ui_game_symbol_swap" pivot="center" tooltip="Description" sound_play_on_hover="[default_hover]" sound="[paging_click]" visible="{showstats}" />
+						</rect>
+					</rect>
+
+					<rect name="smxui_menu_module_traders" depth="5" pos="365,-55" width="46" height="555" visible="{showtraderoptions}">
+						<grid name="vendorItemActions" depth="2" pos="0,0" width="46" height="60" rows="4" cols="1" cell_width="46" cell_height="70" controller="ItemActionList" repeat_content="true" visible="false">
+							<smxui_item_action_entry width="46" height="46" />
+						</grid>
+
+						<rect name="counterControl" depth="3" pos="0,-275" width="46" height="150" controller="Counter">
+							<smxui_counter_control />
+						</rect>
+					</rect>
+
+					<rect name="smxui_content_module" depth="5" pos="0,-230" width="340" height="320" visible="{showstatanddescription}">
+
+						<rect name="smxui_stats_module" depth="2" pos="0,0" width="340" height="320" visible="{showstats}">
+
+							<smxui_window_design_module_title pos="0,0" text="ITEM  STATS" />
+
+							<rect name="smxui_stats_module_content" depth="2" pos="0,-40" width="340" height="280">
+								<rect pos="0,-10" height="35">
+									<sprite name="smxui_statsentry_background" depth="2" pos="0,3" width="340" height="40" sprite="smxlib_window_statsentry_background" color="[smxui_table_entry_background_2]" globalopacitymod="1.8" />
+									<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="{itemstattitle1}" font_size="22" justify="left" color="[smxui_element_labelcolor_1]" />
+									<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="{itemstat1}" font_size="22" justify="right" color="[smxui_element_labelcolor_3]" />
+								</rect>
+								<rect pos="0,-45" height="35">
+									<sprite name="smxui_statsentry_background" depth="2" pos="0,3" width="340" height="40" sprite="smxlib_window_statsentry_background" color="[smxui_table_entry_background_1]" globalopacitymod="1.8" flip="horizontally" />
+									<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="{itemstattitle2}" font_size="22" justify="left" color="[smxui_element_labelcolor_1]" />
+									<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="{itemstat2}" font_size="22" justify="right" color="[smxui_element_labelcolor_3]" />
+								</rect>
+								<rect pos="0,-80" height="35">
+									<sprite name="smxui_statsentry_background" depth="2" pos="0,3" width="340" height="40" sprite="smxlib_window_statsentry_background" color="[smxui_table_entry_background_2]" globalopacitymod="1.8" flip="horizontally" />
+									<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="{itemstattitle3}" font_size="22" justify="left" color="[smxui_element_labelcolor_1]" />
+									<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="{itemstat3}" font_size="22" justify="right" color="[smxui_element_labelcolor_3]" />
+								</rect>
+								<rect pos="0,-115" height="35">
+									<sprite name="smxui_statsentry_background" depth="2" pos="0,3" width="340" height="40" sprite="smxlib_window_statsentry_background" color="[smxui_table_entry_background_1]" globalopacitymod="1.8" />
+									<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="{itemstattitle4}" font_size="22" justify="left" color="[smxui_element_labelcolor_1]" />
+									<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="{itemstat4}" font_size="22" justify="right" color="[smxui_element_labelcolor_3]" />
+								</rect>
+								<rect pos="0,-150" height="35">
+									<sprite name="smxui_statsentry_background" depth="2" pos="0,3" width="340" height="40" sprite="smxlib_window_statsentry_background" color="[smxui_table_entry_background_2]" globalopacitymod="1.8" flip="horizontally" />
+									<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="{itemstattitle5}" font_size="22" justify="left" color="[smxui_element_labelcolor_1]" />
+									<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="{itemstat5}" font_size="22" justify="right" color="[smxui_element_labelcolor_3]" />
+								</rect>
+								<rect pos="0,-185" height="35">
+									<sprite name="smxui_statsentry_background" depth="2" pos="0,3" width="340" height="40" sprite="smxlib_window_statsentry_background" color="[smxui_table_entry_background_1]" globalopacitymod="1.8" flip="horizontally" />
+									<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="{itemstattitle6}" font_size="22" justify="left" color="[smxui_element_labelcolor_1]" />
+									<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="{itemstat6}" font_size="22" justify="right" color="[smxui_element_labelcolor_3]" />
+								</rect>
+								<rect pos="0,-220" height="35">
+									<sprite name="smxui_statsentry_background" depth="2" pos="0,3" width="340" height="40" sprite="smxlib_window_statsentry_background" color="[smxui_table_entry_background_2]" globalopacitymod="1.8"  />
+									<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="{itemstattitle7}" font_size="22" justify="left" color="[smxui_element_labelcolor_1]" />
+									<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="{itemstat7}" font_size="22" justify="right" color="[smxui_element_labelcolor_3]" />
+								</rect>
+							</rect>
+						</rect>
+
+						<rect name="smxui_description_module" depth="2" pos="0,0" width="340" height="320" visible="{showdescription}">
+
+							<smxui_window_design_module_title pos="0,0" text="DESCRIPTION" />
+
+							<sprite name="backdropModule" depth="2" pos="10,-45" width="320" height="260" sprite="smxlib_window_background" flip="horizontally" color="[smxui_element_backdrop_2]" globalopacitymod="1.1" />
+							<label name="descriptionText" depth="3" pos="25,-55" width="290" height="240" style="smxlib_label_normal" text="{itemdescription}" font_size="22" upper_case="false" parse_actions="true" />
+						</rect>
+					</rect>
+
+					<rect name="smxui_description_module" depth="6" pos="0,-230" width="340" height="470" visible="{showonlydescription}">
+
+						<smxui_window_design_module_title pos="0,0" text="DESCRIPTION" />
+
+						<sprite name="backdropModule" depth="2" pos="10,-45" width="320" height="400" sprite="smxlib_window_background" color="[smxui_element_backdrop_2]" flip="horizontally" globalopacitymod="1.1" />
+						<label name="descriptionText" depth="3" pos="25,-55" width="290" height="240" style="smxlib_label_normal" text="{itemdescription}" font_size="22" upper_case="false" parse_actions="true" />
+					</rect>
+
+					<rect name="smxui_modifications_module" depth="5" pos="0,-550" width="340" height="150" visible="{showstatanddescription}">
+
+						<smxui_window_design_module_title pos="0,0" text="MODIFICATIONS" />
+
+						<grid name="parts" depth="4" pos="35,-90" rows="1" cols="5" cell_width="68" cell_height="68" repeat_content="true" controller="PartList" arrangement="horizontal" visible="{isnotcomparing}">
+							<smxui_partlist_item_stack name="0" />
+						</grid>
+
+						<rect name="parts" depth="4" pos="0,-90" width="340" height="150" visible="{iscomparing}" >
+							<label name="descriptionText" depth="3" pos="0,10" height="22" style="smxlib_label_normal" text_key="xuiCompareNoModded" font_size="22" justify="center" upper_case="true" overflow="ShrinkContent" color="[smxui_element_accentcolor_1]" />
+						</rect>
+					</rect>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Crafting Info Window -->  <!-- SMX DEV: With SMX perk windows there is a bug where you press the button to go to the correct perk. It opens the perkwindow and highlights the correct perk. But doesn't swap to the correct page. --> <!-- SMX DEV: Check color change based on ingredient status -->
+
+		<remove xpath="/windows/window[@name='craftingInfoPanel']" />
+
+		<append xpath="/windows">
+			<window name="craftingInfoPanel" depth="1" width="450" size="800" anchor="CenterCenter" panel="Center" controller="CraftingInfoWindow" cursor_area="true"
+					valid_color="[smxui_crafting_valid_entry]" invalid_color="[smxui_crafting_invalid_entry]" valid_sprite="ui_game_symbol_check" invalid_sprite="ui_game_symbol_x">
+
+				<smxlib_window_design name="windowName" depth="1" width="450" height="800" text="{itemname}" text_key="" />
+				<smxui_window_design_menu_right depth="3" width="450" height="800" />
+
+				<sprite name="windowIcon" depth="2" pos="99999,99999" size="0,0" style="icon32px" sprite="{itemgroupicon}" />
+				<sprite name="costIcon" depth="4" pos="99999,99999" size="0,0" sprite="ui_game_symbol_coin" color="[white]" foregroundlayer="true" />
+
+				<rect name="smxui_window_content" depth="3" pos="20,-80" width="340" height="700">
+
+					<sprite name="backdropWindow" depth="1" pos="0,-5" width="340" height="690" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />
+
+					<rect name="smxui_preview_module" depth="5" pos="0,0" width="340" height="230">
+						
+						<sprite name="backdropModule" depth="2" pos="20,-20" width="300" height="195" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_background]" globalopacitymod="1.1" />
+						<sprite name="frameLeft" depth="3" pos="20,-11" width="215" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+						<sprite name="frameTop" depth="4" pos="10,-20" width="320" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+						<sprite name="frameRight" depth="3" pos="320,-11" width="215" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+						<sprite name="frameBottom" depth="4" pos="10,-215" width="320" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+
+						<sprite name="qualityBackground" depth="2" pos="175,-110" width="301" height="160" sprite="smxlib_item_preview_background" pivot="center" justify="center" color="{durabilitycolor}" />
+						<sprite name="itemPreview" depth="5" pos="120,-106" size="165,165" atlas="ItemIconAtlas" sprite="{itemicon}" pivot="center" color="{itemicontint}" foregroundlayer="true" />
+						<sprite name="itemtypeicon" depth="6" pos="0,0" size="40,40" sprite="ui_game_symbol_{itemtypeicon}" color="{itemtypeicontint}" foregroundlayer="true" visible="{hasitemtypeicon}" />
+						
+						<sprite name="craftingTimeIndex" depth="7" pos="190,-192" size="30,30" sprite="ui_game_symbol_clock" pivot="center" justify="center" rotation="0" color="[smxui_element_iconcolor_1]" />
+						<label name="craftingTime" depth="7" pos="262,-195" width="100" height="52" style="smxlib_label_normal" text="{craftingtime}" font_size="50" pivot="center" justify="right" overflow="ShrinkContent" color="[smxui_element_labelcolor_2]" />
+
+						<rect name="requiredToolOverlay" depth="6" pos="0,0" width="340" height="40">
+							<sprite name="requiredToolCheckmark" depth="17" pos="115,-12" size="35,35" sprite="ui_game_symbol_check" pivot="center" color="[red]" globalopacitymod="1.8" />
+							<sprite name="requiredToolCheckmarkBackground" depth="16" pos="112,-16" size="15,15" sprite="smxlib_window_checkmark_background" pivot="center" rotation="-2" color="[smxui_element_background]" globalopacitymod="1.3" />
+							<sprite name="requiredToolTextBackground" depth="14" pos="200,-20" width="240" height="30" sprite="smxlib_window_statsentry_background"  pivot="center" rotation="-2" color="[smxui_element_module_title_background]" globalopacitymod="1.8" />
+							<label name="requiredToolText" depth="15" pos="220,-21" width="180" height="24" style="smxlib_label_normal" text="Required" text_key="xuiRequired" font_size="22" pivot="center" justify="center" upper_case="true" rotation="-2" overflow="ShrinkContent" color="[smxui_element_labelcolor_1]" />
+						</rect>
+					</rect>
+
+					<rect name="smxui_menu_module_items" depth="5" pos="365,-55" width="46" height="555">
+						<grid name="itemActions" pos="0,0" width="46" height="60" rows="4" cols="1" cell_width="46" cell_height="70" repeat_content="true" controller="ItemActionList" visible="false">
+							<smxui_item_action_entry width="46" height="46" />
+						</grid>
+
+						<rect name="counterControl" depth="3" pos="0,-275" width="46" height="150" controller="RecipeCraftCount">
+							<smxui_counter_control />
+						</rect>
+
+						<rect name="searchControls" pos="0,-510" width="46" height="46">
+							<button name="ingredientsButton" depth="4" pos="23,20" size="30,30" style="press, smxlib_icon_colors" sprite="ui_game_symbol_resource" pivot="center" selected="true" tooltip_key="Ingredients" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
+							<button name="descriptionButton" depth="4" pos="23,-20" size="30,30" style="press, smxlib_icon_colors" sprite="ui_game_symbol_book" pivot="center" tooltip_key="lblBookDesc" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
+							<button name="showunlocksButton" depth="4" pos="23,-60" size="30,30" style="press, smxlib_icon_colors" sprite="ui_game_symbol_unlock" pivot="center" tooltip_key="xuiSkillUnlocks" sound_play_on_hover="[default_hover]" sound="[paging_click]" visible="{showunlockedbytab}" />
+						</rect>
+					</rect>
+
+					<rect name="smxui_ingredients_module" depth="5" pos="0,-230" width="340" height="470" visible="{showingredients}">
+
+						<smxui_window_design_module_title pos="0,0" text="INGREDIENTS" />
+
+						<sprite name="backdropModule" depth="2" pos="10,-45" width="320" height="400" sprite="smxlib_window_background" color="[smxui_element_backdrop_2]" flip="horizontally" globalopacitymod="1.1" />
+
+						<grid name="ingredients" depth="3" pos="60,-95" rows="5" cols="1" cell_width="298" cell_height="75" arrangement="vertical" repeat_content="true" controller="IngredientList">
+							<smxui_ingredient_row name="0" />
+						</grid>
+					</rect>
+
+					<rect name="smxui_description_module" depth="6" pos="0,-230" width="340" height="470" visible="{showdescription}">
+
+						<smxui_window_design_module_title pos="0,0" text="DESCRIPTION" />
+
+						<sprite name="backdropModule" depth="2" pos="10,-45" width="320" height="400" sprite="smxlib_window_background" color="[smxui_element_backdrop_2]" flip="horizontally" globalopacitymod="1.1" />
+
+						<label name="descriptionText" depth="3" pos="25,-55" width="290" height="380" style="smxlib_label_normal" text="{itemdescription}" font_size="22" upper_case="false" parse_actions="true" />
+					</rect>
+
+					<rect name="smxui_unlockedby_module" depth="5" pos="0,-230" width="340" height="470" visible="{showunlockedby}">
+
+						<smxui_window_design_module_title pos="0,0" text="UNLOCKED  BY" />
+
+						<sprite name="backdropModule" depth="2" pos="10,-45" width="320" height="400" sprite="smxlib_window_background" color="[smxui_element_backdrop_2]" flip="horizontally" globalopacitymod="1.1" />
+
+						<grid name="unlockedBy" depth="3" pos="60,-95" rows="5" cols="1" cell_width="298" cell_height="75" repeat_content="true" controller="UnlockByList">
+							<smxui_unlocked_by_row name="1" /> 
+						</grid> 
+					</rect>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Buff Info Panel -->
+
+		<remove xpath="/windows/window[@name='buffInfoPanel']" />
+
+		<append xpath="/windows">
+			<window name="buffInfoPanel" depth="1" width="450" height="800" anchor="CenterCenter" panel="Center" controller="BuffInfoWindow">
+
+				<smxlib_window_design name="windowName" depth="1" width="450" height="800" text="{buffname|once}" text_key="" />
+				<smxui_window_design_menu_right depth="3" width="450" height="800" />
+
+				<rect name="smxui_window_content" depth="3" pos="20,-80" width="340" height="700">
+
+					<sprite name="backdropWindow" depth="1" pos="0,-5" width="340" height="690" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />
+
+					<rect name="smxui_preview_module" depth="5" pos="0,0" width="340" height="230">
+						<sprite name="backdropModule" depth="2" pos="20,-20" width="300" height="195" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_background]" globalopacitymod="1.1" />
+						<sprite name="frameLeft" depth="3" pos="20,-11" width="215" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+						<sprite name="frameTop" depth="4" pos="10,-20" width="320" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+						<sprite name="frameRight" depth="3" pos="320,-11" width="215" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+						<sprite name="frameBottom" depth="4" pos="10,-215" width="320" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+
+						<sprite name="qualityBackground" depth="2" pos="175,-110" width="301" height="160" sprite="smxlib_item_preview_background" pivot="center" justify="center" color="{buffcolor}" />
+						<sprite name="itemPreview" depth="5" pos="120,-106" size="165,165" sprite="{bufficon|once}" pivot="center" color="[white]" foregroundlayer="true" />
+					</rect>
+
+					<rect name="smxui_menu_module_items" depth="5" pos="365,-55" width="46" height="555">
+						<grid name="itemActions" pos="0,0" width="46" height="60" rows="4" cols="1" cell_width="46" cell_height="70" repeat_content="true" controller="ItemActionList" visible="false">
+							<smxui_item_action_entry width="46" height="46" />
+						</grid>
+
+						<rect name="searchControls" pos="0,-510" width="46" height="46">
+							<button name="descriptionButton" depth="4" pos="23,-10" size="30,30" style="press, smxlib_icon_colors" sprite="ui_game_symbol_book" pivot="center" selected="true" tooltip_key="lblBookDesc" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
+							<button name="statButton" depth="4" pos="23,-60" size="30,30" style="press, smxlib_icon_colors" sprite="ui_game_symbol_assemble" pivot="center" tooltip_key="Stats! Shhh, it's a secret!" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
+						</rect>
+					</rect>
+
+					<rect name="smxui_description_module" depth="6" pos="0,-230" width="340" height="470" visible="{showdescription}">
+
+						<smxui_window_design_module_title pos="0,0" text="BUFF  INFORMATION" />
+
+						<sprite name="backdropModule" depth="2" pos="10,-45" width="320" height="400" sprite="smxlib_window_background" color="[smxui_element_backdrop_2]" flip="horizontally" globalopacitymod="1.1" />
+
+						<label name="descriptionText" depth="3" pos="25,-55" width="290" height="380" style="smxlib_label_normal" text="{buffdescription}" font_size="22" upper_case="false" overflow="ShrinkContent" parse_actions="true" />
+					</rect>
+
+					<rect name="smxui_stats_module" depth="6" pos="0,-230" width="340" height="470" visible="{showstats}">
+
+						<smxui_window_design_module_title pos="0,0" text="BUFF  STATS" />
+
+						<sprite name="backdropModule" depth="2" pos="10,-45" width="320" height="400" sprite="smxlib_window_background" color="[smxui_element_backdrop_2]" flip="horizontally" globalopacitymod="1.1" />
+
+						<label name="descriptionText2" depth="3" pos="25,-55" width="290" height="380" style="smxlib_label_normal" text="{buffstats}" font_size="22" upper_case="false" overflow="ShrinkContent" parse_actions="true" />
+					</rect>
+
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // ServiceInfo Panel -->
+
+		<remove xpath="/windows/window[@name='serviceInfoPanel']" />
+
+		<append xpath="/windows">
+			<window name="serviceInfoPanel" depth="1" width="450" height="800" anchor="CenterCenter" panel="Center" controller="ServiceInfoWindow" cursor_area="true">
+
+				<smxlib_window_design name="windowName" depth="1" width="450" height="800" text="{servicename}" text_key="" />
+				<smxui_window_design_menu_right depth="3" width="450" height="800" />
+
+				<rect name="smxui_window_content" depth="3" pos="20,-80" width="340" height="700">
+
+					<sprite name="backdropWindow" depth="1" pos="0,-5" width="340" height="690" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />
+
+					<rect name="smxui_preview_module" depth="5" pos="0,0" width="340" height="230">
+						<sprite name="iconBackground" depth="8" pos="365,20" width="80" height="170" sprite="smxlib_window_pricetag" rotation="-90" color="[smxui_element_accentcolor_1]" globalopacitymod="1.8" />
+						<label name="priceIndex" depth="9" pos="285,-21" width="120" height="36" style="smxlib_label_normal" text=" [808080]$[-]" font_size="36" pivot="center" justify="left" visible="false" />
+						<label name="price" depth="10" pos="295,-21" width="100" height="36" style="smxlib_label_normal" text=" {servicecost}" font_size="36" pivot="center" justify="right" overflow="ShrinkContent" color="{pricecolor}" visible="false" />
+
+						<sprite name="backdropModule" depth="2" pos="20,-20" width="300" height="195" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_background]" globalopacitymod="1.1" />
+						<sprite name="frameLeft" depth="3" pos="20,-11" width="215" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+						<sprite name="frameTop" depth="4" pos="10,-20" width="320" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+						<sprite name="frameRight" depth="3" pos="320,-11" width="215" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+						<sprite name="frameBottom" depth="4" pos="10,-215" width="320" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+
+						<sprite name="qualityBackground" depth="2" pos="175,-110" width="301" height="160" sprite="smxlib_item_preview_background" pivot="center" justify="center" color="[white]" />
+						<sprite name="servicePreview" depth="5" pos="120,-106" size="165,165" atlas="ItemIconAtlas" sprite="cntVendingMachineTrader" pivot="center" color="{serviceicontint}" foregroundlayer="true" />
+					</rect>
+
+					<rect name="smxui_menu_module_items" depth="5" pos="365,-55" width="46" height="555">
+						<grid name="itemActions" pos="0,0" width="46" height="60" rows="5" cols="1" cell_width="46" cell_height="70" repeat_content="true" controller="ItemActionList" visible="false">
+							<smxui_item_action_entry width="46" height="46" />
+						</grid>
+					</rect>
+
+					<rect name="descriptionText" depth="6" pos="0,-230" width="340" height="470">
+
+						<smxui_window_design_module_title pos="0,0" text="DESCRIPTION" />
+
+						<sprite name="backdropModule" depth="2" pos="10,-45" width="320" height="260" sprite="smxlib_window_background" color="[smxui_element_backdrop_2]" flip="horizontally" globalopacitymod="1.1" />
+						<label name="descriptionText" depth="3" pos="25,-55" width="290" height="240" style="smxlib_label_normal" text="{servicedescription}" font_size="22" upper_case="false" parse_actions="true" />
+					</rect>
+
+					<rect name="statText" depth="5" pos="0,-550" width="340" height="150" >
+
+						<smxui_window_design_module_title pos="0,0" text="SERVICE  STATS" />
+
+						<smxlib_modular_frame name="smxui_fuelindicator_frame" depth="1" pos="10,-45" width="320" height="80" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
+						<label name="statText" depth="4" pos="20,-55" width="300" height="65" style="smxlib_label_normal" text="{servicestats}" font_size="22" upper_case="false" overflow="ShrinkContent" color="[smxui_element_labelcolor_1]" />
+					</rect>
+				</rect>
 			</window>
 		</append>
 

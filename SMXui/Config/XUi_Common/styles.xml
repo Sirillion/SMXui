@@ -1,0 +1,46 @@
+<SMXui file="XUi_Common/styles.xml">
+
+<!--	// SMX // Vanilla hoverColor Color "Correction" -->
+
+		<set xpath="/styles/global/style_entry[@name='hoverColor']/@value">96,96,96</set>
+
+
+<!--	// SMX // Paging Header Window -->
+
+		<append xpath="/styles">
+			<style name="smxui_window_paging_icons"						type="button">
+				<style_entry name="depth" 								value="2"/>
+				<style_entry name="width" 								value="198"/>
+				<style_entry name="height" 								value="42"/>
+				<style_entry name="pivot" 								value="center" />
+				<style_entry name="hoverscale" 							value="1" />
+				<style_entry name="collider_scale" 						value="1.0" />
+				<style_entry name="defaultcolor" 						value="[smxui_element_backdrop_1]" />
+				<style_entry name="selectedcolor" 						value="[smxui_element_accentcolor_1]" />
+				<style_entry name="disabledcolor" 						value="[smxui_element_button_background]" />
+				<style_entry name="hoversprite" 						value="smxui_button_background" />
+				<style_entry name="selectedsprite" 						value="smxui_button_background" />
+				<style_entry name="globalopacitymod" 					value="1.2"/>
+				<style_entry name="sound" 								value="[paging_click]"/>
+			</style>
+		</append>
+
+		<append xpath="/styles">
+			<style name="smxui_window_paging_icons"						type="sprite">
+				<style_entry name="depth" 								value="2"/>
+				<style_entry name="width" 								value="198"/>
+				<style_entry name="height" 								value="42"/>
+				<style_entry name="pivot" 								value="center" />
+				<style_entry name="hoverscale" 							value="1" />
+				<style_entry name="collider_scale" 						value="1.0" />
+				<style_entry name="defaultcolor" 						value="[smxui_element_backdrop_1]" />
+				<style_entry name="selectedcolor" 						value="[smxui_element_accentcolor_1]" />
+				<style_entry name="disabledcolor" 						value="[smxui_element_button_background]" />
+				<style_entry name="hoversprite" 						value="smxui_button_background" />
+				<style_entry name="selectedsprite" 						value="smxui_button_background" />
+				<style_entry name="globalopacitymod" 					value="1.2"/>
+				<style_entry name="sound" 								value="[paging_click]"/>
+			</style>
+		</append>
+
+</SMXui>

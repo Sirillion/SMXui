@@ -1,3 +1,25 @@
 Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
-xuiChangeLogHeaderUI,UI,Menu,x,,ChangeLog - SMXui...
-xuiChangeLogUI,UI,Menu,x,,[AF1E19]*[-] Stepped away from build numbers in version numbering.\n[AF1E19]*[-] Fixed: Twitch Integration changes added.\n,,,,,
+
+xuiChangeLogHeaderUI,UI,Menu,x,,ChangeLog - SMXui - r20.rc1
+xuiChangeLogUI,UI,Menu,x,,[AF1E19]*[-]  Updated to work with A20.\n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n,,,,,
+
+TwitchInfo_ActionDisableAction,xui,Menu,,,Disable,,,,,,,,,,,,,,
+TwitchInfo_ActionEnableAction,xui,Menu,,,Enable,,,,,,,,,,,,,,
+lblLevel,UI,Tooltip,,,{0},,{0},{0},{0},{0},{0},{0},{0},{0},{0},{0},{0},{0},{0}
+attAttributeTitle,progression,Attribute,,,Attribute,,Attribut,Atributo,Attribut,Attributo,特性,속성,Atrybut,Atributo,Атрибут,Nitelik,属性,屬性,Atributo
+attPerceptionName,progression,Attribute,,,Perception,,Wahrnehmung,Percepción,Perception,Percezione,知覚,인지력,Percepcja,Percepção,Восприятие,Algı,感知,感知,Percepción
+attStrengthName,progression,Attribute,,,Strength,,Stärke,Fuerza,Force,Forza,強さ,힘,Siła,Força,Сила,Kuvvet,力量,力量,Fuerza
+attFortitudeName,progression,Attribute,,,Fortitude,,Standhaftigkeit,Fortaleza,Courage,Resilienza,忍耐,불굴의 정신,Hart,Robustez,Стойкость,Dayanma,强健,堅韌,Fortaleza
+attAgilityName,progression,Attribute,,,Agility,,Beweglichkeit,Agilidad,Agilité,Agilità,素早さ,민첩성,Zwinność,Agilidade,Ловкость,Atiklik,敏捷,敏捷性,Agilidad
+attIntellectName,progression,Attribute,,,Intellect,,Intelligenz,Intelecto,Intelligence,Intelletto,知能,지능,Intelekt,Intelecto,Интеллект,Zekâ,智慧,智力,Intelecto
+
+modDyeBlack,item_modifiers,mod,,,Black,,Schwarz,Negro,noire,Nero,黒,검정색,Czarny,Preta,Черный,Siyah,黑,黑,Negro
+modDyeBlue,item_modifiers,mod,,,Blue,,Blau,Azul,bleue,Blu,青,파란색,Niebieski,Azul,Синий,Mavi,蓝,藍,Azul
+modDyeBrown,item_modifiers,mod,,,Brown,,Braun,Marrón,marron,Marrone,茶,갈색,Brązowy,Marrom,Коричневый,Kahverengi,棕,棕,Marrón
+modDyeGreen,item_modifiers,mod,,,Green,,Grün,Verde,verte,Verde,緑,초록색,Zielony,Verde,Зеленый,Yeşil,绿,綠,Verde
+modDyeOrange,item_modifiers,mod,,,Orange,,Orange,Naranja,orange,Arancione,橙,주황색,Pomarańczowy,Laranja,Оранжевый,Turuncu,橙,橙,Naranja
+modDyePink,item_modifiers,mod,,,Pink,,Rosa,Rosa,rose,Rosa,ピンク,분홍색,Róż,Rosa,Розовый,Pembe,粉,粉,Rosa
+modDyePurple,item_modifiers,mod,,,Purple,,Lila,Lila,violet,Viola,紫,보라색,Fiolet,Roxo,Фиолетовый,Mor,紫,紫,Lila
+modDyeRed,item_modifiers,mod,,,Red,,Rot,Rojo,rouge,Rosso,赤,빨간색,Czerwone,Vermelho,Красный,Kırmızı,红,紅,Rojo
+modDyeWhite,item_modifiers,mod,,,Solvent,,Flüssig,Disolvente,solvant,Solvente,溶剤,하얀색,Rozpuszczalnik,Solvente,Растворитель,Çözücü,溶剂,溶劑,Disolvente
+modDyeYellow,item_modifiers,mod,,,Yellow,,Gelb,Amarillo,jaune,Giallo,黄,노란색,Żółty,Amarelo,Желтый,Sarı,黄,黃,Amarillo
