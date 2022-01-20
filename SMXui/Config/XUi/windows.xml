@@ -4,7 +4,7 @@
 
 		// EAC:				Non Friendly, SMX requires EAC to be DISABLED.
 
-		// VERSION:			r20.rc1
+		// VERSION:			r20.rc2
 
 		// BUILD:			A20.0
 
@@ -239,7 +239,7 @@
 
 						<button name="btnSort" depth="3" pos="0,0" size="40,40" anchor_left="queue,1,-90" anchor_right="queue,1,-50" style="press, hover, smxlib_icon_colors" sprite="smxlib_ui_game_symbol_sort" pivot="center" tooltip_key="lblSortContainer" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
 
-						<smxui_lockedslots_combobox_horizontal name="cbxLockedSlots" pos="180,0" type="ComboBoxInt" value_min="0" value_max="{container_slots}" value_wrap="true" value_increment="1" tooltip_key="xuiStashLockedSlots" />
+						<!--smxui_lockedslots_combobox_horizontal name="cbxLockedSlots" pos="180,0" type="ComboBoxInt" value_min="0" value_max="{container_slots}" value_wrap="true" value_increment="1" tooltip_key="xuiStashLockedSlots" /-->
 					</rect>
 				</rect>
 
@@ -250,7 +250,7 @@
 					<sprite name="backdropWindow" depth="3" pos="0,0" anchor_left="queue,0,-45" anchor_bottom="queue,0,25" anchor_right="queue,1,-20" anchor_top="queue,1,45" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />
 
 					<sprite name="backgroundMain" depth="4" pos="0,0" anchor_left="queue,0,-35" anchor_bottom="queue,0,35" anchor_right="queue,1,-35" anchor_top="queue,1,35" sprite="menu_empty" type="sliced" color="[black]" />
-					<grid name="queue" depth="12" pos="35,-35" rows="10" cols="9" cell_width="68" cell_height="68" repeat_content="true" controller="LootContainer">
+					<grid name="queue" depth="12" pos="35,-35" rows="9" cols="10" cell_width="68" cell_height="68" repeat_content="true" controller="LootContainer">
 						<smxui_looting_item_stack name="0" />
 					</grid>
 				</rect>
@@ -281,7 +281,7 @@
 
 						<button name="btnSort" depth="3" pos="0,0" size="40,40" anchor_left="queue,1,-90" anchor_right="queue,1,-50" style="press, hover, smxlib_icon_colors" sprite="smxlib_ui_game_symbol_sort" pivot="center" tooltip_key="lblSortContainer" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
 
-						<smxui_lockedslots_combobox_horizontal name="cbxLockedSlots" pos="180,0" type="ComboBoxInt" value_min="0" value_max="{container_slots}" value_wrap="true" value_increment="1" tooltip_key="xuiStashLockedSlots" />
+						<!--smxui_lockedslots_combobox_horizontal name="cbxLockedSlots" pos="180,0" type="ComboBoxInt" value_min="0" value_max="{container_slots}" value_wrap="true" value_increment="1" tooltip_key="xuiStashLockedSlots" /-->
 					</rect>
 				</rect>
 
@@ -292,7 +292,7 @@
 					<sprite name="backdropWindow" depth="3" pos="0,0" anchor_left="queue,0,-45" anchor_bottom="queue,0,25" anchor_right="queue,1,-20" anchor_top="queue,1,45" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />
 
 					<sprite name="backgroundMain" depth="4" pos="0,0" anchor_left="queue,0,-35" anchor_bottom="queue,0,35" anchor_right="queue,1,-35" anchor_top="queue,1,35" sprite="menu_empty" type="sliced" color="[black]" />
-					<grid name="queue" depth="12" pos="35,-35" rows="10" cols="9" cell_width="68" cell_height="68" repeat_content="true">
+					<grid name="queue" depth="12" pos="35,-35" rows="9" cols="10" cell_width="68" cell_height="68" repeat_content="true">
 						<smxui_looting_item_stack name="0"/>
 					</grid>
 				</rect>
@@ -602,20 +602,17 @@
 
 				<rect name="smxui_forgeinput_resources_module" depth="9" pos="570,879" width="68" height="136">
 
-					<sprite name="backgroundMain" depth="2" width="68" height="204" sprite="menu_empty" type="sliced" color="[smxui_slot_main_background]" on_press="true" />
+					<sprite name="backgroundMain" depth="2" width="68" height="136" sprite="menu_empty" type="sliced" color="[smxui_slot_main_background]" on_press="true" />
 
-					<rect name="smxui_forgeinput_resources_content" depth="1" height="204">
+					<rect name="smxui_forgeinput_resources_content" depth="1" height="136">
 
 						<label name="smxui_input_grid_label" depth="9" pos="34,10" width="68" height="22" style="smxlib_label_normal" text="INPUT" text_key="xuiSmelting" font_size="18" pivot="center" justify="center" upper_case="true" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
 
-						<grid name="smxui_input_grid" depth="10" pos="34,-34" rows="3" cols="1" cell_width="68" cell_height="68" repeat_content="true" controller="WorkstationMaterialInputGrid">
+						<grid name="smxui_input_grid" depth="10" pos="34,-34" rows="2" cols="1" cell_width="68" cell_height="68" repeat_content="true" controller="WorkstationMaterialInputGrid">
 							<smxui_preview_item_stack name="0" />
 						</grid>
 
-						<grid name="smxui_slot_preview" depth="6" rows="3" cols="1" pos="34,-34" cell_width="68" cell_height="68" controller="SlotPreview">
-							<rect>
-								<sprite name="slot" depth="4" size="50,50" atlas="UIAtlas" sprite="ui_game_symbol_fire" pivot="center" color="[red]" globalopacitymod="0.8" foregroundlayer="true" />
-							</rect>
+						<grid name="smxui_slot_preview" depth="6" rows="2" cols="1" pos="34,-34" cell_width="68" cell_height="68" controller="SlotPreview">
 							<rect>
 								<sprite name="slot" depth="4" size="50,50" atlas="UIAtlas" sprite="ui_game_symbol_fire" pivot="center" color="[red]" globalopacitymod="0.8" foregroundlayer="true" />
 							</rect>
@@ -642,7 +639,7 @@
 							<sprite name="smxui_artline_horizontal" depth="1" pos="50,25" width="70" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
 							<sprite name="smxui_artline_vertical" depth="1" pos="105,47" width="55" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
 							<sprite name="smxui_artline_horizontal" depth="1" pos="70,-5" width="68" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
-							<sprite name="smxui_artline_vertical" depth="1" pos="105,-238" width="47" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_vertical" depth="1" pos="105,-170" width="115" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
 						</rect>
 					</rect>
 				</rect>
@@ -736,14 +733,14 @@
 
 				<rect name="smxui_button_module" depth="9" pos="410,831" width="136" height="40">
 
-					<button name="button" width="${width}" height="40" sprite="smxui_button_background" defaultcolor="[smxui_element_accentcolor_1]" hoversprite="smxui_button_background" hovercolor="[white]" hoverscale="1.0" disabledcolor="[white]" />
+					<button name="button" width="150" height="40" sprite="smxui_button_background" defaultcolor="[smxui_element_accentcolor_1]" hoversprite="smxui_button_background" hovercolor="[white]" hoverscale="1.0" disabledcolor="[white]" />
 
 					<sprite name="flameIcon" depth="5" pos="88,-597" size="25,25" sprite="ui_game_symbol_fire" />
 
 					<label name="burnTimeLeft" depth="4" pos="102,-333" width="60" height="22" style="smxlib_label_normal" text="00:00" font_size="22" pivot="center" justify="center" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
 					<smxlib_modular_frame name="smxui_fuel_burntime" depth="1" pos="72,-319" width="64" height="25" pivot="center" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
 
-					<label name="onoff" depth="2" pos="68,-20" style="smxlib_label_normal" text="TURN ON" text_key="xuiTurnOn" font_size="24" pivot="center" justify="center" upper_case="true" />
+					<label name="onoff" depth="2" pos="75,-21" width="120" height="24" style="smxlib_label_normal" text="TURN ON" text_key="xuiTurnOn" font_size="24" pivot="center" justify="center" upper_case="true" />
 				</rect>
 
 				<rect name="smxui_fuel_art_module" depth="10" pos="410,515" width="136" height="40">
@@ -1234,7 +1231,7 @@
 						<label name="smxui_buffs_label" depth="9" pos="34,14" width="68" height="22" style="smxlib_label_normal" text="BUFFS" font_size="18" pivot="center" justify="center" upper_case="true" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
 
 						<grid depth="10" name="buffs" pos="34,-34" rows="6" cols="1" cell_width="68" cell_height="74" repeat_content="true" controller="ActiveBuffList">
-							<smxui_active_buff_entry />
+							<smxui_active_buff_entry cell_width="68" cell_height="74" />
 						</grid>
 
 						<rect pos="5,-440" width="68" height="40">

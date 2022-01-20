@@ -81,7 +81,7 @@ public class SMXui_itemstack_xuic
 	}
 */
 
-	/*	// NOT READY. Attemt to inject an new if statement for when a slot is locked then show this color.
+	/*	// NOT READY. Attempt to inject an new if statement for when a slot is locked then show this color.
 		[HarmonyPatch(typeof(XUiC_ItemStack))]
 		[HarmonyPatch("updateBorderColor")]
 		public class SMXuiItemStackUpdateBorderColor

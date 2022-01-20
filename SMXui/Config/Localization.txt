@@ -1,7 +1,7 @@
 Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
 
-xuiChangeLogHeaderUI,UI,Menu,x,,ChangeLog - SMXui - r20.rc1
-xuiChangeLogUI,UI,Menu,x,,[AF1E19]*[-]  Updated to work with A20.\n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n,,,,,
+xuiChangeLogHeaderUI,UI,Menu,x,,ChangeLog - SMXui - r20.rc2
+xuiChangeLogUI,UI,Menu,x,,[AF1E19]*[-]  ADDED: Set hardcoded sprites to fit theme.\n[AF1E19]*[-]  ADDED: Dedicated mod slots in ItemInfo.\n[AF1E19]*[-]  FIXED: Removed container/vehicle slot lock.\n[AF1E19]*[-]  FIXED: Cut third forge slot to optional modlet.\n[AF1E19]*[-]  FIXED: Small general adjustments.\n[AF1E19][-]  \n,,,,,
 
 TwitchInfo_ActionDisableAction,xui,Menu,,,Disable,,,,,,,,,,,,,,
 TwitchInfo_ActionEnableAction,xui,Menu,,,Enable,,,,,,,,,,,,,,

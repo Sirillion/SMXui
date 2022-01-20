@@ -454,7 +454,7 @@
 					<sprite name="mainBackground" depth="0" pos="0,0" width="64" height="64" sprite="menu_empty" type="sliced" pivot="center" color="[smxui_slot_main_background]" globalopacitymod="1.3" />
 
 					<sprite name="background" depth="1" pos="0,0" width="56" height="56" style="press" sprite="menu_empty" pivot="center" type="sliced" color="[smxui_slot_slot_background]" on_hover="true" globalopacity="true" tooltip="{tooltip}"/>
-					<sprite name="itemBackgroundNormal" depth="2" pos="0,0" width="25" height="25" sprite="ui_game_symbol_assemble" pivot="center" rotation="0" color="[smxui_slot_item_background]" globalopacitymod="1.2" visible="{isempty}" />
+					<sprite name="itemBackgroundNormal" depth="2" pos="0,0" width="25" height="25" sprite="${sprite}" pivot="center" rotation="0" color="[smxui_slot_item_background]" globalopacitymod="1.2" visible="{isempty}" />
 					<sprite name="slotFrame" depth="3" pos="0,0" width="67" height="67" sprite="smxlib_slot_frame_narrow" pivot="center" color="[smxui_slot_frame_normal]" globalopacitymod="1.8" />
 
 					<texture name="backgroundTexture" depth="4" pos="0,0" width="42" height="42" pivot="center" material="Materials/Transparent Colored" globalopacity="true" />
@@ -503,11 +503,20 @@
 		<append xpath="/controls">
 			<smxui_active_buff_entry>
 				<rect controller="ActiveBuffEntry" width="68" height="74" style="press" on_hover="true" on_scroll="true" pivot="center" sound_play_on_hover="[default_hover]" sound="[recipe_click]" tooltip="{buffname}">
-					<sprite name="backgroundMain" depth="0" pos="0,0" width="68" height="74" sprite="menu_empty3px" pivot="center" type="sliced" color="[smxui_slot_main_background]" /> <!-- SMX DEV: Correct color ref? -->
-					<sprite name="background" depth="1" pos="0,0" width="56" height="64" sprite="menu_empty" pivot="center" type="sliced" color="[smxui_slot_slot_background]" globalopacitymod="0.5" visible="true" />
-					<sprite name="slotBackground" depth="2" pos="0,0" width="62" height="66" sprite="smxlib_window_background" pivot="center" flip="horizontally" color="[smxui_element_background]" globalopacitymod="1.1" />
+
+					<!--sprite name="mainBackground" depth="0" pos="0,0" width="${cell_width-4}" height="${cell_height-4}" sprite="menu_empty" type="sliced" pivot="center" color="[smxui_slot_main_background]" globalopacitymod="1.3" />
+
+					<sprite name="slotBackground" depth="1" pos="0,0" width="${cell_width-14}" height="${cell_height-14}" sprite="menu_empty" pivot="center" type="sliced" color="[smxhud_slot_slot_background]" globalopacity="true" />
+					<sprite name="itemBackgroundDurability" depth="2" pos="0,3" width="${cell_width-9}" height="${cell_height-27}" sprite="smxlib_item_preview_background" pivot="center" rotation="45" color="{durabilitycolor}" globalopacitymod="0.8" visible="{hasdurability}" />
+					<sprite name="itemBackgroundNormal" depth="2" pos="0,3" width="${cell_width-9}" height="${cell_height-27}" sprite="smxlib_item_preview_background" pivot="center" rotation="45" color="[smxhud_slot_item_background]" globalopacitymod="1.2" visible="{#!hasdurability}" />
+					<sprite name="slotFrame" depth="3" pos="0,0" width="${cell_width-1}" height="${cell_height-1}" sprite="smxlib_slot_frame_narrow" pivot="center" color="{selectionbordercolor}" globalopacitymod="1.8" /-->
+
+
+					<sprite name="mainBackground" depth="0" pos="0,0" width="${cell_width-4}" height="${cell_height-4}" sprite="menu_empty" type="sliced" pivot="center" color="[smxui_slot_main_background]" globalopacitymod="1.3" />
+					<sprite name="slotBackground" depth="1" pos="0,0" width="${cell_width-14}" height="${cell_height-14}" sprite="menu_empty" type="sliced" pivot="center" color="[smxui_slot_slot_background]" globalopacity="true" />
+					<!--sprite name="slotBackground" depth="2" pos="0,0" width="62" height="66" sprite="smxlib_window_background" pivot="center" flip="horizontally" color="[smxui_element_background]" globalopacitymod="1.1" /-->
 					<!--sprite name="itemBackgroundNormal" depth="3" pos="0,0" width="25" height="25" sprite="ui_game_symbol_muscle" pivot="center" rotation="0" color="[smxui_slot_item_background]" globalopacitymod="1.2" /-->
-					<sprite name="slotFrame" depth="4" pos="0,0" width="67" height="73" sprite="smxlib_slot_frame_narrow" pivot="center" color="[smxui_slot_frame_normal]" globalopacitymod="1.8" />
+					<sprite name="background" depth="4" pos="0,0" width="${cell_width-1}" height="${cell_height-1}" sprite="smxlib_slot_frame_narrow" pivot="center" color="[smxui_slot_frame_normal]" globalopacitymod="1.8" />
 					<sprite name="buffIcon" depth="6" pos="0,5" size="50,50" sprite="{bufficon|once}" pivot="center" color="{buffcolor}" globalopacitymod="1.8" />
 					<label name="buffValue" depth="7" pos="0,-26" width="56" height="18" style="smxlib_label_normal" text="{buffdisplayinfo}" font_size="18" pivot="center" justify="right" color="[smxui_element_labelcolor_2]" />
 				</rect>
