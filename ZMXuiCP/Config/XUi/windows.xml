@@ -7,7 +7,7 @@
 		<append xpath="/windows">
 			<window name="windowBackpack" depth="1" width="470" height="800" anchor="CenterCenter" panel="Right" controller="BackpackWindow" cursor_area="true">
 				<smxlib_window_design name="windowName" depth="1" width="470" height="800" text="INVENTORY" text_key="xuiInventory" />
-				<smxui_window_design_content_inventory depth="3" pos="43,-43" width="360" height="700" rows="9" cols="5" cell_width="68" cell_height="68" />
+				<smxui_window_design_content_inventory depth="3" pos="43,-43" width="360" height="700" rows="9" rows2="9" cols="5" cell_width="68" cell_height="68" />
 				<smxui_window_design_menu_right depth="3" width="470" height="800" />
 				<smxui_window_design_menu_right_inventory depth="3" width="470" height="800" />
 			</window>

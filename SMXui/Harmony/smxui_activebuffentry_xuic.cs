@@ -8,10 +8,10 @@ using UnityEngine;
 //	Changes hard coded sprites to be SMX sprites.
 //	Difference: Vanilla has these sprites hardcoded so when the action happens the sprite would shift to something else. This prevents that.
 
-public class SMXhud_activebuffentryui_xuic
+public class SMXui_XUiC_ActiveBuffEntry
 {
     [HarmonyPatch(typeof(XUiC_ActiveBuffEntry), "SelectedChanged")]
-    public class SMXhud_ActiveBuffEntry_SelectedChanged
+    public class ActiveBuffEntry_SelectedChanged
     {
         public static bool Prefix(ref XUiC_ActiveBuffEntry __instance, bool isSelected, ref XUiV_Sprite ___background)
         {

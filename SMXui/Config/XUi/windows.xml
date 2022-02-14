@@ -4,7 +4,7 @@
 
 		// EAC:				Non Friendly, SMX requires EAC to be DISABLED.
 
-		// VERSION:			r20.rc2
+		// VERSION:			r20.rc3
 
 		// BUILD:			A20.0
 
@@ -323,7 +323,7 @@
 							<label depth="5" pos="36,-30" width="36" height="24" style="smxlib_label_normal" text="{fuel}%" font_size="16" pivot="center" justify="center" color="[smxui_element_labelcolor_2]" />
 
 							<sprite name="smxui_fuelindicator_gauge" depth="4" pos="100,-90" size="128,149" sprite="smxui_vehicle_fuel_gauge" pivot="center" globalopacitymod="1.8" />
-							<sprite name="smxui_fuelindicator_needle" depth="6" pos="100,-90" size="128,149" sprite="smxui_vehicle_fuel_needle" pivot="center" globalopacitymod="1.8" controller="DialIndicator, SMXui" indicator_value="{fuelfill}" start_angle="90" end_angle="0" range_min="0" range_max="1" limit_indicator_to_range="true" animation_duration="3" />
+							<sprite name="smxui_fuelindicator_needle" depth="6" pos="100,-90" size="128,149" sprite="smxui_vehicle_fuel_needle" pivot="center" globalopacitymod="1.8" controller="DialIndicator, XUiComponents" indicator_value="{fuelfill}" start_angle="90" end_angle="0" range_min="0" range_max="1" limit_indicator_to_range="true" animation_duration="3" />
 							<sprite name="windowIcon" depth="2" pos="70,-60" size="16,16" sprite="ui_game_symbol_gas" color="[smxui_element_iconcolor_1]" />
 						</rect>
 
@@ -640,6 +640,7 @@
 							<sprite name="smxui_artline_vertical" depth="1" pos="105,47" width="55" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
 							<sprite name="smxui_artline_horizontal" depth="1" pos="70,-5" width="68" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
 							<sprite name="smxui_artline_vertical" depth="1" pos="105,-170" width="115" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<!--sprite name="smxui_artline_vertical" depth="1" pos="105,-238" width="47" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" /-->
 						</rect>
 					</rect>
 				</rect>
@@ -798,7 +799,7 @@
 
 				<rect name="smxui_queue_art_module" depth="10" pos="410,200" width="136" height="80">
 					<sprite name="smxui_artline_vertical" depth="1" pos="102,-5" width="80" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
-					<sprite name="smxui_artline_horizontal" depth="1" pos="-3,486" width="72" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
+					<sprite name="smxui_artline_horizontal" depth="1" pos="-40,-57" width="160" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
 				</rect>
 			</window>
 		</append>

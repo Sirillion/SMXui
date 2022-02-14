@@ -1,4 +1,4 @@
-<SMXui name="XUi/controls.xml">
+	<SMXui name="XUi/controls.xml">
 
 <!--	// SMX // Drag & Drop Window -->
 
@@ -181,15 +181,15 @@
 		<append xpath="/controls">
 			<smxui_window_design_content_inventory>
 				<rect name="smxui_window_content" depth="${depth}" pos="20,-80" width="${width}" height="${height}">
-					<sprite name="backdropWindow" depth="4" pos="0,0" width="${cols*cell_width+20}" height="${rows*cell_height+20}" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />
+					<sprite name="backdropWindow" depth="4" pos="0,0" width="${cols*cell_width+20}" height="${rows*cell_height+30}" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />
 
 					<rect name="content" depth="5" pos="0,0" width="${width}" height="${height}">
-						
-						<sprite name="backgroundMain" depth="5" pos="9,-9" width="${cols*cell_width+1}" height="${rows*cell_height+1}" sprite="menu_empty3px" type="sliced" color="[black]" on_press="true" />
 
-						<grid name="inventory" depth="10" pos="${pos}" rows="${rows}" cols="${cols}" cell_width="${cell_width}" cell_height="${cell_height}" controller="Backpack" repeat_content="true">
-							<smxui_backpack_item_stack name="0" pos="0" pos2="0,0" size="18,18" size2="40,40" font_size="18" cell_width="${cell_width}" cell_height="${cell_height}" />
-						</grid>
+							<sprite name="backgroundMain" depth="5" pos="9,-9" width="${cols*cell_width+1}" height="${rows*cell_height+1}" sprite="menu_empty3px" type="sliced" color="[black]" on_press="true" />
+
+							<grid name="inventory" depth="10" pos="${pos}" rows="${rows2}" cols="${cols}" cell_width="${cell_width}" cell_height="${cell_height}" controller="Backpack" repeat_content="true">
+								<smxui_backpack_item_stack name="0" pos="0" pos2="0,0" size="18,18" size2="40,40" font_size="18" cell_width="${cell_width}" cell_height="${cell_height}" />
+							</grid>
 					</rect>
 
 					<rect name="smxui_currency_module" depth="5" pos="0,${-height+60}" width="${width}" height="60">

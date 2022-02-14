@@ -4,7 +4,7 @@
 
 		// EAC:				Friendly
 
-		// VERSION:			r20.rc2
+		// VERSION:			r20.rc3
 
 		// BUILD:			A20.0
 
@@ -159,7 +159,7 @@
 
 		<remove xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'orkstation')]/window[@name='windowOutput']" />
 
-		<insertAfter xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'orkstation')]/window[2]">
+		<insertAfter xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'orkstation') and not (contains (@name, 'orge'))]/window[2]">
 			<window name="windowOutputWorkstation" />
 		</insertAfter>
 
