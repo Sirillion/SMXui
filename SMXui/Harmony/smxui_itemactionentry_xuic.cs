@@ -9,8 +9,8 @@ using HarmonyLib;
 //	Credits: Sirillion.
 //	Assists: sphereii, TormentedEmu.
 
-//	Adds an extra binding to separate statmax into its own for current ammo count.
-//	Difference: Vanilla has no statmax binding and as such it can only show statcurrentwithmax or statcurrent.
+//	Removes the hard coded vanilla sprites to allow for custom sprite use.
+//	Difference: Vanilla hard codes these sprite states so that using mouse over events like color changes and tooltips becomes impossible. This prevents that.
 
 public class SMXui_itemactionentry_xuic
 {

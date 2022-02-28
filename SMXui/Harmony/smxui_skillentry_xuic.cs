@@ -4,16 +4,16 @@ using HarmonyLib;
 //	Credits: Sirillion.
 //	Tweaked: 
 
-//	Adds an extra binding to change the hard coded colors to fit with the SMX color scheme.
+//	Adds an extra binding to change the hard coded colors to fit SMX theme.
 //	Difference: Vanilla has hard coded color values for the SkillEntry which clash with the SMX color scheme.
 
-public class SMXui_SkillEntry_ColorCorrection
+public class SMXui_skillentry_xuic
 {
 
 	//	Correcting the colors for perk rowstates.
 	[HarmonyPatch(typeof(XUiC_SkillEntry))]
 	[HarmonyPatch("GetBindingValue")]
-	public class SMXuiSkillEntry
+	public class SMXuiSkillEntryGetBindingValue
 	{
 		public static void Postfix(ref bool __result, ref string value, ref string bindingName, ref bool ___isSelected, ref bool ___IsHovered, ref string ___hoverColor, ref ProgressionValue ___currentSkill, ref string ___rowColor)
 		{

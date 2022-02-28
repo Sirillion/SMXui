@@ -19,7 +19,7 @@ public class SMXui_itemstack_xuic
 	[HarmonyPatch(typeof(XUiC_ItemStack))]
 	[HarmonyPatch("GetBindingValue")]
 
-	public class SMXhudItemStackHasIcon
+	public class SMXuiItemStackHasIcon
 	{
 		public static bool Prefix(ref bool __result, ref string _value, ref string _bindingName, ref ItemStack ___itemStack)
 		{
@@ -35,66 +35,4 @@ public class SMXui_itemstack_xuic
 			return true;
 		}
 	}
-
-
-/*	// Not ready
-	[HarmonyPatch(typeof(XUiC_ItemStack))]
-	[HarmonyPatch("GetBindingValue")]
-	public class SMXuiItemStackAddBinding
-	{
-		public static void Postfix(ref bool __result, ref string _value, ref string _bindingName, ref XUiC_ItemStack.StackLockTypes ___stackLockType, ref bool ___attributeLock, ref ItemStack ___itemStack)
-		{
-			if (_bindingName != null)
-			{
-				if (_bindingName == "smxstacklockcolor")
-				{
-					if (___stackLockType == XUiC_ItemStack.StackLockTypes.Quest)
-					{
-						_value = "255,144,24,255";
-					}
-					else if (___attributeLock && ___itemStack.IsEmpty())
-					{
-						_value = "175,30,25,255";
-					}
-					else
-					{
-						_value = "255,255,0,255";
-					}
-					__result = true;
-				}
-
-				if (_bindingName == "smxstacklockicon")
-				{
-					if (___stackLockType == XUiC_ItemStack.StackLockTypes.Quest)
-					{
-						_value = "ui_game_symbol_quest";
-					}
-					else
-					{
-						_value = "";
-					}
-					__result = true;
-				}
-			}
-
-		}
-	}
-*/
-
-	/*	// NOT READY. Attempt to inject an new if statement for when a slot is locked then show this color.
-		[HarmonyPatch(typeof(XUiC_ItemStack))]
-		[HarmonyPatch("updateBorderColor")]
-		public class SMXuiItemStackUpdateBorderColor
-		{
-			public static void Prefix(ref XUiC_ItemStack __instance, ref bool __result,
-									ref Color32 ___SelectionBorderColor, ref Color32 ___attributeLockColor)
-			{
-				if (__instance.IsLocked)
-				{
-					___SelectionBorderColor = ___attributeLockColor;
-				__result = true;
-				}
-			}
-		}
-	*/
 }

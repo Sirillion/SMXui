@@ -4,9 +4,9 @@
 
 		// EAC:				Non Friendly, SMX requires EAC to be DISABLED.
 
-		// VERSION:			r20.rc3
+		// VERSION:			r20.rc4
 
-		// BUILD:			A20.0
+		// BUILD:			A20.3
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -18,35 +18,36 @@
 
 		// DEPENDENCIES:	SMXlib, ZMXuiCP.
 
-		// TERMS OF USE:	You are allowed to use this modlet as is for your own personal use and/or on a server you run and/or administrate.
+		// TERMS OF USE:	1. You are allowed to use this modlet as is for your own personal use and/or on a server you run and/or administrate.
 
-							You are under no circumstance allowed to distribute any SMX and/or ZMX branded modlets without written consent from the main developer.
+							2. You are under no circumstance allowed to distribute any SMX and/or ZMX branded modlets without written consent from the main developer.
 
-							If you wish to distribute SMX and/or ZMX branded modlets as part of your own project and consent have been given you are required
+							3. If you wish to distribute SMX and/or ZMX branded modlets as part of your own project and consent have been given you are required
 							to do so in such a way so that all the files of the SMX and/or ZMX modlet or modlets in question remain unaltered and you cannot
 							under any circumstance claim credit for creating the modlet or modlets or any of the files provided with it/them.
 
-							If consent is given you are required to make the changes as a new modlet that injects into the modlet in question and
+							4. If consent is given you are required to make the changes as a new modlet that injects into the modlet in question and
 							keeping load order in mind it is to be named so that it loads AFTER the original modlet. The original modlet shall be distributed
 							as is with no change to its files what so ever.
 
-							If consent is given it is only given on a case to case basis and those that receive consent cannot pass that consent on to another
+							5. If consent is given it is only given on a case to case basis and those that receive consent cannot pass that consent on to another
 							party or project. Nor will the consent pass on to other creators that opt to include consented work into their project.
 
-							You are not allowed to use any of the assets bundled with SMX and/or ZMX branded modlets in other projects. This restriction
+							6. You are not allowed to use any of the assets bundled with SMX and/or ZMX branded modlets in other projects. This restriction
 							applies to all files that the SMX and/or ZMX modlets consist of. EXCEPTION: The content of the Harmony folder is to be considered
 							open source and can be used freely as long as the original credit comments within the files are not removed or altered other than
 							adding to.
 
-							You are required to seek special consent from the main developer should you wish to make changes to any asset files provided with the
+							7. You are required to seek special consent from the main developer should you wish to make changes to any asset files provided with the
 							SMX and/or ZMX branded modlets.
 
-							You are required to inform the main developer when your project that contains any SMX and/or ZMX modlet or modlets have been made
+							8. You are required to inform the main developer when your project that contains any SMX and/or ZMX modlet or modlets have been made
 							available to the public.
 
-		// CREDITS:			Sirillion (main developer/designer/harmony/frontend/backend/author), sphereii (developer/harmony/backend), TormentedEmu (developer/harmony/backend)
+		// CREDITS:			Sirillion (main developer/designer/harmony/frontend/backend/author)
+							sphereii (developer/harmony/backend), TormentedEmu (developer/harmony/backend), Laydor (developer/harmony/backend)
 
-		// CONTRIBUTORS:	Laydor (code), Mumpfy (art)
+		// CONTRIBUTORS:	Mumpfy (art)
 -->
 
 <!--	// SMX // Mouseover Tooltip -->
@@ -240,6 +241,7 @@
 						<button name="btnSort" depth="3" pos="0,0" size="40,40" anchor_left="queue,1,-90" anchor_right="queue,1,-50" style="press, hover, smxlib_icon_colors" sprite="smxlib_ui_game_symbol_sort" pivot="center" tooltip_key="lblSortContainer" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
 
 						<!--smxui_lockedslots_combobox_horizontal name="cbxLockedSlots" pos="180,0" type="ComboBoxInt" value_min="0" value_max="{container_slots}" value_wrap="true" value_increment="1" tooltip_key="xuiStashLockedSlots" /-->
+
 					</rect>
 				</rect>
 
@@ -250,8 +252,8 @@
 					<sprite name="backdropWindow" depth="3" pos="0,0" anchor_left="queue,0,-45" anchor_bottom="queue,0,25" anchor_right="queue,1,-20" anchor_top="queue,1,45" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />
 
 					<sprite name="backgroundMain" depth="4" pos="0,0" anchor_left="queue,0,-35" anchor_bottom="queue,0,35" anchor_right="queue,1,-35" anchor_top="queue,1,35" sprite="menu_empty" type="sliced" color="[black]" />
-					<grid name="queue" depth="12" pos="35,-35" rows="9" cols="10" cell_width="68" cell_height="68" repeat_content="true" controller="LootContainer">
-						<smxui_looting_item_stack name="0" />
+					<grid name="queue" depth="12" pos="35,-35" rows="9" cols="10" cell_width="68" cell_height="68" repeat_content="true" controller="XUiC.LootContainer, XUiComponents">
+						<smxui_looting_item_stack name="0" cell_width="68" cell_height="68" />
 					</grid>
 				</rect>
 			</window>
@@ -263,7 +265,7 @@
 		<remove xpath="/windows/window[@name='windowVehicleStorage']" />
 
 		<append xpath="/windows">
-			<window name="windowVehicleStorage" depth="5" width="{windowWidth}" height="378" panel="Left" anchor_side="bottomright" controller="VehicleContainer" window_grid_width_difference="50" cursor_area="true">
+			<window name="windowVehicleStorage" depth="5" width="{windowWidth}" height="378" panel="Left" anchor_side="bottomright" controller="XUiC.VehicleContainer, XUiComponents" window_grid_width_difference="50" cursor_area="true">
 
 				<rect name="smxui_vehiclestorage_design" anchor_left="queue,0,-3" anchor_right="queue,1,0">
 					<sprite name="smxui_window_header_background" anchor_left="queue,0,-60" anchor_right="queue,1,-5" depth="3" height="65" sprite="smxlib_window_header_background" color="[smxui_element_header_background]" globalopacitymod="1.4" />
@@ -282,6 +284,7 @@
 						<button name="btnSort" depth="3" pos="0,0" size="40,40" anchor_left="queue,1,-90" anchor_right="queue,1,-50" style="press, hover, smxlib_icon_colors" sprite="smxlib_ui_game_symbol_sort" pivot="center" tooltip_key="lblSortContainer" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
 
 						<!--smxui_lockedslots_combobox_horizontal name="cbxLockedSlots" pos="180,0" type="ComboBoxInt" value_min="0" value_max="{container_slots}" value_wrap="true" value_increment="1" tooltip_key="xuiStashLockedSlots" /-->
+
 					</rect>
 				</rect>
 
@@ -293,7 +296,7 @@
 
 					<sprite name="backgroundMain" depth="4" pos="0,0" anchor_left="queue,0,-35" anchor_bottom="queue,0,35" anchor_right="queue,1,-35" anchor_top="queue,1,35" sprite="menu_empty" type="sliced" color="[black]" />
 					<grid name="queue" depth="12" pos="35,-35" rows="9" cols="10" cell_width="68" cell_height="68" repeat_content="true">
-						<smxui_looting_item_stack name="0"/>
+						<smxui_looting_item_stack name="0" cell_width="68" cell_height="68" />
 					</grid>
 				</rect>
 			</window>
@@ -323,7 +326,7 @@
 							<label depth="5" pos="36,-30" width="36" height="24" style="smxlib_label_normal" text="{fuel}%" font_size="16" pivot="center" justify="center" color="[smxui_element_labelcolor_2]" />
 
 							<sprite name="smxui_fuelindicator_gauge" depth="4" pos="100,-90" size="128,149" sprite="smxui_vehicle_fuel_gauge" pivot="center" globalopacitymod="1.8" />
-							<sprite name="smxui_fuelindicator_needle" depth="6" pos="100,-90" size="128,149" sprite="smxui_vehicle_fuel_needle" pivot="center" globalopacitymod="1.8" controller="DialIndicator, XUiComponents" indicator_value="{fuelfill}" start_angle="90" end_angle="0" range_min="0" range_max="1" limit_indicator_to_range="true" animation_duration="3" />
+							<sprite name="smxui_fuelindicator_needle" depth="6" pos="100,-90" size="128,149" sprite="smxui_vehicle_fuel_needle" pivot="center" globalopacitymod="1.8" controller="XUiC.DialIndicator, XUiComponents" indicator_value="{fuelfill}" start_angle="90" end_angle="0" range_min="0" range_max="1" limit_indicator_to_range="true" animation_duration="3" />
 							<sprite name="windowIcon" depth="2" pos="70,-60" size="16,16" sprite="ui_game_symbol_gas" color="[smxui_element_iconcolor_1]" />
 						</rect>
 
@@ -811,7 +814,7 @@
 			<window name="windowCraftingQueueWorkstationNoToolNoFuel" depth="10" width="136" height="68" panel="Left" cursor_area="true">
 				<rect name="smxui_queue_module" depth="9" pos="410,604" width="136" height="204" controller="CraftingQueue">
 
-					<sprite name="backgroundMain" depth="2" width="136" height="204" sprite="menu_empty" type="sliced" color="[smxui_slot_main_background]" on_press="true" />
+					<sprite name="backgroundMain" depth="2" width="68" height="408" sprite="menu_empty" type="sliced" color="[smxui_slot_main_background]" on_press="true" />
 
 					<grid name="queue" depth="10" pos="34,-34" rows="6" cols="1" cell_width="68" cell_height="68" arrangement="vertical" repeat_content="true">
 						<smxui_crafting_recipe_stack name="0"/>
@@ -1247,5 +1250,880 @@
 <!--	// SMX // Quest Turn In Window -->
 
 		<setattribute xpath="/windows/window[@name='windowQuestTurnInDescription']" name="depth">5</setattribute>
+
+
+<!--	// SMX // Map Window -->
+
+		<remove xpath="/windows/window[@name='mapArea']" />
+
+		<append xpath="/windows">
+			<window name="mapArea" depth="2" width="1500" height="800" panel="Center" controller="MapArea" cursor_area="true" >
+
+				<smxlib_window_design name="windowName" depth="1" width="1500" height="800" text="" text_key="xuiMap" />
+
+				<rect name="smxui_main_content_module" depth="5" pos="20,-73" width="1460" height="710">
+
+					<sprite name="smxlib_window_waypoint_separation" depth="4" pos="312,-10" width="690" height="3" sprite="smxlib_separation_line_1" rotation="270" color="[smxui_element_separation_1]" />
+
+					<rect name="smxui_debugmode_module" depth="1" pos="20,65" width="270" height="50">
+
+						<button name="switchStaticMap" depth="1" pos="25,-25" size="40,40" style="press, hover, smxlib_icon_colors" sprite="smxlib_ui_game_symbol_switch_off" selectedsprite="smxlib_ui_game_symbol_switch_on" pivot="center" hoverscale="1" tooltip_key="lblSwitchStaticMap" sound="[paging_click]" sound_play_on_hover="[default_hover]" />
+
+						<combobox	name="cbxStaticMapType"
+									pos="60,-10"
+									width="210"
+									height="30"
+									type="ComboBoxEnum`1[XUiC_MapArea+EStaticMapOverlay]"
+									value_wrap="true"
+									localization_prefix="xuiStaticMapType" />
+					</rect>
+
+					<rect name="content" depth="3" pos="330,0" width="1120" height="710">
+
+						<sprite name="backdropWindow" depth="0" pos="-5,0" width="1130" height="710" sprite="smxlib_window_background" type="sliced" color="[smxui_element_backdrop_2]" globalopacitymod="1.1" />
+
+						<rect name="mapView" depth="1" pos="10,-20" width="1080" height="670" on_drag="true" style="press, scroll, hover" snap="false" sound="[craft_click]">
+
+							<texture name="mapViewTexture" depth="2" pos="0,0" width="1100" height="670" material="Materials/MaskableMainmap" />
+							<panel name="clippingPanel" depth="4" pos="0,0" width="1100" height="670" createuipanel="true" clipping="SoftClip" clippingsoftness="4,4" clippingsize="1100,670" clippingcenter="550,-335" disableautobackground="true" />
+
+							<sprite name="frameLeft" depth="5" pos="3,15" width="710" height="5" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameTop" depth="6" pos="-20,5" width="1130" height="5" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameRight" depth="5" pos="1103,15" width="710" height="5" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameBottom" depth="6" pos="-15,-665" width="1130" height="5" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+
+							<panel name="content" depth="5" pos="25,-550" width="300" height="130" controller="MapStats" createuipanel="true" disableautobackground="true">
+
+								<sprite name="backgroundMain" depth="0" pos="-20,20" sprite="smxhud_chat_background" color="[smxui_element_backdrop_1]" disabled_font_color="148,148,148,255" globalopacitymod="1.8" />
+								<label name="Title" depth="12" pos="130,-5" width="300" height="28" style="smxlib_label_normal" text="PLAYER POSITION STATISTICS" text_key="" font_size="22" pivot="center" justify="center" upper_case="true" color="[smxui_element_labelcolor_3]" />
+
+								<sprite name="tempIcon" depth="1" pos="30,-55" width="65" height="42" style="hover, smxui_window_paging_icons" pivot="center" color="[smxui_element_accentcolor_1]" hovercolor="[smxui_element_accentcolor_1]" sprite="smxui_button_background" tooltip="{playercoretemptitle}" tooltip_key="" sound="[paging_click]" hoverscale="1" globalopacitymod="1.6" />
+								<sprite name="tempIconIcon" depth="2" pos="30,-54" size="30,30" sprite="ui_game_symbol_temperature" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.8" />
+								<label name="tempLabel" depth="1" pos="30,-88" width="80" height="22" style="smxlib_label_normal" text="{playercoretemp}" font_size="14" pivot="center" justify="center" />
+
+								<sprite name="windIcon" depth="1" pos="130,-55" width="65" height="42" style="hover, smxui_window_paging_icons" pivot="center" color="[smxui_element_accentcolor_1]" hovercolor="[smxui_element_accentcolor_1]" sprite="smxui_button_background" tooltip="{mapwindtitle}" tooltip_key="" sound="[paging_click]" hoverscale="1" globalopacitymod="1.6" />
+								<sprite name="windIconIcon" depth="2" pos="130,-54" size="30,30" sprite="ui_game_symbol_wind" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.8" />
+								<label name="windLabel" depth="1" pos="130,-88" width="80" height="22" style="smxlib_label_normal" text="{mapwind} MPH" font_size="14" pivot="center" justify="center" />
+
+								<sprite name="elevIcon" depth="1" pos="230,-55" width="65" height="42" style="hover, smxui_window_paging_icons" pivot="center" color="[smxui_element_accentcolor_1]" hovercolor="[smxui_element_accentcolor_1]" sprite="smxui_button_background" tooltip="{mapelevationtitle}" tooltip_key="" sound="[paging_click]" hoverscale="1" globalopacitymod="1.6" />
+								<sprite name="elevIconIcon" depth="2" pos="230,-54" size="30,30" sprite="ui_game_symbol_climb" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.8" />
+								<label name="elevLabel" depth="1" pos="230,-88" width="80" height="22" style="smxlib_label_normal" text="{mapelevation} M" font_size="14" pivot="center" justify="center" />
+							</panel>
+
+							<panel name="toolbar" depth="5" pos="1015,-20" width="100" height="380" createuipanel="true" disableautobackground="true">
+
+								<sprite name="backgroundMain" depth="0" pos="-20,20" sprite="smxhud_chat_background" color="[smxui_element_backdrop_1]" disabled_font_color="148,148,148,255" globalopacitymod="1.8" />
+								<label name="Title" depth="12" pos="30,-5" width="100" height="28" style="smxlib_label_normal" text="MAP TOOLS" text_key="" font_size="22" pivot="center" justify="center" upper_case="true" color="[smxui_element_labelcolor_3]" />
+
+								<button name="cursorIcon" depth="1" pos="30,-55" width="65" height="42" style="hover, smxui_window_paging_icons" sprite="smxui_button_background" pivot="center" hoverscale="1" defaultcolor="[smxui_element_accentcolor_1]" hovercolor="[smxui_element_accentcolor_1]" globalopacitymod="1.6" tooltip="Cursor Position" tooltip_key="lblCursorPosition" sound="[paging_click]" />
+								<sprite name="cursorIconIcon" depth="2" pos="30,-54" size="30,30" sprite="ui_game_symbol_map_cursor" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.8" />
+								<label name="cursorPos" depth="1" pos="30,-88" width="80" height="22" style="smxlib_label_normal" text="300 N 832 W" font_size="14" pivot="center" justify="center" />
+
+								<button name="playerIcon" depth="1" pos="30,-135" width="65" height="42" style="press, hover, smxui_window_paging_icons" sprite="smxui_button_background" pivot="center" hoverscale="1" defaultcolor="[smxui_element_accentcolor_1]" globalopacitymod="1.6" tooltip="Center on Player" tooltip_key="lblCenterOnPlayer" sound="[paging_click]" sound_play_on_hover="[default_hover]" />
+								<sprite name="playerIconIcon" depth="2" pos="30,-135" size="30,30" sprite="ui_game_symbol_map_player_arrow" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.8" />
+								<label name="playerPos" depth="1" pos="30,-168" width="80" height="22" style="smxlib_label_normal" text="110 S 769 W" font_size="14" pivot="center" justify="center" />
+
+								<button name="bedrollIcon" depth="1" pos="30,-215" width="65" height="42" style="press, hover, smxui_window_paging_icons" sprite="smxui_button_background" pivot="center" hoverscale="1" defaultcolor="[smxui_element_accentcolor_1]" globalopacitymod="1.6" tooltip="Center on Sleeping Bag" tooltip_key="lblCenterOnSleepingBag" sound="[paging_click]" sound_play_on_hover="[default_hover]" />
+								<sprite name="bedrollIconIcon" depth="2" pos="30,-215" size="30,30" sprite="ui_game_symbol_map_bed" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.8" />
+								<label name="bedrollPos" depth="1" pos="30,-248" width="80" height="22" style="smxlib_label_normal" text="300 N 832 W" font_size="14" pivot="center" justify="center" />
+
+								<button name="waypointIcon" depth="1" pos="30,-295" width="65" height="42" style="press, hover, smxui_window_paging_icons" sprite="smxui_button_background" pivot="center" hoverscale="1" defaultcolor="[smxui_element_accentcolor_1]" globalopacitymod="1.6" tooltip="Remove Quick Waypoint" tooltip_key="lblRemoveQuickWaypoint" sound="[paging_click]" sound_play_on_hover="[default_hover]" />
+								<sprite name="waypointIconIcon" depth="2" pos="30,-295" size="30,30" sprite="ui_game_symbol_map_waypoint_remove" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.8" />
+								<label name="waypointDistance" depth="1" pos="30,-328" width="80" height="22" style="smxlib_label_normal" text="0.2 KILOMETERS" font_size="14" pivot="center" justify="center" />
+							</panel>
+						</rect>
+					</rect>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Waypoints Window - Personal -->
+
+		<remove xpath="/windows/window[@name='mapTracking']" />
+
+		<append xpath="/windows">
+			<window name="mapTracking" depth="3" width="300" height="10" panel="Center" controller="MapWaypoint" cursor_area="true" >
+
+				<rect name="smxui_window_content" depth="3" pos="20,710" width="300" height="460">
+
+					<sprite name="backdropWindow" depth="1" pos="0,20" width="300" height="700" sprite="smxlib_window_background" type="sliced" flip="horizontally" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />
+					<sprite name="backdropWindow" depth="1" pos="10,-25" width="280" height="435" sprite="smxlib_window_background" type="sliced" flip="vertically" color="[smxui_element_backdrop_2]" globalopacitymod="1.1" />
+
+					<rect name="toolbar" depth="4" pos="15,30" width="270" height="50" >
+						<button name="trackBtn" depth="1" pos="30,-25" width="65" height="42" style="press, hover, smxui_window_paging_icons" sprite="smxui_button_background" pivot="center" hoverscale="1" defaultcolor="[smxui_element_accentcolor_1]" tooltip="Track Waypoint" tooltip_key="lblTrackWaypoint" sound="[paging_click]" sound_play_on_hover="[default_hover]" />
+						<sprite name="trackBtnIcon" depth="2" pos="30,-24" size="30,30" sprite="ui_game_symbol_compass" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.8" />
+
+						<button name="showOnMapBtn" depth="1" pos="100,-25" width="65" height="42" style="press, hover" sprite="smxui_button_background" pivot="center" hoverscale="1" defaultcolor="[smxui_element_accentcolor_1]" tooltip="Show on Map" tooltip_key="lblShowOnMap" sound="[paging_click]" sound_play_on_hover="[default_hover]" />
+						<sprite name="showOnMapBtnIcon" depth="2" pos="100,-24" size="30,30" sprite="ui_game_symbol_map" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.8" />
+
+						<button name="waypointRemoveBtn" depth="1" pos="170,-25" width="65" height="42" style="hover" on_press="true" sprite="smxui_button_background" pivot="center" hoverscale="1" defaultcolor="[smxui_element_accentcolor_1]" tooltip="Remove Waypoint" tooltip_key="lblRemoveWaypoint" sound="[paging_click]" sound_play_on_hover="[default_hover]" />
+						<sprite name="waypointRemoveBtnIcon" depth="2" pos="170,-24" size="30,30" sprite="ui_game_symbol_map_waypoint_remove" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.8" />
+
+						<button name="inviteBtn" depth="1" pos="240,-25" width="65" height="42" style="press, hover" sprite="smxui_button_background" pivot="center" hoverscale="1" defaultcolor="[smxui_element_accentcolor_1]" tooltip="Share Waypoint" tooltip_key="lblShareWaypoint" sound="[paging_click]" sound_play_on_hover="[default_hover]" />
+						<sprite name="inviteBtnIcon" depth="2" pos="240,-24" size="30,30" sprite="ui_game_symbol_players" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.8" />
+					</rect>
+
+					<rect name="searchControls" depth="5" pos="20,-40" width="300" height="40" console_enabled="false">
+						<smxui_search_content_module depth="1" pos="0,0" width="300" height="40" />
+					</rect>
+
+					<rect name="smxui_pager_module" depth="5" pos="0,-410" width="300" height="40">
+						<rect pos="100,0" width="340" height="40">
+							<smxui_paging_module name="pager" pos="0,0" width="100" show_max_page="true" />
+						</rect>
+					</rect>
+
+					<grid name="waypointList" pos="6,-105" width="280" height="78" rows="4" cols="1" cell_width="280" cell_height="78" repeat_content="true" arrangement="vertical" normal_color="[iconColor]" disabled_color="[iconColor]" controller="MapWaypointList">
+						<smxui_waypoint_entry name="0" pos="50,-36" width="280" height="73" />
+					</grid>
+				</rect>
+			</window>
+		</append>
+
+	
+<!--	// SMX // Waypoints Window - Shared -->
+
+		<remove xpath="/windows/window[@name='mapInvites']" />
+
+		<append xpath="/windows">
+			<window name="mapInvites" depth="4" width="300" height="10" panel="Center" cursor_area="true" >
+
+				<rect name="smxui_window_content" depth="3" pos="20,270" width="300" height="200">
+
+					<sprite name="backdropWindow" depth="1" pos="10,-60" width="280" height="150" sprite="smxlib_window_background" flip="both" color="[smxui_element_backdrop_2]" globalopacitymod="1.1" />
+
+					<rect name="toolbar" depth="4" pos="15,-5" width="270" height="50">
+
+						<button name="waypointSetBtn" depth="1" pos="40,-25" width="85" height="42" style="press, hover, smxui_window_paging_icons" sprite="smxui_button_background" pivot="center" defaultcolor="[smxui_element_accentcolor_1]" tooltip="Save Waypoint" tooltip_key="lblSaveWaypoint" sound="[paging_click]" sound_play_on_hover="[default_hover]" />
+						<sprite name="trackBtnIcon" depth="2" pos="40,-24" size="30,30" sprite="ui_game_symbol_map_waypoint_set" pivot="center" globalopacitymod="1.8" />
+
+						<button name="showOnMapBtn" depth="1" pos="135,-25" width="85" height="42" style="press, hover, smxui_window_paging_icons" sprite="smxui_button_background" pivot="center" defaultcolor="[smxui_element_accentcolor_1]" tooltip="Show on Map" tooltip_key="lblShowOnMap" sound="[paging_click]" sound_play_on_hover="[default_hover]" />
+						<sprite name="showOnMapBtnIcon" depth="2" pos="135,-24" size="30,30" sprite="ui_game_symbol_map" pivot="center" globalopacitymod="1.8" />
+
+						<button name="waypointRemoveBtn" depth="1" pos="230,-25" width="85" height="42" style="press, hover, smxui_window_paging_icons" sprite="smxui_button_background" pivot="center" defaultcolor="[smxui_element_accentcolor_1]" tooltip="Remove Waypoint" tooltip_key="lblRemoveWaypoint" sound="[paging_click]" sound_play_on_hover="[default_hover]" />
+						<sprite name="waypointRemoveBtnIcon" depth="2" pos="230,-24" size="30,30" sprite="ui_game_symbol_map_waypoint_remove" pivot="center" globalopacitymod="1.8" />
+					</rect>
+
+					<rect name="content" depth="2" pos="0,-50" height="200">
+						<grid name="invitesList" pos="6,-20" width="280" height="78" rows="2" cols="1" cell_width="280" cell_height="78" repeat_content="true" arrangement="vertical" normal_color="[iconColor]" disabled_color="[iconColor]" controller="MapInvitesList">
+							<smx_invites_entry name="0" pos="50,-36" width="280" height="73" />
+						</grid>
+					</rect>
+				</rect>
+			</window>
+		</append>
+	
+
+	<!--	// SMX // Waypoints Window - Set Waypoint -->
+
+		<remove xpath="/windows/window[@name='mapAreaSetWaypoint']" />
+
+		<append xpath="/windows">
+			<window name="mapAreaSetWaypoint" depth="10" pos="200,-200" width="200" height="145" cursor_area="true" >
+
+				<panel name="content" depth="10" pos="0,0" height="145" createuipanel="true" disableautobackground="true">
+
+					<sprite name="backgroundMain" depth="11" sprite="smxhud_chat_background" color="[smxui_element_backdrop_1]" disabled_font_color="148,148,148,255" globalopacitymod="1.8" />
+					<label name="Title" depth="12" pos="100,-18" width="188" height="28" style="smxlib_label_normal" text="SET WAYPOINT:" text_key="" font_size="22" pivot="center" justify="left" upper_case="true" color="[smxui_element_labelcolor_3]" />
+
+					<sprite name="xMarks" depth="-1" pos="0,0" width="80" height="80" sprite="ui_game_symbol_map_cursor" rotation="0" pivot="center" color="[smxui_element_accentcolor_2]" globalopacitymod="1.8" controller="XUiC.Spinner, XUiComponents" spin="true" angle_per_second="-15" />
+
+					<grid name="list" depth="15" pos="6,-40" width="188" height="92" rows="2" cols="1" cell_width="390" cell_height="50" repeat_content="false" arrangement="vertical" controller="MapPopupList">
+						<rect depth="3" width="100%" height="45" style="press" on_hover="true" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound="[craft_click]" sound_play_on_hover="[default_hover]">
+							<sprite name="background" height="45" sprite="smxui_button_background" color="[smxui_element_accentcolor_1]" globalopacitymod="1.2" />
+							<sprite name="Icon" depth="4" pos="35,-21" size="30,30" sprite="ui_game_symbol_map_waypoint_set" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.6" />
+							<label name="Name" depth="4" pos="125,-23" width="115" height="28" style="smxlib_label_normal" text="QUICK WAYPOINT" text_key="xuiQuickWaypoint" font_size="18" pivot="center" justify="left" upper_case="true" />
+						</rect>
+						<rect depth="3" width="100%" height="45" style="press" on_hover="true" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound="[craft_click]" sound_play_on_hover="[default_hover]">
+							<sprite name="background" height="45" sprite="smxui_button_background" color="[smxui_element_accentcolor_1]" globalopacitymod="1.2" />
+							<sprite name="Icon" depth="4" pos="35,-21" size="30,30" sprite="ui_game_symbol_pen" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.6" />
+							<label name="Name" depth="4" pos="125,-23" width="115" height="28" style="smxlib_label_normal" text="SAVE WAYPOINT" text_key="xuiSaveWaypoint" font_size="18" pivot="center" justify="left" upper_case="true" />
+						</rect>
+					</grid>
+				</panel>
+			</window>
+		</append>
+
+
+	<!--	// SMX // Waypoints Window - Share Waypoint -->
+
+		<remove xpath="/windows/window[@name='mapTrackingPopup']" />
+
+		<append xpath="/windows">
+			<window name="mapTrackingPopup" depth="10" pos="-410,355" width="200" height="145" cursor_area="true" >
+
+				<panel name="content" depth="5" pos="0,0" height="145" createuipanel="true" disableautobackground="true">
+
+					<sprite name="backgroundMain" depth="8" sprite="smxhud_chat_background" color="[smxui_element_backdrop_1]" disabled_font_color="148,148,148,255" globalopacitymod="1.8" />
+					<label name="Title" depth="9" pos="100,-18" width="188" height="28" style="smxlib_label_normal" text="SHARE WITH:" text_key="" font_size="22" pivot="center" justify="left" upper_case="true" color="[smxui_element_labelcolor_3]" />
+
+					<grid name="list" depth="9" pos="6,-40" width="188" height="92" rows="2" cols="1" cell_width="390" cell_height="50" repeat_content="false" arrangement="vertical">
+						<rect name="inviteFriends" depth="3" width="100%" height="45" style="press, hover" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound_play_on_hover="[default_hover]">
+							<sprite name="background" height="45" sprite="smxui_button_background" color="[smxui_element_accentcolor_1]" globalopacitymod="1.2" />
+							<sprite name="Icon" depth="4" pos="35,-21" size="30,30" sprite="ui_game_symbol_allies" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.6" />
+							<label name="Name" depth="4" pos="125,-23" width="115" height="28" style="smxlib_label_normal" text="ALLIES" text_key="xuiAllies" font_size="18" pivot="center" justify="left" upper_case="true" />
+						</rect>
+
+						<rect name="inviteEveryone" depth="3" width="100%" height="45" style="press, hover" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound_play_on_hover="[default_hover]">
+							<sprite name="background" height="45" sprite="smxui_button_background" color="[smxui_element_accentcolor_1]" globalopacitymod="1.2" />
+							<sprite name="Icon" depth="4" pos="35,-21" size="30,30" sprite="ui_game_symbol_players" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.6" />
+							<label name="Name" depth="4" pos="125,-23" width="115" height="28" style="smxlib_label_normal" text="EVERYONE" text_key="xuiEveryone" font_size="18" pivot="center" justify="left" upper_case="true" />
+						</rect>
+					</grid>
+				</panel>
+			</window>
+		</append>
+
+
+	<!--	// SMX // Waypoints Window - Choose Waypoint Icon -->
+
+		<remove xpath="/windows/window[@name='mapAreaChooseWaypoint']" />
+
+		<append xpath="/windows">
+			<window name="mapAreaChooseWaypoint" depth="12" pos="200,-200" width="200" height="472" cursor_area="true" >
+				<panel name="content" depth="10" pos="0,0" height="572" createuipanel="true" disableautobackground="true">
+
+					<sprite name="backgroundMain" depth="11" pos="0,10" sprite="smxhud_chat_background" color="[smxui_element_backdrop_1]" disabled_font_color="148,148,148,255" globalopacitymod="1.8" />
+
+					<grid name="list" depth="12" pos="-4,-4" width="46" height="460" rows="12" cols="4" cell_width="46" cell_height="46" repeat_content="true" arrangement="vertical" controller="MapSubPopupList">
+						<smx_map_popup_sub_line name="0"/>
+					</grid>
+				</panel>
+			</window>
+		</append>
+
+
+	<!--	// SMX // Waypoints Window - Enter Waypoint Name -->
+
+		<remove xpath="/windows/window[@name='mapAreaEnterWaypointName']" />
+
+		<append xpath="/windows">
+			<window name="mapAreaEnterWaypointName" depth="11" pos="200,-200" width="200" height="50" cursor_area="true">
+
+				<panel name="content" depth="10" pos="0,0" height="47" createuipanel="true" disableautobackground="true" controller="MapEnterWaypoint">
+
+					<sprite name="backgroundMain" depth="11" sprite="smxhud_chat_background" color="[smxui_element_backdrop_1]" disabled_font_color="148,148,148,255" globalopacitymod="1.8" />
+
+					<panel depth="12" pos="6,-7" width="188" height="45" disableautobackground="true">
+
+						<sprite name="background" depth="1" pos="0,-1" width="188" height="30" sprite="smxlib_window_input_background" color="[smxui_element_background]" globalopacitymod="1.2" />
+						<sprite name="frameLeft" depth="13" pos="0,-1" width="2" height="30" sprite="smxlib_window_input_frame_left" color="[smxui_element_input_frame]" globalopacitymod="1.8" />
+						<sprite name="frameTop" depth="14" pos="0,2" width="190" height="3" sprite="smxlib_window_input_frame_top" color="[smxui_element_input_frame]" globalopacitymod="1.8" />
+						<sprite name="frameRight" depth="13" pos="188,-1" width="3" height="30" sprite="smxlib_window_input_frame_right" color="[smxui_element_input_frame]" globalopacitymod="1.8" />
+						<sprite name="frameBottom" depth="14" pos="0,-30" width="190" height="3" sprite="smxlib_window_input_frame_bottom" color="[smxui_element_input_frame]" globalopacitymod="1.8" />
+
+						<textfield name="searchInput" depth="2" pos="94,-16" width="188" height="30" pivot="center" virtual_keyboard_prompt="vkPromptWaypointName" />
+					</panel>
+				</panel>
+			</window>
+		</append>
+
+
+<!-- SMX DEV: Code below in WIP and not to be included in releases! -->
+
+
+	<!--remove xpath="/windows/window[@name='windowQuestTurnInDescription']" /-->
+
+		<append xpath="/windows">
+			<window name="SMXwindowQuestTurnInDescription" depth="5" size="350,800" panel="Left" controller="QuestTurnInDetailsWindow" cursor_area="true">
+
+				<smxlib_window_design name="windowName" depth="1" width="350" height="800" text="{npcname}" text_key="" />
+
+				<rect name="SMXuiTurnInDescription" pos="0,0">
+
+					<rect name="content" depth="2" pos="0,-46" height="346">
+						<rect name="preview" depth="1" pos="0,-25" size="350,200">
+							<sprite name="portrait" depth="10" pos="175,-90" size="165,165" style="smxui_item_preview_icon" atlas="uiAtlas" sprite="{npcportrait}" />
+							<sprite name="portrait" depth="12" pos="175,-90" size="175,175" sprite="smxlib_ui_element_slot_frame_narrow" color="[black]" type="sliced" fillcenter="false" globalopacitymod="1.8" pivot="center" />
+							<label name="traderName" depth="3" pos="0,-188" width="100%" height="30" text="{questtitle}" font_size="24" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" justify="center" />
+							<!-- <label pos="6,-186" depth="3" name="traderRepTitle" width="100%" height="30" text="TRADER REP:" font_size="28" /> -->
+							<!-- <label pos="6,-213" depth="3" name="traderRep" width="100%" height="30" text="TRUSTED" font_size="28" /> -->
+						</rect>
+
+						<rect name="content" depth="3" pos="35,-265" size="270,228">
+							<label name="descriptionText" depth="3" pos="8,-8" size="270,200" text="{questcompletetext}" font_size="18" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" overflow="resizeheight" />
+						</rect>
+								
+						<!--grid name="parts" pos="65,-510" rows="2" cols="3" cell_width="75" cell_height="75" repeat_content="true" controller="ItemPartStackGrid">
+							<smx_item_part_slot />
+						</grid>
+						
+						<grid name="cosmeticparts" pos="215,-585" rows="1" cols="1" cell_width="75" cell_height="75" repeat_content="true" controller="ItemCosmeticStackGrid">
+							<smx_item_part_slot_cosmetic />
+						</grid-->
+					</rect>
+				</rect>
+			</window>
+		</append>
+
+
+	<!--	// SMX // Skill List Window -->
+
+		<remove xpath="/windows/window[@name='windowSkillList']" />
+
+		<append xpath="/windows">
+			<window name="windowSkillList" depth="2" width="1500" height="800" panel="Center" controller="SkillListWindow" cursor_area="true" >
+<!--smxmoddingtool_red_nopivot /-->
+
+				<smxlib_window_design name="windowName" depth="1" width="1500" height="800" text="" text_key="{titlename}" />
+
+				<rect name="smxui_main_content_module" depth="5" pos="20,-73" width="1050" height="710">
+<!--smxmoddingtool_tan_nopivot /-->
+
+					<rect name="smxui_skillpoints_module" depth="6" pos="10,-10" width="300" height="200">
+<!--smxmoddingtool_white_nopivot /-->
+
+						<sprite name="backdropWindow" depth="1" pos="0,10" width="300" height="710" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />
+
+						<sprite name="smxlib_window_attribute_separation" depth="4" pos="310,0" width="650" height="3" sprite="smxlib_separation_line_1" rotation="270" color="[smxui_element_separation_1]" />
+
+						<sprite name="smxlib_artbox_accent_glow_top" depth="3" pos="150,-25" width="175" height="103" sprite="smxlib_window_accent_glow" flip="vertically" pivot="center" color="[smxui_element_accentcolor_1]" globalopacitymod="1.8" />
+						<sprite name="smxlib_artbox_accent_glow_top" depth="4" pos="150,-25" width="175" height="103" sprite="smxlib_window_accent_overlay" flip="vertically" pivot="center" color="[smxui_element_accentcolor_1]" globalopacitymod="1.8" />
+
+						<sprite name="smxlib_artbox_accent_glow_bottom" depth="3" pos="150,-125" width="175" height="103" sprite="smxlib_window_accent_glow" flip="horizontally" pivot="center" color="[smxui_element_accentcolor_1]" globalopacitymod="1.8" />
+						<sprite name="smxlib_artbox_accent_glow_bottom" depth="4" pos="150,-125" width="175" height="103" sprite="smxlib_window_accent_overlay" flip="horizontally" pivot="center" color="[smxui_element_accentcolor_1]" globalopacitymod="1.8" />
+
+						<sprite name="smxui_artbox_icon" depth="1" pos="150,-75" width="154" height="154" sprite="smxlib_ui_game_symbol_biohazard" rotation="0" pivot="center" color="[black]" globalopacitymod="0.6" />
+						<sprite name="smxui_artbox_icon" depth="2" pos="150,-75" width="150" height="150" sprite="smxlib_ui_game_symbol_biohazard" rotation="0" pivot="center" color="[darkGrey]" globalopacitymod="0.6" />
+
+						<label name="smxui_skillpoints_available" depth="5" pos="140,-85" width="300" height="150" style="smxlib_label_normal" text="{skillpointsavailable}" font_size="60" pivot="center" justify="center" upper_case="true" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
+						<label name="smxui_skillpoints_label" depth="2" pos="150,-170" width="300" height="50" style="smxlib_label_normal" text_key="xuiPointsAvailableNew" font_size="28" pivot="center" justify="center" color="[smxui_element_labelcolor_2]" visible="{isnormal}" />
+					</rect>
+
+					<rect name="smxui_attribute_entry_module" depth="7" pos="10,-210" width="300" height="490">
+<!--smxmoddingtool_limegreen_nopivot /-->
+						<sprite name="backdropWindow" depth="1" pos="10,-20" width="280" height="470" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_2]" globalopacitymod="1.1" />
+
+						<rect depth="1" pos="10,-28" width="280" height="440">
+
+							<sprite name="smxui_artline_horizontal" depth="1" pos="10,30" width="260" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
+
+							<!-- SMX COMMENT: MOD compatibility. Do NOT change rows until you add more than 12 entries. Only touch those named _mod and notice how they should be added on the lines below.
+											  You MUST change both smxui_attribute_design and categories for this to work! -->
+							<grid name="smxui_attribute_design" depth="2" pos="0,0" rows="12" cols="1" width="280" height="78" cell_width="280" cell_height="78" repeat_content="false">
+								<smxui_category_attribute pos="50,-36" width="280" height="73" sprite="smxlib_ui_game_symbol_perception" text="" text_key="attperception" />
+								<smxui_category_attribute pos="50,-36" width="280" height="73" sprite="smxlib_ui_game_symbol_strength" text="" text_key="attstrength" />
+								<smxui_category_attribute pos="50,-36" width="280" height="73" sprite="smxlib_ui_game_symbol_fortitude" text="" text_key="attfortitude" />
+								<smxui_category_attribute pos="50,-36" width="280" height="73" sprite="smxlib_ui_game_symbol_agility" text="" text_key="attagility" />
+								<smxui_category_attribute pos="50,-36" width="280" height="73" sprite="smxlib_ui_game_symbol_intellect" text="" text_key="attintellect" />
+								<smxui_category_books pos="50,-36" width="280" height="73" sprite="smxlib_ui_game_symbol_perkbooks" text="" text_key="attbooks" />
+								<!--smxui_category_attribute_mod pos="25,0" width="70" height="70" sprite="" text="" text_key="" />
+								<smxui_category_attribute_mod pos="105,78" width="70" height="70" sprite="" text="" text_key="" />
+								<smxui_category_attribute_mod pos="185,156" width="70" height="70" sprite="" text="" text_key="" /-->
+							</grid>
+
+							<!-- SMX COMMENT: MOD compatibility. Do NOT change rows until you add more than 12 entries. Only touch those named _mod and notice how they should be added on the lines below.
+											  You MUST change both smxui_attribute_design and categories for this to work! -->
+							<grid name="categories" depth="1" pos="0,0" rows="12" cols="1" width="280" height="78" cell_width="280" cell_height="78" repeat_content="false" controller="CategoryList">
+								<smxui_category_button pos="0,0" width="280" height="70" />
+								<smxui_category_button pos="0,0" width="280" height="70" />
+								<smxui_category_button pos="0,0" width="280" height="70" />
+								<smxui_category_button pos="0,0" width="280" height="70" />
+								<smxui_category_button pos="0,0" width="280" height="70" />
+								<smxui_category_button pos="0,0" width="280" height="70" />
+								<!--smxui_category_button_mod pos="25,0" width="70" height="70" />
+								<smxui_category_button_mod pos="105,78" width="70" height="70" />
+								<smxui_category_button_mod pos="185,156" width="70" height="70" /-->
+							</grid>
+						</rect>
+					</rect>
+
+					<rect name="smxui_search_module" depth="7" pos="420,-650" width="300" height="50">
+<!--smxmoddingtool_tan_nopivot /-->
+
+						<!--panel depth="1" pos="30,0" width="200" disableautobackground="true" console_enabled="false">
+							<sprite depth="1" name="searchIcon" style="icon30px" pos="0,-22" sprite="ui_game_symbol_search" pivot="center"/>
+							<textfield depth="2" pos="22,-7" width="120" height="30" name="searchInput" search_field="true" close_group_on_tab="true" />
+						</panel-->
+
+						<panel depth="2" pos="540,0" width="104" height="43" disableautobackground="true" visible="{paging_visible}">
+							<pager name="pager" pos="4,-6" />
+						</panel>
+					</rect>
+
+					<rect name="smxui_perks_entry_module" depth="5" pos="330,-10" width="710" height="690">
+<!--smxmoddingtool_green_nopivot /-->
+
+						<sprite name="backdropWindow" depth="1" pos="0,10" width="710" height="710" sprite="smxlib_window_background" flip="horizontally" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />
+
+						<sprite name="backdropWindow" depth="2" pos="20,-220" width="660" height="470" sprite="smxlib_window_background" color="[smxui_element_backdrop_2]" globalopacitymod="1.1" />
+
+<!--grid name="smxui_attribute_design" depth="2" pos="0,0" rows="12" cols="1" width="280" height="78" cell_width="280" cell_height="78" repeat_content="false"-->
+
+						<rect name="skills" pos="20,-218" width="660" height="480" controller="SkillList">
+<!--smxmoddingtool_green_nopivot /-->
+
+<!--smxmoddingtool_green_hor pos="-500,-210" /-->
+							<grid name="skills" depth="3" pos="0,-10" rows="1" cols="1" cell_width="320" cell_height="78" repeat_content="true" arrangement="vertical" visible="{isnormal}">
+								<smxui_attribute_entry pos="50,-36" width="280" height="73" sprite="smxlib_ui_game_symbol_perception" text="" text_key="" />
+							</grid>
+
+							<grid name="skills" depth="3" rows="5" cols="2" pos="30,-88" cell_width="320" cell_height="78" repeat_content="true" arrangement="horizontal" visible="{isnormal}">
+								<smxui_perk_entry pos="50,-36" width="280" height="73" sprite="" text="" text_key="" />
+							</grid>
+
+							<grid name="books" depth="3" rows="5" cols="2" pos="30,-88" cell_width="320" cell_height="78" repeat_content="true" arrangement="horizontal" visible="{isbook}">
+								<smxui_attribute_entry pos="50,-36" width="280" height="73" sprite="" text="" text_key="" />
+							</grid>
+						</rect>
+					</rect>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Skill Window - Attribute Info Window -->
+
+		<remove xpath="/windows/window[@name='windowSkillAttributeInfo']" />
+
+		<append xpath="/windows">
+			<window name="windowSkillAttributeInfo" depth="3" width="640" height="68" panel="Center" controller="SkillAttributeInfoWindow" cursor_area="true" hidden_entries_with_paging="2" >
+
+				<rect name="smxui_main_content_module" depth="5" pos="1080,-73" width="380" height="710">
+				<!--rect pos="1080,0"-->
+<!--smxmoddingtool_red_nopivot /-->
+
+					<rect name="smxui_attributeinfo_header_module" pos="-700,-10">
+						<rect name="smxui_attributeinfo_module" depth="1" pos="5,0" width="640" height="200">
+<!--smxmoddingtool_green_nopivot /-->
+
+							<!--sprite pos="4,-5" depth="2" name="windowIcon" style="icon32px" sprite="ui_game_symbol_skills"/-->
+							<!--label style="header.name" text="{groupname}" /-->
+							<sprite name="frameLeft" depth="4" pos="0,-65" width="150" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameTop" depth="5" pos="250,3" width="410" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameRight" depth="4" pos="640,10" width="240" height="3" sprite="smxlib_separation_line_1" rotation="-90" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameBottom" depth="5" pos="-20,-200" width="680" height="3" sprite="smxlib_separation_line_1" flip="horizontally" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+
+
+							<sprite name="frameLeft" depth="4" pos="27,6" width="66" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameTop" depth="5" pos="19,0" width="66" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameRight" depth="4" pos="77,6" width="66" height="3" sprite="smxlib_separation_line_1" rotation="-90" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameBottom" depth="5" pos="19,-50" width="66" height="3" sprite="smxlib_separation_line_1" flip="horizontally" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+
+							<sprite name="backdropInfoPanel" depth="0" pos="0,0" width="640" height="200" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_background]" globalopacitymod="1.1" />
+
+							<sprite name="smxui_attribute_background" depth="1" pos="140,-36" width="275" height="75" sprite="smxlib_window_button_background" pivot="center" color="[darkGrey]" />
+
+							<sprite name="smxui_attribute_icon_splash" depth="2" pos="50,-36" size="110,70" sprite="smxlib_window_splash" pivot="center" rotation="35" color="[smxui_skillwindow_undefined_1]" globalopacitymod="1.8" />
+							<sprite name="smxui_attribute_icon_background" depth="3" pos="50,-26" size="50,50" sprite="smxlib_ui_game_symbol_sloticon_background" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.8" />
+							<sprite depth="3" pos="50,-26" width="50" height="50" sprite="{groupicon}" pivot="center" foregroundlayer="true"/>
+
+							<label name="groupName" depth="5" pos="168,-36" width="120" height="32" style="smxlib_label_normal" text="{groupname}" font_size="24" pivot="center" justify="left" upper_case="true" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
+							<label name="levels" depth="2" pos="120,-56" width="200" height="28" style="smxlib_label_normal" text="{currentlevel} {skillLevel} / {maxSkillLevel}" font_size="16" pivot="center" justify="right" />
+<!--sprite color="[red]" pos="535,-20" size="200,28" pivot="center" /-->
+							<label name="descriptionText" depth="2" pos="10,-80" width="620" height="110" style="smxlib_label_normal" text="{groupdescription}" font_size="22" pivot="topleft" justify="left" upper_case="false" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
+<!--sprite color="[red]" size="620,110" pos="10,-80" pivot="topleft" depth="22" /-->
+						</rect>
+
+						<rect name="smxui_attributedetails_module" depth="1" pos="700,0" width="380" height="200">
+<!--smxmoddingtool_white_nopivot /-->
+							<sprite name="smxlib_window_attribute_separation" depth="4" pos="-10,0" width="650" height="3" sprite="smxlib_separation_line_1" rotation="270" color="[smxui_element_separation_1]" />
+
+							<sprite name="backdropInfoPanel" depth="0" pos="0,10" width="390" height="710" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />
+
+							<sprite name="frameLeft" depth="4" pos="30,10" width="240" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameTop" depth="5" pos="20,3" width="360" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameRight" depth="4" pos="370,10" width="240" height="3" sprite="smxlib_separation_line_1" rotation="-90" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameBottom" depth="5" pos="10,-200" width="380" height="3" sprite="smxlib_separation_line_1" flip="horizontally" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+
+							<sprite name="backdropInfoPanel" depth="0" pos="30,0" width="340" height="200" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_background]" globalopacitymod="1.1" />
+
+							<label name="descriptionText" depth="2" pos="35,-5" width="329" height="190" style="smxlib_label_normal" text="{detailsdescription}" font_size="22" pivot="topleft" justify="left" upper_case="false" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
+<!--sprite color="[tan]" size="329,190" pos="35,-5" pivot="topleft" depth="22" /-->
+						</rect>
+					</rect>
+
+					<rect name="smxui_attributes_module" depth="1" pos="10,-240" width="360" height="460">
+<!--smxmoddingtool_tan_nopivot /-->
+						<sprite name="backdropWindow" depth="1" pos="10,10" width="350" height="470" sprite="smxlib_window_background" flip="horizontally" color="[smxui_element_backdrop_2]" globalopacitymod="1.1" />
+
+						<rect name="smxui_attributeentries_module" depth="1" pos="20,-15" width="340" height="440">
+<!--smxmoddingtool_limegreen_nopivot /-->
+
+							<!-- SMX COMMENT: Artlines SLOT 1 > 3 -->
+							<sprite name="smxui_artline_horizontal" depth="4" pos="96,-27" width="195" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_vertical" depth="5" pos="290,-27" width="70" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+
+							<!-- SMX COMMENT: Artlines SLOT 3 > 5 -->
+							<sprite name="smxui_artline_horizontal" depth="4" pos="40,-115" width="230" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_vertical" depth="5" pos="40,-115" width="80" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+
+							<!-- SMX COMMENT: Artlines SLOT 5 > 7 -->
+							<sprite name="smxui_artline_horizontal" depth="4" pos="40,-192" width="200" height="4" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_vertical" depth="5" pos="222,-220" width="18" height="4" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_horizontal" depth="4" pos="147,-235" width="78" height="4" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_vertical" depth="5" pos="150,-235" width="18" height="4" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+
+							<!-- SMX COMMENT: Artlines SLOT 7 > 8 -->
+							<sprite name="smxui_artline_horizontal" depth="4" pos="167,-285" width="78" height="5" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+
+							<!-- SMX COMMENT: Artlines SLOT 8 > 10 -->
+							<sprite name="smxui_artline_vertical" depth="5" pos="262,-325" width="18" height="5" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_horizontal" depth="4" pos="76,-342" width="188" height="5" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+
+							<sprite name="smxui_artline_vertical" depth="5" pos="51,-362" width="46" height="5" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_horizontal" depth="4" pos="51,-405" width="98" height="5" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+
+							<grid name="smxui_attribute_grid" depth="1" rows="10" cols="1" pos="0,0" width="78" cell_width="78" cell_height="78" repeat_content="false">
+								<smxui_skill_attribute_level pos="20,5" width="78" height="78" globalopacitymod="0.2" />
+								<smxui_skill_attribute_level pos="180,68" width="78" height="78" globalopacitymod="0.3" />
+								<smxui_skill_attribute_level pos="240,68" width="78" height="78" globalopacitymod="0.4" />
+								<smxui_skill_attribute_level pos="90,146" width="78" height="78" globalopacitymod="0.5" />
+								<smxui_skill_attribute_level pos="-10,146" width="78" height="78" globalopacitymod="0.6" />
+								<smxui_skill_attribute_level pos="170,224" width="78" height="78" globalopacitymod="0.7" />
+								<smxui_skill_attribute_level pos="100,216" width="78" height="78" globalopacitymod="0.8" />
+								<smxui_skill_attribute_level pos="210,276" width="78" height="78" globalopacitymod="0.9" />
+								<smxui_skill_attribute_level pos="0,316" width="78" height="78" globalopacitymod="1.0" />
+								<smxui_skill_attribute_level pos="120,326" width="78" height="78" globalopacitymod="1.2" />
+							</grid>
+						</rect>
+
+						<rect name="pagerBox" depth="3" width="644" height="43" pos="3,-689" visible="{showPaging}">
+							<sprite depth="1" name="background" color="[mediumGrey]" type="sliced"/>
+							<sprite depth="0" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="647" height="47" color="[black]" type="sliced" fillcenter="false" />
+
+							<panel pos="524,0" width="104" height="43" disableautobackground="true">
+								<pager name="pager" pos="-16,-6" primary_pager="false" />
+											 
+																										
+																																							   
+						
+																																								  
+							</panel>
+						</rect>
+					</rect>
+				</rect>
+			</window>
+		</append>
+
+
+
+<!--	// SMX // Skill Window - Skill Skill Info -->
+
+		<remove xpath="/windows/window[@name='windowSkillSkillInfo']" />
+
+		<append xpath="/windows">
+			<window name="windowSkillSkillInfo" depth="3" width="647" height="68" panel="Center" controller="SkillSkillInfoWindow" cursor_area="true" >
+
+				<rect pos="1000,0">
+
+					<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
+						<sprite pos="4,-5" depth="2" name="windowIcon" style="icon32px" sprite="ui_game_symbol_skills"/>
+						<label style="header.name" text="{groupname}" />
+						<label pos="635, -9" depth="2" width="300" height="28" text="{currentlevel} {skillLevel} / {maxSkillLevel}" font_size="26" color="[lightGrey]" justify="right" pivot="topright"/>
+					</panel>
+					<rect name="content" pos="0,-46" height="669" depth="1">
+
+						<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" width="151" height="163" color="[black]" type="sliced" fillcenter="false" />
+						<sprite depth="1" pos="2,-2" name="preview" width="148" height="162" color="[darkGrey]" type="sliced" />
+						<sprite depth="3" pos="77,-77" width="100" height="100" sprite="{groupicon}" pivot="center" foregroundlayer="true"/>
+
+						<rect name="descriptionBox" depth="1" pos="148,0" width="498" height="162" >
+							<sprite depth="1" name="background" color="[mediumGrey]" type="sliced"/>
+							<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="499" height="163" color="[black]" type="sliced" fillcenter="false" />
+
+							<label depth="2" name="descriptionText" pos="6,-8" width="486" height="144" text="{groupdescription}"/>
+						</rect>
+
+						<rect name="currentProgressBox" depth="1" pos="0,-160" height="44">
+							<sprite depth="1" name="background" color="[mediumGrey]" type="sliced"/>
+							<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" height="46" color="[black]" type="sliced" fillcenter="false" />
+
+							<label depth="2" pos="10,-22" width="80" height="32" text="{currentlevel} {skillLevel}" justify="right" pivot="left" />
+							<sprite depth="2" pos="99,-22" height="18" width="452" color="[black]" type="sliced" pivot="left" />
+							<sprite depth="3" pos="100,-22" height="16" width="450" color="[darkGrey]" type="sliced" pivot="left" foregroundlayer="true" />
+							<sprite depth="3" pos="100,-22" height="16" width="450" color="[red]" type="filled" pivot="left" foregroundlayer="true" fill="{skillpercentthislevel}" />
+							<label depth="2" pos="640,-22" width="80" height="32" text="{currentlevel} {nextSkillLevel}" justify="left" pivot="right" visible="{notmaxlevel}" />
+
+							<rect pos="200,0" width="250" depth="4" name="locked" visible="{nextSkillLevelLocked}">
+								<sprite depth="5" pos="0,-22" style="icon30px" pivot="left" foregroundlayer="true" sprite="ui_game_symbol_lock" />
+								<label depth="4" pos="40,-22" width="210" height="32" text="{nextSkillLevelRequirement}" justify="left" pivot="left" />
+							</rect>
+						</rect>
+
+						<rect name="effects" depth="1" pos="0,-203" width="647" height="135">
+							<sprite depth="1" name="background" color="[darkGrey]" type="sliced"/>
+							<sprite depth="3" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
+
+							<rect name="header" height="43">
+								<sprite depth="1" name="background" color="[lightGrey]" type="sliced"/>
+								<sprite depth="3" pos="0,1" width="647" height="46" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
+								<label depth="2" pos="14,-10" text_key="xuiSkillEffects"  height="34" />
+							</rect>
+
+							<label depth="2" pos="8,-47" width="310" height="84" text="{effectsCol1}" />
+							<label depth="2" pos="331,-47" width="310" height="84" text="{effectsCol2}" />
+						</rect>
+
+						<rect name="milestones" depth="1" pos="0,-336" width="647" height="348">
+							<sprite depth="1" name="background" color="[darkGrey]" type="sliced"/>
+							<sprite depth="4" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
+
+							<rect name="header" height="43">
+								<sprite depth="1" name="background" color="[lightGrey]" type="sliced"/>
+								<sprite depth="3" pos="0,1" width="647" height="46" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
+								<label depth="2" pos="14,-10" text_key="xuiSkillMilestones"  height="34" />
+							</rect>
+
+							<grid depth="2" rows="5" cols="1" pos="0,-45" width="647" cell_width="647" cell_height="60" repeat_content="true">
+								<skill_skill_milestone depth="2" width="647" height="60" />
+							</grid>
+						</rect>
+					</rect>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Skill Window - Skill Perk Info -->
+
+		<remove xpath="/windows/window[@name='windowSkillPerkInfo']" />
+
+		<append xpath="/windows">
+			<window name="windowSkillPerkInfo" depth="3" width="647" height="68" panel="Center" controller="SkillPerkInfoWindow" cursor_area="true" hidden_entries_with_paging="1" >
+
+				<rect name="smxui_main_content_module" depth="5" pos="1080,-73" width="380" height="710">
+				<!--rect pos="1080,0"-->
+<!--smxmoddingtool_red_nopivot /-->
+
+					<rect name="smxui_attributeinfo_header_module" pos="-700,-10">
+						<rect name="smxui_attributeinfo_module" depth="1" pos="5,0" width="640" height="200">
+<!--smxmoddingtool_green_nopivot /-->
+
+							<!--sprite pos="4,-5" depth="2" name="windowIcon" style="icon32px" sprite="ui_game_symbol_skills"/-->
+							<!--label style="header.name" text="{groupname}" /-->
+							<sprite name="frameLeft" depth="4" pos="0,-65" width="150" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameTop" depth="5" pos="250,3" width="410" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameRight" depth="4" pos="640,10" width="240" height="3" sprite="smxlib_separation_line_1" rotation="-90" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameBottom" depth="5" pos="-20,-200" width="680" height="3" sprite="smxlib_separation_line_1" flip="horizontally" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+
+
+							<sprite name="frameLeft" depth="4" pos="27,6" width="66" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameTop" depth="5" pos="19,0" width="66" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameRight" depth="4" pos="77,6" width="66" height="3" sprite="smxlib_separation_line_1" rotation="-90" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameBottom" depth="5" pos="19,-50" width="66" height="3" sprite="smxlib_separation_line_1" flip="horizontally" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+
+							<sprite name="backdropInfoPanel" depth="0" pos="0,0" width="640" height="200" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_background]" globalopacitymod="1.1" />
+
+							<sprite name="smxui_attribute_background" depth="1" pos="140,-36" width="275" height="75" sprite="smxlib_window_button_background" pivot="center" color="[darkGrey]" />
+
+							<sprite name="smxui_attribute_icon_splash" depth="2" pos="50,-36" size="110,70" sprite="smxlib_window_splash" pivot="center" rotation="35" color="[smxui_skillwindow_undefined_1]" globalopacitymod="1.8" />
+							<sprite name="smxui_attribute_icon_background" depth="3" pos="50,-26" size="50,50" sprite="smxlib_ui_game_symbol_sloticon_background" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.8" />
+							<sprite depth="3" pos="50,-26" width="50" height="50" sprite="{groupicon}" pivot="center" foregroundlayer="true"/>
+
+							<label name="groupName" depth="5" pos="168,-36" width="120" height="32" style="smxlib_label_normal" text="{groupname}" font_size="24" pivot="center" justify="left" upper_case="true" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
+							<label name="levels" depth="2" pos="120,-56" width="200" height="28" style="smxlib_label_normal" text="{currentlevel} {skillLevel} / {maxSkillLevel}" font_size="16" pivot="center" justify="right" />
+<!--sprite color="[red]" pos="535,-20" size="200,28" pivot="center" /-->
+							<label name="descriptionText" depth="2" pos="10,-80" width="620" height="110" style="smxlib_label_normal" text="{groupdescription}" font_size="22" pivot="topleft" justify="left" upper_case="false" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
+<!--sprite color="[red]" size="620,110" pos="10,-80" pivot="topleft" depth="22" /-->
+						</rect>
+
+						<rect name="smxui_attributedetails_module" depth="1" pos="700,0" width="380" height="200">
+<!--smxmoddingtool_white_nopivot /-->
+							<sprite name="smxlib_window_attribute_separation" depth="4" pos="-10,0" width="650" height="3" sprite="smxlib_separation_line_1" rotation="270" color="[smxui_element_separation_1]" />
+
+							<sprite name="backdropInfoPanel" depth="0" pos="0,10" width="390" height="710" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />
+
+							<sprite name="frameLeft" depth="4" pos="30,10" width="240" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameTop" depth="5" pos="20,3" width="360" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameRight" depth="4" pos="370,10" width="240" height="3" sprite="smxlib_separation_line_1" rotation="-90" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameBottom" depth="5" pos="10,-200" width="380" height="3" sprite="smxlib_separation_line_1" flip="horizontally" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+
+							<sprite name="backdropInfoPanel" depth="0" pos="30,0" width="340" height="200" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_background]" globalopacitymod="1.1" />
+
+							<label name="descriptionText" depth="2" pos="35,-5" width="329" height="190" style="smxlib_label_normal" text="{detailsdescription}" font_size="22" pivot="topleft" justify="left" upper_case="false" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
+<!--sprite color="[tan]" size="329,190" pos="35,-5" pivot="topleft" depth="22" /-->
+						</rect>
+					</rect>
+
+					<rect name="smxui_attributes_module" depth="1" pos="10,-240" width="360" height="460">
+<!--smxmoddingtool_tan_nopivot /-->
+						<sprite name="backdropWindow" depth="1" pos="10,10" width="350" height="470" sprite="smxlib_window_background" flip="horizontally" color="[smxui_element_backdrop_2]" globalopacitymod="1.1" />
+
+						<rect name="smxui_attributeentries_module" depth="1" pos="10,-10" width="340" height="440">
+<!--smxmoddingtool_limegreen_nopivot /-->
+
+							<!-- SMX COMMENT: Artlines SLOT 1 > 3 -->
+							<!--sprite name="smxui_artline_horizontal" depth="4" pos="96,-27" width="195" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_vertical" depth="5" pos="290,-27" width="70" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" /-->
+
+							<!-- SMX COMMENT: Artlines SLOT 3 > 5 -->
+							<!--sprite name="smxui_artline_horizontal" depth="4" pos="40,-115" width="230" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" /-->
+							<!--sprite name="smxui_artline_vertical" depth="5" pos="40,-115" width="80" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" /-->
+
+							<!-- SMX COMMENT: Artlines SLOT 5 > 7 -->
+							<!--sprite name="smxui_artline_horizontal" depth="4" pos="40,-192" width="200" height="4" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_vertical" depth="5" pos="222,-220" width="18" height="4" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_horizontal" depth="4" pos="147,-235" width="78" height="4" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_vertical" depth="5" pos="150,-235" width="18" height="4" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" /-->
+
+							<!-- SMX COMMENT: Artlines SLOT 7 > 8 -->
+							<!--sprite name="smxui_artline_horizontal" depth="4" pos="167,-285" width="78" height="5" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" /-->
+
+							<!-- SMX COMMENT: Artlines SLOT 8 > 10 -->
+							<!--sprite name="smxui_artline_vertical" depth="5" pos="262,-325" width="18" height="5" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_horizontal" depth="4" pos="76,-342" width="188" height="5" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" /-->
+
+							<!--sprite name="smxui_artline_vertical" depth="5" pos="51,-362" width="46" height="5" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_horizontal" depth="4" pos="51,-405" width="98" height="5" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" /-->
+
+							<grid name="smxui_attribute_grid" depth="1" rows="5" cols="1" pos="0,0" width="78" cell_width="78" cell_height="78" repeat_content="false">
+								<smxui_skill_perk_level1 pos="131,5" width="78" height="78" globalopacitymod="0.4" />
+								<smxui_skill_perk_level2 pos="131,-15" width="78" height="78" globalopacitymod="0.6" />
+								<smxui_skill_perk_level2 pos="131,-40" width="78" height="78" globalopacitymod="0.8" />
+								<smxui_skill_perk_level2 pos="131,-60" width="78" height="78" globalopacitymod="1.0" />
+								<smxui_skill_perk_level2 pos="131,-80" width="78" height="78" globalopacitymod="1.2" />
+								<!--smxui_skill_perk_level pos="170,224" width="78" height="78" globalopacitymod="0.7" />
+								<smxui_skill_perk_level pos="100,216" width="78" height="78" globalopacitymod="0.8" />
+								<smxui_skill_perk_level pos="210,276" width="78" height="78" globalopacitymod="0.9" />
+								<smxui_skill_perk_level pos="0,316" width="78" height="78" globalopacitymod="1.0" />
+								<smxui_skill_perk_level pos="120,326" width="78" height="78" globalopacitymod="1.2" /-->
+							</grid>
+						</rect>
+
+						<rect name="pagerBox" depth="3" width="644" height="43" pos="3,-689" visible="{showPaging}">
+							<sprite depth="1" name="background" color="[mediumGrey]" type="sliced"/>
+							<sprite depth="0" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="647" height="47" color="[black]" type="sliced" fillcenter="false" />
+
+							<panel pos="524,0" width="104" height="43" disableautobackground="true">
+								<pager name="pager" pos="-16,-6" primary_pager="false" />
+											 
+																										
+																																							   
+						
+																																								  
+							</panel>
+						</rect>
+					</rect>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Skill Window - Skill Book Info -->
+
+		<remove xpath="/windows/window[@name='windowSkillBookInfo']" />
+
+		<append xpath="/windows">
+			<window name="windowSkillBookInfo" depth="3" width="647" height="68" panel="Center" controller="SkillBookInfoWindow" cursor_area="true" hidden_entries_with_paging="1" >
+
+				<rect name="smxui_main_content_module" depth="5" pos="1080,736" width="380" height="710">
+				<!--rect pos="1080,0"-->
+<!--smxmoddingtool_red_nopivot /-->
+
+					<rect name="smxui_attributeinfo_header_module" pos="-700,-10">
+						<rect name="smxui_attributeinfo_module" depth="1" pos="5,0" width="640" height="200">
+<!--smxmoddingtool_green_nopivot /-->
+
+							<!--sprite pos="4,-5" depth="2" name="windowIcon" style="icon32px" sprite="ui_game_symbol_skills"/-->
+							<!--label style="header.name" text="{groupname}" /-->
+							<sprite name="frameLeft" depth="4" pos="0,-65" width="150" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameTop" depth="5" pos="250,3" width="410" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameRight" depth="4" pos="640,10" width="240" height="3" sprite="smxlib_separation_line_1" rotation="-90" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameBottom" depth="5" pos="-20,-200" width="680" height="3" sprite="smxlib_separation_line_1" flip="horizontally" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+
+
+							<sprite name="frameLeft" depth="4" pos="27,6" width="66" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameTop" depth="5" pos="19,0" width="66" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameRight" depth="4" pos="77,6" width="66" height="3" sprite="smxlib_separation_line_1" rotation="-90" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameBottom" depth="5" pos="19,-50" width="66" height="3" sprite="smxlib_separation_line_1" flip="horizontally" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+
+							<sprite name="backdropInfoPanel" depth="0" pos="0,0" width="640" height="200" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_background]" globalopacitymod="1.1" />
+
+							<sprite name="smxui_attribute_background" depth="1" pos="140,-36" width="275" height="75" sprite="smxlib_window_button_background" pivot="center" color="[darkGrey]" />
+
+							<sprite name="smxui_attribute_icon_splash" depth="2" pos="50,-36" size="110,70" sprite="smxlib_window_splash" pivot="center" rotation="35" color="[smxui_skillwindow_undefined_1]" globalopacitymod="1.8" />
+							<sprite name="smxui_attribute_icon_background" depth="3" pos="50,-26" size="50,50" sprite="smxlib_ui_game_symbol_sloticon_background" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.8" />
+							<sprite depth="3" pos="50,-26" width="50" height="50" sprite="{groupicon}" pivot="center" foregroundlayer="true"/>
+
+							<label name="groupName" depth="5" pos="168,-36" width="120" height="32" style="smxlib_label_normal" text="{groupname}" font_size="24" pivot="center" justify="left" upper_case="true" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
+							<label name="levels" depth="2" pos="120,-56" width="200" height="28" style="smxlib_label_normal" text="{currentlevel} {skillLevel} / {maxSkillLevel}" font_size="16" pivot="center" justify="right" />
+<!--sprite color="[red]" pos="535,-20" size="200,28" pivot="center" /-->
+							<label name="descriptionText" depth="2" pos="10,-80" width="620" height="110" style="smxlib_label_normal" text="{groupdescription}" font_size="22" pivot="topleft" justify="left" upper_case="false" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
+<!--sprite color="[red]" size="620,110" pos="10,-80" pivot="topleft" depth="22" /-->
+						</rect>
+
+						<rect name="smxui_attributedetails_module" depth="1" pos="700,0" width="380" height="200">
+<!--smxmoddingtool_white_nopivot /-->
+							<sprite name="smxlib_window_attribute_separation" depth="4" pos="-10,0" width="650" height="3" sprite="smxlib_separation_line_1" rotation="270" color="[smxui_element_separation_1]" />
+
+							<sprite name="backdropInfoPanel" depth="0" pos="0,10" width="390" height="710" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />
+
+							<sprite name="frameLeft" depth="4" pos="30,10" width="240" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameTop" depth="5" pos="20,3" width="360" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameRight" depth="4" pos="370,10" width="240" height="3" sprite="smxlib_separation_line_1" rotation="-90" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+							<sprite name="frameBottom" depth="5" pos="10,-200" width="380" height="3" sprite="smxlib_separation_line_1" flip="horizontally" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
+
+							<sprite name="backdropInfoPanel" depth="0" pos="30,0" width="340" height="200" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_background]" globalopacitymod="1.1" />
+
+							<label name="descriptionText" depth="2" pos="35,-5" width="329" height="190" style="smxlib_label_normal" text="{detailsdescription}" font_size="22" pivot="topleft" justify="left" upper_case="false" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
+<!--sprite color="[tan]" size="329,190" pos="35,-5" pivot="topleft" depth="22" /-->
+						</rect>
+					</rect>
+
+					<rect name="smxui_attributes_module" depth="1" pos="10,-240" width="360" height="460">
+<!--smxmoddingtool_tan_nopivot /-->
+						<sprite name="backdropWindow" depth="1" pos="10,10" width="350" height="470" sprite="smxlib_window_background" flip="horizontally" color="[smxui_element_backdrop_2]" globalopacitymod="1.1" />
+
+						<rect name="smxui_attributeentries_module" depth="1" pos="10,-10" width="340" height="440">
+<!--smxmoddingtool_limegreen_nopivot /-->
+
+							<!-- SMX COMMENT: Artlines SLOT 1 > 3 -->
+							<!--sprite name="smxui_artline_horizontal" depth="4" pos="96,-27" width="195" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_vertical" depth="5" pos="290,-27" width="70" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" /-->
+
+							<!-- SMX COMMENT: Artlines SLOT 3 > 5 -->
+							<!--sprite name="smxui_artline_horizontal" depth="4" pos="40,-115" width="230" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" /-->
+							<!--sprite name="smxui_artline_vertical" depth="5" pos="40,-115" width="80" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" /-->
+
+							<!-- SMX COMMENT: Artlines SLOT 5 > 7 -->
+							<!--sprite name="smxui_artline_horizontal" depth="4" pos="40,-192" width="200" height="4" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_vertical" depth="5" pos="222,-220" width="18" height="4" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_horizontal" depth="4" pos="147,-235" width="78" height="4" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_vertical" depth="5" pos="150,-235" width="18" height="4" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" /-->
+
+							<!-- SMX COMMENT: Artlines SLOT 7 > 8 -->
+							<!--sprite name="smxui_artline_horizontal" depth="4" pos="167,-285" width="78" height="5" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" /-->
+
+							<!-- SMX COMMENT: Artlines SLOT 8 > 10 -->
+							<!--sprite name="smxui_artline_vertical" depth="5" pos="262,-325" width="18" height="5" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_horizontal" depth="4" pos="76,-342" width="188" height="5" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" /-->
+
+							<!--sprite name="smxui_artline_vertical" depth="5" pos="51,-362" width="46" height="5" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
+							<sprite name="smxui_artline_horizontal" depth="4" pos="51,-405" width="98" height="5" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" /-->
+
+							<grid name="smxui_attribute_grid" depth="1" rows="5" cols="1" pos="0,0" width="78" cell_width="78" cell_height="78" repeat_content="true">
+								<skill_book_level width="646" height="50" />
+								<!--smxui_skill_perk_level1 pos="131,5" width="78" height="78" globalopacitymod="0.4" />
+								<smxui_skill_perk_level2 pos="131,-15" width="78" height="78" globalopacitymod="0.6" />
+								<smxui_skill_perk_level2 pos="131,-40" width="78" height="78" globalopacitymod="0.8" />
+								<smxui_skill_perk_level2 pos="131,-60" width="78" height="78" globalopacitymod="1.0" />
+								<smxui_skill_perk_level2 pos="131,-80" width="78" height="78" globalopacitymod="1.2" /-->
+								<!--smxui_skill_perk_level pos="170,224" width="78" height="78" globalopacitymod="0.7" />
+								<smxui_skill_perk_level pos="100,216" width="78" height="78" globalopacitymod="0.8" />
+								<smxui_skill_perk_level pos="210,276" width="78" height="78" globalopacitymod="0.9" />
+								<smxui_skill_perk_level pos="0,316" width="78" height="78" globalopacitymod="1.0" />
+								<smxui_skill_perk_level pos="120,326" width="78" height="78" globalopacitymod="1.2" /-->
+							</grid>
+						</rect>
+
+						<rect name="pagerBox" depth="3" width="644" height="43" pos="3,-689" visible="{showPaging}">
+							<sprite depth="1" name="background" color="[mediumGrey]" type="sliced"/>
+							<sprite depth="0" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="647" height="47" color="[black]" type="sliced" fillcenter="false" />
+
+							<panel pos="524,0" width="104" height="43" disableautobackground="true">
+								<pager name="pager" pos="-16,-6" primary_pager="false" />
+											 
+																										
+																																							   
+						
+																																								  
+							</panel>
+						</rect>
+					</rect>
+				</rect>
+			</window>
+		</append>
 
 </SMXui>

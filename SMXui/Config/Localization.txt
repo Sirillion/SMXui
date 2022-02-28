@@ -1,7 +1,7 @@
 Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
 
-xuiChangeLogHeaderUI,UI,Menu,x,,ChangeLog - SMXui - r20.rc3
-xuiChangeLogUI,UI,Menu,x,,[AF1E19]*[-]  CHANGE: Added code for scrollable inventory.\n[AF1E19]*[-]  ADDED: New optional modlet with scrollable inventory.\n[AF1E19]*[-]  FIXED: Mouseover color for buff entries.\n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n,,,,,
+xuiChangeLogHeaderUI,UI,Menu,x,,ChangeLog - SMXui - r20.rc4
+xuiChangeLogUI,UI,Menu,x,,[AF1E19]*[-]  FIXED: Background sprite size in crafting queue.\n[AF1E19]*[-]  ADDED: Map window re-design.\n[AF1E19]*[-]  ADDED: Search function.(ZMXuiCPBBM only)\n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n,,,,,
 
 TwitchInfo_ActionDisableAction,xui,Menu,,,Disable,,,,,,,,,,,,,,
 TwitchInfo_ActionEnableAction,xui,Menu,,,Enable,,,,,,,,,,,,,,

@@ -8,10 +8,10 @@ using UnityEngine;
 //	Changes hard coded sprites to be SMX sprites.
 //	Difference: Vanilla has these sprites hardcoded so when the action happens the sprite would shift to something else. This prevents that.
 
-public class SMXui_XUiC_ActiveBuffEntry
+public class SMXui_activebuffentry_xuic
 {
     [HarmonyPatch(typeof(XUiC_ActiveBuffEntry), "SelectedChanged")]
-    public class ActiveBuffEntry_SelectedChanged
+    public class SMXuiActiveBuffEntrySelectedChanged
     {
         public static bool Prefix(ref XUiC_ActiveBuffEntry __instance, bool isSelected, ref XUiV_Sprite ___background)
         {
@@ -23,12 +23,12 @@ public class SMXui_XUiC_ActiveBuffEntry
             if (___background != null)
             {
                 // this controls the color of the background sprite
-                ___background.Color = (isSelected ? new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue) : // Sprite color when selected
-                                                    new Color32(96, 96, 96, byte.MaxValue)); // Sprite color when not selected
+                ___background.Color = (isSelected ? new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue) :   // Sprite color when selected
+                                                    new Color32(96, 96, 96, byte.MaxValue));                                    // Sprite color when not selected
 
                 // this controls which sprite will be shown when the buff is selected(or clicked on) in the active buff list(Character window)
-                ___background.SpriteName = (isSelected ? "smxlib_slot_frame_narrow" : // Sprite to use when buff currently selected
-                                                         "smxlib_slot_frame_narrow"); // Sprite to use when buff not selected
+                ___background.SpriteName = (isSelected ? "smxlib_slot_frame_narrow" :                                           // Sprite to use when buff currently selected
+                                                         "smxlib_slot_frame_narrow");                                           // Sprite to use when buff not selected
             }
 
             return false;

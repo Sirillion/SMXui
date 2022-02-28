@@ -7,13 +7,13 @@
 //	Reserves the item modification parts list slot 0 to a cosmetic mod whether it exists or not
 //	Difference: If there is no cosmetic mod, all the remaining installed mods will shift to slot 1
 
-public class SMXui_XUiC_ItemInfoWindow
+public class SMXui_iteminfowindow_xuic
 {
     public static ItemStack PartListItemStack = ItemStack.Empty.Clone();
     public static bool HasCosmeticMods = false;
 
     [HarmonyPatch(typeof(XUiC_PartList), "SetMainItem")]
-    public class SMXui_XUiC_PartList_SetMainItem
+    public class SMXuiPartListSetMainItem
     {
         public static void Postfix(ref XUiC_PartList __instance, ItemStack itemStack)
         {
