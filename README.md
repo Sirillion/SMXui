@@ -21,6 +21,8 @@ SMXui is an extension of SMXhud and SMXmenu and will bring the art style over to
 </p>
 <p align="center"><img src="https://7dtd-community.s3.us-east-2.amazonaws.com/monthly_2022_01/A20.0_2022-01-16_23-35-18.jpg.51f0aaa2e1809e4e67fe3f0647768357.jpg" width="1080" title="SMXui - Vehicle Window - A20">
 </p>
+<p align="center"><img src="https://7dtd-community.s3.us-east-2.amazonaws.com/monthly_2022_02/A20.3_2022-02-28_19-38-23.jpg.a055e75b74b79d4bacdea88247289f53.jpg" width="1080" title="SMXui - Map Windows - A20">
+</p>
 
 
 ## **WELCOME**
