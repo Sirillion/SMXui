@@ -1,4 +1,4 @@
-	<SMXui name="XUi/controls.xml">
+<SMXui name="XUi/controls.xml">
 
 <!--	// SMX // Drag & Drop Window -->
 
@@ -9,8 +9,8 @@
 					<sprite name="itemIcon" depth="6" pos="0,0" size="86,86" atlas="ItemIconAtlas" sprite="{itemicon}" color="{iconcolor}" pivot="center" foregroundlayer="true" />
 					<sprite name="durabilityBackground" depth="3" pos="0,-36" width="73" height="7" sprite="smxlib_item_durability_bar" pivot="center" color="[smxui_item_durability_background]" foregroundlayer="true" visible="{hasdurability}" />
 					<sprite name="durability" depth="4" pos="0,-36" width="73" height="7" sprite="smxlib_item_durability_bar" type="filled" fill="{durabilityfill}" pivot="center" color="{durabilitycolor}" foregroundlayer="true" visible="{hasdurability}" />
-					<label name="stackValue" depth="7" pos="0,-28" width="73" height="28" style="smxlib_label_normal" text="{itemcount}" font_size="20" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
-					<!--label name="stackValue" depth="7" pos="0,-28" width="73" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
+					<label name="stackValue" depth="7" pos="0,-28" width="73" height="28" style="smxcore_label_normal" text="{itemcount}" font_size="20" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
+					<!--label name="stackValue" depth="7" pos="0,-28" width="73" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
 				</rect>
 			</smxui_drag_item_stack>
 		</append>
@@ -31,7 +31,7 @@
 						sound="[recipe_click]"
 						visible="{showresponse}">
 					<sprite name="Icon" depth="5" pos="20,-20" size="20,20" sprite="ui_game_symbol_talk" pivot="center" color="{rowstatecolor}" globalopacitymod="1.8" />
-					<label name="Text" depth="4" pos="200,-20" width="300" height="36" style="smxlib_label_normal" text="{response}{poi.name}" font_size="22" pivot="center" color="{rowstatecolor}" overflow="ShrinkContent" />
+					<label name="Text" depth="4" pos="200,-20" width="300" height="36" style="smxcore_label_normal" text="{response}{poi.name}" font_size="22" pivot="center" color="{rowstatecolor}" overflow="ShrinkContent" />
 				</rect>
 			</smxui_response_entry>
 		</append>
@@ -77,14 +77,14 @@
 						enabled_color="${enabled_color}" 
 						disabled_color="${disabled_color}">
 
-					<button name="back" depth="${1+depth}" pos="23,0" size="25,25" style="press, hover, smxlib_icon_colors" sprite="ui_game_symbol_arrow_left" pivot="center" rotation="0" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="${tooltip_key}" />
+					<button name="back" depth="${1+depth}" pos="23,0" size="25,25" style="press, hover, smxcore_icon_colors" sprite="ui_game_symbol_arrow_left" pivot="center" rotation="0" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="${tooltip_key}" />
 
 					<sprite name="background" depth="${1+depth}" pos="53,0" width="25" height="25" sprite="ui_game_symbol_lock" pivot="center" color="[smxui_lockslot_background]" foregroundlayer="${foregroundlayer}" />
 					<sprite name="fill" depth="${2+depth}" pos="53,0" width="25" height="25" sprite="ui_game_symbol_lock" type="filled" fill="{fillvalue}" filldirection="vertical" pivot="center" color="[smxui_lockslot_foreground]" foregroundlayer="true" visible="{isnumber}" />
 
-					<label name="currentValue" depth="${3+depth}" pos="83,-1" width="45" height="45" style="smxlib_label_normal" text="" font_size="22" pivot="center" justify="center" color="[smxui_element_labelcolor_1]" />
+					<label name="currentValue" depth="${3+depth}" pos="83,-1" width="45" height="45" style="smxcore_label_normal" text="" font_size="22" pivot="center" justify="center" color="[smxui_element_labelcolor_1]" />
 
-					<button name="forward" depth="${1+depth}" pos="110,0" size="25,25" style="press, hover, smxlib_icon_colors" sprite="ui_game_symbol_arrow_right" pivot="center" rotation="0" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="${tooltip_key}" />
+					<button name="forward" depth="${1+depth}" pos="110,0" size="25,25" style="press, hover, smxcore_icon_colors" sprite="ui_game_symbol_arrow_right" pivot="center" rotation="0" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="${tooltip_key}" />
 					<panel name="directvalue" depth="9" pos="41,12" width="25" height="25" style="press, scroll, hover, drag" pivot="center" disableautobackground="true" tooltip_key="${tooltip_key}">
 						<sprite color="[transparent]" />
 					</panel>
@@ -147,14 +147,14 @@
 						enabled_color="${enabled_color}" 
 						disabled_color="${disabled_color}">
 
-					<button name="back" depth="${1+depth}" pos="23,-150" size="30,30" style="press, hover, smxlib_icon_colors" sprite="ui_game_symbol_arrow_left" pivot="center" rotation="90" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="${tooltip_key}" />
+					<button name="back" depth="${1+depth}" pos="23,-150" size="30,30" style="press, hover, smxcore_icon_colors" sprite="ui_game_symbol_arrow_left" pivot="center" rotation="90" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="${tooltip_key}" />
 
 					<sprite name="background" depth="${1+depth}" pos="23,-100" width="40" height="40" sprite="ui_game_symbol_lock" pivot="center" color="[smxui_lockslot_background]" foregroundlayer="${foregroundlayer}" />
 					<sprite name="fill" depth="${2+depth}" pos="23,-100" width="40" height="40" sprite="ui_game_symbol_lock" type="filled" fill="{fillvalue}" filldirection="vertical" pivot="center" color="[smxui_lockslot_foreground]" foregroundlayer="true" visible="{isnumber}" />
 
-					<label name="currentValue" depth="${3+depth}" pos="22,-55" width="45" height="45" style="smxlib_label_normal" text="" font_size="28" pivot="center" justify="center" color="[smxui_element_labelcolor_1]" />
+					<label name="currentValue" depth="${3+depth}" pos="22,-55" width="45" height="45" style="smxcore_label_normal" text="" font_size="28" pivot="center" justify="center" color="[smxui_element_labelcolor_1]" />
 
-					<button name="forward" depth="${1+depth}" pos="23,-15" size="30,30" style="press, hover, smxlib_icon_colors" sprite="ui_game_symbol_arrow_right" pivot="center" rotation="90" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="${tooltip_key}" />
+					<button name="forward" depth="${1+depth}" pos="23,-15" size="30,30" style="press, hover, smxcore_icon_colors" sprite="ui_game_symbol_arrow_right" pivot="center" rotation="90" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="${tooltip_key}" />
 					<panel name="directvalue" pos="3,-75" width="40" height="50" style="press, scroll, hover, drag" pivot="center" disableautobackground="true" tooltip_key="${tooltip_key}">
 						<sprite color="[transparent]" />
 					</panel>
@@ -188,7 +188,7 @@
 
 							<sprite name="backgroundMain" depth="5" pos="9,-9" width="${cols*cell_width+1}" height="${rows*cell_height+1}" sprite="menu_empty3px" type="sliced" color="[black]" on_press="true" />
 
-							<grid name="inventory" depth="10" pos="${pos}" rows="${rows2}" cols="${cols}" cell_width="${cell_width}" cell_height="${cell_height}" controller="XUiC.Backpack, XUiComponents" repeat_content="true">
+							<grid name="inventory" depth="10" pos="${pos}" rows="${rows2}" cols="${cols}" cell_width="${cell_width}" cell_height="${cell_height}" controller="Quartz.Backpack, Quartz" repeat_content="true">
 								<smxui_backpack_item_stack name="0" pos="0" pos2="0,0" size="18,18" size2="40,40" font_size="18" cell_width="${cell_width}" cell_height="${cell_height}" />
 							</grid>
 					</rect>
@@ -200,7 +200,7 @@
 						<sprite name="frameTop" depth="4" pos="70,-9" width="${width-80}" height="3" sprite="smxlib_window_input_frame_top" color="[smxui_element_input_frame]" globalopacitymod="1.8" />
 						<sprite name="frameRight" depth="3" pos="${width-12},-12" width="3" height="36" sprite="smxlib_window_input_frame_right" color="[smxui_element_input_frame]" globalopacitymod="1.8" />
 						<sprite name="frameBottom" depth="4" pos="70,-46" width="${width-80}" height="3" sprite="smxlib_window_input_frame_bottom" color="[smxui_element_input_frame]" globalopacitymod="1.8" />
-						<label name="currency" depth="4" pos="${width/2+18},-31" width="${width-80}" height="40" style="smxlib_window_title" text="{currencyamount}" font_size="32" justify="right" />
+						<label name="currency" depth="4" pos="${width/2+18},-31" width="${width-80}" height="40" style="smxcore_window_title" text="{currencyamount}" font_size="32" justify="right" />
 					</rect>
 				</rect>
 			</smxui_window_design_content_inventory>
@@ -210,8 +210,8 @@
 <!--	// SMX // Item Stack - Backpack --> <!-- FIX THIS LAST! -->
 
 		<append xpath="/controls">
-			<smxui_backpack_item_stack controller="XUiC.ItemStack, XUiComponents" on_scroll="false" allow_dropping="true" prefix_id="false">
-				<rect controller="${controller}" width="${4+cell_width}" height="${4+cell_height}" style="hover, smxlib_item_stack" pivot="center" collider_scale="1.0" on_scroll="${on_scroll}" allow_dropping="${allow_dropping}" prefix_id="${prefix_id}" tooltip="{tooltip}">
+			<smxui_backpack_item_stack controller="Quartz.ItemStack, Quartz" on_scroll="false" allow_dropping="true" prefix_id="false">
+				<rect controller="${controller}" width="${4+cell_width}" height="${4+cell_height}" style="hover, smxcore_item_stack" pivot="center" collider_scale="1.0" on_scroll="${on_scroll}" allow_dropping="${allow_dropping}" prefix_id="${prefix_id}" tooltip="{tooltip}">
 
 					<sprite name="mainBackground" depth="0" pos="0,0" width="${cell_width-4}" height="${cell_height-4}" sprite="menu_empty" type="sliced" pivot="center" color="[smxui_slot_main_background]" globalopacitymod="1.3" />
 
@@ -230,12 +230,12 @@
 					<!--sprite name="lockedTypeicon" depth="8" pos="${-cell_width/2+12},${-cell_height/2+12}" size="14,14" sprite="ui_game_symbol_lock" pivot="center" color="[white]" foregroundlayer="true" visible="{isalockedslot}" /-->
 					<!--sprite name="questtypeicon" depth="8" pos="${-cell_width/2+16-pos},${cell_height/2-16+pos}" size="${size}" sprite="{smxstacklockicon}" pivot="center" color="{itemtypeicontint}" foregroundlayer="true" visible="{isassemblelocked}" /--><!-- SMX DEV: Content Lock, feature not ready! -->
 
-					<sprite name="durabilityBackground" depth="5" pos="0,${-cell_height/2+8}" width="${cell_width-12}" height="5" sprite="smxlib_item_durability_bar" pivot="center" color="[smxlib_item_durability_background]" foregroundlayer="true" visible="{hasdurability}" />
+					<sprite name="durabilityBackground" depth="5" pos="0,${-cell_height/2+8}" width="${cell_width-12}" height="5" sprite="smxlib_item_durability_bar" pivot="center" color="[smxcore_item_durability_background]" foregroundlayer="true" visible="{hasdurability}" />
 					<sprite name="durability" depth="6" pos="0,${-cell_height/2+8}" width="${cell_width-12}" height="5" sprite="smxlib_item_durability_bar" pivot="center" type="filled" fill="{durabilityfill}" color="{durabilitycolor}" foregroundlayer="true" visible="{hasdurability}" />
 
-					<label name="stackValue" depth="7" pos="0,${-cell_height/2+12}" width="${cell_width-14}" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="${font_size}" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxhud_element_labelcolor_1]" visible="{#!hasdurability}" />
-					<!--label name="stackValue" depth="7" pos="0,${-cell_height/2+17}" width="${cell_width-14}" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
-					<label name="timer" depth="7" pos="0,-2" width="${cell_width-6}" height="${cell_height-62}" style="smxlib_label_normal" font_size="${font_size}" upper_case="true" pivot="center" justify="center" color="[smxui_slot_timer_color]" />
+					<label name="stackValue" depth="7" pos="0,${-cell_height/2+12}" width="${cell_width-14}" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="${font_size}" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxhud_element_labelcolor_1]" visible="{#!hasdurability}" />
+					<!--label name="stackValue" depth="7" pos="0,${-cell_height/2+17}" width="${cell_width-14}" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
+					<label name="timer" depth="7" pos="0,-2" width="${cell_width-6}" height="${cell_height-62}" style="smxcore_label_normal" font_size="${font_size}" upper_case="true" pivot="center" justify="center" color="[smxui_slot_timer_color]" />
 
 					<sprite name="cancel" depth="14" pos="0,0" size="${cell_width-8},${cell_height-8}" sprite="ui_game_symbol_x" pivot="center" color="[smxui_slot_cancel_color]" foregroundlayer="true" visible="false" />
 					<sprite name="assembleIcon" depth="13" pos="${pos2}" size="${size2}" sprite="{stacklockicon}" pivot="center" foregroundlayer="true" visible="{isassemblelocked}" />
@@ -266,8 +266,8 @@
 					<sprite name="durabilityBackground" depth="5" pos="0,-26" width="56" height="5" sprite="smxlib_item_durability_bar" pivot="center" color="[smxui_item_durability_background]" foregroundlayer="true" visible="{hasdurability}" />
 					<sprite name="durability" depth="6" pos="0,-26" width="56" height="5" sprite="smxlib_item_durability_bar" pivot="center" type="filled" fill="{durabilityfill}" color="{durabilitycolor}" foregroundlayer="true" visible="{hasdurability}" />
 
-					<label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
-					<label name="timer" depth="7" pos="0,-2" width="62" height="24" style="smxlib_label_normal" font_size="18" upper_case="true" pivot="center" justify="center" color="[smxui_slot_timer_color]" />
+					<label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
+					<label name="timer" depth="7" pos="0,-2" width="62" height="24" style="smxcore_label_normal" font_size="18" upper_case="true" pivot="center" justify="center" color="[smxui_slot_timer_color]" />
 
 					<sprite name="cancel" depth="14" pos="0,0" size="60,60" sprite="ui_game_symbol_x" pivot="center" color="[smxui_slot_cancel_color]" foregroundlayer="true" visible="false" />
 					<sprite name="assembleIcon" depth="13" pos="0,0" size="40,40" sprite="{stacklockicon}" pivot="center" foregroundlayer="true" visible="{isassemblelocked}" />
@@ -279,8 +279,8 @@
 <!--	// SMX // Item Stack --> <!-- SMX DEV: mainBackground must be installed on other item_stack windows too. -->
 
 		<append xpath="/controls">
-			<smxui_looting_item_stack controller="XUiC.ItemStack, XUiComponents" on_scroll="false" allow_dropping="true" prefix_id="false" show_favorites="false">
-				<rect controller="${controller}" width="${4+cell_width}" height="${4+cell_height}" style="hover, smxlib_item_stack" pivot="center" collider_scale="1.0" on_scroll="${on_scroll}" allow_dropping="${allow_dropping}" prefix_id="${prefix_id}" show_favorites="${show_favorites}" tooltip="{tooltip}" >
+			<smxui_looting_item_stack controller="Quartz.ItemStack, Quartz" on_scroll="false" allow_dropping="true" prefix_id="false" show_favorites="false">
+				<rect controller="${controller}" width="${4+cell_width}" height="${4+cell_height}" style="hover, smxcore_item_stack" pivot="center" collider_scale="1.0" on_scroll="${on_scroll}" allow_dropping="${allow_dropping}" prefix_id="${prefix_id}" show_favorites="${show_favorites}" tooltip="{tooltip}" >
 
 					<sprite name="mainBackground" depth="0" pos="0,0" width="64" height="64" sprite="menu_empty" type="sliced" pivot="center" color="[smxui_slot_main_background]" globalopacitymod="1.3" />
 
@@ -301,9 +301,9 @@
 					<sprite name="durabilityBackground" depth="5" pos="0,-26" width="56" height="5" sprite="smxlib_item_durability_bar" pivot="center" color="[smxui_item_durability_background]" foregroundlayer="true" visible="{hasdurability}" />
 					<sprite name="durability" depth="6" pos="0,-26" width="56" height="5" sprite="smxlib_item_durability_bar" pivot="center" type="filled" fill="{durabilityfill}" color="{durabilitycolor}" foregroundlayer="true" visible="{hasdurability}" />
 
-					<label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
-					<!--label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
-					<label name="timer" depth="7" pos="0,-2" width="62" height="24" style="smxlib_label_normal" font_size="18" upper_case="true" pivot="center" justify="center" color="[smxui_slot_timer_color]" />
+					<label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
+					<!--label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
+					<label name="timer" depth="7" pos="0,-2" width="62" height="24" style="smxcore_label_normal" font_size="18" upper_case="true" pivot="center" justify="center" color="[smxui_slot_timer_color]" />
 
 					<sprite name="cancel" depth="14" pos="0,0" size="60,60" sprite="ui_game_symbol_x" pivot="center" color="[smxui_slot_cancel_color]" foregroundlayer="true" visible="false" />
 					<sprite name="assembleIcon" depth="13" pos="0,0" size="40,40" sprite="{stacklockicon}" pivot="center" color="{stacklockcolor}" foregroundlayer="true" visible="{isassemblelocked}" />
@@ -337,9 +337,9 @@
 					<sprite name="durabilityBackground" depth="5" pos="0,-26" width="56" height="5" sprite="smxlib_item_durability_bar" pivot="center" color="[smxui_item_durability_background]" foregroundlayer="true" visible="{hasdurability}" />
 					<sprite name="durability" depth="6" pos="0,-26" width="56" height="5" sprite="smxlib_item_durability_bar" pivot="center" type="filled" fill="{durabilityfill}" color="{durabilitycolor}" foregroundlayer="true" visible="{hasdurability}" />
 
-					<label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
-					<!--label name="stackValue" depth="7" pos="-1,-12" width="60" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
-					<label name="timer" depth="7" pos="0,-2" width="62" height="24" style="smxlib_label_normal" font_size="18" upper_case="true" pivot="center" justify="center" color="[smxui_slot_timer_color]" />
+					<label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
+					<!--label name="stackValue" depth="7" pos="-1,-12" width="60" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
+					<label name="timer" depth="7" pos="0,-2" width="62" height="24" style="smxcore_label_normal" font_size="18" upper_case="true" pivot="center" justify="center" color="[smxui_slot_timer_color]" />
 
 					<sprite name="cancel" depth="14" pos="0,0" size="60,60" sprite="ui_game_symbol_x" pivot="center" color="[smxui_slot_cancel_color]" foregroundlayer="true" visible="false" />
 					<sprite name="assembleIcon" depth="13" pos="0,0" size="40,40" sprite="{stacklockicon}" pivot="center" color="{stacklockcolor}" foregroundlayer="true" visible="{isassemblelocked}" />
@@ -371,9 +371,9 @@
 					<sprite name="durabilityBackground" depth="5" pos="0,-26" width="56" height="5" sprite="smxlib_item_durability_bar" pivot="center" color="[smxui_item_durability_background]" foregroundlayer="true" visible="{hasdurability}" />
 					<sprite name="durability" depth="6" pos="0,-26" width="56" height="5" sprite="smxlib_item_durability_bar" pivot="center" type="filled" fill="{durabilityfill}" color="{durabilitycolor}" foregroundlayer="true" visible="{hasdurability}" />
 
-					<label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
-					<!--label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
-					<label name="timer" depth="7" pos="0,-2" width="62" height="24" style="smxlib_label_normal" font_size="18" upper_case="true" pivot="center" justify="center" color="[smxui_slot_timer_color]" />
+					<label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
+					<!--label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
+					<label name="timer" depth="7" pos="0,-2" width="62" height="24" style="smxcore_label_normal" font_size="18" upper_case="true" pivot="center" justify="center" color="[smxui_slot_timer_color]" />
 
 					<sprite name="cancel" depth="14" pos="0,0" size="60,60" sprite="ui_game_symbol_x" pivot="center" color="[smxui_slot_cancel_color]" foregroundlayer="true" visible="false" />
 					<sprite name="assembleIcon" depth="13" pos="0,0" size="40,40" sprite="{stacklockicon}" pivot="center" color="{stacklockcolor}" foregroundlayer="true" visible="{isassemblelocked}" />
@@ -406,9 +406,9 @@
 					<sprite name="durabilityBackground" depth="5" pos="0,-26" width="56" height="5" sprite="smxlib_item_durability_bar" pivot="center" color="[smxui_item_durability_background]" foregroundlayer="true" visible="{hasdurability}" />
 					<sprite name="durability" depth="6" pos="0,-26" width="56" height="5" sprite="smxlib_item_durability_bar" pivot="center" type="filled" fill="{durabilityfill}" color="{durabilitycolor}" foregroundlayer="true" visible="{hasdurability}" />
 
-					<label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
-					<!--label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
-					<label name="timer" depth="7" pos="0,-2" width="62" height="24" style="smxlib_label_normal" font_size="18" upper_case="true" pivot="center" justify="center" color="[smxui_slot_timer_color]" />
+					<label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
+					<!--label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
+					<label name="timer" depth="7" pos="0,-2" width="62" height="24" style="smxcore_label_normal" font_size="18" upper_case="true" pivot="center" justify="center" color="[smxui_slot_timer_color]" />
 
 					<sprite name="cancel" depth="14" pos="0,0" size="60,60" sprite="ui_game_symbol_x" pivot="center" color="[smxui_slot_cancel_color]" foregroundlayer="true" visible="false" />
 					<sprite name="assembleIcon" depth="13" pos="0,0" size="40,40" sprite="{stacklockicon}" pivot="center" color="{stacklockcolor}" foregroundlayer="true" visible="{isassemblelocked}" />
@@ -442,9 +442,9 @@
 					<sprite name="durabilityBackground" depth="5" pos="0,-26" width="56" height="5" sprite="smxlib_item_durability_bar" pivot="center" color="[smxui_item_durability_background]" foregroundlayer="true" visible="{hasdurability}" />
 					<sprite name="durability" depth="6" pos="0,-26" width="56" height="5" sprite="smxlib_item_durability_bar" pivot="center" type="filled" fill="{durabilityfill}" color="{durabilitycolor}" foregroundlayer="true" visible="{hasdurability}" />
 
-					<label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
-					<!--label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
-					<label name="timer" depth="7" pos="0,-2" width="62" height="24" style="smxlib_label_normal" font_size="18" upper_case="true" pivot="center" justify="center" color="[smxui_slot_timer_color]" />
+					<label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
+					<!--label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
+					<label name="timer" depth="7" pos="0,-2" width="62" height="24" style="smxcore_label_normal" font_size="18" upper_case="true" pivot="center" justify="center" color="[smxui_slot_timer_color]" />
 
 					<sprite name="cancel" depth="14" pos="0,0" size="60,60" sprite="ui_game_symbol_x" pivot="center" color="[smxui_slot_cancel_color]" foregroundlayer="true" visible="false" />
 					<sprite name="assembleIcon" depth="13" pos="0,-18" size="18,18" sprite="{stacklockicon}" pivot="center" color="{stacklockcolor}" foregroundlayer="true" visible="{isassemblelocked}" />
@@ -475,9 +475,9 @@
 					<sprite name="durabilityBackground" depth="5" pos="0,-26" width="42" height="5" sprite="smxlib_item_durability_bar" pivot="center" color="[smxui_item_durability_background]" foregroundlayer="true" visible="{hasdurability}" />
 					<sprite name="durability" depth="6" pos="0,-26" width="42" height="5" sprite="smxlib_item_durability_bar" pivot="center" type="filled" fill="{durabilityfill}" color="{durabilitycolor}" foregroundlayer="true" visible="{hasdurability}" />
 
-					<label name="stackValue" depth="7" pos="-1,-23" width="46" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
-					<!--label name="stackValue" depth="7" pos="-1,-23" width="46" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
-					<label name="timer" depth="7" pos="0,-2" width="62" height="24" style="smxlib_label_normal" font_size="18" upper_case="true" pivot="center" justify="center" color="[smxui_slot_timer_color]" />
+					<label name="stackValue" depth="7" pos="-1,-23" width="46" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
+					<!--label name="stackValue" depth="7" pos="-1,-23" width="46" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
+					<label name="timer" depth="7" pos="0,-2" width="62" height="24" style="smxcore_label_normal" font_size="18" upper_case="true" pivot="center" justify="center" color="[smxui_slot_timer_color]" />
 
 					<sprite name="cancel" depth="14" pos="0,0" size="46,46" sprite="ui_game_symbol_x" pivot="center" color="[smxui_slot_cancel_color]" foregroundlayer="true" visible="false" />
 					<sprite name="assembleIcon" depth="13" pos="0,0" size="26,26" sprite="{stacklockicon}" pivot="center" foregroundlayer="true" visible="{isassemblelocked}" />
@@ -501,8 +501,8 @@
 					<sprite name="durabilityBackground" depth="5" pos="0,-26" width="56" height="5" sprite="smxlib_item_durability_bar" pivot="center" color="[smxui_item_durability_background]" foregroundlayer="true" visible="{hasdurability}" />
 					<sprite name="durability" depth="6" pos="0,-26" width="56" height="5" sprite="smxlib_item_durability_bar" pivot="center" type="filled" fill="{durabilityfill}" color="{durabilitycolor}" foregroundlayer="true" visible="{hasdurability}" />
 
-					<label name="stackValue" depth="7" pos="99999,99999" width="60" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="center" color="[smxui_element_labelcolor_1]" />
-					<!--label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxlib_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{#!hasdurability}" /-->
+					<label name="stackValue" depth="7" pos="99999,99999" width="60" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="center" color="[smxui_element_labelcolor_1]" />
+					<!--label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{#!hasdurability}" /-->
 				</rect>
 			</smxui_equipment_stack>
 		</append>
@@ -528,7 +528,7 @@
 					<!--sprite name="itemBackgroundNormal" depth="3" pos="0,0" width="25" height="25" sprite="ui_game_symbol_muscle" pivot="center" rotation="0" color="[smxui_slot_item_background]" globalopacitymod="1.2" /-->
 					<sprite name="background" depth="4" pos="0,0" width="${cell_width-1}" height="${cell_height-1}" sprite="smxlib_slot_frame_narrow" pivot="center" color="[smxui_slot_frame_normal]" globalopacitymod="1.8" />
 					<sprite name="buffIcon" depth="6" pos="0,5" size="50,50" sprite="{bufficon|once}" pivot="center" color="{buffcolor}" globalopacitymod="1.8" />
-					<label name="buffValue" depth="7" pos="0,-26" width="56" height="18" style="smxlib_label_normal" text="{buffdisplayinfo}" font_size="18" pivot="center" justify="right" color="[smxui_element_labelcolor_2]" />
+					<label name="buffValue" depth="7" pos="0,-26" width="56" height="18" style="smxcore_label_normal" text="{buffdisplayinfo}" font_size="18" pivot="center" justify="right" color="[smxui_element_labelcolor_2]" />
 				</rect>
 			</smxui_active_buff_entry>
 		</append>
@@ -549,8 +549,8 @@
 					<sprite name="itemIcon" depth="4" pos="0,0" size="60,60" atlas="ItemIconAtlas" sprite="" pivot="center" foregroundlayer="true" />
 					<sprite name="lockIcon" depth="5" pos="-20,20" size="18,18" sprite="ui_game_symbol_hammer" pivot="center" foregroundlayer="true" visible="false" />
 
-					<label name="count" depth="5" pos="-1,-23" size="60,18" style="smxlib_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="right" color="[smxui_element_labelcolor_1]" />
-					<label name="timer" depth="5" pos="0,-2" size="62,24" style="smxlib_label_normal" font_size="20" pivot="center" justify="center" upper_case="true" color="[smxui_slot_timer_color]" />
+					<label name="count" depth="5" pos="-1,-23" size="60,18" style="smxcore_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="right" color="[smxui_element_labelcolor_1]" />
+					<label name="timer" depth="5" pos="0,-2" size="62,24" style="smxcore_label_normal" font_size="20" pivot="center" justify="center" upper_case="true" color="[smxui_slot_timer_color]" />
 
 					<sprite name="overlay" depth="2" width="68" height="68" color="32,32,32,128" type="sliced" />
 					<sprite name="cancel" depth="9" pos="0,0" size="60,60" sprite="ui_game_symbol_x" pivot="center" color="[smxui_slot_cancel_color]" foregroundlayer="true" visible="false" />
@@ -563,7 +563,7 @@
 
 		<append xpath="/controls">
 			<smxui_item_part_slot>
-				<rect controller="${controller}" width="${4+cell_width}" height="${4+cell_height}" background_color="[smxhud_slot_slot_background]" highlight_color="[lightGrey]" style="hover, smxlib_item_stack" pivot="center" collider_scale="1.0" tooltip="{partname}" sound_play_on_hover="[default_hover]">
+				<rect controller="${controller}" width="${4+cell_width}" height="${4+cell_height}" background_color="[smxhud_slot_slot_background]" highlight_color="[lightGrey]" style="hover, smxcore_item_stack" pivot="center" collider_scale="1.0" tooltip="{partname}" sound_play_on_hover="[default_hover]">
 
 					<sprite name="mainBackground" depth="0" pos="0,0" width="${cell_width-4}" height="${cell_height-4}" sprite="menu_empty" type="sliced" pivot="center" color="[smxui_slot_main_background]" globalopacitymod="1.3" />
 
@@ -573,7 +573,7 @@
 					<sprite name="slotFrame" depth="3" pos="0,0" width="${cell_width-1}" height="${cell_height-1}" sprite="smxlib_slot_frame_narrow" pivot="center" color="${color}" globalopacitymod="1.8" />
 					<sprite name="itemIcon" depth="6" pos="0,0" size="${cell_width-8},${cell_height-8}" atlas="{partatlas}" sprite="{particon}" pivot="center" color="{particoncolor}" foregroundlayer="true" visible="${visible}" />
 
-					<label name="itemInfo" depth="7" pos="130,-10" width="130" height="34" style="smxlib_label_normal" text="${text}" font_size="28" pivot="center" justify="center" upper_case="true" color="[smxui_element_labelcolor_1]" />
+					<label name="itemInfo" depth="7" pos="130,-10" width="130" height="34" style="smxcore_label_normal" text="${text}" font_size="28" pivot="center" justify="center" upper_case="true" color="[smxui_element_labelcolor_1]" />
 				</rect>
 			</smxui_item_part_slot>
 		</append>
@@ -586,9 +586,9 @@
 				<rect controller="ItemActionEntry" width="${width}" height="${height}" disabled_font_color="[darkGrey]" default_font_color="[white]" default_background_color="[lightGrey]">
 					<sprite name="Icon" depth="3" pos="23,-23" size="40,40" sprite="{actionicon}" pivot="center" color="{statuscolor}" foregroundlayer="true" />
 					<sprite name="background" depth="4" pos="23,-23" size="40,40" sprite="{actionicon}" color="{statuscolor}" pivot="center" foregroundlayer="true" on_hover="true" on_press="true" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip="{actionname}" />
-					<label name="Name" depth="5" pos="99999,99999" size="40,20" style="smxlib_label_normal" text="{actionname}" font_size="14" pivot="center" justify="center" upper_case="true" color="{statuscolor}" overflow="ShrinkContent" />
+					<label name="Name" depth="5" pos="99999,99999" size="40,20" style="smxcore_label_normal" text="{actionname}" font_size="14" pivot="center" justify="center" upper_case="true" color="{statuscolor}" overflow="ShrinkContent" />
 					<gamepad_icon name="gamepadIcon" depth="5" pos="23,-52" pivot="center" />
-					<label name="keyboardButton" depth="6" pos="23,-52" size="40,20" style="smxlib_label_normal" text="&lt;W&gt;" font_size="16" pivot="center" justify="center" upper_case="true" color="{statuscolor}" overflow="ShrinkContent" />
+					<label name="keyboardButton" depth="6" pos="23,-52" size="40,20" style="smxcore_label_normal" text="&lt;W&gt;" font_size="16" pivot="center" justify="center" upper_case="true" color="{statuscolor}" overflow="ShrinkContent" />
 				</rect>
 			</smxui_item_action_entry>
 		</append>
@@ -613,14 +613,14 @@
 						caret_color="[white]" 
 						selection_color="[mediumGrey_half_alpha]" 
 						backgroundcolor="[black]">
-					<sprite name="background" depth="1" pos="3,-3" width="40" height="30" color="[smxlib_element_backdrop_2]" type="sliced" />
+					<sprite name="background" depth="1" pos="3,-3" width="40" height="30" color="[smxcore_element_backdrop_2]" type="sliced" />
 
 					<sprite name="frameLeft" depth="4" pos="0,-2" width="2" height="33" sprite="smxlib_window_input_frame_left" color="[smxui_element_input_frame]" globalopacitymod="1.8" />
 					<sprite name="frameTop" depth="5" pos="0,0" width="44" height="3" sprite="smxlib_window_input_frame_top" color="[smxui_element_input_frame]" globalopacitymod="1.8" />
 					<sprite name="frameRight" depth="4" pos="43,-2" width="3" height="33" sprite="smxlib_window_input_frame_right" color="[smxui_element_input_frame]" globalopacitymod="1.8" />
 					<sprite name="frameBottom" depth="5" pos="0,-33" width="44" height="3" sprite="smxlib_window_input_frame_bottom" color="[smxui_element_input_frame]" globalopacitymod="1.8" />
 
-					<label name="text" depth="2" pos="23,-18" width="42" height="26" style="smxlib_label_normal" font_size="24" pivot="center" justify="center" overflow="ShrinkContent" />
+					<label name="text" depth="2" pos="23,-18" width="42" height="26" style="smxcore_label_normal" font_size="24" pivot="center" justify="center" overflow="ShrinkContent" />
 				</panel>
 			</smxui_counter_control_input>
 		</append>
@@ -634,9 +634,9 @@
 
 					<smxui_counter_control_input name="count_input" depth="2" pos="0,-60" />
 
-					<button name="countMax" depth="3" pos="23,5" size="30,30" style="press, hover, smxlib_icon_colors" sprite="ui_game_symbol_arrow_max" pivot="center" rotation="90" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip="All Available" />
-					<button name="countUp" depth="3" pos="23,-30" size="30,30" style="press, hover, held, smxlib_icon_colors" sprite="ui_game_symbol_arrow_left" pivot="center" rotation="-90" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="One More" />
-					<button name="countDown" depth="3" pos="23,-130" size="30,30" style="press, hover, held, smxlib_icon_colors" sprite="ui_game_symbol_arrow_right" pivot="center" rotation="-90" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="One Less" />
+					<button name="countMax" depth="3" pos="23,5" size="30,30" style="press, hover, smxcore_icon_colors" sprite="ui_game_symbol_arrow_max" pivot="center" rotation="90" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip="All Available" />
+					<button name="countUp" depth="3" pos="23,-30" size="30,30" style="press, hover, held, smxcore_icon_colors" sprite="ui_game_symbol_arrow_left" pivot="center" rotation="-90" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="One More" />
+					<button name="countDown" depth="3" pos="23,-130" size="30,30" style="press, hover, held, smxcore_icon_colors" sprite="ui_game_symbol_arrow_right" pivot="center" rotation="-90" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="One Less" />
 				</rect>
 			</smxui_counter_control>
 		</append>
@@ -661,13 +661,13 @@
 
 					<sprite name="itemIcon" depth="6" pos="0,0" size="60,60" atlas="ItemIconAtlas" sprite="{itemicon}" pivot="center" color="{itemicontint}" foregroundlayer="true" />
 
-					<label name="itemName" depth="2" pos="155,15" width="200" height="24" style="smxlib_label_normal" text="{itemname}" font_size="24" pivot="center" justify="left" overflow="ShrinkContent" color="[smxui_element_labelcolor_1]" />
+					<label name="itemName" depth="2" pos="155,15" width="200" height="24" style="smxcore_label_normal" text="{itemname}" font_size="24" pivot="center" justify="left" overflow="ShrinkContent" color="[smxui_element_labelcolor_1]" />
 
-					<label name="needCount" depth="6" pos="155,-15" width="180" height="28" style="smxlib_label_normal" text=" [808080]{haveneedcount}[-] " font_size="28" pivot="center" justify="right" /> <!-- SMX DEV: Revisit, add binding to hide elements and rework this to present better. -->
+					<label name="needCount" depth="6" pos="155,-15" width="180" height="28" style="smxcore_label_normal" text=" [808080]{haveneedcount}[-] " font_size="28" pivot="center" justify="right" /> <!-- SMX DEV: Revisit, add binding to hide elements and rework this to present better. -->
 
 					<!-- SMX DEV: Deprecated? -->
-					<!--label name="needCount" depth="6" pos="155,-15" width="180" height="24" style="smxlib_label_normal" text=" [808080]Need: ([-] [FFFFFF]{needcount}[-][808080] )[-]" font_size="16" pivot="center" justify="left" />
-					<label name="haveCount" depth="7" pos="155,-15" width="180" height="24" style="smxlib_label_normal" text=" [808080]Have: ([-] [FFFFFF]{havecount}[-][808080] )[-]" font_size="16" pivot="center" justify="right" /-->
+					<!--label name="needCount" depth="6" pos="155,-15" width="180" height="24" style="smxcore_label_normal" text=" [808080]Need: ([-] [FFFFFF]{needcount}[-][808080] )[-]" font_size="16" pivot="center" justify="left" />
+					<label name="haveCount" depth="7" pos="155,-15" width="180" height="24" style="smxcore_label_normal" text=" [808080]Have: ([-] [FFFFFF]{havecount}[-][808080] )[-]" font_size="16" pivot="center" justify="right" /-->
 				</rect>
 			</smxui_ingredient_row>
 		</append>
@@ -692,7 +692,7 @@
 
 					<sprite name="itemIcon" depth="6" pos="0,0" size="60,60" atlas="{itemiconatlas}" sprite="{itemicon}" pivot="center" foregroundlayer="true" />
 
-					<label name="itemName" depth="2" pos="155,0" width="200" height="24" style="smxlib_label_normal" text="{name}" font_size="24" pivot="center" justify="left" overflow="ShrinkContent" color="[smxui_element_labelcolor_1]" />
+					<label name="itemName" depth="2" pos="155,0" width="200" height="24" style="smxcore_label_normal" text="{name}" font_size="24" pivot="center" justify="left" overflow="ShrinkContent" color="[smxui_element_labelcolor_1]" />
 				</rect>
 			</smxui_unlocked_by_row>
 		</append>
@@ -703,7 +703,7 @@
 		<append xpath="/controls">
 			<smxui_crafting_category_icon categoryname="" spritename="" displayname="" displayname_key="">
 				<button name="categoryIcon" controller="CategoryEntry" categoryname="${categoryname}" spritename="${spritename}" displayname="${displayname}" displayname_key="${displayname_key}" 
-						depth="1" pos="22,-20" size="28,28" style="smxlib_icon_colors" sprite="{categoryicon|once}" pivot="center" tooltip="{categorydisplayname|once}" sound_play_on_hover="[default_hover]" sound="[paging_click]" collider_scale="1.1" />
+						depth="1" pos="22,-20" size="28,28" style="smxcore_icon_colors" sprite="{categoryicon|once}" pivot="center" tooltip="{categorydisplayname|once}" sound_play_on_hover="[default_hover]" sound="[paging_click]" collider_scale="1.1" />
 			</smxui_crafting_category_icon>
 		</append>
 
@@ -750,9 +750,9 @@
 					<sprite name="Icon" depth="4" pos="36,-35" size="60,60" atlas="ItemIconAtlas" sprite="{recipeicon}" pivot="center" color="{hasingredientsstatecolor}" foregroundlayer="true" />
 					<sprite name="itemtypeicon" depth="8" pos="318,-18" size="20,20" sprite="ui_game_symbol_{itemtypeicon}" pivot="center" color="{itemtypeicontint}" foregroundlayer="true" visible="{hasitemtypeicon}" />
 
-					<label name="Name" depth="2" pos="191,-25" width="200" height="24" style="smxlib_label_normal" text="{recipename}" font_size="24" pivot="center" justify="left" overflow="ShrinkContent" color="{hasingredientsstatecolor}" />
+					<label name="Name" depth="2" pos="191,-25" width="200" height="24" style="smxcore_label_normal" text="{recipename}" font_size="24" pivot="center" justify="left" overflow="ShrinkContent" color="{hasingredientsstatecolor}" />
 
-					<label name="resourceChecker" depth="2" pos="200,-48" width="200" height="14" style="smxlib_label_normal" text="Have Resources" font_size="14" pivot="center" justify="left" overflow="ShrinkContent" color="[smxui_element_labelcolor_4]" visible="{hasingredients}" />
+					<label name="resourceChecker" depth="2" pos="200,-48" width="200" height="14" style="smxcore_label_normal" text="Have Resources" font_size="14" pivot="center" justify="left" overflow="ShrinkContent" color="[smxui_element_labelcolor_4]" visible="{hasingredients}" />
 
 					<sprite name="Favorite" depth="5" pos="2,-35" size="25,25" sprite="server_favorite" pivot="center" color="[smxui_element_accentcolor_2]" foregroundlayer="true" visible="{isfavorite}" />
 					<sprite name="Unlocked" depth="5" pos="318,-52" size="20,20" sprite="{unlockicon}" pivot="center" color="{unlockstatecolor}" foregroundlayer="true" visible="{isunlockable}" />
@@ -767,8 +767,8 @@
 			<smxui_forge_materials>
 				<rect name="smxui_forgeinput_entry" depth="1" width="68" height="20" tooltip_key="${name}" >
 					<sprite name="materialIcon" depth="2" pos="12,-15" width="25" height="25" atlas="ItemIconAtlas" sprite="${name}" color="{itemicontint}" pivot="center" foregroundlayer="true" />
-					<label name="material" depth="2" pos="99999,99999" width="55" height="30" style="smxlib_label_normal" font_size="18" pivot="center" justify="left" overflow="ShrinkContent" />
-					<label name="weight" depth="2" pos="48,-17" width="44" height="30" style="smxlib_label_normal" font_size="18" pivot="center" justify="right" color="[tan]" overflow="ShrinkContent" />
+					<label name="material" depth="2" pos="99999,99999" width="55" height="30" style="smxcore_label_normal" font_size="18" pivot="center" justify="left" overflow="ShrinkContent" />
+					<label name="weight" depth="2" pos="48,-17" width="44" height="30" style="smxcore_label_normal" font_size="18" pivot="center" justify="right" color="[tan]" overflow="ShrinkContent" />
 				</rect>
 			</smxui_forge_materials>
 		</append>
@@ -781,55 +781,55 @@
 				<rect name="smxui_playerlist_header" depth="7" pos="${pos}" width="1440" height="46">
 
 					<rect name="steamId" depth="1" pos="0,0" width="250" height="46">
-						<label name="text" depth="1" pos="130,-23" height="42" style="smxlib_label_normal" text="STEAM ID" text_key="xuiSteamID" font_size="26" pivot="center" justify="left" />
+						<label name="text" depth="1" pos="130,-23" height="42" style="smxcore_label_normal" text="STEAM ID" text_key="xuiSteamID" font_size="26" pivot="center" justify="left" />
 					</rect>
 
 					<rect name="level" depth="1" pos="260,0" width="70" height="46">
-						<label name="text" depth="1" pos="35,-23" height="42" style="smxlib_label_normal" text="LEVEL" text_key="xuiLevel" font_size="26" pivot="center" justify="center" />
+						<label name="text" depth="1" pos="35,-23" height="42" style="smxcore_label_normal" text="LEVEL" text_key="xuiLevel" font_size="26" pivot="center" justify="center" />
 					</rect>
 
 					<rect name="gamestage" depth="1" pos="340,0" width="100" height="46">
-						<label name="text" depth="1" pos="50,-23" height="42" style="smxlib_label_normal" text="GAME STAGE" text_key="xuiGameStage" font_size="26" pivot="center" justify="center" />
+						<label name="text" depth="1" pos="50,-23" height="42" style="smxcore_label_normal" text="GAME STAGE" text_key="xuiGameStage" font_size="26" pivot="center" justify="center" />
 					</rect>
 
 					<rect name="party" depth="1" pos="450,0" width="70" height="46">
-						<label name="text" depth="1" pos="35,-23" height="42" style="smxlib_label_normal" text="PARTY" text_key="xuiParty" font_size="26" pivot="center" justify="center" />
+						<label name="text" depth="1" pos="35,-23" height="42" style="smxcore_label_normal" text="PARTY" text_key="xuiParty" font_size="26" pivot="center" justify="center" />
 					</rect>
 
 					<rect name="allies" depth="1" pos="530,0" width="70" height="46">
-						<label name="text" depth="1" pos="35,-23" height="42" style="smxlib_label_normal" text="ALLIES" text_key="xuiAllies" font_size="26" pivot="center" justify="center" />
+						<label name="text" depth="1" pos="35,-23" height="42" style="smxcore_label_normal" text="ALLIES" text_key="xuiAllies" font_size="26" pivot="center" justify="center" />
 					</rect>
 
 					<rect name="voice" depth="1" pos="610,0" width="80" height="46">
-						<label name="text" depth="1" pos="40,-23" height="42" style="smxlib_label_normal" text="VOICE" text_key="xuiVoice" font_size="26" pivot="center" justify="center" />
+						<label name="text" depth="1" pos="40,-23" height="42" style="smxcore_label_normal" text="VOICE" text_key="xuiVoice" font_size="26" pivot="center" justify="center" />
 					</rect>
 
 					<rect name="km" depth="1" pos="700,0" width="70" height="46">
-						<label name="text" depth="1" pos="35,-23" height="42" style="smxlib_label_normal" text="KM" text_key="xuiKM" font_size="26" pivot="center" justify="center" />
+						<label name="text" depth="1" pos="35,-23" height="42" style="smxcore_label_normal" text="KM" text_key="xuiKM" font_size="26" pivot="center" justify="center" />
 					</rect>
 
 					<rect name="map" depth="1" pos="780,0" width="80" height="46">
-						<label name="text" depth="1" pos="40,-23" height="42" style="smxlib_label_normal" text="MAP" text_key="xuiMap" font_size="26" pivot="center" justify="center" />
+						<label name="text" depth="1" pos="40,-23" height="42" style="smxcore_label_normal" text="MAP" text_key="xuiMap" font_size="26" pivot="center" justify="center" />
 					</rect>
 
 					<rect name="zombieKills" depth="1" pos="870,0" width="140" height="46">
-						<label name="text" depth="1" pos="70,-23" height="42" style="smxlib_label_normal" text="ZOMBIE KILLS" text_key="xuiEnemyKills" font_size="26" pivot="center" justify="center" />
+						<label name="text" depth="1" pos="70,-23" height="42" style="smxcore_label_normal" text="ZOMBIE KILLS" text_key="xuiEnemyKills" font_size="26" pivot="center" justify="center" />
 					</rect>
 
 					<rect name="playerKills" depth="1" pos="1020,0" width="140" height="46">
-						<label name="text" depth="1" pos="70,-23" height="42" style="smxlib_label_normal" text="PLAYER KILLS" text_key="xuiPlayerKills" font_size="26" pivot="center" justify="center" />
+						<label name="text" depth="1" pos="70,-23" height="42" style="smxcore_label_normal" text="PLAYER KILLS" text_key="xuiPlayerKills" font_size="26" pivot="center" justify="center" />
 					</rect>
 
 					<rect name="deaths" depth="1" pos="1170,0" width="90" height="46">
-						<label name="text" depth="1" pos="45,-23" height="42" style="smxlib_label_normal" text="DEATHS" text_key="xuiDeaths" font_size="26" pivot="center" justify="center" />
+						<label name="text" depth="1" pos="45,-23" height="42" style="smxcore_label_normal" text="DEATHS" text_key="xuiDeaths" font_size="26" pivot="center" justify="center" />
 					</rect>
 
 					<rect name="ping" depth="1" pos="1270,0" width="80" height="46">
-						<label name="text" depth="1" pos="40,-23" height="42" style="smxlib_label_normal" text="PING" text_key="xuiPing" font_size="26" pivot="center" justify="center" />
+						<label name="text" depth="1" pos="40,-23" height="42" style="smxcore_label_normal" text="PING" text_key="xuiPing" font_size="26" pivot="center" justify="center" />
 					</rect>
 
 					<rect name="reportheader" depth="1" pos="1360,0" width="80" height="46">
-						<label name="text" depth="1" pos="40,-23" height="42" style="smxlib_label_normal" text_key="xuiPlayersReportPlayerCol" font_size="26" pivot="center" justify="center" />
+						<label name="text" depth="1" pos="40,-23" height="42" style="smxcore_label_normal" text_key="xuiPlayersReportPlayerCol" font_size="26" pivot="center" justify="center" />
 					</rect>
 				</rect>
 			</smxui_players_header>
@@ -845,7 +845,7 @@
 					<sprite name="background" pos="-50,23" width="1530" height="90" sprite="smxui_playerlist_entry_background" color="[smxui_table_entry_background_4]" />
 
 					<rect name="steamId" depth="1" pos="0,0" width="250" height="46">
-						<label name="steamIdText" depth="1" pos="110,-23" width="186" height="38" style="smxlib_label_normal" text="" font_size="26" pivot="center" justify="left" overflow="ShrinkContent" />
+						<label name="steamIdText" depth="1" pos="110,-23" width="186" height="38" style="smxcore_label_normal" text="" font_size="26" pivot="center" justify="left" overflow="ShrinkContent" />
 
 						<sprite name="admin" depth="1" pos="0,-20" width="25" height="25" sprite="ui_game_symbol_star" pivot="center" color="[red]" tooltip_key="xuiIsAdmin" />
 
@@ -856,42 +856,43 @@
 					</rect>
 
 					<rect name="level" depth="1" pos="260,0" width="70" height="46">
-						<label name="levelText" depth="1" pos="35,-23" height="38" style="smxlib_label_normal" text="" font_size="26" pivot="center" justify="center" />
+						<label name="levelText" depth="1" pos="35,-23" height="38" style="smxcore_label_normal" text="" font_size="26" pivot="center" justify="center" />
 					</rect>
 
 					<rect name="gamestage" depth="1" pos="340,0" width="100" height="46">
-						<label name="gamestageText" depth="1" pos="50,-23" height="38" style="smxlib_label_normal" text="" font_size="26" pivot="center" justify="center" />
+						<label name="gamestageText" depth="1" pos="50,-23" height="38" style="smxcore_label_normal" text="" font_size="26" pivot="center" justify="center" />
 					</rect>
 
 					<rect name="party" depth="1" pos="450,0" width="70" height="46">
-						<label name="labelPartyIcon" depth="1" pos="35,-23" height="38" style="smxlib_label_normal" text="--" font_size="26" pivot="center" justify="center" />
+						<label name="labelPartyIcon" depth="1" pos="35,-23" height="38" style="smxcore_label_normal" text="--" font_size="26" pivot="center" justify="center" />
 						<button name="iconPartyIcon" depth="1" pos="35,-23" size="28,28" style="press, hover" sprite="ui_game_symbol_party" color="[smxui_element_iconcolor_2]" disabledcolor="[disabledLabelColor]" pivot="center" sound="[craft_click]" />
 					</rect>
 
 					<rect name="allies" depth="1" pos="530,0" width="70" height="46">
-						<label name="labelAllyIcon" depth="1" pos="35,-23" height="38" style="smxlib_label_normal" text="--" font_size="26" pivot="center" justify="center" />
+						<label name="labelAllyIcon" depth="1" pos="35,-23" height="38" style="smxcore_label_normal" text="--" font_size="26" pivot="center" justify="center" />
 						<button name="iconAllyIcon" depth="1" pos="35,-23" size="28,28" style="press, hover" sprite="ui_game_symbol_players" color="[smxui_element_iconcolor_2]" disabledcolor="[disabledLabelColor]" pivot="center" sound="[craft_click]" />
 					</rect>
 
 					<rect name="voice" depth="1" pos="610,0" width="80" height="46">
-						<sprite name="iconVoice" depth="1" pos="40,-23" size="28,28" sprite="ui_game_symbol_mic" color="[smxui_element_iconcolor_2]" pivot="center" />
+						<button name="iconChat" depth="1" pos="20,-23" size="28,28" style="press, hover" sprite="ui_game_symbol_shape_text" color="[smxui_element_iconcolor_2]" pivot="center" sound="[craft_click]" />
+						<button name="iconVoice" depth="1" pos="60,-23" size="28,28" style="press, hover" sprite="ui_game_symbol_mic" color="[smxui_element_iconcolor_2]" pivot="center" sound="[craft_click]" />
 					</rect>
 
 					<rect name="km" depth="1" pos="700,0" width="70" height="46">
-						<label name="labelDistanceWalked" depth="1" pos="35,-23" height="38" style="smxlib_label_normal" text="-" font_size="26" pivot="center" justify="center" />
+						<label name="labelDistanceWalked" depth="1" pos="35,-23" height="38" style="smxcore_label_normal" text="-" font_size="26" pivot="center" justify="center" />
 					</rect>
 
 					<rect name="map" depth="1" pos="780,0" width="80" height="46">
-						<label name="labelShowOnMap" depth="0" pos="40,-23" height="38" style="smxlib_label_normal" text="--" font_size="26" pivot="center" justify="center" />
+						<label name="labelShowOnMap" depth="0" pos="40,-23" height="38" style="smxcore_label_normal" text="--" font_size="26" pivot="center" justify="center" />
 						<button name="iconShowOnMap" depth="1" pos="40,-23" size="28,28" style="press, hover" pivot="center" sprite="ui_game_symbol_map" color="[smxui_element_iconcolor_2]" disabledcolor="[disabledLabelColor]" sound="[craft_click]" tooltip="Show on Map" tooltip_key="lblShowOnMap" />
 					</rect>
 
 					<rect name="zombieKills" depth="1" pos="870,0" width="140" height="46">
-						<label name="zombieKillsText" depth="1" pos="70,-23" height="38" style="smxlib_label_normal" text="" font_size="26" pivot="center" justify="center" />
+						<label name="zombieKillsText" depth="1" pos="70,-23" height="38" style="smxcore_label_normal" text="" font_size="26" pivot="center" justify="center" />
 					</rect>
 
 					<rect name="playerKills" depth="1" pos="1020,0" width="140" height="46">
-						<label name="playerKillsText" depth="1" pos="70,-23" height="38" style="smxlib_label_normal" text="" font_size="26" pivot="center" justify="center" />
+						<label name="playerKillsText" depth="1" pos="70,-23" height="38" style="smxcore_label_normal" text="" font_size="26" pivot="center" justify="center" />
 					</rect>
 
 					<rect name="deaths" depth="1" pos="1170,0" width="90" height="46">
@@ -899,11 +900,11 @@
 					</rect>
 
 					<rect name="ping" depth="1" pos="1270,0" width="80" height="46">
-						<label name="pingText" depth="1" pos="40,-23" height="38" style="smxlib_label_normal" text="--" font_size="26" pivot="center" justify="center" />
+						<label name="pingText" depth="1" pos="40,-23" height="38" style="smxcore_label_normal" text="--" font_size="26" pivot="center" justify="center" />
 					</rect>
 
 					<rect name="reportheader" depth="1" pos="1360,0" width="80" height="46">
-						<label name="labelReportPlayer" depth="0" pos="40,-23" height="38" style="smxlib_label_normal" text="--" font_size="26" pivot="center" justify="center" />
+						<label name="labelReportPlayer" depth="0" pos="40,-23" height="38" style="smxcore_label_normal" text="--" font_size="26" pivot="center" justify="center" />
 						<button name="iconReportPlayer" depth="1" pos="40,-23" size="28,28" style="press, hover" sprite="ui_game_symbol_quest" color="[smxui_element_iconcolor_2]" pivot="center" sound="[craft_click]" tooltip_key="xuiPlayersReportPlayer" />
 					</rect>
 				</rect>
@@ -918,8 +919,8 @@
 				<rect height="33">
 					<sprite name="smxui_statsentry_background" depth="2" pos="0,3" width="340" height="40" sprite="smxlib_window_statsentry_background" color="${backgroundcolor}" globalopacitymod="1.8" />
 
-					<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="${textcontent}" font_size="22" justify="left" color="[smxui_element_labelcolor_1]" overflow="ShrinkContent" />
-					<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="${valuecontent}" font_size="22" justify="right" color="[smxui_element_labelcolor_3]" />
+					<label depth="3" pos="20,-6" width="300" style="smxcore_label_normal" text="${textcontent}" font_size="22" justify="left" color="[smxui_element_labelcolor_1]" overflow="ShrinkContent" />
+					<label depth="3" pos="20,-6" width="300" style="smxcore_label_normal" text="${valuecontent}" font_size="22" justify="right" color="[smxui_element_labelcolor_3]" />
 
 				</rect>
 			</smxui_player_stats_entry_normal>
@@ -928,8 +929,8 @@
 				<rect height="33">
 					<sprite name="smxui_statsentry_background" depth="2" pos="0,3" width="340" height="40" sprite="smxlib_window_statsentry_background" color="${backgroundcolor}" globalopacitymod="1.8" flip="horizontally" />
 
-					<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="${textcontent}" font_size="22" justify="left" color="[smxui_element_labelcolor_1]" overflow="ShrinkContent" />
-					<label depth="3" pos="20,-6" width="300" style="smxlib_label_normal" text="${valuecontent}" font_size="22" justify="right" color="[smxui_element_labelcolor_3]" />
+					<label depth="3" pos="20,-6" width="300" style="smxcore_label_normal" text="${textcontent}" font_size="22" justify="left" color="[smxui_element_labelcolor_1]" overflow="ShrinkContent" />
+					<label depth="3" pos="20,-6" width="300" style="smxcore_label_normal" text="${valuecontent}" font_size="22" justify="right" color="[smxui_element_labelcolor_3]" />
 
 				</rect>
 			</smxui_player_stats_entry_flipped>
@@ -965,7 +966,7 @@
 
 		<append xpath="/controls">
 			<smxui_waypoint_entry>
-				<rect name="smxui_waypoint_icon" width="${width}" height="${height}" controller="XUiC.MapWaypointListEntry, XUiComponents">
+				<rect name="smxui_waypoint_icon" width="${width}" height="${height}" controller="Quartz.MapWaypointListEntry, Quartz">
 
 					<sprite name="frameLeft" depth="4" pos="27,6" width="66" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" visible="{#!isempty}" />
 					<sprite name="frameTop" depth="5" pos="19,0" width="66" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" visible="{#!isempty}" />
@@ -979,10 +980,10 @@
 					<sprite name="iconBackground2" depth="2" pos="50,-26" size="50,50" sprite="menu_empty" type="sliced" pivot="center" color="[smxui_element_background]" globalopacitymod="1.8" visible="{#!isempty}" />
 					<sprite name="Icon" depth="4" pos="50,-26" size="45,45" sprite="ui_game_symbol_pen" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.8" />
 
-					<label name="Name" depth="5" pos="150,-16" width="120" height="20" style="smxlib_label_normal" text="Name" font_size="14" pivot="center" justify="left" rotation="0" upper_case="true" color="[smxui_element_accentcolor_2]" overflow="ShrinkContent" />
-					<label name="Distance" depth="5" pos="160,-36" width="80" height="32" style="smxlib_label_normal" text="0.7KM" font_size="24" pivot="center" justify="right" upper_case="true" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
+					<label name="Name" depth="5" pos="150,-16" width="120" height="20" style="smxcore_label_normal" text="Name" font_size="14" pivot="center" justify="left" rotation="0" upper_case="true" color="[smxui_element_accentcolor_2]" overflow="ShrinkContent" />
+					<label name="Distance" depth="5" pos="160,-36" width="80" height="32" style="smxcore_label_normal" text="0.7KM" font_size="24" pivot="center" justify="right" upper_case="true" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
 
-					<label name="NoEntry" depth="5" pos="145,-36" width="260" height="32" style="smxlib_label_normal" text="NO WAYPOINT HAVE BEEN SET" font_size="18" pivot="center" justify="center" upper_case="true" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" visible="{isempty}" />
+					<label name="NoEntry" depth="5" pos="145,-36" width="260" height="32" style="smxcore_label_normal" text="NO WAYPOINT HAVE BEEN SET" font_size="18" pivot="center" justify="center" upper_case="true" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" visible="{isempty}" />
 
 					<sprite name="Tracking" depth="5" pos="245,-34" size="30,30" sprite="ui_game_symbol_compass" pivot="center" color="[smxui_element_accentcolor_2]" foregroundlayer="true" />
 				</rect>
@@ -994,7 +995,7 @@
 
 		<append xpath="/controls">
 			<smx_invites_entry>
-				<rect name="smxui_waypoint_icon" width="${width}" height="${height}" controller="XUiC.MapInvitesListEntry, XUiComponents">
+				<rect name="smxui_waypoint_icon" width="${width}" height="${height}" controller="Quartz.MapInvitesListEntry, Quartz">
 
 					<sprite name="frameLeft" depth="4" pos="27,6" width="66" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" visible="{#!isempty}" />
 					<sprite name="frameTop" depth="5" pos="19,0" width="66" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" visible="{#!isempty}" />
@@ -1008,10 +1009,10 @@
 					<sprite name="iconBackground2" depth="2" pos="50,-26" size="50,50" sprite="menu_empty" type="sliced" pivot="center" color="[smxui_element_background]" globalopacitymod="1.8" visible="{#!isempty}" />
 					<sprite name="Icon" depth="4" pos="50,-26" size="45,45" sprite="ui_game_symbol_pen" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.8" />
 
-					<label name="Name" depth="5" pos="150,-16" width="120" height="20" style="smxlib_label_normal" text="Name" font_size="14" pivot="center" justify="left" rotation="0" upper_case="true" color="[smxui_element_accentcolor_2]" overflow="ShrinkContent" />
-					<label name="Distance" depth="5" pos="160,-36" width="80" height="32" style="smxlib_label_normal" text="0.7KM" font_size="24" pivot="center" justify="right" upper_case="true" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
+					<label name="Name" depth="5" pos="150,-16" width="120" height="20" style="smxcore_label_normal" text="Name" font_size="14" pivot="center" justify="left" rotation="0" upper_case="true" color="[smxui_element_accentcolor_2]" overflow="ShrinkContent" />
+					<label name="Distance" depth="5" pos="160,-36" width="80" height="32" style="smxcore_label_normal" text="0.7KM" font_size="24" pivot="center" justify="right" upper_case="true" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
 
-					<label name="NoEntry" depth="5" pos="145,-36" width="260" height="32" style="smxlib_label_normal" text="NO WAYPOINT HAVE BEEN SHARED" font_size="18" pivot="center" justify="center" upper_case="true" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" visible="{isempty}" />
+					<label name="NoEntry" depth="5" pos="145,-36" width="260" height="32" style="smxcore_label_normal" text="NO WAYPOINT HAVE BEEN SHARED" font_size="18" pivot="center" justify="center" upper_case="true" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" visible="{isempty}" />
 				</rect>
 			</smx_invites_entry>
 		</append>

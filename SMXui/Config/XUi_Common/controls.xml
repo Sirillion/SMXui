@@ -3,15 +3,15 @@
 <!--	// SMX // Window Design - Main Window -->
 
 		<append xpath="/controls">
-			<smxlib_window_design>
-				<rect name="smxlib_window_design" depth="${depth}">
-					<sprite name="smxlib_window_background" depth="1" width="${width}" height="${height}" sprite="smxlib_window_background_detail" type="sliced" color="[smxlib_element_background]" globalopacitymod="1.0" />
-					<sprite name="smxlib_window_foreground" depth="2" width="${width}" height="${height}" sprite="smxlib_window_background" type="sliced" color="[smxlib_element_background]" globalopacitymod="1.6" />
-					<sprite name="smxlib_window_header_background" depth="3" width="${width}" height="65" sprite="smxlib_window_header_background" type="sliced" color="[smxlib_element_header_background]" globalopacitymod="1.4" />
-					<sprite name="smxlib_window_header_separation" depth="4" pos="20,-61" width="${width-40}" height="5" sprite="smxlib_separation_line_1" flip="vertically" color="[smxlib_element_separation_1]" globalopacitymod="1.2" />
-					<label name="${name}" depth="5" pos="${Round(width/2,0)},-40" width="${width-40}" height="36" style="smxlib_window_title" text="${text}" text_key="${text_key}" overflow="ShrinkContent" />
+			<smxcore_window_design>
+				<rect name="smxcore_window_design" depth="${depth}">
+					<sprite name="smxcore_window_background" depth="1" width="${width}" height="${height}" sprite="smxlib_window_background_detail" type="sliced" color="[smxcore_element_background]" globalopacitymod="1.0" />
+					<sprite name="smxcore_window_foreground" depth="2" width="${width}" height="${height}" sprite="smxlib_window_background" type="sliced" color="[smxcore_element_background]" globalopacitymod="1.6" />
+					<sprite name="smxcore_window_header_background" depth="3" width="${width}" height="65" sprite="smxlib_window_header_background" type="sliced" color="[smxcore_element_header_background]" globalopacitymod="1.4" />
+					<sprite name="smxcore_window_header_separation" depth="4" pos="20,-61" width="${width-40}" height="5" sprite="smxlib_separation_line_1" flip="vertically" color="[smxcore_element_separation_1]" globalopacitymod="1.2" />
+					<label name="${name}" depth="5" pos="${Round(width/2,0)},-40" width="${width-40}" height="36" style="smxcore_window_title" text="${text}" text_key="${text_key}" overflow="ShrinkContent" />
 				</rect>
-			</smxlib_window_design>
+			</smxcore_window_design>
 		</append>
 
 
@@ -19,7 +19,7 @@
 
 		<append xpath="/controls">
 			<smxui_window_design_menu_top>
-				<rect name="smxlib_window_design_menu_top" depth="${depth}">
+				<rect name="smxcore_window_design_menu_top" depth="${depth}">
 					<sprite name="smxui_window_category_background" depth="3" pos="5,-63" width="${width-10}" height="50" sprite="smxlib_window_category_background" color="[smxui_element_background]" globalopacitymod="1.1" />
 					<sprite name="smxui_window_category_separation" depth="4" pos="20,-112" width="${width-40}" height="3" sprite="smxlib_separation_line_2" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
 				</rect>
@@ -44,7 +44,7 @@
 
 		<append xpath="/controls">
 			<smxui_window_design_menu_right_wtop>
-				<rect name="smxlib_window_design_menu_right_wtop" depth="${depth}">
+				<rect name="smxcore_window_design_menu_right_wtop" depth="${depth}">
 					<sprite name="smxui_window_menu_separation" depth="4" pos="${width-75},-137" width="${height-215}" height="3" sprite="smxlib_separation_line_1" rotation="270" color="[smxui_element_separation_1]" />
 				</rect>
 			</smxui_window_design_menu_right_wtop>
@@ -69,17 +69,17 @@
 				<rect name="smxui_window_menu_content" depth="4" pos="${width-65},-90" width="45" height="${height-200}">
 
 					<rect name="smxui_container_options" depth="5" pos="0,0" width="45" height="250" controller="ContainerStandardControls" move_start_bottom_left="true">
-						<button name="btnMoveFillStacks" depth="3" pos="23,-40" size="50,50" style="press, hover, smxlib_icon_colors" pivot="center" sprite="smxlib_ui_game_symbol_dumpfill" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="lblStashFillStacks" visible="{lootingorvehiclestorage}" />
-						<button name="btnMoveSmart" depth="3" pos="23,-115" size="50,50" style="press, hover, smxlib_icon_colors" pivot="center" sprite="smxlib_ui_game_symbol_dumpsmart" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="lblStashSmart" visible="{lootingorvehiclestorage}" />
-						<button name="btnMoveAll" depth="3" pos="23,-190" size="50,50" style="press, hover, smxlib_icon_colors" pivot="center" sprite="smxlib_ui_game_symbol_dumpall" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="lblStashAll" visible="{lootingorvehiclestorage}" />
+						<button name="btnMoveFillStacks" depth="3" pos="23,-40" size="50,50" style="press, hover, smxcore_icon_colors" pivot="center" sprite="smxlib_ui_game_symbol_dumpfill" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="lblStashFillStacks" visible="{lootingorvehiclestorage}" />
+						<button name="btnMoveSmart" depth="3" pos="23,-115" size="50,50" style="press, hover, smxcore_icon_colors" pivot="center" sprite="smxlib_ui_game_symbol_dumpsmart" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="lblStashSmart" visible="{lootingorvehiclestorage}" />
+						<button name="btnMoveAll" depth="3" pos="23,-190" size="50,50" style="press, hover, smxcore_icon_colors" pivot="center" sprite="smxlib_ui_game_symbol_dumpall" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="lblStashAll" visible="{lootingorvehiclestorage}" />
 
 						<smxui_lockedslots_combobox_vertical name="cbxLockedSlots" pos="0,-320" type="ComboBoxInt" value_min="0" value_max="45" value_wrap="true" value_increment="1" tooltip_key="xuiStashLockedSlots" />
 
-						<button name="btnSort" depth="3" pos="23,-570" size="50,50" style="press, hover, smxlib_icon_colors" pivot="center" sprite="smxlib_ui_game_symbol_sort" tooltip_key="lblSortContainer" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
-						<label name="sortContainer" depth="3" pos="28,-605" width="60" height="18" style="smxlib_label_normal" text_key="lblSortContainer" font_size="18" pivot="center" overflow="ShrinkContent" color="[smxui_element_labelcolor_2]" />
+						<button name="btnSort" depth="3" pos="23,-570" size="50,50" style="press, hover, smxcore_icon_colors" pivot="center" sprite="smxlib_ui_game_symbol_sort" tooltip_key="lblSortContainer" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
+						<label name="sortContainer" depth="3" pos="28,-605" width="60" height="18" style="smxcore_label_normal" text_key="lblSortContainer" font_size="18" pivot="center" overflow="ShrinkContent" color="[smxui_element_labelcolor_2]" />
 
-						<button name="btnClearInventory" depth="3" pos="23,-650" size="50,50" style="press, hover, smxlib_icon_colors" pivot="center" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" sound_play_on_hover="[default_hover]" sound="[paging_click]" visible="{creativewindowopen}" />
-						<label name="clearInventory" depth="3" pos="28,-688" width="60" height="18" style="smxlib_label_normal" text_key="lblClearInventory" font_size="18" pivot="center" overflow="ShrinkContent" color="[red]" visible="{creativewindowopen}" />
+						<button name="btnClearInventory" depth="3" pos="23,-650" size="50,50" style="press, hover, smxcore_icon_colors" pivot="center" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" sound_play_on_hover="[default_hover]" sound="[paging_click]" visible="{creativewindowopen}" />
+						<label name="clearInventory" depth="3" pos="28,-688" width="60" height="18" style="smxcore_label_normal" text_key="lblClearInventory" font_size="18" pivot="center" overflow="ShrinkContent" color="[red]" visible="{creativewindowopen}" />
 					</rect>
 				</rect>
 			</smxui_window_design_menu_right_inventory>
@@ -106,7 +106,7 @@
 				<rect name="smxui_window_content_module_title" pos="${pos}" text="${text}">
 					<sprite name="smxui_module_title_separation" depth="3" pos="20,-15" width="300" height="5" sprite="smxlib_separation_line_1" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
 					<sprite name="smxui_module_title_background" depth="4" pos="50,-5" width="240" height="30" sprite="smxlib_window_statsentry_background" rotation="2" color="[smxui_element_module_title_background]" globalopacitymod="1.8" />
-					<label name="smxui_module_title_entry" depth="5" pos="50,-10" width="240" height="30" style="smxlib_label_normal" text="${text}" font_size="22" justify="center" rotation="2" spacing_x="6" color="[smxui_element_labelcolor_1]" />
+					<label name="smxui_module_title_entry" depth="5" pos="50,-10" width="240" height="30" style="smxcore_label_normal" text="${text}" font_size="22" justify="center" rotation="2" spacing_x="6" color="[smxui_element_labelcolor_1]" />
 				</rect>
 			</smxui_window_design_module_title>
 		</append>
@@ -138,7 +138,7 @@
 				<rect name="${name}" depth="${depth}" pos="${pos}" controller="Paging" visible="{paging_visible}" show_max_page="${show_max_page}" separator="${separator}" primary_pager="${primary_pager}">
 					<button name="pageDown" depth="4" pos="${width-width},-22" width="26" height="26" style="press" sprite="ui_game_symbol_arrow_left" disabledcolor="[lightGrey]" pivot="center" enabled="{# int(pagenumber) &gt; 1}" sound="[paging_click]" />
 					<rect depth="4" pos="0,0">
-						<label depth="5" pos="${Round (width/2,0)},-22" width="70" height="28" style="smxlib_label_normal" text="{#showmaxpage ? pagenumber + separator + maxpagenumber : pagenumber}" font_size="22" pivot="center" justify="center" />
+						<label depth="5" pos="${Round (width/2,0)},-22" width="70" height="28" style="smxcore_label_normal" text="{#showmaxpage ? pagenumber + separator + maxpagenumber : pagenumber}" font_size="22" pivot="center" justify="center" />
 					</rect>
 					<button name="pageUp" depth="4" pos="${width},-22" width="26" height="26" style="press" sprite="ui_game_symbol_arrow_right" disabledcolor="[lightGrey]" pivot="center" enabled="{# int(pagenumber) &lt; int(maxpagenumber)}" sound="[paging_click]" />
 				</rect>
@@ -149,7 +149,7 @@
 <!--	// SMX // Modular Frames -->
 
 		<append xpath="/controls">
-			<smxlib_modular_frame>
+			<smxcore_modular_frame>
 				<rect name="smxui_modular_frame" depth="${depth}" pos="${pos}" width="${width}" height="${height}">
 					<rect pos="0,0" width="${width}" height="${height}">
 						<sprite name="background" depth="2" pos="-1,-2" width="${width-3}" height="${height-3}" sprite="menu_empty" type="sliced" color="[smxui_element_background]" globalopacitymod="${globalopacitymod}" />
@@ -161,9 +161,9 @@
 
 					</rect>
 				</rect>
-			</smxlib_modular_frame>
+			</smxcore_modular_frame>
 
-			<smxlib_modular_frame_skills>
+			<smxcore_modular_frame_skills>
 				<rect name="smxui_modular_frame" depth="${depth}" pos="${pos}" width="${width}" height="${height}" visible="${visible}">
 					<rect pos="0,0" width="${width}" height="${height}">
 						<sprite name="background1" depth="1" pos="-1,-2" width="${width-3}" height="${height-3}" sprite="smxlib_window_background_detail" flip="vertically" color="[smxui_element_background]" globalopacitymod="1.8" />
@@ -176,7 +176,7 @@
 
 					</rect>
 				</rect>
-			</smxlib_modular_frame_skills>
+			</smxcore_modular_frame_skills>
 		</append>
 
 

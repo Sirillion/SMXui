@@ -4,9 +4,9 @@
 
 		// EAC:				Friendly
 
-		// VERSION:			r20.rc4
+		// VERSION:			r20.rc5
 
-		// BUILD:			A20.3
+		// BUILD:			A20.5
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -16,7 +16,7 @@
 							patched to fit the SMXui design. Please note that this modlet is also mandatory for SMXui to work as I did not want to add
 							redundant code and rather have it all handled within this one modlet.
 
-		// DEPENDENCIES:	SMXui, SMXlib.
+		// DEPENDENCIES:	SMXcore, SMXui.
 
 		// TERMS OF USE:	1. You are allowed to use this modlet as is for your own personal use and/or on a server you run and/or administrate.
 
