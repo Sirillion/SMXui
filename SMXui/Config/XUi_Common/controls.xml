@@ -68,7 +68,7 @@
 			<smxui_window_design_menu_right_inventory>
 				<rect name="smxui_window_menu_content" depth="4" pos="${width-65},-90" width="45" height="${height-200}">
 
-					<rect name="smxui_container_options" depth="5" pos="0,0" width="45" height="250" controller="ContainerStandardControls" move_start_bottom_left="true">
+					<rect name="smxui_container_options" depth="5" pos="0,0" width="45" height="250" controller="Quartz.ContainerStandardControls, Quartz" move_start_bottom_left="true">
 						<button name="btnMoveFillStacks" depth="3" pos="23,-40" size="50,50" style="press, hover, smxcore_icon_colors" pivot="center" sprite="smxlib_ui_game_symbol_dumpfill" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="lblStashFillStacks" visible="{lootingorvehiclestorage}" />
 						<button name="btnMoveSmart" depth="3" pos="23,-115" size="50,50" style="press, hover, smxcore_icon_colors" pivot="center" sprite="smxlib_ui_game_symbol_dumpsmart" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="lblStashSmart" visible="{lootingorvehiclestorage}" />
 						<button name="btnMoveAll" depth="3" pos="23,-190" size="50,50" style="press, hover, smxcore_icon_colors" pivot="center" sprite="smxlib_ui_game_symbol_dumpall" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="lblStashAll" visible="{lootingorvehiclestorage}" />

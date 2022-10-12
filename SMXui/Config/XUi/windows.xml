@@ -4,9 +4,9 @@
 
 		// EAC:				Non Friendly, SMX requires EAC to be DISABLED.
 
-		// VERSION:			r20.rc5
+		// VERSION:			r20.rc6
 
-		// BUILD:			A20.5
+		// BUILD:			A20.6
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -101,7 +101,7 @@
 				<label name="lblWindowName" depth="5" pos="300,-22" size="150,40" style="smxcore_label_normal" font_size="32" pivot="center" justify="center" upper_case="true" overflow="ShrinkContent" />
 
 				<label name="smxui_temp_display" depth="5" pos="-560,-22" size="115,40" style="smxcore_label_normal" text="{maptemperature}" font_size="20" pivot="center" justify="center" overflow="ShrinkContent" upper_case="true" color="[smxui_element_labelcolor_2]" controller="MapStats" />
-				<label name="smxui_clock_display" depth="5" pos="1160,-22" size="115,40" style="smxcore_label_normal" text="{time}" font_size="20" pivot="center" justify="center" overflow="ShrinkContent" upper_case="true" color="[smxui_element_labelcolor_2]" controller="PlayerStatWindow, SMXhud" />
+				<label name="smxui_clock_display" depth="5" pos="1160,-22" size="115,40" style="smxcore_label_normal" text="{time}" font_size="20" pivot="center" justify="center" overflow="ShrinkContent" upper_case="true" color="[smxui_element_labelcolor_2]" controller="SMXcore.PlayerStatWindow, SMXcore" />
 			</window>
 		</append>
 
@@ -157,7 +157,7 @@
 				<gamepad_icon name="LB_Icon" depth="9" pos="-560,-43" size="35,35" sprite="Button_LB" pivot="center" />
 				<gamepad_icon name="RB_Icon" depth="1" pos="1160,-43" size="35,35" sprite="Button_RB" pivot="center" />
 
-				<label name="smxcore_clock_display" depth="5" pos="1160,-22" size="115,40" style="smxcore_label_normal" text="{time}" font_size="20" pivot="center" justify="center" overflow="ShrinkContent" upper_case="true" color="[smxui_element_labelcolor_2]" controller="PlayerStatWindow, SMXhud" tooltip="The time of your life! :)" />
+				<label name="smxcore_clock_display" depth="5" pos="1160,-22" size="115,40" style="smxcore_label_normal" text="{time}" font_size="20" pivot="center" justify="center" overflow="ShrinkContent" upper_case="true" color="[smxui_element_labelcolor_2]" controller="SMXcore.PlayerStatWindow, SMXcore" tooltip="The time of your life! :)" />
 				<label name="smxcore_temp_display" depth="5" pos="-560,-22" size="115,40" style="smxcore_label_normal" text="{maptemperature}" font_size="20" pivot="center" justify="center" overflow="ShrinkContent" upper_case="true" color="[smxui_element_labelcolor_2]" controller="MapStats" tooltip="Ambient Temperature" />
 			</window>
 		</append>
@@ -174,7 +174,7 @@
 					<label name="header.name" depth="6" pos="0,10" width="1000" height="80" style="smxcore_window_title" text="{respondentname}" font_size="36" pivot="center" color="[smxui_element_labelcolor_1]" />
 
 					<sprite name="smxui_respondent_background" depth="7" pos="-450,-98" width="165" height="165" sprite="menu_empty" type="sliced" pivot="center" color="[smxui_element_background]" globalopacitymod="1.8" />
-					<sprite name="smxui_respondent_portrait" depth="8" pos="-450,-98" width="165" height="165" atlas="uiAtlas" sprite="{npcportrait}" pivot="center" globalopacitymod="1.8" controller="PlayerStatWindow, SMXhud" />
+					<sprite name="smxui_respondent_portrait" depth="8" pos="-450,-98" width="165" height="165" atlas="uiAtlas" sprite="{npcportrait}" pivot="center" globalopacitymod="1.8" controller="SMXcore.PlayerStatWindow, SMXcore" />
 					<sprite name="smxui_respondent_frame" depth="9" pos="-450,-98" width="178" height="178" sprite="smxlib_slot_frame_narrow" pivot="center" color="[smxui_element_background]" globalopacitymod="1.8" />
 
 				</rect>
@@ -233,7 +233,7 @@
 					<sprite name="smxui_window_category_background" depth="3" pos="5,-63" anchor_left="queue,0,-60" anchor_right="queue,1,-10" height="50" sprite="smxlib_window_category_background" color="[smxui_element_background]" globalopacitymod="1.1" />
 					<sprite name="smxui_window_category_separator" depth="4" pos="20,-112" anchor_left="queue,0,-40" anchor_right="queue,1,-20" height="3" sprite="smxlib_separation_line_2" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
 
-					<rect name="containerControl" depth="9" pos="30,0" anchor_top="queue,1,82" pivot="topleft" controller="ContainerStandardControls" createuiwidget="true" visible="{buttons_visible}">
+					<rect name="containerControl" depth="9" pos="30,0" anchor_top="queue,1,82" pivot="topleft" controller="Quartz.ContainerStandardControls, Quartz" createuiwidget="true" visible="{buttons_visible}">
 						<button name="btnMoveFillStacks" depth="3" pos="30,0" size="40,40" style="press, hover, smxcore_icon_colors" sprite="smxlib_ui_game_symbol_dumpfill" pivot="center" flip="horizontally" tooltip_key="lblStashFillStacks" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
 						<button name="btnMoveSmart" depth="3" pos="90,0" size="40,40" style="press, hover, smxcore_icon_colors" sprite="smxlib_ui_game_symbol_dumpsmart" pivot="center" flip="horizontally" tooltip_key="lblStashSmart" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
 						<button name="btnMoveAll" depth="3" pos="150,0" size="40,40" style="press, hover, smxcore_icon_colors" sprite="smxlib_ui_game_symbol_dumpall" pivot="center" flip="horizontally" tooltip="{take_all_tooltip}" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
@@ -276,7 +276,7 @@
 					<sprite name="smxui_window_category_background" depth="3" pos="5,-63" anchor_left="queue,0,-60" anchor_right="queue,1,-10" height="50" sprite="smxlib_window_category_background" color="[smxui_element_background]" globalopacitymod="1.1" />
 					<sprite name="smxui_window_category_separator" depth="4" pos="20,-112" anchor_left="queue,0,-40" anchor_right="queue,1,-20" height="3" sprite="smxlib_separation_line_2" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
 
-					<rect name="containerControl" depth="9" pos="30,0" anchor_top="queue,1,82" pivot="topleft" controller="ContainerStandardControls" createuiwidget="true" visible="{buttons_visible}">
+					<rect name="containerControl" depth="9" pos="30,0" anchor_top="queue,1,82" pivot="topleft" controller="Quartz.ContainerStandardControls, Quartz" createuiwidget="true" visible="{buttons_visible}">
 						<button name="btnMoveFillStacks" depth="3" pos="30,0" size="40,40" style="press, hover, smxcore_icon_colors" sprite="smxlib_ui_game_symbol_dumpfill" pivot="center" flip="horizontally" tooltip_key="lblStashFillStacks" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
 						<button name="btnMoveSmart" depth="3" pos="90,0" size="40,40" style="press, hover, smxcore_icon_colors" sprite="smxlib_ui_game_symbol_dumpsmart" pivot="center" flip="horizontally" tooltip_key="lblStashSmart" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
 						<button name="btnMoveAll" depth="3" pos="150,0" size="40,40" style="press, hover, smxcore_icon_colors" sprite="smxlib_ui_game_symbol_dumpall" pivot="center" flip="horizontally" tooltip="{take_all_tooltip}" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
@@ -382,11 +382,11 @@
 							<smxui_window_design_module_title pos="0,0" text="MODIFIERS" />
 
 							<grid name="cosmeticparts" depth="2" pos="117,-285" pivot="center" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true" controller="ItemCosmeticStackGrid" sound_play_on_hover="[default_hover]">
-								<smxui_item_part_slot controller="ItemCosmeticStack" cell_width="68" cell_height="68" text="{partname}" text_key="" sprite="smxlib_ui_game_symbol_spraycan" color="{particoncolor}" visible="{partvisible}"/>
+								<smxui_item_part_slot controller="SMXcore.ItemCosmeticStack, SMXcore" cell_width="68" cell_height="68" text="{partname}" text_key="" sprite="smxlib_ui_game_symbol_spraycan" color="{particoncolor}" visible="{partvisible}"/>
 							</grid>
 
 							<grid name="parts" depth="2" pos="83,-95" rows="2" cols="3" cell_width="88" cell_height="70" repeat_content="true" controller="VehiclePartStackGrid">
-								<smxui_item_part_slot controller="VehiclePartStack" cell_width="68" cell_height="68" text="" sprite="ui_game_symbol_assemble" color="[smxui_slot_frame_normal]" visible="true" />
+								<smxui_item_part_slot controller="SMXcore.VehiclePartStack, SMXcore" cell_width="68" cell_height="68" text="" sprite="ui_game_symbol_assemble" color="[smxui_slot_frame_normal]" visible="true" />
 							</grid>
 						</rect>
 					</rect>
@@ -983,7 +983,7 @@
 						<smxui_window_design_module_title pos="0,0" text="MODIFIERS" />
 
 						<grid name="cosmeticparts" depth="2" pos="117,-285" pivot="center" rows="1" cols="1" cell_width="68" cell_height="68" repeat_content="true" controller="ItemCosmeticStackGrid" sound_play_on_hover="[default_hover]">
-							<smxui_item_part_slot controller="ItemCosmeticStack" cell_width="68" cell_height="68" text="{partname}" text_key="" sprite="smxlib_ui_game_symbol_spraycan" color="{particoncolor}" visible="true"/>
+							<smxui_item_part_slot controller="SMXcore.ItemCosmeticStack, SMXcore" cell_width="68" cell_height="68" text="{partname}" text_key="" sprite="smxlib_ui_game_symbol_spraycan" color="{particoncolor}" visible="true"/>
 						</grid>
 
 						<grid name="parts" depth="2" pos="83,-95" rows="2" cols="3" cell_width="88" cell_height="70" repeat_content="true" controller="VehiclePartStackGrid">
@@ -1429,13 +1429,13 @@
 
 					<sprite name="xMarks" depth="-1" pos="0,0" width="80" height="80" sprite="ui_game_symbol_map_cursor" rotation="0" pivot="center" color="[smxui_element_accentcolor_2]" globalopacitymod="1.8" controller="Quartz.Spinner, Quartz" spin="true" angle_per_second="-15" />
 
-					<grid name="list" depth="15" pos="6,-40" width="188" height="92" rows="2" cols="1" cell_width="390" cell_height="50" repeat_content="false" arrangement="vertical" controller="MapPopupList">
-						<rect depth="3" width="100%" height="45" style="press" on_hover="true" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound="[craft_click]" sound_play_on_hover="[default_hover]">
+					<grid name="list" depth="15" pos="6,-40" width="188" height="92" rows="2" cols="1" cell_width="390" cell_height="50" repeat_content="false" arrangement="vertical" controller="SMXcore.MapPopupList, SMXcore">
+						<rect depth="3" width="100%" height="45" style="press" on_hover="true" on_scroll="false" disabled_font_color="148,148,148,255" controller="SMXcore.MapPopupEntry, SMXcore" sound="[craft_click]" sound_play_on_hover="[default_hover]">
 							<sprite name="background" height="45" sprite="smxui_button_background" color="[smxui_element_accentcolor_1]" globalopacitymod="1.2" />
 							<sprite name="Icon" depth="4" pos="35,-21" size="30,30" sprite="ui_game_symbol_map_waypoint_set" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.6" />
 							<label name="Name" depth="4" pos="125,-23" width="115" height="28" style="smxcore_label_normal" text="QUICK WAYPOINT" text_key="xuiQuickWaypoint" font_size="18" pivot="center" justify="left" upper_case="true" />
 						</rect>
-						<rect depth="3" width="100%" height="45" style="press" on_hover="true" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound="[craft_click]" sound_play_on_hover="[default_hover]">
+						<rect depth="3" width="100%" height="45" style="press" on_hover="true" on_scroll="false" disabled_font_color="148,148,148,255" controller="SMXcore.MapPopupEntry, SMXcore" sound="[craft_click]" sound_play_on_hover="[default_hover]">
 							<sprite name="background" height="45" sprite="smxui_button_background" color="[smxui_element_accentcolor_1]" globalopacitymod="1.2" />
 							<sprite name="Icon" depth="4" pos="35,-21" size="30,30" sprite="ui_game_symbol_pen" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.6" />
 							<label name="Name" depth="4" pos="125,-23" width="115" height="28" style="smxcore_label_normal" text="SAVE WAYPOINT" text_key="xuiSaveWaypoint" font_size="18" pivot="center" justify="left" upper_case="true" />
@@ -1459,13 +1459,13 @@
 					<label name="Title" depth="9" pos="100,-18" width="188" height="28" style="smxcore_label_normal" text="SHARE WITH:" text_key="" font_size="22" pivot="center" justify="left" upper_case="true" color="[smxui_element_labelcolor_3]" />
 
 					<grid name="list" depth="9" pos="6,-40" width="188" height="92" rows="2" cols="1" cell_width="390" cell_height="50" repeat_content="false" arrangement="vertical">
-						<rect name="inviteFriends" depth="3" width="100%" height="45" style="press, hover" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound_play_on_hover="[default_hover]">
+						<rect name="inviteFriends" depth="3" width="100%" height="45" style="press, hover" on_scroll="false" disabled_font_color="148,148,148,255" controller="SMXcore.MapPopupEntry, SMXcore" sound_play_on_hover="[default_hover]">
 							<sprite name="background" height="45" sprite="smxui_button_background" color="[smxui_element_accentcolor_1]" globalopacitymod="1.2" />
 							<sprite name="Icon" depth="4" pos="35,-21" size="30,30" sprite="ui_game_symbol_allies" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.6" />
 							<label name="Name" depth="4" pos="125,-23" width="115" height="28" style="smxcore_label_normal" text="ALLIES" text_key="xuiAllies" font_size="18" pivot="center" justify="left" upper_case="true" />
 						</rect>
 
-						<rect name="inviteEveryone" depth="3" width="100%" height="45" style="press, hover" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound_play_on_hover="[default_hover]">
+						<rect name="inviteEveryone" depth="3" width="100%" height="45" style="press, hover" on_scroll="false" disabled_font_color="148,148,148,255" controller="SMXcore.MapPopupEntry, SMXcore" sound_play_on_hover="[default_hover]">
 							<sprite name="background" height="45" sprite="smxui_button_background" color="[smxui_element_accentcolor_1]" globalopacitymod="1.2" />
 							<sprite name="Icon" depth="4" pos="35,-21" size="30,30" sprite="ui_game_symbol_players" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.6" />
 							<label name="Name" depth="4" pos="125,-23" width="115" height="28" style="smxcore_label_normal" text="EVERYONE" text_key="xuiEveryone" font_size="18" pivot="center" justify="left" upper_case="true" />
@@ -1486,7 +1486,7 @@
 
 					<sprite name="backgroundMain" depth="11" pos="0,10" sprite="smxhud_chat_background" color="[smxui_element_backdrop_1]" disabled_font_color="148,148,148,255" globalopacitymod="1.8" />
 
-					<grid name="list" depth="12" pos="-4,-4" width="46" height="460" rows="12" cols="4" cell_width="46" cell_height="46" repeat_content="true" arrangement="vertical" controller="MapSubPopupList">
+					<grid name="list" depth="12" pos="-4,-4" width="46" height="460" rows="12" cols="4" cell_width="46" cell_height="46" repeat_content="true" arrangement="vertical" controller="SMXcore.MapSubPopupList, SMXcore">
 						<smx_map_popup_sub_line name="0"/>
 					</grid>
 				</panel>
@@ -1518,6 +1518,5 @@
 				</panel>
 			</window>
 		</append>
-
 
 </SMXui>

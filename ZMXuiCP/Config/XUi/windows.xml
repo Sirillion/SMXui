@@ -204,7 +204,7 @@
 
 						<smxui_window_design_module_title pos="0,0" text="MODIFICATIONS" />
 
-						<grid name="parts" depth="4" pos="35,-90" rows="1" cols="5" cell_width="68" cell_height="68" repeat_content="false" controller="PartList" arrangement="horizontal" visible="{isnotcomparing}">
+						<grid name="parts" depth="4" pos="35,-90" rows="1" cols="5" cell_width="68" cell_height="68" repeat_content="false" controller="SMXcore.PartList, SMXcore" arrangement="horizontal" visible="{isnotcomparing}">
 							<smxui_partlist_item_stack name="0" sprite="smxlib_ui_game_symbol_spraycan" />
 							<smxui_partlist_item_stack name="0" sprite="ui_game_symbol_assemble" />
 							<smxui_partlist_item_stack name="0" sprite="ui_game_symbol_assemble" />
@@ -425,6 +425,5 @@
 				</rect>
 			</window>
 		</append>
-
 
 </ZMXuiCP>

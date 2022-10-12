@@ -512,7 +512,7 @@
 
 		<append xpath="/controls">
 			<smxui_active_buff_entry>
-				<rect controller="ActiveBuffEntry" width="68" height="74" style="press" on_hover="true" on_scroll="true" pivot="center" sound_play_on_hover="[default_hover]" sound="[recipe_click]" tooltip="{buffname}">
+				<rect controller="SMXcore.ActiveBuffEntry, SMXcore" width="68" height="74" style="press" on_hover="true" on_scroll="true" pivot="center" sound_play_on_hover="[default_hover]" sound="[recipe_click]" tooltip="{buffname}">
 
 					<!--sprite name="mainBackground" depth="0" pos="0,0" width="${cell_width-4}" height="${cell_height-4}" sprite="menu_empty" type="sliced" pivot="center" color="[smxui_slot_main_background]" globalopacitymod="1.3" />
 
@@ -583,7 +583,7 @@
 
 		<append xpath="/controls">
 			<smxui_item_action_entry>
-				<rect controller="ItemActionEntry" width="${width}" height="${height}" disabled_font_color="[darkGrey]" default_font_color="[white]" default_background_color="[lightGrey]">
+				<rect controller="SMXcore.ItemActionEntry, SMXcore" width="${width}" height="${height}" disabled_font_color="[darkGrey]" default_font_color="[white]" default_background_color="[lightGrey]">
 					<sprite name="Icon" depth="3" pos="23,-23" size="40,40" sprite="{actionicon}" pivot="center" color="{statuscolor}" foregroundlayer="true" />
 					<sprite name="background" depth="4" pos="23,-23" size="40,40" sprite="{actionicon}" color="{statuscolor}" pivot="center" foregroundlayer="true" on_hover="true" on_press="true" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip="{actionname}" />
 					<label name="Name" depth="5" pos="99999,99999" size="40,20" style="smxcore_label_normal" text="{actionname}" font_size="14" pivot="center" justify="center" upper_case="true" color="{statuscolor}" overflow="ShrinkContent" />
@@ -656,7 +656,7 @@
 						<sprite name="frameSeparator" depth="4" pos="40,15" width="30" height="2" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
 					</rect>
 
-					<sprite name="slotBackground" depth="1" pos="110,0" width="295" height="66" sprite="smxlib_window_background" pivot="center" flip="horizontally" color="[smxui_element_background]" globalopacitymod="1.1" />
+					<sprite name="slotBackground" depth="1" pos="110,0" width="295" height="66" style="hover" sprite="smxlib_window_background" pivot="center" flip="horizontally" color="[smxui_element_background]" globalopacitymod="1.1" tooltip_key="You need {needcount} {itemname}, you have {havecount}" />
 					<sprite name="itemBackgroundNormal" depth="2" pos="0,3" width="59" height="41" sprite="smxlib_item_preview_background" pivot="center" rotation="45" color="[smxui_slot_item_background]" globalopacitymod="1.2" />
 
 					<sprite name="itemIcon" depth="6" pos="0,0" size="60,60" atlas="ItemIconAtlas" sprite="{itemicon}" pivot="center" color="{itemicontint}" foregroundlayer="true" />
@@ -955,7 +955,7 @@
 		<append xpath="/controls">
 			<smx_map_popup_sub_line>
 				<rect depth="3" height="43" width="43">
-					<sprite name="background" depth="3" pos="35,-21" size="43,43" style="press" on_hover="true" on_scroll="false" sprite="smxui_button_background" pivot="center" color="[smxui_element_backdrop_1]" disabled_font_color="148,148,148,255" controller="MapSubPopupEntry" sound="[craft_click]" sound_play_on_hover="[default_hover]"/>
+					<sprite name="background" depth="3" pos="35,-21" size="43,43" style="press" on_hover="true" on_scroll="false" sprite="smxui_button_background" pivot="center" color="[smxui_element_backdrop_1]" disabled_font_color="148,148,148,255" controller="SMXcore.MapSubPopupEntry, SMXcore" sound="[craft_click]" sound_play_on_hover="[default_hover]"/>
 					<sprite name="Icon" depth="4" pos="35,-21" size="30,30" sprite="ui_game_symbol_map_waypoint_set" pivot="center" color="[smxui_element_iconcolor_1]" globalopacitymod="1.6" />
 				</rect>
 			</smx_map_popup_sub_line>
