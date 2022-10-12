@@ -1,5 +1,5 @@
 # SMXui - THE UI REPLACEMENT MODLET
-> Verified to work with: A20.5B2
+> Verified to work with: A20.6B9
 
 > Dependencies: [SMXcore](https://github.com/Sirillion/SMXcore), ZMXuiCP(part of this repo).
 
