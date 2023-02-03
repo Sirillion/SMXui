@@ -23,8 +23,7 @@ SMXui is an extension of SMXhud and SMXmenu and will bring the art style over to
 </p>
 <p align="center"><img src="https://7dtd-community.s3.us-east-2.amazonaws.com/monthly_2022_02/A20.3_2022-02-28_19-38-23.jpg.a055e75b74b79d4bacdea88247289f53.jpg" width="1080" title="SMXui - Map Windows - A20">
 </p>
-<p align="center"><img src="https://staticdelivery.nexusmods.com/mods/1059/images/22
-/22-1675436399-1752377380.jpeg" width="1080" title="SMXui - Skills Windows - A20">
+<p align="center"><img src="https://staticdelivery.nexusmods.com/mods/1059/images/22/22-1675436399-1752377380.jpeg" width="1080" title="SMXui - Skills Windows - A20">
 </p>
 
 ## **WELCOME**
