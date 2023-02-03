@@ -90,6 +90,13 @@
 				<smxcore_window_design name="windowName" depth="1" width="450" height="800" text="{itemname}" text_key="" />
 				<smxui_window_design_menu_right depth="3" width="450" height="800" />
 
+
+<!-- SMX EXP -->
+	<label name="durabilityValue" depth="7" pos="20,-15" width="50" height="50" style="smxcore_label_normal" text="{durabilitytext}" font_size="40" justify="{durabilityjustify}" color="[smxui_element_labelcolor_1]" visible="{hasdurability}" />
+
+	<sprite name="background" depth="5" pos="20,-15" width="56" height="56" sprite="menu_empty" pivot="center" type="sliced" color="[smxui_slot_slot_background]" on_hover="true" globalopacity="true" tooltip="{tooltip}" visible="{hasdurability}" />
+	<sprite name="slotFrame" depth="6" pos="20,-15" width="67" height="67" sprite="smxlib_slot_frame_narrow" pivot="center" color="[smxui_slot_frame_normal]" globalopacitymod="1.8" visible="{hasdurability}" />
+
 				<rect name="smxui_window_content" depth="3" pos="20,-80" width="340" height="700">
 
 					<sprite name="backdropWindow" depth="1" pos="0,-5" width="340" height="690" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />

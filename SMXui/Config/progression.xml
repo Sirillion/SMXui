@@ -1,0 +1,100 @@
+<SMXui file="progression.xml">
+
+<!--	// SMX // Skill Window - Replacing Attribute Icons -->
+
+		<set xpath="/progression/attributes/attribute[@name='attPerception']/@icon">smxlib_ui_game_symbol_perception</set>
+		<set xpath="/progression/attributes/attribute[@name='attStrength']/@icon">smxlib_ui_game_symbol_strength</set>
+		<set xpath="/progression/attributes/attribute[@name='attFortitude']/@icon">smxlib_ui_game_symbol_fortitude</set>
+		<set xpath="/progression/attributes/attribute[@name='attAgility']/@icon">smxlib_ui_game_symbol_agility</set>
+		<set xpath="/progression/attributes/attribute[@name='attIntellect']/@icon">smxlib_ui_game_symbol_intellect</set>
+		<set xpath="/progression/attributes/attribute[@name='attBooks']/@icon">smxlib_ui_game_symbol_perkbooks</set>
+
+
+<!--	// SMX // Skill Window - Replacing Perk Icons - Perception -->
+
+		<set xpath="/progression/perks/perk[@name='perkDeadEye']/@icon">smxlib_ui_game_symbol_deadeye</set>
+		<set xpath="/progression/perks/perk[@name='perkDemolitionsExpert']/@icon">smxlib_ui_game_symbol_demolitionsexpert</set>
+		<set xpath="/progression/perks/perk[@name='perkJavelinMaster']/@icon">smxlib_ui_game_symbol_javelinmaster</set>
+		<set xpath="/progression/perks/perk[@name='perkLockPicking']/@icon">smxlib_ui_game_symbol_lockpicking</set>
+		<set xpath="/progression/perks/perk[@name='perkInfiltrator']/@icon">smxlib_ui_game_symbol_infiltrator</set>
+		<set xpath="/progression/perks/perk[@name='perkAnimalTracker']/@icon">smxlib_ui_game_symbol_animaltracker</set>
+		<set xpath="/progression/perks/perk[@name='perkPenetrator']/@icon">smxlib_ui_game_symbol_penetrator</set>
+		<set xpath="/progression/perks/perk[@name='perkLuckyLooter']/@icon">smxlib_ui_game_symbol_luckylooter</set>
+		<set xpath="/progression/perks/perk[@name='perkTreasureHunter']/@icon">smxlib_ui_game_symbol_treasurehunter</set>
+		<set xpath="/progression/perks/perk[@name='perkSalvageOperations']/@icon">smxlib_ui_game_symbol_salvageoperations</set>
+
+
+<!--	// SMX // Skill Window - Replacing Perk Icons - Strength -->
+
+		<set xpath="/progression/perks/perk[@name='perkBoomstick']/@icon">smxlib_ui_game_symbol_boomstick</set>
+		<set xpath="/progression/perks/perk[@name='perkPummelPete']/@icon">smxlib_ui_game_symbol_pummelpete</set>
+		<set xpath="/progression/perks/perk[@name='perkSkullCrusher']/@icon">smxlib_ui_game_symbol_skullcrusher</set>
+		<set xpath="/progression/perks/perk[@name='perkSexualTrex']/@icon">smxlib_ui_game_symbol_sexosaurus</set>
+		<set xpath="/progression/perks/perk[@name='perkHeavyArmor']/@icon">smxlib_ui_game_symbol_heavyarmor</set>
+		<set xpath="/progression/perks/perk[@name='perkPackMule']/@icon">smxlib_ui_game_symbol_packmule</set>
+		<set xpath="/progression/perks/perk[@name='perkMasterChef']/@icon">smxlib_ui_game_symbol_masterchef</set>
+		<set xpath="/progression/perks/perk[@name='perkMiner69r']/@icon">smxlib_ui_game_symbol_miner69er</set>
+		<set xpath="/progression/perks/perk[@name='perkMotherLode']/@icon">smxlib_ui_game_symbol_motherlode</set>
+
+
+<!--	// SMX // Skill Window - Replacing Perk Icons - Fortitude -->
+
+		<set xpath="/progression/perks/perk[@name='perkBrawler']/@icon">smxlib_ui_game_symbol_brawler</set>
+		<set xpath="/progression/perks/perk[@name='perkMachineGunner']/@icon">smxlib_ui_game_symbol_machinegunner</set>
+		<set xpath="/progression/perks/perk[@name='perkTheHuntsman']/@icon">smxlib_ui_game_symbol_huntsman</set>
+		<set xpath="/progression/perks/perk[@name='perkWellInsulated']/@icon">smxlib_ui_game_symbol_insulated</set>
+		<set xpath="/progression/perks/perk[@name='perkLivingOffTheLand']/@icon">smxlib_ui_game_symbol_livingofland</set>
+		<set xpath="/progression/perks/perk[@name='perkPainTolerance']/@icon">smxlib_ui_game_symbol_paintolerance</set>
+		<set xpath="/progression/perks/perk[@name='perkHealingFactor']/@icon">smxlib_ui_game_symbol_healingfactor</set>
+		<set xpath="/progression/perks/perk[@name='perkSlowMetabolism']/@icon">smxlib_ui_game_symbol_irongut</set>
+		<set xpath="/progression/perks/perk[@name='perkRuleOneCardio']/@icon">smxlib_ui_game_symbol_rule1cardio</set>
+
+
+<!--	// SMX // Skill Window - Replacing Perk Icons - Agility -->
+
+		<set xpath="/progression/perks/perk[@name='perkArchery']/@icon">smxlib_ui_game_symbol_archery</set>
+		<set xpath="/progression/perks/perk[@name='perkGunslinger']/@icon">smxlib_ui_game_symbol_gunslinger</set>
+		<set xpath="/progression/perks/perk[@name='perkDeepCuts']/@icon">smxlib_ui_game_symbol_deepcuts</set>
+		<set xpath="/progression/perks/perk[@name='perkRunAndGun']/@icon">smxlib_ui_game_symbol_runandgun</set>
+		<set xpath="/progression/perks/perk[@name='perkFlurryOfBlows']/@icon">smxlib_ui_game_symbol_flurryofblows</set>
+		<set xpath="/progression/perks/perk[@name='perkLightArmor']/@icon">smxlib_ui_game_symbol_lightarmor</set>
+		<set xpath="/progression/perks/perk[@name='perkParkour']/@icon">smxlib_ui_game_symbol_parkour</set>
+		<set xpath="/progression/perks/perk[@name='perkHiddenStrike']/@icon">smxlib_ui_game_symbol_hiddenstrike</set>
+		<set xpath="/progression/perks/perk[@name='perkFromTheShadows']/@icon">smxlib_ui_game_symbol_fromtheshadows</set>
+
+
+<!--	// SMX // Skill Window - Replacing Perk Icons - Intellect -->
+
+		<set xpath="/progression/perks/perk[@name='perkElectrocutioner']/@icon">smxlib_ui_game_symbol_electrocutioner</set>
+		<set xpath="/progression/perks/perk[@name='perkTurrets']/@icon">smxlib_ui_game_symbol_roboticsinventor</set>
+		<set xpath="/progression/perks/perk[@name='perkBetterBarter']/@icon">smxlib_ui_game_symbol_betterbarter</set>
+		<set xpath="/progression/perks/perk[@name='perkDaringAdventurer']/@icon">smxlib_ui_game_symbol_thedaringadventurer</set>
+		<set xpath="/progression/perks/perk[@name='perkCharismaticNature']/@icon">smxlib_ui_game_symbol_charismaticnature</set>
+		<set xpath="/progression/perks/perk[@name='perkPhysician']/@icon">smxlib_ui_game_symbol_physician</set>
+		<set xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/@icon">smxlib_ui_game_symbol_advancedengineering</set>
+		<set xpath="/progression/perks/perk[@name='perkGreaseMonkey']/@icon">smxlib_ui_game_symbol_greasemonkey</set>
+
+
+<!--	// SMX // Skill Window - Setting Perk Book Icons -->
+
+		<set xpath="/progression/skills/skill[@name='skillArtOfMining']/@icon">bookArtOfMiningLuckyStrike</set>
+		<set xpath="/progression/skills/skill[@name='skillAutoWeapons']/@icon">bookAutoWeaponsDamage</set>
+		<set xpath="/progression/skills/skill[@name='skillBatterUp']/@icon">bookBatterUpBigHits</set>
+		<set xpath="/progression/skills/skill[@name='skillBarBrawling']/@icon">bookBarBrawling1BasicMoves</set>
+		<set xpath="/progression/skills/skill[@name='skillFiremansAlmanac']/@icon">bookFiremansAlmanacHeat</set>
+		<set xpath="/progression/skills/skill[@name='skillGreatHeist']/@icon">bookTheGreatHeistSafes</set>
+		<set xpath="/progression/skills/skill[@name='skillHuntingJournal']/@icon">bookHuntingJournalBears</set>
+		<set xpath="/progression/skills/skill[@name='skillLuckyLooter']/@icon">bookLuckyLooterDukes</set>
+		<set xpath="/progression/skills/skill[@name='skillEnforcer']/@icon">bookEnforcerDamage</set>
+		<set xpath="/progression/skills/skill[@name='skillNeedleAndThread']/@icon">bookNeedleAndThreadWinterWear</set>
+		<set xpath="/progression/skills/skill[@name='skillNightStalker']/@icon">bookNightStalkerStealthDamage</set>
+		<set xpath="/progression/skills/skill[@name='skillPistolPete']/@icon">bookPistolPeteTakeAim</set>
+		<set xpath="/progression/skills/skill[@name='skillArchery']/@icon">bookRangersArrowRecovery</set>
+		<set xpath="/progression/skills/skill[@name='skillShotguns']/@icon">bookShotgunMessiahDamage</set>
+		<set xpath="/progression/skills/skill[@name='skillSniper']/@icon">bookSniperDamage</set>
+		<set xpath="/progression/skills/skill[@name='skillSpearHunter']/@icon">bookSpearHunter1Damage</set>
+		<set xpath="/progression/skills/skill[@name='skillUrbanCombat']/@icon">bookUrbanCombatLanding</set>
+		<set xpath="/progression/skills/skill[@name='skillTechJunkie']/@icon">bookTechJunkie1Damage</set>
+		<set xpath="/progression/skills/skill[@name='skillWasteTreasures']/@icon">bookWasteTreasuresHoney</set>
+
+</SMXui>

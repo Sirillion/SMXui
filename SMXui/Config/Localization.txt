@@ -3,7 +3,7 @@ Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german
 xuiChangeLogHeaderUI,UI,Menu,x,,ChangeLog - SMXui - r20.rc6
 xuiChangeLogUI,UI,Menu,x,,[AF1E19]*[-]  CHANGE: Moved back-end code to SMXcore.\n[AF1E19]*[-]  ADDED: Quartz lockable slots system.\n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n,,,,,
 
-xuiPointsAvailableNew,UI,XUI,,,Points\nAvailable,,Verfügbare(r) Punkt(e),Punto(s) disponible(s),Point(s) disponible(s),Punto/i disponibile/i,利用可能ポイント,사용 가능한 포인트,Dostępne punkty:,Ponto(s) disponível(eis),Доступны очки:,Kullanılabilir Puan,可用点数,可用分數,Punto(s) disponible(s)
+xuiPointsAvailableNew,UI,XUI,,,Points Available,,Verfügbare(r) Punkt(e),Punto(s) disponible(s),Point(s) disponible(s),Punto/i disponibile/i,利用可能ポイント,사용 가능한 포인트,Dostępne punkty:,Ponto(s) disponível(eis),Доступны очки:,Kullanılabilir Puan,可用点数,可用分數,Punto(s) disponible(s)
 
 TwitchInfo_ActionDisableAction,xui,Menu,,,Disable,,,,,,,,,,,,,,
 TwitchInfo_ActionEnableAction,xui,Menu,,,Enable,,,,,,,,,,,,,,

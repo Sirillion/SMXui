@@ -4,7 +4,7 @@
 
 		// EAC:				Friendly
 
-		// VERSION:			r20.rc6
+		// VERSION:			r20.rc7
 
 		// BUILD:			A20.6
 
@@ -320,7 +320,7 @@
 			<window name="windowSkillBookInfo" />
 		</set>
 
-		<setattribute xpath="/xui//window_group[@name='skills']" name="controller">XUiC_SkillWindowGroup</setattribute>
+		<setattribute xpath="/xui//window_group[@name='skills']" name="controller">SMXcore.SkillWindowGroup, SMXcore</setattribute>
 
 
 <!--	// SMX // Map Windows -->
