@@ -4,7 +4,7 @@
 
 		// EAC:				Non Friendly, SMX requires EAC to be DISABLED.
 
-		// VERSION:			r20.rc7
+		// VERSION:			r20.rc8
 
 		// BUILD:			A20.6
 
@@ -1557,12 +1557,10 @@
 
 						<sprite name="backdropWindow" depth="1" pos="10,-20" width="280" height="470" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_2]" globalopacitymod="1.1" />
 
-						<rect depth="1" pos="10,-28" width="280" height="440">
+						<rect name="smxui_attribute_entry_module_scrolling" depth="1" pos="10,-28" width="280" height="440">
 
 							<sprite name="smxui_artline_horizontal" depth="1" pos="10,30" width="260" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
 
-			<!-- SMX Comment: MOD compatibility. Activate this scrollbar section BELOW to add scrolling to the attribute entries. Do NOT change any values, it is pre-setup! -->
-			<!-- ...delete or comment this line... 
 							<scrollbar	name="scrollbar"
 										depth="6"
 										pos="285,-230"
@@ -1583,38 +1581,12 @@
 							</scrollbar>
 
 							<scrollview name="scrollview" depth="5" pos="0,30" width="280" height="498" scrollbar="scrollbar" reset_position="true" over_scroll="false" scroll_speed="2.5">
-			... delete or comment this line ... -->
-			<!-- SMX Comment: MOD compatibility. Activate this scrollbar section ABOVE to add scrolling to the attribute entries. Do NOT change any values, it is pre-setup! -->
 
-								<!-- SMX COMMENT: MOD compatibility. Do NOT change rows until you add more than 12 entries. You MUST change both smxui_attribute_design and categories for this to work! -->
-								<grid name="smxui_attribute_design" depth="2" pos="0,0" rows="12" cols="1" width="280" height="78" cell_width="280" cell_height="78" repeat_content="false">
-									<smxui_category_attribute pos="50,-36" width="280" height="73" sprite="smxlib_ui_game_symbol_perception" text="" text_key="attperception" />
-									<smxui_category_attribute pos="50,-36" width="280" height="73" sprite="smxlib_ui_game_symbol_strength" text="" text_key="attstrength" />
-									<smxui_category_attribute pos="50,-36" width="280" height="73" sprite="smxlib_ui_game_symbol_fortitude" text="" text_key="attfortitude" />
-									<smxui_category_attribute pos="50,-36" width="280" height="73" sprite="smxlib_ui_game_symbol_agility" text="" text_key="attagility" />
-									<smxui_category_attribute pos="50,-36" width="280" height="73" sprite="smxlib_ui_game_symbol_intellect" text="" text_key="attintellect" />
-									<smxui_category_books pos="50,-36" width="280" height="73" sprite="smxlib_ui_game_symbol_perkbooks" text="" text_key="attbooks" />
-									<!--smxui_category_attribute pos="50,-36" width="280" height="73" sprite="SMX Comment: Change this to your icon." text="" text_key="SMX Comment: Change this to your localization." /--> <!-- SMX Comment: Add one of these for each attribute entry you add! Change sprite and text_key values ONLY!! -->
+								<grid name="smxui_attribute_design" depth="1" pos="0,0" rows="{smxskillcategoryrows}" cols="1" width="280" height="75" cell_width="280" cell_height="75" repeat_content="true" controller="SMXcore.SkillCategoryList, SMXcore">
+									<smxui_category_attribute pos="50,-36" width="280" height="73" />
 								</grid>
-
-								<!-- SMX COMMENT: MOD compatibility. Do NOT change rows until you add more than 12 entries. You MUST change both smxui_attribute_design and categories for this to work! -->
-								<grid name="categories" depth="1" pos="0,0" rows="12" cols="1" width="280" height="78" cell_width="280" cell_height="78" repeat_content="false" controller="CategoryList">
-									<smxui_category_button pos="0,0" width="280" height="70" />
-									<smxui_category_button pos="0,0" width="280" height="70" />
-									<smxui_category_button pos="0,0" width="280" height="70" />
-									<smxui_category_button pos="0,0" width="280" height="70" />
-									<smxui_category_button pos="0,0" width="280" height="70" />
-									<smxui_category_button pos="0,0" width="280" height="70" />
-									<!--smxui_category_button pos="0,0" width="280" height="70" /--> <!-- SMX Comment: Add one of these for each attribute entry you add! Change NOTHING else!! -->
-								</grid>
-
-			<!-- SMX Comment: MOD compatibility. Activate this scrollbar end tag BELOW to add scrolling to the attribute entries. Do NOT change any values, it is pre-setup! -->
-			<!-- ...delete or comment this line... 
 
 							</scrollview>
-
-			... delete or comment this line ... -->
-			<!-- SMX Comment: MOD compatibility. Activate this scrollbar end tag ABOVE to add scrolling to the attribute entries. Do NOT change any values, it is pre-setup! -->
 
 						</rect>
 					</rect>
@@ -1682,7 +1654,7 @@
 							<sprite name="frameRight" depth="4" pos="640,10" width="240" height="3" sprite="smxlib_separation_line_1" rotation="-90" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
 							<sprite name="frameBottom" depth="5" pos="-20,-200" width="680" height="3" sprite="smxlib_separation_line_1" flip="horizontally" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
 
-							<sprite name="smxui_artbox_groupicon" depth="2" pos="540,-100" width="200" height="200" sprite="{groupicon}" globalopacitymod="0.2" pivot="center" flip="horizontally" />
+							<sprite name="smxui_artbox_groupicon" depth="1" pos="540,-100" width="200" height="200" pivot="center" flip="horizontally" sprite="{groupicon}" color="255,255,255,40" globalopacity="false" />
 
 							<sprite name="frameLeft" depth="4" pos="27,6" width="66" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
 							<sprite name="frameTop" depth="5" pos="19,0" width="66" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
@@ -1735,17 +1707,8 @@
 
 							<scrollview name="scrollview" depth="5" pos="-10,10" width="370" height="650" scrollbar="scrollbar" reset_position="true" over_scroll="false" scroll_speed="2.5">
 
-								<grid name="smxui_attribute_grid" depth="1" rows="10" cols="1" pos="0,0" width="78" cell_width="320" cell_height="130" repeat_content="false">
-									<smxui_skill_attribute_level width="78" height="78" globalopacitymod="0.2" />
-									<smxui_skill_attribute_level width="78" height="78" globalopacitymod="0.3" />
-									<smxui_skill_attribute_level width="78" height="78" globalopacitymod="0.4" />
-									<smxui_skill_attribute_level width="78" height="78" globalopacitymod="0.5" />
-									<smxui_skill_attribute_level width="78" height="78" globalopacitymod="0.6" />
-									<smxui_skill_attribute_level width="78" height="78" globalopacitymod="0.7" />
-									<smxui_skill_attribute_level width="78" height="78" globalopacitymod="0.8" />
-									<smxui_skill_attribute_level width="78" height="78" globalopacitymod="0.9" />
-									<smxui_skill_attribute_level width="78" height="78" globalopacitymod="1.0" />
-									<smxui_skill_attribute_level width="78" height="78" globalopacitymod="1.2" />
+								<grid name="smxui_attribute_grid" depth="1" rows="20" cols="1" pos="0,0" width="78" cell_width="320" cell_height="130" repeat_content="true">
+									<smxui_skill_attribute_level width="78" height="78" />
 								</grid>
 
 							</scrollview>
@@ -1852,7 +1815,7 @@
 							<sprite name="frameRight" depth="4" pos="640,10" width="240" height="3" sprite="smxlib_separation_line_1" rotation="-90" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
 							<sprite name="frameBottom" depth="5" pos="-20,-200" width="680" height="3" sprite="smxlib_separation_line_1" flip="horizontally" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
 
-							<sprite name="smxui_artbox_groupicon" depth="2" pos="540,-100" width="200" height="200" sprite="{groupicon}" globalopacitymod="0.2" pivot="center" flip="horizontally" />
+							<sprite name="smxui_artbox_groupicon" depth="1" pos="540,-100" width="200" height="200" pivot="center" flip="horizontally" sprite="{groupicon}" color="255,255,255,40" globalopacity="false" />
 
 							<sprite name="frameLeft" depth="4" pos="27,6" width="66" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
 							<sprite name="frameTop" depth="5" pos="19,0" width="66" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
@@ -1884,8 +1847,6 @@
 
 						<rect name="smxui_perkentries_module" depth="1" pos="10,-15" width="350" height="650">
 
-			<!-- SMX Comment: MOD compatibility. Activate this scrollbar section BELOW to add scrolling to the perk entries. Do NOT change any values, it is pre-setup! -->
-			<!-- ...delete or comment this line... 
 							<scrollbar	name="scrollbar"
 										depth="6"
 										pos="360,-315"
@@ -1905,25 +1866,13 @@
 								<button name="background" sprite="smxlib_scrollbar_background" pivot="center" hovercolor="[smxui_scrollbar_background_hover]" color="[smxui_scrollbar_background]" defaultcolor="[smxui_scrollbar_background]" hoverscale="1" sound_play_on_press_down="[paging_click]" />
 							</scrollbar>
 
-							<scrollview name="scrollview" depth="5" pos="-10,10" width="370" height="650" scrollbar="scrollbar" reset_position="true" over_scroll="false" scroll_speed="2.5">
-			... delete or comment this line ... -->
-			<!-- SMX Comment: MOD compatibility. Activate this scrollbar section ABOVE to add scrolling to the perk entries. Do NOT change any values, it is pre-setup! -->
+							<scrollview name="scrollview" depth="5" pos="-10,10" width="370" height="670" scrollbar="scrollbar" reset_position="true" over_scroll="false" scroll_speed="2.5">
 
-								<grid name="smxui_perk_grid" depth="1" rows="10" cols="1" pos="0,0" width="78" cell_width="320" cell_height="130" repeat_content="false">
-									<smxui_skill_perk_level width="78" height="78" globalopacitymod="0.4" />
-									<smxui_skill_perk_level width="78" height="78" globalopacitymod="0.6" />
-									<smxui_skill_perk_level width="78" height="78" globalopacitymod="0.8" />
-									<smxui_skill_perk_level width="78" height="78" globalopacitymod="1.0" />
-									<smxui_skill_perk_level width="78" height="78" globalopacitymod="1.2" />
+								<grid name="smxui_perk_grid" depth="1" rows="20" cols="1" pos="0,0" width="78" cell_width="320" cell_height="130" repeat_content="true">
+									<smxui_skill_perk_level width="78" height="78" />
 								</grid>
 
-			<!-- SMX Comment: MOD compatibility. Activate this scrollbar end tag BELOW to add scrolling to the perk entries. Do NOT change any values, it is pre-setup! -->
-			<!-- ...delete or comment this line... 
-
 							</scrollview>
-
-			... delete or comment this line ... -->
-			<!-- SMX Comment: MOD compatibility. Activate this scrollbar end tag ABOVE to add scrolling to the perk entries. Do NOT change any values, it is pre-setup! -->
 
 						</rect>
 					</rect>
@@ -1948,7 +1897,7 @@
 							<sprite name="frameRight" depth="4" pos="640,10" width="240" height="3" sprite="smxlib_separation_line_1" rotation="-90" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
 							<sprite name="frameBottom" depth="5" pos="-20,-200" width="680" height="3" sprite="smxlib_separation_line_1" flip="horizontally" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
 
-							<sprite name="smxui_artbox_groupicon" depth="2" pos="540,-100" width="200" height="200" atlas="itemiconatlas" sprite="{groupicon}" globalopacitymod="0.2" pivot="center" />
+							<sprite name="smxui_artbox_groupicon" depth="0" pos="540,-100" width="200" height="200" pivot="center" atlas="itemiconatlas" sprite="{groupicon}" color="255,255,255,75" globalopacity="false" />
 
 							<sprite name="frameLeft" depth="4" pos="27,6" width="66" height="3" sprite="smxlib_separation_line_1" rotation="-90" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
 							<sprite name="frameTop" depth="5" pos="19,0" width="66" height="3" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" globalopacitymod="1.8" />
@@ -2000,14 +1949,8 @@
 
 							<scrollview name="scrollview" depth="5" pos="-10,10" width="370" height="650" scrollbar="scrollbar" reset_position="true" over_scroll="false" scroll_speed="2.5">
 
-								<grid name="smxui_attribute_grid" depth="1" rows="7" cols="1" pos="0,0" width="78" cell_width="320" cell_height="130" repeat_content="false">
-									<smxui_skill_book_level width="78" height="78" globalopacitymod="0.2" />
-									<smxui_skill_book_level width="78" height="78" globalopacitymod="0.4" />
-									<smxui_skill_book_level width="78" height="78" globalopacitymod="0.5" />
-									<smxui_skill_book_level width="78" height="78" globalopacitymod="0.6" />
-									<smxui_skill_book_level width="78" height="78" globalopacitymod="0.8" />
-									<smxui_skill_book_level width="78" height="78" globalopacitymod="1.0" />
-									<smxui_skill_book_level width="78" height="78" globalopacitymod="1.2" />
+								<grid name="smxui_attribute_grid" depth="1" rows="8" cols="1" pos="0,0" width="78" cell_width="320" cell_height="130" repeat_content="true">
+									<smxui_skill_book_level width="78" height="78" />
 								</grid>
 							</scrollview>
 

@@ -1,7 +1,7 @@
 Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
 
-xuiChangeLogHeaderUI,UI,Menu,x,,ChangeLog - SMXui - r20.rc6
-xuiChangeLogUI,UI,Menu,x,,[AF1E19]*[-]  CHANGE: Moved back-end code to SMXcore.\n[AF1E19]*[-]  ADDED: Quartz lockable slots system.\n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n,,,,,
+xuiChangeLogHeaderUI,UI,Menu,x,,ChangeLog - SMXui - r20.rc8
+xuiChangeLogUI,UI,Menu,x,,[AF1E19]*[-]  ADDED: New skills window design.\n[AF1E19]*[-]  CHANGE: Back end skills window improvements.\n[AF1E19]*[-]  FIXED: A bug in the map window.\n[AF1E19]*[-]  FIXED: Skills window bug fixes.\n[AF1E19][-]  \n[AF1E19][-]  \n,,,,,
 
 xuiPointsAvailableNew,UI,XUI,,,Points Available,,Verfügbare(r) Punkt(e),Punto(s) disponible(s),Point(s) disponible(s),Punto/i disponibile/i,利用可能ポイント,사용 가능한 포인트,Dostępne punkty:,Ponto(s) disponível(eis),Доступны очки:,Kullanılabilir Puan,可用点数,可用分數,Punto(s) disponible(s)
 
