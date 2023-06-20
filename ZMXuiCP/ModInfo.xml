@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <xml>
-	<ModInfo>
-		<Name value="ZMXuiCP" />
-		<Description value="A compatibility modlet to ensure the highest level of compatibility for SMXui." />
-		<Author value="Sirillion" />
-		<Version value="r20.rc7" />
-		<Website value="http://www.nexusmods.com/7daystodie/mods/22/?" />
-	</ModInfo>
+	<Name value="ZMXuiCP" />
+	<Author value="Sirillion" />
+	<Description value="A compatibility modlet to ensure the highest level of compatibility for SMXui." />
+	<DisplayName value="ZMXuiCP" />
+	<Website value="http://www.nexusmods.com/7daystodie/mods/22/?" />
+	<Version value="21.0.317.0" />
 </xml>

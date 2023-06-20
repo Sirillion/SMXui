@@ -32,6 +32,7 @@
 						visible="{showresponse}">
 					<sprite name="Icon" depth="5" pos="20,-20" size="20,20" sprite="ui_game_symbol_talk" pivot="center" color="{rowstatecolor}" globalopacitymod="1.8" />
 					<label name="Text" depth="4" pos="200,-20" width="300" height="36" style="smxcore_label_normal" text="{response}{poi.name}" font_size="22" pivot="center" color="{rowstatecolor}" overflow="ShrinkContent" />
+<!--sprite color="[green]" type="sliced" /-->
 				</rect>
 			</smxui_response_entry>
 		</append>
@@ -311,6 +312,80 @@
 			</smxui_looting_item_stack>
 		</append>
 
+
+<!--	// SMX // Dew Collector Stack -->
+
+		<append xpath="/controls">
+			<smx_dewcollector_stack controller="DewCollectorStack" on_scroll="false" allow_dropping="true" prefix_id="false" show_favorites="false">
+				<rect controller="DewCollectorStack" width="${4+cell_width}" height="${4+cell_height}" style="hover, smxcore_item_stack" pivot="center" collider_scale="1.0" on_scroll="${on_scroll}" allow_dropping="${allow_dropping}" prefix_id="${prefix_id}" show_favorites="${show_favorites}" tooltip="{tooltip}" >
+
+					<sprite name="mainBackground" depth="0" pos="0,0" width="64" height="64" sprite="menu_empty" type="sliced" pivot="center" color="[smxui_slot_main_background]" globalopacitymod="1.3" />
+
+					<sprite name="slotBackground" depth="1" pos="0,0" width="56" height="56" sprite="menu_empty" pivot="center" type="sliced" color="[smxui_slot_slot_background]" globalopacity="true" />
+					<sprite name="itemBackgroundDurability" depth="2" pos="0,3" width="59" height="41" sprite="smxlib_item_preview_background" pivot="center" rotation="45" color="{durabilitycolor}" globalopacitymod="0.8" visible="{hasdurability}" />
+					<sprite name="itemBackgroundNormal" depth="2" pos="0,3" width="59" height="41" sprite="smxlib_item_preview_background" pivot="center" rotation="45" color="[smxui_slot_item_background]" globalopacitymod="1.2" visible="{#!hasdurability}" />
+					<sprite name="slotFrame" depth="3" pos="0,0" width="67" height="67" sprite="smxlib_slot_frame_narrow" pivot="center" color="{selectionbordercolor}" globalopacitymod="1.8" />
+
+					<texture name="backgroundTexture" depth="4" pos="0,0" width="56" height="56" pivot="center" material="Materials/Transparent Colored" globalopacity="true" />
+
+					<sprite name="disabledOverlay" depth="5" pos="0,0" width="64" height="64" pivot="center" type="sliced" color="[darkGrey_half_alpha]" visible="false" />
+
+					<sprite name="itemIcon" depth="6" pos="0,0" size="60,60" atlas="{itematlas}" sprite="{itemicon}" pivot="center" color="{iconcolor}" foregroundlayer="true" visible="{showitem}" />
+					<sprite name="fillIcon" depth="6" pos="0,0" size="40,40" sprite="ui_game_symbol_water" pivot="center" color="[darkGrey]" foregroundlayer="true" visible="{showempty}" />
+
+					<sprite name="lockTypeIcon" depth="8" pos="-20,20" size="18,18" sprite="{locktypeicon}" pivot="center" foregroundlayer="true" />
+					<sprite name="itemtypeicon" depth="8" pos="-20,20" size="18,18" sprite="ui_game_symbol_{itemtypeicon}" pivot="center" color="{itemtypeicontint}" foregroundlayer="true" visible="{hasitemtypeicon}" />
+					<sprite name="favoriteIcon" depth="8" pos="20,-20" size="18,18" sprite="server_favorite" pivot="center" color="[smxui_element_accentcolor_2]" foregroundlayer="true" visible="{isfavorite}" />
+
+					<sprite name="durabilityBackground" depth="5" pos="0,-26" width="56" height="5" sprite="smxlib_item_durability_bar" pivot="center" color="[smxui_item_durability_background]" foregroundlayer="true" visible="{hasdurability}" />
+					<sprite name="durability" depth="6" pos="0,-26" width="56" height="5" sprite="smxlib_item_durability_bar" pivot="center" type="filled" fill="{durabilityfill}" color="{durabilitycolor}" foregroundlayer="true" visible="{hasdurability}" />
+
+					<label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxui_element_labelcolor_1]" visible="{#!hasdurability}" />
+					<!--label name="stackValue" depth="7" pos="-1,-23" width="60" height="18" style="smxcore_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
+					<label name="timer" depth="7" pos="0,-2" width="62" height="24" style="smxcore_label_normal" font_size="18" upper_case="true" pivot="center" justify="center" color="[smxui_slot_timer_color]" />
+
+					<sprite name="cancel" depth="14" pos="0,0" size="60,60" sprite="ui_game_symbol_x" pivot="center" color="[smxui_slot_cancel_color]" foregroundlayer="true" visible="false" />
+					<sprite name="assembleIcon" depth="13" pos="0,0" size="40,40" sprite="{stacklockicon}" pivot="center" color="{stacklockcolor}" foregroundlayer="true" visible="{isassemblelocked}" />
+
+					<rect pos="26,0" width="64" height="58" visible="{hasfill}">
+						<sprite depth="3" pos="1,0" width="6" height="57" pivot="center" color="[darkGrey]" type="sliced" globalopacity="false" />
+						<filledsprite name="BarContent" depth="5" pos="1,1" width="6" pivot="center" color="{fillcolor}" type="filled" fill="{waterfill}" filldirection="Vertical" globalopacity="false" />
+					</rect>
+
+				</rect>
+			</smx_dewcollector_stack>
+		</append>
+
+<!--
+	<dewcollector_stack controller="DewCollectorStack" on_scroll="false" allow_dropping="true" prefix_id="false" show_favorites="false">
+		<rect controller="DewCollectorStack" style="itemStack, hover" collider_scale="1.0" on_scroll="${on_scroll}" allow_dropping="${allow_dropping}" prefix_id="${prefix_id}" show_favorites="${show_favorites}" tooltip="{tooltip}" >
+
+			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="78" height="78" color="[black]" type="sliced" fillcenter="false" />
+			<sprite depth="3" name="background" sprite="menu_empty3px" width="73" height="73" color="{selectionbordercolor}" type="sliced" globalopacity="true" fillcenter="false"/>
+			<sprite depth="2" name="highlightOverlay" width="72" height="72" color="{backgroundcolor}" pos="0,0" type="sliced" globalopacity="true"/>
+
+			<texture depth="3" name="backgroundTexture" material="Materials/Transparent Colored" size="73,73" globalopacity="true"/>
+			<sprite depth="8" name="favoriteIcon" width="24" height="24" sprite="server_favorite" pos="2,-2" foregroundlayer="true" visible="{isfavorite}"/>
+			<sprite depth="6" name="itemIcon" width="64" height="64" atlas="{itematlas}" sprite="{itemicon}" pos="35,-35" pivot="center" foregroundlayer="true" color="{iconcolor}" visible="{showitem}" />
+			<sprite depth="6" name="fillIcon" width="40" height="40" sprite="ui_game_symbol_water" pos="35,-35" pivot="center" foregroundlayer="true" color="[darkGrey]" visible="{showempty}" />
+			
+			<sprite depth="3" name="durabilityBackground" width="70" height="10" sprite="menu_empty3px" color="[darkGrey]" type="sliced" pos="1, -60" foregroundlayer="true" visible="{hasdurability}" />
+			<filledsprite depth="4" name="durability" width="70" height="10" sprite="menu_empty2px" color="{durabilitycolor}" fill="{durabilityfill}" type="filled" pos="1, -60" foregroundlayer="true" visible="{hasdurability}" />
+
+			<sprite depth="5" name="disabledOverlay" width="72" height="72" color="[darkGrey_half_alpha]" pos="1,-1" type="sliced" visible="false"/>
+
+			<label depth="7" name="stackValue" pos="-2,-45" width="70" height="28" text="{itemcount}" font_size="26" effect="outline" justify="{#hasdurability ? 'Center' : 'Right'}" />
+			<label depth="7" name="timer" pos="35,-38" width="70" height="24" font_size="24" justify="center" pivot="center" effect="outline" color="[beige]"/>
+			<sprite depth="9" name="cancel" sprite="ui_game_symbol_x" width="70" height="70" color="255,0,0,255" type="sliced" visible="false" foregroundlayer="true"/>
+			<sprite depth="13" name="assembleIcon" size="40,40" sprite="{stacklockicon}" color="{stacklockcolor}" visible="{isassemblelocked}" pos="14,-14" foregroundlayer="true" />
+			
+			<rect pos="66, 0" width="64" height="74" visible="{hasfill}">
+				<sprite width="6" height="73" depth="3" pos="1,0" color="[darkGrey]" globalopacity="false" type="sliced" />
+				<filledsprite depth="5" pos="1,1" width="6" name="BarContent" color="{fillcolor}" globalopacity="false" type="filled" fill="{waterfill}" filldirection="Vertical" />
+			</rect>
+		</rect>
+	</dewcollector_stack>
+-->
 
 <!--	// SMX // Item Stack -->
 
@@ -634,9 +709,9 @@
 
 					<smxui_counter_control_input name="count_input" depth="2" pos="0,-60" />
 
-					<button name="countMax" depth="3" pos="23,5" size="30,30" style="press, hover, smxcore_icon_colors" sprite="ui_game_symbol_arrow_max" pivot="center" rotation="90" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip="All Available" />
-					<button name="countUp" depth="3" pos="23,-30" size="30,30" style="press, hover, held, smxcore_icon_colors" sprite="ui_game_symbol_arrow_left" pivot="center" rotation="-90" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="One More" />
-					<button name="countDown" depth="3" pos="23,-130" size="30,30" style="press, hover, held, smxcore_icon_colors" sprite="ui_game_symbol_arrow_right" pivot="center" rotation="-90" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" tooltip_key="One Less" />
+					<button name="countMax" depth="3" pos="23,5" size="30,30" style="press, hover, smxcore_icon_colors" sprite="ui_game_symbol_arrow_max" pivot="center" rotation="90" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" enabled="{enablecountup}" tooltip="All Available" />
+					<button name="countUp" depth="3" pos="23,-30" size="30,30" style="press, hover, held, smxcore_icon_colors" sprite="ui_game_symbol_arrow_left" pivot="center" rotation="-90" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" enabled="{enablecountup}" tooltip_key="One More" />
+					<button name="countDown" depth="3" pos="23,-130" size="30,30" style="press, hover, held, smxcore_icon_colors" sprite="ui_game_symbol_arrow_right" pivot="center" rotation="-90" disabledcolor="[disabledColor]" sound_play_on_hover="[default_hover]" sound="[paging_click]" enabled="{enablecountdown}" tooltip_key="One Less" />
 				</rect>
 			</smxui_counter_control>
 		</append>
@@ -1196,6 +1271,8 @@
 					<!--label depth="3" pos="5,-${Round(height/2,0)}" text="{level}" pivot="left" justify="center" width="65" font_size="30" color="{color_fg}" visible="{hasentry}" /-->
 					<!--label depth="3" pos="77,-${Round(height/2,0)}" text="{text}" pivot="left" justify="left" width="493" font_size="24" color="{color_fg}" visible="{hasentry}" /-->
 
+					<sprite name="germanIs2Long" depth="99" pos="25,9" width="20" height="20" sprite="ui_game_symbol_stealth" color="[red]" on_hover="true" tooltip="{longdescription}" />
+
 					<button depth="9" name="btnBuy" pos="71,-85" size="25,25" style="press, hover, smxcore_icon_colors" sprite="{buyicon}" pivot="center" tooltip="{buytooltip}" sound="[paging_click]" defaultcolor="{buycolor}" manualcolors="true" visible="{buyvisible}" />
 				</rect>
 			</smxui_skill_attribute_level>
@@ -1237,6 +1314,8 @@
 					<!--label depth="3" pos="5,-${Round(height/2,0)}" text="{level}" pivot="left" justify="center" width="65" font_size="30" color="{color_fg}" visible="{hasentry}" /-->
 					<!--label depth="3" pos="77,-${Round(height/2,0)}" text="{text}" pivot="left" justify="left" width="493" font_size="24" color="{color_fg}" visible="{hasentry}" /-->
 
+					<sprite name="germanIs2Long" depth="99" pos="25,9" width="20" height="20" sprite="ui_game_symbol_stealth" color="[red]" on_hover="true" tooltip="{longdescription}" />
+
 					<button depth="9" name="btnBuy" pos="71,-85" size="25,25" style="press, hover, smxcore_icon_colors" sprite="{buyicon}" pivot="center" tooltip="{buytooltip}" sound="[paging_click]" defaultcolor="{buycolor}" manualcolors="true" visible="{buyvisible}" />
 				</rect>
 			</smxui_skill_perk_level>
@@ -1276,6 +1355,8 @@
 
 					<label name="smxui_book_number" depth="3" pos="15,-39" width="70" height="60" style="smxcore_label_normal" text="{level}" pivot="center" justify="center" font_size="45" color="{color_bg}" visible="{hasentry}" />
 					<sprite name="smxui_book_complete" depth="3" pos="15,-39" width="35" height="35" pivot="center" sprite="ui_game_symbol_check" color="{color_bg}" visible="{iscomplete}" />
+
+					<sprite name="germanIs2Long" depth="99" pos="25,9" width="20" height="20" sprite="ui_game_symbol_stealth" color="[red]" on_hover="true" tooltip="{longdescription}" />
 
 					<!--label depth="3" pos="5,-${Round(height/2,0)}" text="{level}" pivot="left" justify="center" width="65" font_size="30" color="{color_fg}" visible="{hasentry}" /-->
 					<!--label depth="3" pos="77,-${Round(height/2,0)}" text="{text}" pivot="left" justify="left" width="493" font_size="24" color="{color_fg}" visible="{hasentry}" /-->

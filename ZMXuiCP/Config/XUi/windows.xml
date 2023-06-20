@@ -242,6 +242,9 @@
 				<sprite name="windowIcon" depth="2" pos="99999,99999" size="0,0" style="icon32px" sprite="{itemgroupicon}" />
 				<sprite name="costIcon" depth="4" pos="99999,99999" size="0,0" sprite="ui_game_symbol_coin" color="[white]" foregroundlayer="true" />
 
+				<button name="addQualityButton" depth="12" pos="320,-195" size="30,30" style="press" pivot="center" sprite="ui_game_symbol_arrow_right" sound="[paging_click]" disabledcolor="[lightGrey]" enabled="{enableaddquality}" visible="{hasdurability}" />
+				<button name="subtractQualityButton" depth="12" pos="60,-195" size="30,30" style="press" pivot="center" sprite="ui_game_symbol_arrow_left" sound="[paging_click]" disabledcolor="[lightGrey]" enabled="{enablesubtractquality}" visible="{hasdurability}" />
+
 				<rect name="smxui_window_content" depth="3" pos="20,-80" width="340" height="700">
 
 					<sprite name="backdropWindow" depth="1" pos="0,-5" width="340" height="690" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />

@@ -1,7 +1,7 @@
 Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
 
-xuiChangeLogHeaderUI,UI,Menu,x,,ChangeLog - SMXui - r20.rc8
-xuiChangeLogUI,UI,Menu,x,,[AF1E19]*[-]  ADDED: New skills window design.\n[AF1E19]*[-]  CHANGE: Back end skills window improvements.\n[AF1E19]*[-]  FIXED: A bug in the map window.\n[AF1E19]*[-]  FIXED: Skills window bug fixes.\n[AF1E19][-]  \n[AF1E19][-]  \n,,,,,
+xuiChangeLogHeaderUI,UI,Menu,x,,ChangeLog - SMXui - 21.0.317.0
+xuiChangeLogUI,UI,Menu,x,,[AF1E19]*[-]  CHANGE: Updated for A21.\n[AF1E19]*[-]  CHANGE: Updated ModInfo.xml to v2.\n[AF1E19]*[-]  CHANGE: Skills window removed for A21.\n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n,,,,,
 
 xuiPointsAvailableNew,UI,XUI,,,Points Available,,Verfügbare(r) Punkt(e),Punto(s) disponible(s),Point(s) disponible(s),Punto/i disponibile/i,利用可能ポイント,사용 가능한 포인트,Dostępne punkty:,Ponto(s) disponível(eis),Доступны очки:,Kullanılabilir Puan,可用点数,可用分數,Punto(s) disponible(s)
 
@@ -25,3 +25,5 @@ modDyePurple,item_modifiers,mod,,,Purple,,Lila,Lila,violet,Viola,紫,보라색,F
 modDyeRed,item_modifiers,mod,,,Red,,Rot,Rojo,rouge,Rosso,赤,빨간색,Czerwone,Vermelho,Красный,Kırmızı,红,紅,Rojo
 modDyeWhite,item_modifiers,mod,,,Solvent,,Flüssig,Disolvente,solvant,Solvente,溶剤,하얀색,Rozpuszczalnik,Solvente,Растворитель,Çözücü,溶剂,溶劑,Disolvente
 modDyeYellow,item_modifiers,mod,,,Yellow,,Gelb,Amarillo,jaune,Giallo,黄,노란색,Żółty,Amarelo,Желтый,Sarı,黄,黃,Amarillo
+
+statEntityDamageRanged,ui_display,Item stat,,,Damage,,Schaden,Daño,Dommage,Danno,ダメージ,손상,Szkoda,Dano,Повреждать,Zarar,损害,損害,Daño

@@ -4,9 +4,9 @@
 
 		// EAC:				Non Friendly, SMX requires EAC to be DISABLED.
 
-		// VERSION:			r20.rc8
+		// VERSION:			21.0.317.0
 
-		// BUILD:			A20.6
+		// BUILD:			A21.0
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -49,6 +49,17 @@
 
 		// CONTRIBUTORS:	Mumpfy (art)
 -->
+
+<!--	// SMX // Window Background -->
+
+
+		<append xpath="/windows">
+			<window name="smxWindowBackground" depth="0" width="1920" height="1080">
+				<sprite name="Background" depth="0" pos="0,0" sprite="smxlib_window_background" type="sliced" color="0,0,0,255" anchor_left="#cam,0,-5" anchor_bottom="#cam,0,-5" anchor_right="#cam,1,5" anchor_top="#cam,1,5" />
+				<sprite name="Background" depth="0" pos="0,0" sprite="smxlib_window_background_detail" type="sliced" color="0,0,0,255" anchor_left="#cam,0,-5" anchor_bottom="#cam,0,-5" anchor_right="#cam,1,5" anchor_top="#cam,1,5" />
+			</window>
+		</append>
+
 
 <!--	// SMX // Mouseover Tooltip -->
 
@@ -210,9 +221,34 @@
 					</rect>
 				</panel>
 
-				<grid name="items" pos="-190,20" width="640" height="120" rows="4" cols="2" cell_width="340" cell_height="36" repeat_content="true" controller="DialogResponseList" arrangement="vertical">
-					<smxui_response_entry id="0" enabled_color="[iconColor]" disabled_color="[disabledLabelColor]" row_color="[white]" hover_color="[lightGrey]" />
-				</grid>
+				<scrollbar	name="scrollbar"
+							depth="6"
+							pos="500,-50"
+							width="12"
+							height="120"
+							padding="4"
+							foregroundname="handler"
+							foregroundsprite="smxlib_scrollbar_handler"
+							foregroundcolor="[smxui_scrollbar_handler]"
+							backgroundname="background"
+							backgroundsprite="smxlib_scrollbar_background"
+							backgroundcolor="[smxui_scrollbar_background]"
+							pivot="center"
+							globalopacitymod="1.8">
+
+					<button name="handler" sprite="smxlib_scrollbar_handler" pivot="center" hovercolor="[smxui_scrollbar_handler_hover]" color="[smxui_scrollbar_handler]" defaultcolor="[smxui_scrollbar_handler]" hoverscale="1" />
+					<button name="background" sprite="smxlib_scrollbar_background" pivot="center" hovercolor="[smxui_scrollbar_background_hover]" color="[smxui_scrollbar_background]" defaultcolor="[smxui_scrollbar_background]" hoverscale="1" sound_play_on_press_down="[paging_click]" />
+				</scrollbar>
+
+				<scrollview name="scrollview" depth="5" pos="-190,25" width="640" height="150" scrollbar="scrollbar" reset_position="true" over_scroll="false" scroll_speed="2.5">
+<!--sprite color="[red]" type="sliced" /-->
+
+					<grid name="items" pos="0,0" width="640" height="120" rows="30" cols="2" cell_width="340" cell_height="36" repeat_content="true" controller="DialogResponseList" arrangement="vertical">
+						<smxui_response_entry id="0" enabled_color="[iconColor]" disabled_color="[disabledLabelColor]" row_color="[white]" hover_color="[lightGrey]" />
+					</grid>
+
+				</scrollview>
+
 			</window>
 		</append>
 
@@ -424,13 +460,13 @@
 					<!--grid name="recipes" depth="5" pos="44,-130" width="68" height="68" rows="6" cols="5" cell_width="68" cell_height="68" arrangement="horizontal" controller="RecipeList" repeat_content="true">
 						<smxui_crafting_recipe_entry_grid name="0" />
 					</grid-->
-					<!--grid name="recipes" depth="5" pos="10,-100" width="345" height="70" rows="5" cols="1" cell_width="346" cell_height="75" arrangement="vertical" controller="RecipeList" repeat_content="true">
-						<smxui_crafting_recipe_entry_list name="0" />
-					</grid-->
-					<!-- >>> SMX COMMENT: Do NOT remove the commented section. "BACKUP" entries of GRID vs LIST crafting layout. <<< -->
 					<grid name="recipes" depth="5" pos="10,-100" width="345" height="70" rows="5" cols="1" cell_width="346" cell_height="75" arrangement="vertical" controller="RecipeList" repeat_content="true">
 						<smxui_crafting_recipe_entry_list name="0" />
 					</grid>
+					<!-- >>> SMX COMMENT: Do NOT remove the commented section. "BACKUP" entries of GRID vs LIST crafting layout. <<< -->
+					<!--grid name="recipes" depth="5" pos="10,-100" width="345" height="70" rows="5" cols="1" cell_width="346" cell_height="75" arrangement="vertical" controller="RecipeList" repeat_content="true">
+						<smxui_crafting_recipe_entry_list name="0" />
+					</grid-->
 
 					<rect name="smxui_pager_module" depth="5" pos="10,-512" width="340" height="40">
 						<rect pos="120,0" width="340" height="40">
@@ -454,6 +490,45 @@
 
 					<grid name="queue" depth="10" pos="34,-34" rows="1" cols="5" cell_width="68" cell_height="68" repeat_content="true">
 						<smxui_crafting_recipe_stack name="0"/>
+					</grid>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Dew Collector -->
+
+		<remove xpath="/windows/window[@name='windowDewCollector']" />
+
+		<append xpath="/windows">
+			<window name="windowDewCollector" depth="2" width="{windowWidth}" height="378" panel="Left" anchor_side="bottomright" controller="DewCollectorWindow" window_grid_width_difference="50" cursor_area="true" visible="false">
+
+				<rect name="smx_dewcollector_design" anchor_left="queue,0,0" anchor_right="queue,1,0">
+					<sprite name="smxui_window_header_background" anchor_left="queue,0,-60" anchor_right="queue,1,-5" depth="3" height="65" sprite="smxlib_window_header_background" color="[smxui_element_header_background]" globalopacitymod="1.4" />
+					<sprite name="smxui_window_header_separator" depth="4" pos="20,-61" anchor_left="queue,0,-40" anchor_right="queue,1,-20" height="5" sprite="smxlib_separation_line_1" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
+
+					<label name="lootName" depth="5" pos="75,-40" anchor_left="queue,0,-30" anchor_right="queue,1,-20" width="172" height="36" style="smxcore_window_title" text_key="xuiDewCollector" overflow="ShrinkContent" />
+
+					<sprite name="smxui_window_category_background" depth="3" pos="5,-63" anchor_left="queue,0,-60" anchor_right="queue,1,-10" height="50" sprite="smxlib_window_category_background" color="[smxui_element_background]" globalopacitymod="1.1" />
+					<sprite name="smxui_window_category_separator" depth="4" pos="20,-112" anchor_left="queue,0,-40" anchor_right="queue,1,-20" height="3" sprite="smxlib_separation_line_2" flip="vertically" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
+
+					<rect name="containerControl" depth="9" pos="30,0" anchor_top="queue,1,82" pivot="topleft" controller="ContainerStandardControls" createuiwidget="true" visible="{buttons_visible}">
+						<!--button name="btnMoveFillStacks" depth="3" pos="30,0" size="40,40" style="press, hover, smxcore_icon_colors" sprite="smxlib_ui_game_symbol_dumpfill" pivot="center" flip="horizontally" tooltip_key="lblStashFillStacks" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
+						<button name="btnMoveSmart" depth="3" pos="90,0" size="40,40" style="press, hover, smxcore_icon_colors" sprite="smxlib_ui_game_symbol_dumpsmart" pivot="center" flip="horizontally" tooltip_key="lblStashSmart" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
+						<button name="btnMoveAll" depth="3" pos="150,0" size="40,40" style="press, hover, smxcore_icon_colors" sprite="smxlib_ui_game_symbol_dumpall" pivot="center" flip="horizontally" tooltip="{take_all_tooltip}" sound_play_on_hover="[default_hover]" sound="[paging_click]" />
+						<button name="btnSort" depth="3" pos="0,0" size="40,40" anchor_left="queue,1,-90" anchor_right="queue,1,-50" style="press, hover, smxcore_icon_colors" sprite="smxlib_ui_game_symbol_sort" pivot="center" tooltip_key="lblSortContainer" sound_play_on_hover="[default_hover]" sound="[paging_click]" /-->
+					</rect>
+				</rect>
+					
+				<rect name="content" pos="20,-135">
+					<sprite name="smxui_window_background" depth="1" pos="0,0" anchor_left="queue,0,-60" anchor_bottom="queue,0,0" anchor_right="queue,1,-5" anchor_top="queue,1,170" sprite="smxlib_window_background_detail" color="[smxui_element_background]" globalopacitymod="1.0" on_press="true" />
+					<sprite name="smxui_window_foreground" depth="2" pos="0,0" anchor_left="queue,0,-60" anchor_bottom="queue,0,0" anchor_right="queue,1,-5" anchor_top="queue,1,170" sprite="smxlib_window_background" color="[smxui_element_background]" globalopacitymod="1.6" on_press="true" />
+
+					<sprite name="backdropWindow" depth="3" pos="0,0" anchor_left="queue,0,-45" anchor_bottom="queue,0,25" anchor_right="queue,1,-20" anchor_top="queue,1,45" sprite="smxlib_window_background" flip="vertically" color="[smxui_element_backdrop_1]" globalopacitymod="1.1" />
+
+					<sprite name="backgroundMain" depth="4" pos="0,0" anchor_left="queue,0,-35" anchor_bottom="queue,0,35" anchor_right="queue,1,-35" anchor_top="queue,1,35" sprite="menu_empty" type="sliced" color="[black]" />
+					<grid name="queue" depth="12" pos="35,-35" rows="1" cols="3" cell_width="68" cell_height="68" repeat_content="true" controller="DewCollectorContainer">
+						<smx_dewcollector_stack controller="DewCollectorStack" override_stack_count="1" name="0" cell_width="68" cell_height="68" />
 					</grid>
 				</rect>
 			</window>
@@ -739,7 +814,7 @@
 
 					<button name="button" width="150" height="40" sprite="smxui_button_background" defaultcolor="[smxui_element_accentcolor_1]" hoversprite="smxui_button_background" hovercolor="[white]" hoverscale="1.0" disabledcolor="[white]" />
 
-					<sprite name="flameIcon" depth="5" pos="88,-597" size="25,25" sprite="ui_game_symbol_fire" />
+					<!--sprite name="flameIcon" depth="5" pos="88,-597" size="25,25" sprite="ui_game_symbol_fire" /-->
 
 					<label name="burnTimeLeft" depth="4" pos="102,-333" width="60" height="22" style="smxcore_label_normal" text="00:00" font_size="22" pivot="center" justify="center" color="[smxui_element_labelcolor_2]" overflow="ShrinkContent" />
 					<smxcore_modular_frame name="smxui_fuel_burntime" depth="1" pos="72,-319" width="64" height="25" pivot="center" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
@@ -827,8 +902,8 @@
 
 					<sprite name="smxui_articon_hammer" depth="4" pos="22,498" width="25" height="25" sprite="ui_game_symbol_hammer" rotation="0" color="[smxui_element_accentcolor_2]" globalopacitymod="1.2" />
 
-					<sprite name="smxui_artline_vertical" depth="1" pos="34,-5" width="80" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
-					<sprite name="smxui_artline_horizontal" depth="1" pos="-40,-57" width="92" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
+					<sprite name="smxui_artline_vertical" depth="1" pos="34,-5" width="88" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
+					<sprite name="smxui_artline_horizontal" depth="1" pos="-40,-57" width="108" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
 
 					<sprite name="smxui_artbox_background_45" depth="2" pos="-5,485" width="54" height="54" sprite="smxlib_artbox_background" rotation="45" color="[smxui_element_background]" globalopacitymod="1.8" />
 					<sprite name="smxui_artbox_foreground_45" depth="3" pos="-2,484" width="50" height="50" sprite="smxlib_artbox_foreground" rotation="45" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
@@ -840,10 +915,14 @@
 <!--	// SMX // Workstation Output - Fuel -->
 
 		<append xpath="/windows">
-			<window name="windowOutputWorkstationFuel" depth="9" width="360" height="68" anchor="CenterTop" panel="Left" cursor_area="true" >
+			<window name="windowOutputWorkstationFuel" depth="99" width="360" height="68" anchor="CenterTop" panel="Left" cursor_area="true" controller="WorkstationOutputWindow">
 				<rect name="smxui_content_module" depth="0" pos="30,100" height="75" disablefallthrough="true" on_press="true">
 
 					<sprite name="backgroundMain" depth="2" width="340" height="68" sprite="menu_empty" type="sliced" color="[smxui_slot_main_background]" on_press="true" />
+
+					<rect name="smx_output_dump" depth="5" pos="481,-36" pivot="center" controller="ContainerStandardControls" createuiwidget="true" visible="{buttons_visible}">
+						<button name="btnMoveAll" depth="3" pos="0,0" size="28,28" style="press, hover" pivot="center" sprite="smxlib_ui_game_symbol_dumpall" flip="horizontally" globalopacitymod="1.2" sound="[paging_click]" tooltip="{take_all_tooltip}" />
+					</rect>
 
 					<grid name="inventory" depth="10" pos="34,-34" rows="1" cols="5" cell_width="68" cell_height="68" repeat_content="true" controller="WorkstationOutputGrid">
 						<smxui_output_item_stack name="0"/>
@@ -856,10 +935,25 @@
 <!--	// SMX // Workstation Output - NoFuel -->
 
 		<append xpath="/windows">
-			<window name="windowOutputWorkstationNoFuel" depth="9" width="360" height="68" anchor="CenterTop" panel="Left" cursor_area="true" >
+			<window name="windowOutputWorkstationNoFuel" depth="99" width="360" height="68" anchor="CenterTop" panel="Left" cursor_area="true" controller="WorkstationOutputWindow">
 				<rect name="smxui_content_module" depth="0" pos="30,100" height="75" disablefallthrough="true" on_press="true">
 
 					<sprite name="backgroundMain" depth="2" width="340" height="68" sprite="menu_empty" type="sliced" color="[smxui_slot_main_background]" on_press="true" />
+
+					<rect name="smx_output_dump" depth="5" pos="413,-36" pivot="center" controller="ContainerStandardControls" createuiwidget="true" visible="{buttons_visible}">
+
+						<!--sprite name="smxui_artline_vertical" depth="1" pos="34,100" width="120" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
+						<sprite name="smxui_artline_horizontal" depth="1" pos="-3,-6" width="72" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_separation_1]" globalopacitymod="1.2" /-->
+
+						<button name="btnMoveAll" depth="3" pos="0,0" size="28,28" style="press, hover" pivot="center" sprite="smxlib_ui_game_symbol_dumpall" flip="horizontally" globalopacitymod="1.2" sound="[paging_click]" tooltip="{take_all_tooltip}" />
+
+						<!--sprite name="smxui_artline_vertical" depth="1" pos="34,-25" width="80" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="270" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
+						<sprite name="smxui_artline_horizontal" depth="1" pos="-40,-87" width="92" height="3" sprite="smxlib_separation_line_1" flip="vertically" rotation="0" color="[smxui_element_separation_1]" globalopacitymod="1.2" /-->
+
+						<sprite name="smxui_artbox_background_45" depth="2" pos="-38,0" width="54" height="54" sprite="smxlib_artbox_background" rotation="45" color="[smxui_element_background]" globalopacitymod="1.8" />
+						<sprite name="smxui_artbox_foreground_45" depth="3" pos="-35,1" width="50" height="50" sprite="smxlib_artbox_foreground" rotation="45" color="[smxui_element_separation_1]" globalopacitymod="1.2" />
+
+					</rect>
 
 					<grid name="inventory" depth="10" pos="34,-34" rows="1" cols="5" cell_width="68" cell_height="68" repeat_content="true" controller="WorkstationOutputGrid">
 						<smxui_output_item_stack name="0"/>
@@ -1226,7 +1320,7 @@
 		<remove xpath="/windows/window[@name='ActiveBuffsWindow']" />
 
 		<append xpath="/windows">
-			<window name="ActiveBuffsWindow" depth="4" width="68" height="68" panel="Left" Controller="ActiveBuffWindow" cursor_area="true" >
+			<window name="ActiveBuffsWindow" depth="4" width="68" height="68" panel="Left" cursor_area="true" >
 
 				<rect name="smxui_content_module" depth="5" pos="405,680" width="68" height="510">
 
@@ -1522,10 +1616,10 @@
 
 <!--	// SMX // Attribute List Window - "Categories" -->
 
-		<remove xpath="/windows/window[@name='windowSkillList']" />
+		<!--remove xpath="/windows/window[@name='windowSkillList']" /-->
 
 		<append xpath="/windows">
-			<window name="windowSkillList" depth="2" width="1500" height="800" panel="Center" controller="SMXcore.SkillListWindow, SMXcore" cursor_area="true" >
+			<window name="SMXwindowSkillList" depth="2" width="1500" height="800" panel="Center" controller="SMXcore.SkillListWindow, SMXcore" cursor_area="true" >
 
 				<smxcore_window_design name="windowName" depth="1" width="1500" height="800" text="" text_key="{titlename}" />
 
@@ -1639,10 +1733,10 @@
 
 <!--	// SMX // Skill Window - Attribute Info Window -->
 
-		<remove xpath="/windows/window[@name='windowSkillAttributeInfo']" />
+		<!--remove xpath="/windows/window[@name='windowSkillAttributeInfo']" /-->
 
 		<append xpath="/windows">
-			<window name="windowSkillAttributeInfo" depth="3" width="640" height="68" panel="Center" controller="SkillAttributeInfoWindow" cursor_area="true" hidden_entries_with_paging="2" >
+			<window name="SMXwindowSkillAttributeInfo" depth="3" width="640" height="68" panel="Center" controller="SkillAttributeInfoWindow" cursor_area="true" hidden_entries_with_paging="2" >
 
 				<rect name="smxui_main_content_module" depth="5" pos="1080,-73" width="380" height="710">
 
@@ -1722,11 +1816,11 @@
 
 <!--	// SMX // Skill Window - Skill Skill Info -->
 
-		<remove xpath="/windows/window[@name='windowSkillSkillInfo']" />
+		<!--remove xpath="/windows/window[@name='windowSkillSkillInfo']" /-->
 
 
 		<append xpath="/windows">
-			<window name="windowSkillSkillInfo" depth="3" width="647" height="68" panel="Center" controller="SkillSkillInfoWindow" cursor_area="true" >
+			<window name="SMXwindowSkillSkillInfo" depth="3" width="647" height="68" panel="Center" controller="SkillSkillInfoWindow" cursor_area="true" >
 
 				<rect pos="1000,0">
 
@@ -1800,10 +1894,10 @@
 
 <!--	// SMX // Skill Window - Skill Perk Info -->
 
-		<remove xpath="/windows/window[@name='windowSkillPerkInfo']" />
+		<!--remove xpath="/windows/window[@name='windowSkillPerkInfo']" /-->
 
 		<append xpath="/windows">
-			<window name="windowSkillPerkInfo" depth="3" width="640" height="68" panel="Center" controller="SkillPerkInfoWindow" cursor_area="true" hidden_entries_with_paging="2" >
+			<window name="SMXwindowSkillPerkInfo" depth="3" width="640" height="68" panel="Center" controller="SkillPerkInfoWindow" cursor_area="true" hidden_entries_with_paging="2" >
 
 				<rect name="smxui_main_content_module" depth="5" pos="1080,-73" width="380" height="710">
 
@@ -1883,10 +1977,10 @@
 
 <!--	// SMX // Skill Window - Skill Book Info -->
 
-		<remove xpath="/windows/window[@name='windowSkillBookInfo']" />
+		<!--remove xpath="/windows/window[@name='windowSkillBookInfo']" /-->
 
 		<append xpath="/windows">
-			<window name="windowSkillBookInfo" depth="3" width="640" height="68" panel="Center" controller="SkillBookInfoWindow" cursor_area="true" hidden_entries_with_paging="1" >
+			<window name="SMXwindowSkillBookInfo" depth="3" width="640" height="68" panel="Center" controller="SkillBookInfoWindow" cursor_area="true" hidden_entries_with_paging="1" >
 
 				<rect name="smxui_main_content_module" depth="5" pos="1080,736" width="380" height="710">
 

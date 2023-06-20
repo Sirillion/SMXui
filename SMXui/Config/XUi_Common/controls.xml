@@ -124,7 +124,8 @@
 						<sprite name="frameTop" depth="4" pos="50,0" width="${width-100}" height="3" sprite="smxlib_window_input_frame_top" color="[smxui_element_input_frame]" globalopacitymod="1.8" />
 						<sprite name="frameRight" depth="3" pos="${width-52},-3" width="3" height="36" sprite="smxlib_window_input_frame_right" color="[smxui_element_input_frame]" globalopacitymod="1.8" />
 						<sprite name="frameBottom" depth="4" pos="50,-37" width="${width-100}" height="3" sprite="smxlib_window_input_frame_bottom" color="[smxui_element_input_frame]" globalopacitymod="1.8" />
-						<textfield name="searchInput" depth="2" pos="${width/2},${-height/2}" width="${width-104}" height="36" pivot="center" search_field="true" virtual_keyboard_prompt="vkPromptSearchTerm" close_group_on_tab="true" />
+						<textfield name="searchInput" depth="2" pos="${width/2-118},${-height/2+20}" width="${width-104}" height="${height}" search_field="true" virtual_keyboard_prompt="vkPromptSearchTerm" close_group_on_tab="true" clear_button="true" />
+						<!--textfield name="searchInput" depth="2" pos="${width/2},${-height/2}" width="${width-104}" height="${height}" pivot="center" search_field="true" virtual_keyboard_prompt="vkPromptSearchTerm" close_group_on_tab="true" clear_button="true" /-->
 					</rect>
 				</rect>
 			</smxui_search_content_module>

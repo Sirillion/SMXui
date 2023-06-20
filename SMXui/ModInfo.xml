@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <xml>
-	<ModInfo>
-		<Name value="SMXui" />
-		<Description value="A UI conversion modlet with custom assets for 7 Days To Die." />
-		<Author value="Sirillion" />
-		<Version value="r20.rc8" />
-		<Website value="http://www.nexusmods.com/7daystodie/mods/22/?" />
-	</ModInfo>
+	<Name value="SMXui" />
+	<Author value="Sirillion" />
+	<Description value="A UI conversion modlet for 7 Days To Die." />
+	<DisplayName value="SMXui" />
+	<Website value="http://www.nexusmods.com/7daystodie/mods/22/?" />
+	<Version value="21.0.317.0" />
 </xml>

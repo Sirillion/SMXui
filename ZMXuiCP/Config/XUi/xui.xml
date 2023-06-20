@@ -4,9 +4,9 @@
 
 		// EAC:				Friendly
 
-		// VERSION:			r20.rc7
+		// VERSION:			21.0.317.0
 
-		// BUILD:			A20.6
+		// BUILD:			A21.0
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -118,6 +118,7 @@
 <!--	// SMX // Backpack Window -->
 
 		<set xpath="/xui/ruleset[@name='default']/window_group[@name='backpack']">
+			<!--window name="smxWindowBackground" /-->
 			<window name="itemInfoPanel" />
 			<window name="emptyInfoPanel" />
 			<window name="windowBackpack" />
@@ -311,16 +312,16 @@
 
 
 <!--	// SMX // Skill Windows -->
-		<set xpath="/xui/ruleset[@name='default']/window_group[@name='skills']">
-			<window name="windowSkillList" />
+		<!--set xpath="/xui/ruleset[@name='default']/window_group[@name='skills']">
+			<window name="windowSkillList" /-->
 			<!--window name="windowSkillInfo" /--> <!-- A20 - CUT! -->
-			<window name="windowSkillAttributeInfo" />
+			<!--window name="windowSkillAttributeInfo" />
 			<window name="windowSkillSkillInfo" />
 			<window name="windowSkillPerkInfo" />
 			<window name="windowSkillBookInfo" />
 		</set>
 
-		<setattribute xpath="/xui//window_group[@name='skills']" name="controller">SMXcore.SkillWindowGroup, SMXcore</setattribute>
+		<setattribute xpath="/xui//window_group[@name='skills']" name="controller">SMXcore.SkillWindowGroup, SMXcore</setattribute-->
 
 
 <!--	// SMX // Map Windows -->
