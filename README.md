@@ -1,5 +1,5 @@
 # SMXui - THE UI REPLACEMENT MODLET
-> Verified to work with: A20.6B9
+> Verified to work with: A21.0B317
 
 > Dependencies: [SMXcore](https://github.com/Sirillion/SMXcore), ZMXuiCP(part of this repo).
 
@@ -8,7 +8,7 @@
 
 ## **DESCRIPTION:**
 
-With the release of A20 SMXhud has now evolved into the world of Harmony. This means that it does now mod deeper than ever before and that opens the door for more and better features. On the flip side this means it is no longer EAC friendly, so turn EAC off.
+With the release of A21 SMXhud has now evolved into the world of Harmony. This means that it does now mod deeper than ever before and that opens the door for more and better features. On the flip side this means it is no longer EAC friendly, so turn EAC off.
 
 SMXui is an extension of SMXhud and SMXmenu and will bring the art style over to the rest of the user interface. We've tried to maintain as close a relation to the vanilla interface as possible but we have also granted ourselves some artistic freedom when it comes to some areas. It deviates from vanilla with the fifth crafting queue slot which I added to make it fit the overall design better. The other changes we made are all optional like the third forge slot, the target health bar and the big bag conversion modlets for those that want a bit bigger bags.
 
