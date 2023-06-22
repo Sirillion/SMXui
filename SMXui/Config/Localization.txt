@@ -1,7 +1,7 @@
 Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
 
-xuiChangeLogHeaderUI,UI,Menu,x,,ChangeLog - SMXui - 21.0.317.0
-xuiChangeLogUI,UI,Menu,x,,[AF1E19]*[-]  CHANGE: Updated for A21.\n[AF1E19]*[-]  CHANGE: Updated ModInfo.xml to v2.\n[AF1E19]*[-]  CHANGE: Skills window removed for A21.\n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n,,,,,
+xuiChangeLogHeaderUI,UI,Menu,x,,ChangeLog - SMXui - 21.0.317.1
+xuiChangeLogUI,UI,Menu,x,,[AF1E19]*[-]  FIXED: Reference for dropped backpack in loot.xml.\n[AF1E19]*[-]  FIXED: Disabled player model in conversation. (Until bug is fixed)\n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n,,,,,
 
 xuiPointsAvailableNew,UI,XUI,,,Points Available,,Verfügbare(r) Punkt(e),Punto(s) disponible(s),Point(s) disponible(s),Punto/i disponibile/i,利用可能ポイント,사용 가능한 포인트,Dostępne punkty:,Ponto(s) disponível(eis),Доступны очки:,Kullanılabilir Puan,可用点数,可用分數,Punto(s) disponible(s)
 

@@ -2,6 +2,6 @@
 
 <!--	// SMX // Player Dropped Backpack Size Adaptation -->
 
-		<set xpath="/lootcontainers/lootcontainer[@id='2']/@size">8,9</set>
+		<set xpath="/lootcontainers/lootcontainer[@name='playerBackpack']/@size">8,9</set>
 
 </SMXui>
