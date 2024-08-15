@@ -3,7 +3,7 @@
 <!--	// SMX // ItemInfo Window - Item Stats -->
 
 		<set xpath="ui_display_info/item_display/item_display_info[@display_type='rangedGun']">
-				<display_entry name="EntityDamage" icon="smxlib_ui_game_symbol_deadeye" display_type="Integer" title_key="statEntityDamageRanged" tags="perkGunslinger,revolver,perkBoomstick,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkTurrets,perkArchery,admin"/>
+				<display_entry name="EntityDamage" icon="smx_ui_game_symbol_deadeye" display_type="Integer" title_key="statEntityDamageRanged" tags="perkGunslinger,revolver,perkBoomstick,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkTurrets,perkArchery,admin"/>
 				<display_entry name="MagazineSize" icon="smxcore_ui_game_symbol_hexagon" title_key="statMagazineSize" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkTurrets,perkArchery,admin"/>
 				<display_entry name="RoundsPerMinute" icon="smxcore_ui_game_symbol_hexagon" title_key="statRoundsPerMinute" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkTurrets,perkArchery,admin"/>
 				<display_entry name="DamageFalloffRange" icon="smxcore_ui_game_symbol_hexagon" title_key="statDamageFalloffRange" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkTurrets,perkArchery,admin"/>

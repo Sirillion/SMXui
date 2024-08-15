@@ -18,8 +18,8 @@
 				<style_entry name="defaultcolor" 						value="[smxui_element_backdrop_1]" />
 				<style_entry name="selectedcolor" 						value="[smxui_element_accentcolor_1]" />
 				<style_entry name="disabledcolor" 						value="[smxui_element_button_background]" />
-				<style_entry name="hoversprite" 						value="smxui_button_background" />
-				<style_entry name="selectedsprite" 						value="smxui_button_background" />
+				<style_entry name="hoversprite" 						value="smx_button_background" />
+				<style_entry name="selectedsprite" 						value="smx_button_background" />
 				<style_entry name="globalopacitymod" 					value="1.2"/>
 				<style_entry name="sound" 								value="[paging_click]"/>
 			</style>
@@ -36,8 +36,8 @@
 				<style_entry name="defaultcolor" 						value="[smxui_element_backdrop_1]" />
 				<style_entry name="selectedcolor" 						value="[smxui_element_accentcolor_1]" />
 				<style_entry name="disabledcolor" 						value="[smxui_element_button_background]" />
-				<style_entry name="hoversprite" 						value="smxui_button_background" />
-				<style_entry name="selectedsprite" 						value="smxui_button_background" />
+				<style_entry name="hoversprite" 						value="smx_button_background" />
+				<style_entry name="selectedsprite" 						value="smx_button_background" />
 				<style_entry name="globalopacitymod" 					value="1.2"/>
 				<style_entry name="sound" 								value="[paging_click]"/>
 			</style>

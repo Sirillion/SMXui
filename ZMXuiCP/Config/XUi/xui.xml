@@ -302,13 +302,14 @@
 		<setattribute xpath="/xui//window_group[@name='questTurnIn']" name="open_backpack_on_open">true</setattribute>
 
 
-<!--	// SMX // Journal Window -->
-		<set xpath="/xui/ruleset[@name='default']/window_group[@name='journal']">
-			<window name="windowJournalList" />
-			<window name="windowJournalEntryDescription" />
+<!--	// SMX // Challenge Window -->
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='windowChallengeList']">
+			<window name="windowChallengeList" />
+			<window name="windowChallengeEntryDescription" />
 		</set>
 
-		<setattribute xpath="/xui//window_group[@name='journal']" name="controller">XUiC_JournalWindowGroup</setattribute>
+		<setattribute xpath="/xui//window_group[@name='windowChallengeList']" name="controller">XUiC_ChallengeEntryListWindow</setattribute>
+		<setattribute xpath="/xui//window_group[@name='windowChallengeEntryDescription']" name="controller">XUiC_ChallengeEntryDescriptionWindow</setattribute>
 
 
 <!--	// SMX // Skill Windows -->
