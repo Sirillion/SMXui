@@ -1,7 +1,7 @@
 # SMXui - THE UI REPLACEMENT MODLET
-> Verified to work with: A21.0B317
+> Verified to work with: 1.1B14
 
-> Dependencies: [SMXcore](https://github.com/Sirillion/SMXcore), ZMXuiCP(part of this repo).
+> Dependencies: [SMXcore](https://github.com/Sirillion/SMXcore)
 
 > Compatibility: Will probably work with most mods that doesn't modify the same windows in the XUI files.
 
