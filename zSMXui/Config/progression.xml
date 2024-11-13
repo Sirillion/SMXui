@@ -1,0 +1,876 @@
+<SMXui name="progression.xml">
+
+<!--	// SMX // Parent Skill Attribute Injection -->
+
+		<!-- SIRILLION: THIS CREATES A "NEW" ATTRIBUTE (CATEGORY) WHICH ALL THE PREVIOUS ATTRIBUTES "CONNECT" TO AS CHILDREN. -->
+
+		<insertBefore xpath="/progression/attributes/attribute[@name='attBooks']">
+			<attribute name="attSkills" name_key="attSkillsName" desc_key="attSkillsDesc" icon="smx_ui_skill_symbol_intellect" min_level="0" max_level="0" base_skill_point_cost="0" />
+		</insertBefore>
+
+
+<!--	// SMX // Book & Magazine Tweaks -->
+
+		<!-- SIRILLION: WE SET LOCALIZATION KEYS FOR USE IN THE BOOK AND MAGAZINE INFO WINDOWS. -->
+
+		<set xpath="/progression/attributes/attribute[@name='attBooks']/@name_key">attBooksName</set>
+		<set xpath="/progression/attributes/attribute[@name='attCrafting']/@name_key">attCraftingName</set>
+
+
+<!--	// SMX // Attribute Removal -->
+
+		<!-- SIRILLION: WE REMOVE THE "OLD" ATTRIBUTES (CATEGORIES) SO THAT THEY CAN BE MOVED DOWN INTO THE SKILLS. -->
+
+		<remove xpath="/progression/attributes/attribute[@name='attPerception']" />
+		<remove xpath="/progression/attributes/attribute[@name='attStrength']" />
+		<remove xpath="/progression/attributes/attribute[@name='attFortitude']" />
+		<remove xpath="/progression/attributes/attribute[@name='attAgility']" />
+		<remove xpath="/progression/attributes/attribute[@name='attIntellect']" />
+
+
+<!--	// SMX // Attribute > Perk Injection -->
+
+		<!-- SIRILLION: WE INJECT THE ATTRIBUTES AGAIN, BUT THIS TIME AS PERKS, NOT ATTRIBUTES. WE THEN SET THEIR PARENT TO BE THE "NEW" ATTRIBUTE WE INJECTED ABOVE. -->
+
+		<insertBefore xpath="/progression/perks/perk[@name='perkDeadEye']">
+			<perk name="attPerception" parent="attSkills" name_key="attPerceptionName" desc_key="attPerceptionDesc" icon="smx_ui_skill_symbol_perception" min_level="1" max_level="10" base_skill_point_cost="1" cost_multiplier_per_level="1.14">
+				<level_requirements level="1"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="2"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="3"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="4"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="5"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="6"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+				<level_requirements level="7"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+				<level_requirements level="8"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+				<level_requirements level="9"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+				<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+
+				<effect_group>
+					<requirement name="ItemHasTags" tags="attPerception"/>
+						<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
+						<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
+						<passive_effect name="DismemberChance" operation="base_add" level="2,10" value=".05,.45"/>
+				</effect_group>
+
+				<effect_group>
+					<effect_description level="1"  desc_key="attPerceptionRank01Desc" long_desc_key="attPerceptionRank01LongDesc"/>
+					<effect_description level="2"  desc_key="attPerceptionRank02Desc" long_desc_key="attPerceptionRank02LongDesc"/>
+					<effect_description level="3"  desc_key="attPerceptionRank03Desc" long_desc_key="attPerceptionRank03LongDesc"/>
+					<effect_description level="4"  desc_key="attPerceptionRank04Desc" long_desc_key="attPerceptionRank04LongDesc"/>
+					<effect_description level="5"  desc_key="attPerceptionRank05Desc" long_desc_key="attPerceptionRank05LongDesc"/>
+					<effect_description level="6"  desc_key="attPerceptionRank06Desc" long_desc_key="attPerceptionRank06LongDesc"/>
+					<effect_description level="7"  desc_key="attPerceptionRank07Desc" long_desc_key="attPerceptionRank07LongDesc"/>
+					<effect_description level="8"  desc_key="attPerceptionRank08Desc" long_desc_key="attPerceptionRank08LongDesc"/>
+					<effect_description level="9"  desc_key="attPerceptionRank09Desc" long_desc_key="attPerceptionRank09LongDesc"/>
+					<effect_description level="10" desc_key="attPerceptionRank10Desc" long_desc_key="attPerceptionRank10LongDesc"/>
+				</effect_group>
+
+				<effect_group>
+					<!-- Increase the chance to find armor crafting skill magazines with each perk rank up to crafting skill 100 -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,10" value="1,10" tags="armorCSM">
+						<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="LT" value="100"/>
+					</passive_effect>
+
+					<!-- Once armor crafting skill reaches 100, set the probability bonus of finding armor crafting skill magazines to 0 -->
+					<passive_effect name="LootProb" operation="base_set" level="1,10" value="1,1" tags="armorCSM">
+						<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="Equals" value="100"/>
+					</passive_effect>
+				</effect_group>
+			</perk>
+
+			<perk name="attStrength" parent="attSkills" name_key="attStrengthName" desc_key="attStrengthDesc" icon="smx_ui_skill_symbol_strength" min_level="1" max_level="10" base_skill_point_cost="1" cost_multiplier_per_level="1.14">
+				<level_requirements level="1"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="2"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="3"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="4"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="5"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="6"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+				<level_requirements level="7"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+				<level_requirements level="8"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+				<level_requirements level="9"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+				<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+
+				<effect_group>
+					<requirement name="ItemHasTags" tags="attStrength"/>
+						<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
+						<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
+						<passive_effect name="DismemberChance" operation="base_add" level="2,10" value=".05,.45"/>
+				</effect_group>
+
+				<effect_group>
+					<effect_description level="1" desc_key="attStrengthRank01Desc" long_desc_key="attStrengthRank01LongDesc"/>
+					<effect_description level="2" desc_key="attStrengthRank02Desc" long_desc_key="attStrengthRank02LongDesc"/>
+					<effect_description level="3" desc_key="attStrengthRank03Desc" long_desc_key="attStrengthRank03LongDesc"/>
+					<effect_description level="4" desc_key="attStrengthRank04Desc" long_desc_key="attStrengthRank04LongDesc"/>
+					<effect_description level="5" desc_key="attStrengthRank05Desc" long_desc_key="attStrengthRank05LongDesc"/>
+					<effect_description level="6" desc_key="attStrengthRank06Desc" long_desc_key="attStrengthRank06LongDesc"/>
+					<effect_description level="7" desc_key="attStrengthRank07Desc" long_desc_key="attStrengthRank07LongDesc"/>
+					<effect_description level="8" desc_key="attStrengthRank08Desc" long_desc_key="attStrengthRank08LongDesc"/>
+					<effect_description level="9" desc_key="attStrengthRank09Desc" long_desc_key="attStrengthRank09LongDesc"/>
+					<effect_description level="10" desc_key="attStrengthRank10Desc" long_desc_key="attStrengthRank10LongDesc"/>
+				</effect_group>
+
+				<effect_group>
+					<!-- Increase the chance to find armor crafting skill magazines with each perk rank up to crafting skill 100 -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,10" value="1,10" tags="armorCSM">
+						<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="LT" value="100"/>
+					</passive_effect>
+
+					<!-- Once armor crafting skill reaches 100, set the probability bonus of finding armor crafting skill magazines to 0 -->
+					<passive_effect name="LootProb" operation="base_set" level="1,10" value="1,1" tags="armorCSM">
+						<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="Equals" value="100"/>
+					</passive_effect>
+				</effect_group>
+			</perk>
+
+			<perk name="attFortitude" parent="attSkills" name_key="attFortitudeName" desc_key="attFortitudeDesc" icon="smx_ui_skill_symbol_fortitude" min_level="1" max_level="10" base_skill_point_cost="1" cost_multiplier_per_level="1.14">
+				<level_requirements level="1"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="2"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="3"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="4"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="5"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="6"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+				<level_requirements level="7"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+				<level_requirements level="8"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+				<level_requirements level="9"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+				<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+
+				<effect_group>
+					<requirement name="ItemHasTags" tags="attFortitude"/>
+					<requirement name="!IsAttachedToEntity" />
+						<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
+						<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
+						<passive_effect name="DismemberChance" operation="base_add" level="2,10" value=".05,.45"/>
+				</effect_group>
+
+				<effect_group>
+					<effect_description level="1" desc_key="attFortitudeRank01Desc" long_desc_key="attFortitudeRank01LongDesc"/>
+					<effect_description level="2" desc_key="attFortitudeRank02Desc" long_desc_key="attFortitudeRank02LongDesc"/>
+					<effect_description level="3" desc_key="attFortitudeRank03Desc" long_desc_key="attFortitudeRank03LongDesc"/>
+					<effect_description level="4" desc_key="attFortitudeRank04Desc" long_desc_key="attFortitudeRank04LongDesc"/>
+					<effect_description level="5" desc_key="attFortitudeRank05Desc" long_desc_key="attFortitudeRank05LongDesc"/>
+					<effect_description level="6" desc_key="attFortitudeRank06Desc" long_desc_key="attFortitudeRank06LongDesc"/>
+					<effect_description level="7" desc_key="attFortitudeRank07Desc" long_desc_key="attFortitudeRank07LongDesc"/>
+					<effect_description level="8" desc_key="attFortitudeRank08Desc" long_desc_key="attFortitudeRank08LongDesc"/>
+					<effect_description level="9" desc_key="attFortitudeRank09Desc" long_desc_key="attFortitudeRank09LongDesc"/>
+					<effect_description level="10" desc_key="attFortitudeRank10Desc" long_desc_key="attFortitudeRank10LongDesc"/>
+				</effect_group>
+
+				<effect_group>
+					<!-- Increase the chance to find armor crafting skill magazines with each perk rank up to crafting skill 100 -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,10" value="1,10" tags="armorCSM">
+						<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="LT" value="100"/>
+					</passive_effect>
+
+					<!-- Once armor crafting skill reaches 100, set the probability bonus of finding armor crafting skill magazines to 0 -->
+					<passive_effect name="LootProb" operation="base_set" level="1,10" value="1,1" tags="armorCSM">
+						<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="Equals" value="100"/>
+					</passive_effect>
+				</effect_group>
+			</perk>
+
+			<perk name="attAgility" parent="attSkills" name_key="attAgilityName" desc_key="attAgilityDesc" icon="smx_ui_skill_symbol_agility" min_level="1" max_level="10" base_skill_point_cost="1" cost_multiplier_per_level="1.14">
+				<level_requirements level="1"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="2"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="3"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="4"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="5"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="6"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+				<level_requirements level="7"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+				<level_requirements level="8"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+				<level_requirements level="9"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+				<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+
+				<effect_group>
+					<requirement name="ItemHasTags" tags="attAgility"/>
+						<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
+						<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
+						<passive_effect name="DismemberChance" operation="base_add" level="2,10" value=".05,.45"/>
+				</effect_group>
+
+				<effect_group>
+					<effect_description level="1" desc_key="attAgilityRank01Desc" long_desc_key="attAgilityRank01LongDesc"/>
+					<effect_description level="2" desc_key="attAgilityRank02Desc" long_desc_key="attAgilityRank02LongDesc"/>
+					<effect_description level="3" desc_key="attAgilityRank03Desc" long_desc_key="attAgilityRank03LongDesc"/>
+					<effect_description level="4" desc_key="attAgilityRank04Desc" long_desc_key="attAgilityRank04LongDesc"/>
+					<effect_description level="5" desc_key="attAgilityRank05Desc" long_desc_key="attAgilityRank05LongDesc"/>
+					<effect_description level="6" desc_key="attAgilityRank06Desc" long_desc_key="attAgilityRank06LongDesc"/>
+					<effect_description level="7" desc_key="attAgilityRank07Desc" long_desc_key="attAgilityRank07LongDesc"/>
+					<effect_description level="8" desc_key="attAgilityRank08Desc" long_desc_key="attAgilityRank08LongDesc"/>
+					<effect_description level="9" desc_key="attAgilityRank09Desc" long_desc_key="attAgilityRank09LongDesc"/>
+					<effect_description level="10" desc_key="attAgilityRank10Desc" long_desc_key="attAgilityRank10LongDesc"/>
+				</effect_group>
+
+				<effect_group>
+					<!-- Increase the chance to find armor crafting skill magazines with each perk rank up to crafting skill 100 -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,10" value="1,10" tags="armorCSM">
+						<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="LT" value="100"/>
+					</passive_effect>
+
+					<!-- Once armor crafting skill reaches 100, set the probability bonus of finding armor crafting skill magazines to 0 -->
+					<passive_effect name="LootProb" operation="base_set" level="1,10" value="1,1" tags="armorCSM">
+						<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="Equals" value="100"/>
+					</passive_effect>
+				</effect_group>
+			</perk>
+
+			<perk name="attIntellect" parent="attSkills" name_key="attIntellectName" desc_key="attIntellectDesc" icon="smx_ui_skill_symbol_intellect" min_level="1" max_level="10" base_skill_point_cost="1" cost_multiplier_per_level="1.14">
+				<level_requirements level="1"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="2"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="3"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="4"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="5"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+				<level_requirements level="6"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+				<level_requirements level="7"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+				<level_requirements level="8"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+				<level_requirements level="9"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+				<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+
+				<effect_group>
+					<requirement name="ItemHasTags" tags="attIntellect"/>
+						<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
+						<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
+						<passive_effect name="DismemberChance" operation="base_add" level="2,10" value=".05,.45"/>
+				</effect_group>
+
+				<effect_group>
+					<effect_description level="1" desc_key="attIntellectRank1Desc" long_desc_key="attIntellectRank1LongDesc"/>
+					<effect_description level="2" desc_key="attIntellectRank2Desc" long_desc_key="attIntellectRank2LongDesc"/>
+					<effect_description level="3" desc_key="attIntellectRank3Desc" long_desc_key="attIntellectRank3LongDesc"/>
+					<effect_description level="4" desc_key="attIntellectRank4Desc" long_desc_key="attIntellectRank4LongDesc"/>
+					<effect_description level="5" desc_key="attIntellectRank5Desc" long_desc_key="attIntellectRank5LongDesc"/>
+					<effect_description level="6" desc_key="attIntellectRank6Desc" long_desc_key="attIntellectRank6LongDesc"/>
+					<effect_description level="7" desc_key="attIntellectRank7Desc" long_desc_key="attIntellectRank7LongDesc"/>
+					<effect_description level="8" desc_key="attIntellectRank8Desc" long_desc_key="attIntellectRank8LongDesc"/>
+					<effect_description level="9" desc_key="attIntellectRank9Desc" long_desc_key="attIntellectRank9LongDesc"/>
+					<effect_description level="10" desc_key="attIntellectRank10Desc" long_desc_key="attIntellectRank10LongDesc"/>
+				</effect_group>
+
+				<effect_group>
+					<!-- Increase the chance to find armor crafting skill magazines with each perk rank up to crafting skill 100 -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,10" value="1,10" tags="armorCSM">
+						<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="LT" value="100"/>
+					</passive_effect>
+
+					<!-- Once armor crafting skill reaches 100, set the probability bonus of finding armor crafting skill magazines to 0 -->
+					<passive_effect name="LootProb" operation="base_set" level="1,10" value="1,1" tags="armorCSM">
+						<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="Equals" value="100"/>
+					</passive_effect>
+				</effect_group>
+			</perk>
+		</insertBefore>
+
+
+<!--	// SMX // "Unused" Skills Removal -->
+
+		<!-- SIRILLION: WE REMOVE THE "UNUSED" SKILLS, THESE ARE THERE JUST TO CREATE THE DIVERSION YOU SEE IN THE VANILLA WINDOW, WE DO NOT NEED THAT. -->
+
+		<remove xpath="/progression/skills/skill[@name='skillPerceptionCombat']" />
+		<remove xpath="/progression/skills/skill[@name='skillPerceptionGeneral']" />
+		<remove xpath="/progression/skills/skill[@name='skillPerceptionScavenging']" />
+
+		<remove xpath="/progression/skills/skill[@name='skillStrengthCombat']" />
+		<remove xpath="/progression/skills/skill[@name='skillStrengthGeneral']" />
+		<remove xpath="/progression/skills/skill[@name='skillStrengthConstruction']" />
+
+		<remove xpath="/progression/skills/skill[@name='skillFortitudeCombat']" />
+		<remove xpath="/progression/skills/skill[@name='skillFortitudeSurvival']" />
+		<remove xpath="/progression/skills/skill[@name='skillFortitudeRecovery']" />
+
+		<remove xpath="/progression/skills/skill[@name='skillAgilityCombat']" />
+		<remove xpath="/progression/skills/skill[@name='skillAgilityAthletics']" />
+		<remove xpath="/progression/skills/skill[@name='skillAgilityStealth']" />
+
+		<remove xpath="/progression/skills/skill[@name='skillIntellectCombat']" />
+		<remove xpath="/progression/skills/skill[@name='skillIntellectInfluence']" />
+		<remove xpath="/progression/skills/skill[@name='skillIntellectCraftsmanship']" />
+
+
+<!--	// SMX // Perk Re-order -->
+
+		<!-- SIRILLION: WE RE-ORDER SOME OF THE PERKS TO MAKE IT FIT BETTER. -->
+
+		<remove xpath="/progression/perks/perk[@name='perkMachineGunner']" />
+
+		<insertBefore xpath="/progression/perks/perk[@name='perkBrawler']">
+			<perk name="perkMachineGunner" parent="skillFortitudeCombat" name_key="perkMachineGunnerName" desc_key="perkMachineGunnerDesc" icon="ui_game_symbol_rifle">
+				<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="1" desc_key="reqFortitudeLevel01"/></level_requirements>
+				<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="3" desc_key="reqFortitudeLevel03"/></level_requirements>
+				<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="5" desc_key="reqFortitudeLevel05"/></level_requirements>
+				<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="7" desc_key="reqFortitudeLevel07"/></level_requirements>
+				<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="10" desc_key="reqFortitudeLevel10"/></level_requirements>
+
+				<effect_group>
+					<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1" tags="perkMachineGunner"/>
+					<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5" tags="perkMachineGunner"/>
+
+					<passive_effect name="RoundsPerMinute" operation="perc_add" level="1,5" value="0.05,0.25" tags="perkMachineGunner"/>
+					<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="1,5" value="0.1,0.3" tags="perkMachineGunner"/>
+
+					<passive_effect name="KickDegreesVerticalMin" operation="perc_add" level="0,5" value="0,-.03" tags="perkMachineGunner"/>
+					<passive_effect name="KickDegreesVerticalMax" operation="perc_add" level="0,5" value="0,-.15" tags="perkMachineGunner"/>
+					<passive_effect name="KickDegreesHorizontalMin" operation="perc_add" level="0,5" value="0,-.03" tags="perkMachineGunner"/>
+					<passive_effect name="KickDegreesHorizontalMax" operation="perc_add" level="0,5" value="0,-.15" tags="perkMachineGunner"/>
+
+					<passive_effect name="IncrementalSpreadMultiplier" operation="perc_add" level="1,5" value="-.03,-.15" tags="perkMachineGunner"/>
+
+					<!-- Increase the chance to find machine guns and ammo with each perk rank -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="machinegunSkill"/>
+					<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="ammo762mm"/>
+
+					<!-- Increase the chance to find machine gun crafting skill magazines with each perk rank up to crafting skill 100 -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="machineGunsCSM">
+						<requirement name="ProgressionLevel" progression_name="craftingMachineGuns" operation="LT" value="100"/>
+					</passive_effect>
+
+					<!-- Once machine gun crafting skill reaches 100, set the probability bonus of finding machine gun crafting skill magazines to 0 -->
+					<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="machineGunsCSM">
+						<requirement name="ProgressionLevel" progression_name="craftingMachineGuns" operation="Equals" value="100"/>
+					</passive_effect>
+
+					<!-- Increase the chance to find Automatic Weapons Handbook books until each book is read -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="autoWeaponsProb">
+						<requirement name="ProgressionLevel" progression_name="perkAutoWeaponsComplete" operation="LT" value="1"/>
+					</passive_effect>
+
+					<!-- When all Automatic Weapons Handbook books have been read, set the probability bonus of finding them to 0 -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="autoWeaponsProb">
+						<requirement name="ProgressionLevel" progression_name="perkAutoWeaponsComplete" operation="Equals" value="1"/>
+					</passive_effect>
+				</effect_group>
+
+				<effect_group>
+					<requirement name="ItemHasTags" tags="perkMachineGunner"/>
+
+						<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Stamina" operation="add" value="2">
+							<requirement name="ProgressionLevel" progression_name="perkMachineGunner" operation="Equals" value="3"/>
+							<requirement name="IsAlive" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Stamina" operation="add" value="4">
+							<requirement name="ProgressionLevel" progression_name="perkMachineGunner" operation="Equals" value="4"/>
+							<requirement name="IsAlive" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Stamina" operation="add" value="6">
+							<requirement name="ProgressionLevel" progression_name="perkMachineGunner" operation="Equals" value="5"/>
+							<requirement name="IsAlive" target="other"/>
+						</triggered_effect>
+
+					<effect_description level="1" desc_key="perkMachineGunnerRank1Desc" long_desc_key="perkMachineGunnerRank1LongDesc"/>
+					<effect_description level="2" desc_key="perkMachineGunnerRank2Desc" long_desc_key="perkMachineGunnerRank2LongDesc"/>
+					<effect_description level="3" desc_key="perkMachineGunnerRank3Desc" long_desc_key="perkMachineGunnerRank3LongDesc"/>
+					<effect_description level="4" desc_key="perkMachineGunnerRank4Desc" long_desc_key="perkMachineGunnerRank4LongDesc"/>
+					<effect_description level="5" desc_key="perkMachineGunnerRank5Desc" long_desc_key="perkMachineGunnerRank5LongDesc" />
+				</effect_group>
+			</perk>
+		</insertBefore>
+
+		<remove xpath="/progression/perks/perk[@name='perkGunslinger']" />
+
+		<insertBefore xpath="/progression/perks/perk[@name='perkArchery']">
+			<perk name="perkGunslinger" parent="skillAgilityCombat" max_level="5" name_key="perkGunslingerName" desc_key="perkGunslingerDesc" icon="ui_game_symbol_gunslinger">
+				<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="1" desc_key="reqAgilityLevel01"/></level_requirements>
+				<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="3" desc_key="reqAgilityLevel03"/></level_requirements>
+				<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="5" desc_key="reqAgilityLevel05"/></level_requirements>
+				<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="7" desc_key="reqAgilityLevel07"/></level_requirements>
+				<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="10" desc_key="reqAgilityLevel10"/></level_requirements>
+
+				<effect_group>
+					<passive_effect name="BlockDamage" operation="perc_add" level="0,5" value="0,1" tags="perkGunslinger"/>
+					<passive_effect name="EntityDamage" operation="perc_add" level="0,5" value="0,.5" tags="perkGunslinger"/>
+
+					<passive_effect name="RoundsPerMinute" operation="perc_add" level="0,5" value="0,0.25" tags="perkGunslinger"/>
+					<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="0,5" value="0,0.30" tags="perkGunslinger"/>
+
+					<passive_effect name="IncrementalSpreadMultiplier" operation="perc_add" level="0,5" value="0,-.25" tags="perkGunslinger"/>
+
+					<!-- Increase the chance to find handguns and ammo with each perk rank -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="handgunSkill"/>
+					<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="ammo9mm"/>
+
+					<!-- Increase the chance to find handgun crafting skill magazines with each perk rank up to crafting skill 100 -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="handgunsCSM">
+						<requirement name="ProgressionLevel" progression_name="craftingHandguns" operation="LT" value="100"/>
+					</passive_effect>
+
+					<!-- Once handgun crafting skill reaches 100, set the probability bonus of finding handgun crafting skill magazines to 0 -->
+					<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="handgunsCSM">
+						<requirement name="ProgressionLevel" progression_name="craftingHandguns" operation="Equals" value="100"/>
+					</passive_effect>
+					
+					<!-- Increase the chance to find Pistol Pete books until each book is read -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="pistolPeteProb">
+						<requirement name="ProgressionLevel" progression_name="perkPistolPeteComplete" operation="LT" value="1"/>
+					</passive_effect>
+
+					<!-- When all Pistol Pete books have been read, set the probability bonus of finding them to 0 -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="pistolPeteProb">
+						<requirement name="ProgressionLevel" progression_name="perkPistolPeteComplete" operation="Equals" value="1"/>
+					</passive_effect>
+					
+					<!-- Increase the chance to find Magnum Enforcer books until each book is read -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="enforcerProb">
+						<requirement name="ProgressionLevel" progression_name="perkEnforcerComplete" operation="LT" value="1"/>
+					</passive_effect>
+
+					<!-- When all Magnum Enforcer books have been read, set the probability bonus of finding them to 0 -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="enforcerProb">
+						<requirement name="ProgressionLevel" progression_name="perkEnforcerComplete" operation="Equals" value="1"/>
+					</passive_effect>
+				</effect_group>
+
+				<effect_group>
+					<requirement name="ItemHasTags" tags="perkGunslinger"/>
+						<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar=".GunslingerCombo" operation="add" value="1">
+							<requirement name="ProgressionLevel" progression_name="perkGunslinger" operation="GTE" value="3"/>
+							<requirement name="NotHasBuff" buff="buffPerkGunslingerBonus"/>
+							<requirement name="IsAlive" target="other"/>
+						</triggered_effect>
+
+						<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffPerkGunslinger">
+							<requirement name="ProgressionLevel" progression_name="perkGunslinger" operation="GTE" value="3"/>
+							<requirement name="NotHasBuff" buff="buffPerkGunslingerBonus"/>
+							<requirement name="IsAlive" target="other"/>
+						</triggered_effect>
+
+					<effect_description level="1" desc_key="perkGunslingerRank1Desc" long_desc_key="perkGunslingerRank1LongDesc"/>
+					<effect_description level="2" desc_key="perkGunslingerRank2Desc" long_desc_key="perkGunslingerRank2LongDesc"/>
+					<effect_description level="3" desc_key="perkGunslingerRank3Desc" long_desc_key="perkGunslingerRank3LongDesc"/>
+					<effect_description level="4" desc_key="perkGunslingerRank4Desc" long_desc_key="perkGunslingerRank4LongDesc"/>
+					<effect_description level="5" desc_key="perkGunslingerRank5Desc" long_desc_key="perkGunslingerRank5LongDesc"/>
+				</effect_group>
+			</perk>
+		</insertBefore>
+
+		<remove xpath="/progression/perks/perk[@name='perkTurrets']" />
+
+		<insertBefore xpath="/progression/perks/perk[@name='perkElectrocutioner']">
+			<perk name="perkTurrets" parent="skillIntellectCombat" name_key="perkTurretsName" desc_key="perkTurretsDesc" icon="ui_game_symbol_electric_turret">
+				<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="3" desc_key="reqIntellectLevel03"/></level_requirements>
+				<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="5" desc_key="reqIntellectLevel05"/></level_requirements>
+				<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="6" desc_key="reqIntellectLevel06"/></level_requirements>
+				<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="8" desc_key="reqIntellectLevel08"/></level_requirements>
+				<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="10" desc_key="reqIntellectLevel10"/></level_requirements>
+
+				<effect_group>
+					<passive_effect name="RoundsPerMinute" operation="perc_add" level="1,2,3,4,5" value=".125,.25,.375,.5,.5" tags="turretMelee"/>
+					<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" level="1,2,3,4,5" value=".125,.25,.375,.5,.5" tags="turretMelee,deployed"/> -->
+
+					<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="4,5" value="0.1,0.2" tags="perkTurrets"/>
+					<passive_effect name="MagazineSize" operation="base_add" level="1,5" value="10,50" tags="perkTurrets">
+						<requirement name="!ItemHasTags" tags="turretMelee"/>
+					</passive_effect>
+
+					<passive_effect name="RoundsPerMinute" operation="perc_add" level="1,2,3,4,5" value=".3,.7,1.1,1.5,1.5" tags="turretRanged"/>
+					<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" level="1,2,3,4,5" value=".3,.6,.9,1.2,1.2" tags="turretRanged"/> -->
+					<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" level="1,2,3,4,5" value=".3,.7,1.1,1.5,1.5" tags="turretRanged,deployed"/> -->
+
+					<passive_effect name="EntityDamage" operation="perc_add" level="1,2,3,4,5" value=".1,.2,.3,.4,.4" tags="perkTurrets"/>
+					<!-- <passive_effect name="EntityDamage" operation="perc_add" level="1,2,3,4,5" value=".1,.2,.3,.4,.4" tags="perkTurrets,deployed"/> -->
+					<passive_effect name="BlockDamage" operation="perc_add" level="1,2,3,4,5" value=".1,.2,.3,.4,.4" tags="turretMelee"/>
+
+					<passive_effect name="JunkTurretActiveCount" operation="base_set" value="0"/>
+					<passive_effect name="JunkTurretActiveCount" operation="base_add" level="5" value="1"/>
+						<!-- JunkTurretActiveCount,  default=1,  A value of 0 means that 1 turret can be active. Value of 2 means 3 turrets will be active. -->
+					<passive_effect name="JunkTurretActiveRange" operation="base_set" level="0,1,2,3,4,5" value="10,14,15,16,17,18"/>
+
+					<!-- Increase the chance to find batons and turrets with each perk rank -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="roboticsSkill"/>
+
+					<!-- Increase the chance to find robotic crafting skill magazines with each perk rank up to crafting skill 100 -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="roboticsCSM">
+						<requirement name="ProgressionLevel" progression_name="craftingRobotics" operation="LT" value="100"/>
+					</passive_effect>
+
+					<!-- Once robotic crafting skill reaches 100, set the probability bonus of finding robotic crafting skill magazines to 0 -->
+					<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="roboticsCSM">
+						<requirement name="ProgressionLevel" progression_name="craftingRobotics" operation="Equals" value="100"/>
+					</passive_effect>
+
+					<!-- Increase the chance to find Tech Junkie books until each book is read -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="techJunkieProb">
+						<requirement name="ProgressionLevel" progression_name="perkTechJunkie8Complete" operation="LT" value="1"/>
+					</passive_effect>
+
+					<!-- When all Tech Junkie books have been read, set the probability bonus of finding them to 0 -->
+					<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="techJunkieProb">
+						<requirement name="ProgressionLevel" progression_name="perkTechJunkie8Complete" operation="Equals" value="1"/>
+					</passive_effect>
+
+					<effect_description level="1" desc_key="perkTurretsRank1Desc" long_desc_key="perkTurretsRank1LongDesc"/>
+					<effect_description level="2" desc_key="perkTurretsRank2Desc" long_desc_key="perkTurretsRank2LongDesc"/>
+					<effect_description level="3" desc_key="perkTurretsRank3Desc" long_desc_key="perkTurretsRank3LongDesc"/>
+					<effect_description level="4" desc_key="perkTurretsRank4Desc" long_desc_key="perkTurretsRank4LongDesc"/>
+					<effect_description level="5" desc_key="perkTurretsRank5Desc" long_desc_key="perkTurretsRank5LongDesc"/>
+				</effect_group>
+			</perk>
+		</insertBefore>
+
+
+<!--	// SMX // Perception Tweaks -->
+
+		<!-- SIRILLION: WE SET EACH PERK TO HAVE THEIR NEW PARENT SINCE WE REMOVED THE SKILLS AND SET EACH PERK UP WITH THEIR CUSTOM ICON. -->
+
+		<set xpath="/progression/perks/perk[@name='perkDeadEye']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkDeadEye']/@icon">smx_ui_skill_symbol_deadeye</set>
+
+		<set xpath="/progression/perks/perk[@name='perkDemolitionsExpert']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkDemolitionsExpert']/@icon">smx_ui_skill_symbol_demolitionsexpert</set>
+
+		<set xpath="/progression/perks/perk[@name='perkJavelinMaster']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkJavelinMaster']/@icon">smx_ui_skill_symbol_javelinmaster</set>
+
+		<set xpath="/progression/perks/perk[@name='perkFlurryOfPerception']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkFlurryOfPerception']/@icon">smx_ui_skill_symbol_fop</set>
+
+		<set xpath="/progression/perks/perk[@name='perkInfiltrator']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkInfiltrator']/@icon">smx_ui_skill_symbol_perception</set>
+
+		<set xpath="/progression/perks/perk[@name='perkAnimalTracker']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkAnimalTracker']/@icon">smx_ui_skill_symbol_animaltracker</set>
+
+		<set xpath="/progression/perks/perk[@name='perkPenetrator']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkPenetrator']/@icon">smx_ui_skill_symbol_penetrator</set>
+
+		<set xpath="/progression/perks/perk[@name='perkLuckyLooter']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkLuckyLooter']/@icon">smx_ui_skill_symbol_luckylooter</set>
+
+		<set xpath="/progression/perks/perk[@name='perkTreasureHunter']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkTreasureHunter']/@icon">smx_ui_skill_symbol_treasurehunter</set>
+
+		<set xpath="/progression/perks/perk[@name='perkSalvageOperations']/@parent">attPerception</set>
+		<set xpath="/progression/perks/perk[@name='perkSalvageOperations']/@icon">smx_ui_skill_symbol_salvageoperations</set>
+
+
+<!--	// SMX // Strength Tweaks -->
+
+		<!-- SIRILLION: WE SET EACH PERK TO HAVE THEIR NEW PARENT SINCE WE REMOVED THE SKILLS AND SET EACH PERK UP WITH THEIR CUSTOM ICON. -->
+
+		<set xpath="/progression/perks/perk[@name='perkBoomstick']/@parent">attStrength</set>
+		<set xpath="/progression/perks/perk[@name='perkBoomstick']/@icon">smx_ui_skill_symbol_boomstick</set>
+
+		<set xpath="/progression/perks/perk[@name='perkPummelPete']/@parent">attStrength</set>
+		<set xpath="/progression/perks/perk[@name='perkPummelPete']/@icon">smx_ui_skill_symbol_pummelpete</set>
+
+		<set xpath="/progression/perks/perk[@name='perkSkullCrusher']/@parent">attStrength</set>
+		<set xpath="/progression/perks/perk[@name='perkSkullCrusher']/@icon">smx_ui_skill_symbol_skullcrusher</set>
+
+		<set xpath="/progression/perks/perk[@name='perkFlurryOfStrength']/@parent">attStrength</set>
+		<set xpath="/progression/perks/perk[@name='perkFlurryOfStrength']/@icon">smx_ui_skill_symbol_fos</set>
+
+		<set xpath="/progression/perks/perk[@name='perkHeavyArmor']/@parent">attStrength</set>
+		<set xpath="/progression/perks/perk[@name='perkHeavyArmor']/@icon">smx_ui_skill_symbol_heavyarmor</set>
+
+		<set xpath="/progression/perks/perk[@name='perkPackMule']/@parent">attStrength</set>
+		<set xpath="/progression/perks/perk[@name='perkPackMule']/@icon">smx_ui_skill_symbol_strength</set>
+
+		<set xpath="/progression/perks/perk[@name='perkMasterChef']/@parent">attStrength</set>
+		<set xpath="/progression/perks/perk[@name='perkMasterChef']/@icon">smx_ui_skill_symbol_masterchef</set>
+
+		<set xpath="/progression/perks/perk[@name='perkMiner69r']/@parent">attStrength</set>
+		<set xpath="/progression/perks/perk[@name='perkMiner69r']/@icon">smx_ui_skill_symbol_miner69er</set>
+
+		<set xpath="/progression/perks/perk[@name='perkMotherLode']/@parent">attStrength</set>
+		<set xpath="/progression/perks/perk[@name='perkMotherLode']/@icon">smx_ui_skill_symbol_motherlode</set>
+
+
+<!--	// SMX // Fortitude Tweaks -->
+
+		<!-- SIRILLION: WE SET EACH PERK TO HAVE THEIR NEW PARENT SINCE WE REMOVED THE SKILLS AND SET EACH PERK UP WITH THEIR CUSTOM ICON. -->
+
+		<set xpath="/progression/perks/perk[@name='perkMachineGunner']/@parent">attfortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkMachineGunner']/@icon">smx_ui_skill_symbol_machinegunner</set>
+
+		<set xpath="/progression/perks/perk[@name='perkBrawler']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkBrawler']/@icon">smx_ui_skill_symbol_brawler</set>
+
+		<set xpath="/progression/perks/perk[@name='perkFlurryOfFortitude']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkFlurryOfFortitude']/@icon">smx_ui_skill_symbol_fof</set>
+
+		<set xpath="/progression/perks/perk[@name='perkTheHuntsman']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkTheHuntsman']/@icon">smx_ui_skill_symbol_huntsman</set>
+
+		<set xpath="/progression/perks/perk[@name='perkWellInsulated']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkWellInsulated']/@icon">smx_ui_skill_symbol_wellinsulated</set>
+
+		<set xpath="/progression/perks/perk[@name='perkLivingOffTheLand']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkLivingOffTheLand']/@icon">smx_ui_skill_symbol_livingofftheland</set>
+
+		<set xpath="/progression/perks/perk[@name='perkPainTolerance']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkPainTolerance']/@icon">smx_ui_skill_symbol_paintolerance</set>
+
+		<set xpath="/progression/perks/perk[@name='perkHealingFactor']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkHealingFactor']/@icon">smx_ui_skill_symbol_healingfactor</set>
+
+		<set xpath="/progression/perks/perk[@name='perkSlowMetabolism']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkSlowMetabolism']/@icon">smx_ui_skills_symbol_slowmetabolism</set>
+
+		<set xpath="/progression/perks/perk[@name='perkRuleOneCardio']/@parent">attFortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkRuleOneCardio']/@icon">smx_ui_skill_symbol_fortitude</set>
+
+
+<!--	// SMX // Agility Tweaks -->
+
+		<!-- SIRILLION: WE SET EACH PERK TO HAVE THEIR NEW PARENT SINCE WE REMOVED THE SKILLS AND SET EACH PERK UP WITH THEIR CUSTOM ICON. -->
+
+		<set xpath="/progression/perks/perk[@name='perkGunslinger']/@parent">attagility</set>
+		<set xpath="/progression/perks/perk[@name='perkGunslinger']/@icon">smx_ui_skill_symbol_gunslinger</set>
+
+		<set xpath="/progression/perks/perk[@name='perkArchery']/@parent">attagility</set>
+		<set xpath="/progression/perks/perk[@name='perkArchery']/@icon">smx_ui_skill_symbol_archery</set>
+
+		<set xpath="/progression/perks/perk[@name='perkDeepCuts']/@parent">attagility</set>
+		<set xpath="/progression/perks/perk[@name='perkDeepCuts']/@icon">smx_ui_skill_symbol_deepcuts</set>
+
+		<set xpath="/progression/perks/perk[@name='perkFlurryOfAgility']/@parent">attagility</set>
+		<set xpath="/progression/perks/perk[@name='perkFlurryOfAgility']/@icon">smx_ui_skill_symbol_foa</set>
+
+		<set xpath="/progression/perks/perk[@name='perkRunAndGun']/@parent">attagility</set>
+		<set xpath="/progression/perks/perk[@name='perkRunAndGun']/@icon">smx_ui_skill_symbol_agility</set>
+
+		<set xpath="/progression/perks/perk[@name='perkMediumArmor']/@parent">attagility</set>
+		<set xpath="/progression/perks/perk[@name='perkMediumArmor']/@icon">smx_ui_skill_symbol_mediumarmor</set>
+
+		<set xpath="/progression/perks/perk[@name='perkParkour']/@parent">attAgility</set>
+		<set xpath="/progression/perks/perk[@name='perkParkour']/@icon">smx_ui_skill_symbol_parkour</set>
+
+		<set xpath="/progression/perks/perk[@name='perkHiddenStrike']/@parent">attAgility</set>
+		<set xpath="/progression/perks/perk[@name='perkHiddenStrike']/@icon">smx_ui_skill_symbol_hiddenstrike</set>
+
+		<set xpath="/progression/perks/perk[@name='perkFromTheShadows']/@parent">attAgility</set>
+		<set xpath="/progression/perks/perk[@name='perkFromTheShadows']/@icon">smx_ui_skill_symbol_fromtheshadows</set>
+
+
+<!--	// SMX // Intellect Tweaks -->
+
+		<!-- SIRILLION: WE SET EACH PERK TO HAVE THEIR NEW PARENT SINCE WE REMOVED THE SKILLS AND SET EACH PERK UP WITH THEIR CUSTOM ICON. -->
+
+		<set xpath="/progression/perks/perk[@name='perkTurrets']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkTurrets']/@icon">smx_ui_skill_symbol_turrets</set>
+
+		<set xpath="/progression/perks/perk[@name='perkElectrocutioner']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkElectrocutioner']/@icon">smx_ui_skill_symbol_electrocutioner</set>
+
+		<set xpath="/progression/perks/perk[@name='perkFlurryOfIntellect']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkFlurryOfIntellect']/@icon">smx_ui_skill_symbol_intellect</set>
+
+		<set xpath="/progression/perks/perk[@name='perkBetterBarter']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkBetterBarter']/@icon">smx_ui_skill_symbol_betterbarter</set>
+
+		<set xpath="/progression/perks/perk[@name='perkDaringAdventurer']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkDaringAdventurer']/@icon">smx_ui_skill_symbol_daringadventurer</set>
+
+		<set xpath="/progression/perks/perk[@name='perkCharismaticNature']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkCharismaticNature']/@icon">smx_ui_skill_symbol_charismaticnature</set>
+
+		<set xpath="/progression/perks/perk[@name='perkPhysician']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkPhysician']/@icon">smx_ui_skill_symbol_physician</set>
+
+		<set xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/@icon">smx_ui_skill_symbol_advancedengineering</set>
+
+		<set xpath="/progression/perks/perk[@name='perkGreaseMonkey']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkGreaseMonkey']/@icon">smx_ui_skill_symbol_greasemonkey</set>
+
+		<set xpath="/progression/perks/perk[@name='perkLockPicking']/@parent">attIntellect</set>
+		<set xpath="/progression/perks/perk[@name='perkLockPicking']/@icon">smx_ui_skill_symbol_lockpicking</set>
+
+
+<!--	// SMX // Skill Book Dummy Injection -->
+
+		<!-- SIRILLION: WE HAVE TO INJECT DUMMY BOOKS AS "FILLERS" TO FORCE THE VANILLA BOOKS TO SHOW UP IN THE WINDOW. DO NOT ASK WHY. -->
+
+		<insertBefore xpath="/progression/skills/book_group[@name='skillArtOfMining']">
+			<book_group name="skillBooksDummy" parent="attBooks" name_key="attBooksName" desc_key="attBooksDesc" long_desc_key="perkBookGroupLongDesc" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller01" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller02" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller03" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller04" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller05" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller06" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller07" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller08" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller09" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller10" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller11" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller12" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller13" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller14" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller15" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller16" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller17" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller18" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller19" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller20" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller21" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller22" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller23" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller24" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller25" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller26" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller27" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller28" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller29" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller30" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller31" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller32" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller33" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller34" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller35" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller36" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller37" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller38" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller39" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller40" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller41" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller42" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller43" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller44" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller45" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller46" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller47" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller48" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller49" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller50" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller51" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller52" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller53" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+			<book_group name="skillBooksDummyFiller54" parent="attBooks" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></book_group>
+		</insertBefore>
+
+
+<!--	// SMX // Skill Book Icon Swap -->
+
+		<!-- SIRILLION: WE SET EACH BOOK UP WITH THEIR ITEMICON EQUIVALENT INSTEAD OF USING THE VANILLA WHITE ICONS. -->
+
+		<set xpath="/progression/skills/book_group[@name='skillArtOfMining']/@icon">bookArtOfMiningLuckyStrike</set>
+		<set xpath="/progression/skills/book_group[@name='skillAutoWeapons']/@icon">bookAutoWeaponsDamage</set>
+		<set xpath="/progression/skills/book_group[@name='skillBatterUp']/@icon">bookBatterUpBigHits</set>
+		<set xpath="/progression/skills/book_group[@name='skillBarBrawling']/@icon">bookBarBrawling1BasicMoves</set>
+		<set xpath="/progression/skills/book_group[@name='skillFiremansAlmanac']/@icon">bookFiremansAlmanacHeat</set>
+		<set xpath="/progression/skills/book_group[@name='skillGreatHeist']/@icon">bookTheGreatHeistSafes</set>
+		<set xpath="/progression/skills/book_group[@name='skillHuntingJournal']/@icon">bookHuntingJournalBears</set>
+		<set xpath="/progression/skills/book_group[@name='skillLuckyLooter']/@icon">bookLuckyLooterDukes</set>
+		<set xpath="/progression/skills/book_group[@name='skillEnforcer']/@icon">bookEnforcerDamage</set>
+		<!--set xpath="/progression/skills/book_group[@name='skillNeedleAndThread']/@icon">bookNeedleAndThreadWinterWear</set-->
+		<set xpath="/progression/skills/book_group[@name='skillNightStalker']/@icon">bookNightStalkerStealthDamage</set>
+		<set xpath="/progression/skills/book_group[@name='skillPistolPete']/@icon">bookPistolPeteTakeAim</set>
+		<set xpath="/progression/skills/book_group[@name='skillArchery']/@icon">bookRangersArrowRecovery</set>
+		<set xpath="/progression/skills/book_group[@name='skillShotguns']/@icon">bookShotgunMessiahDamage</set>
+		<set xpath="/progression/skills/book_group[@name='skillSniper']/@icon">bookSniperDamage</set>
+		<set xpath="/progression/skills/book_group[@name='skillSpearHunter']/@icon">bookSpearHunter1Damage</set>
+		<set xpath="/progression/skills/book_group[@name='skillUrbanCombat']/@icon">bookUrbanCombatLanding</set>
+		<set xpath="/progression/skills/book_group[@name='skillTechJunkie']/@icon">bookTechJunkie1Damage</set>
+		<set xpath="/progression/skills/book_group[@name='skillWasteTreasures']/@icon">bookWasteTreasuresHoney</set>
+
+
+<!--	// SMX // Crafting Magazine Dummy Injection -->
+
+		<!-- SIRILLION: WE HAVE TO INJECT DUMMY MAGAZINES AS "FILLERS" TO FORCE THE VANILLA MAGAZINES TO SHOW UP IN THE WINDOW. DO NOT ASK WHY. -->
+
+		<insertBefore xpath="/progression/crafting_skills/crafting_skill[@name='craftingHarvestingTools']">
+			<crafting_skill name="skillMagsDummy" parent="attCrafting" name_key="attBooksName" desc_key="attBooksDesc" long_desc_key="perkBookGroupLongDesc" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller01" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller02" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller03" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller04" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller05" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller06" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller07" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller08" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller09" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller10" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller11" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller12" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller13" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller14" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller15" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller16" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller17" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller18" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller19" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller20" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller21" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller22" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller23" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller24" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller25" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller26" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller27" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller28" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller29" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller30" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller31" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller32" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller33" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller34" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller35" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller36" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller37" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller38" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller39" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller40" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller41" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller42" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller43" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller44" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller45" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller46" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller47" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller48" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller49" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller50" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller51" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller52" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller53" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller54" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller55" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller56" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller57" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller58" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller59" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller60" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller61" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller62" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller63" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller64" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller65" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller66" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller67" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller68" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller69" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller70" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller71" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller72" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+			<crafting_skill name="skillMagsDummyFiller73" parent="attCrafting" name_key="Books" desc_key="Books" long_desc_key="Books" icon="smxlib_ui_game_symbol_skillbook"><effect_group/></crafting_skill>
+		</insertBefore>
+
+
+<!--	// SMX // Crafting Magazine Icon Swap -->
+
+		<!-- SIRILLION: WE SET EACH MAGAZINE UP WITH THEIR ITEMICON EQUIVALENT INSTEAD OF USING THE VANILLA WHITE ICONS. -->
+
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingHarvestingTools']/@icon">bookToolsDigest</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingRepairTools']/@icon">bookHandyLand</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingSalvageTools']/@icon">bookScrapping4Fun</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingKnuckles']/@icon">bookFuriousFists</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingBlades']/@icon">bookKnifeGuy</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingClubs']/@icon">bookBigHitters</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingSledgehammers']/@icon">bookGetHammered</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingBows']/@icon">bookBowHunters</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingSpears']/@icon">bookSharpSticks</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingHandguns']/@icon">bookHandgunMagazine</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/@icon">bookShotgunWeekly</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingRifles']/@icon">bookRifleWorld</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingMachineGuns']/@icon">bookTacticalWarfare</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/@icon">bookExplosiveMagazine</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingRobotics']/@icon">bookTechPlanet</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingArmor']/@icon">bookArmoredUp</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingMedical']/@icon">bookMedicalJournal</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/@icon">bookHomeCookingWeekly</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingSeeds']/@icon">bookSouthernFarming</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingElectrician']/@icon">bookWiring101</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingTraps']/@icon">bookElectricalTraps</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/@icon">bookForgeAhead</set>
+		<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingVehicles']/@icon">bookVehicleAdventures</set>
+
+</SMXui>

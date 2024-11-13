@@ -1,0 +1,51 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,spanish,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese
+
+smxuiOptionalDownloads,UI,Menu,x,,Optionals,,,,,
+smxuiOptionalDownloadsTooltip,UI,Menu,x,,Contains optional UI elements for SMXui.,,,,,
+smxuiSettingOptionals,UI,Menu,x,,SMXui Optionals,,,,,
+smxuiSettingOptionalsTooltip,UI,Menu,x,,Turns optional UI elements on/off for SMXui.,,,,,
+smxuiSettingThirdForgeSlot,UI,Menu,x,,Third Forge Slot,,,,,
+smxuiSettingThirdForgeSlotTooltip,UI,Menu,x,,Turns the Third Forge Slot on/off for SMXui.\n\nPress F1 for console and run xui reload to activate.,,,,,
+smxuiSettingBigBags,UI,Menu,x,,SMXui Big Bag Mods,,,,,
+smxuiSettingBigBagsTooltip,UI,Menu,x,,Turns optional Big Bag Mods on/off for SMXui.,,,,,
+smxuiSettingBigBag100,UI,Menu,x,,100 Slot Backpack,,,,,
+smxuiSettingBigBag100Tooltip,UI,Menu,x,,Turns the 100 Slot Backpack on/off for SMXui.\n\nYou can only have one Big Bag Mod active.\nPick one and stick with it!\n\nRequires restarting the game.,,,,,
+smxuiSettingBigBag200,UI,Menu,x,,200 Slot Backpack,,,,,
+smxuiSettingBigBag200Tooltip,UI,Menu,x,,Turns the 200 Slot Backpack on/off for SMXui.\n\nYou can only have one Big Bag Mod active.\nPick one and stick with it!\n\nRequires restarting the game.,,,,,
+smxuiSettingBigBag300,UI,Menu,x,,300 Slot Backpack,,,,,
+smxuiSettingBigBag300Tooltip,UI,Menu,x,,Turns the 300 Slot Backpack on/off for SMXui.\n\nYou can only have one Big Bag Mod active.\nPick one and stick with it!\n\nRequires restarting the game.,,,,,
+smxuiSettingBigBag400,UI,Menu,x,,400 Slot Backpack,,,,,
+smxuiSettingBigBag400Tooltip,UI,Menu,x,,Turns the 400 Slot Backpack on/off for SMXui.\n\nYou can only have one Big Bag Mod active.\nPick one and stick with it!\n\nRequires restarting the game.,,,,,
+
+attSkillsName,progression,Attribute,,,Skill Distribution,,,,,,,,,,,,,,
+attSkillsDesc,progression,Attribute,,,Hi survivor!\n\nWelcome to the Skill Distribution window! From here you will learn to distribute your hard earned skill points so that you can progress the apocalypse in style! And who knows... you might just survive this thing!\n\n
+
+attBooksName,progression,Attribute,,,Books & Magazines,,,,,,,,,,,,,,
+attBooksDesc,progression,Attribute,,,In the old world before the ... 'incident'. Experts in their field would create books and manuals or other instructions that could be used to study and gain greater insight into the fields in question. Now a days these books are considered a rare commodity.
+
+attCraftingName,progression,Attribute,,,Crafting Magazines,,,,,,,,,,,,,,
+
+TwitchInfo_ActionDisableAction,xui,Menu,,,Disable,,,,,,,,,,,,,,
+TwitchInfo_ActionEnableAction,xui,Menu,,,Enable,,,,,,,,,,,,,,
+lblLevel,UI,Tooltip,,,{0},,{0},{0},{0},{0},{0},{0},{0},{0},{0},{0},{0},{0},{0}
+
+attAttributeTitle,progression,Attribute,,,Attribute,,Attribut,Atributo,Attribut ,Attributo,特性,속성,Atrybut,Atributo,Атрибут,Nitelik,属性,屬性
+
+attPerceptionName,progression,Attribute,,,Perception,,Wahrnehmung,Percepción,Perception,Percezione,知覚,인지력,Percepcja,Percepção,Восприятие,Algı,感知,感知
+attStrengthName,progression,Attribute,,,Strength,,Stärke,Fuerza,Force,Forza,強さ,힘,Siła,Força,Сила,Kuvvet,力量,力量
+attFortitudeName,progression,Attribute,,,Fortitude,,Standhaftigkeit,Fortaleza,Courage,Resilienza,忍耐,불굴의 정신,Hart,Robustez,Стойкость,Dayanma,强健,堅韌
+attAgilityName,progression,Attribute,,,Agility,,Beweglichkeit,Agilidad,Agilité,Agilità,素早さ,민첩성,Zwinność,Agilidade,Ловкость,Atiklik,敏捷,敏捷性
+attIntellectName,progression,Attribute,,,Intellect,,Intelligenz,Intelecto,Intelligence,Intelletto,知能,지능,Intelekt,Intelecto,Интеллект,Zekâ,智慧,智力
+
+modDyeBlack,item_modifiers,mod,,,Black,,Schwarz,Negro,noire,Nero,黒,검정색,Czarny,Preta,Черный,Siyah,黑色,黑色
+modDyeBlue,item_modifiers,mod,,,Blue,,Blau,Azul,bleue,Blu,青,파란색,Niebieski,Azul,Синий,Mavi,蓝色,藍色
+modDyeBrown,item_modifiers,mod,,,Brown,,Braun,Marrón,marron,Marrone,茶,갈색,Brązowy,Marrom,Коричневый,Kahverengi,棕色,棕色
+modDyeGreen,item_modifiers,mod,,,Green,,Grün,Verde,verte,Verde,緑,초록색,Zielony,Verde,Зеленый,Yeşil,绿色,綠色
+modDyeOrange,item_modifiers,mod,,,Orange,,Orange,Naranja,orange,Arancione,橙,주황색,Pomarańczowy,Laranja,Оранжевый,Turuncu,橙色,橙色
+modDyePink,item_modifiers,mod,,,Pink,,Rosa,Rosa,rose,Rosa,ピンク,분홍색,Róż,Rosa,Розовый,Pembe,粉,粉
+modDyePurple,item_modifiers,mod,,,Purple,,Lila,Lila,violet,Viola,紫,보라색,Fiolet,Roxo,Фиолетовый,Mor,紫,紫
+modDyeRed,item_modifiers,mod,,,Red,,Rot,Rojo,rouge,Rosso,赤,빨간색,Czerwone,Vermelho,Красный,Kırmızı,红,紅
+modDyeWhite,item_modifiers,mod,,,Solvent,,Flüssig,Disolvente,solvant,Solvente,溶剤,하얀색,Rozpuszczalnik,Solvente,Растворитель,Çözücü,溶剂,溶劑
+modDyeYellow,item_modifiers,mod,,,Yellow,,Gelb,Amarillo,jaune,Giallo,黄,노란색,Żółty,Amarelo,Желтый,Sarı,黄,黃
+
+statEntityDamageRanged,ui_display,Item stat,,,Damage,,Schaden,Daño,Dommage,Danno,ダメージ,손상,Szkoda,Dano,Повреждать,Zarar,损害,損害,Daño

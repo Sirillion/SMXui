@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<xml>
+	<Name value="zSMXui" />
+	<DisplayName value="SMXui" />
+	<Description value="A UI conversion modlet for 7 Days To Die." />
+	<Author value="Sirillion" />
+	<Version value="1.1.14.1" />
+	<Website value="http://www.nexusmods.com/7daystodie/mods/22/?" />
+	<Icon value="Gears/smx_gears_icon.png" />
+	<Banner value="Gears/smx_gears_banner.png" />
+</xml>

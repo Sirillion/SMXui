@@ -1,7 +1,0 @@
-<SMXui name="loot.xml">
-
-<!--	// SMX // Player Dropped Backpack Size Adaptation -->
-
-		<set xpath="/lootcontainers/lootcontainer[@name='playerBackpack']/@size">8,9</set>
-
-</SMXui>
