@@ -1,30 +1,5 @@
 Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,spanish,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese
 
-smxuiOptionalDownloads,UI,Menu,x,,Optionals,,,,,
-smxuiOptionalDownloadsTooltip,UI,Menu,x,,Contains optional UI elements for SMXui.,,,,,
-smxuiSettingOptionals,UI,Menu,x,,SMXui Optionals,,,,,
-smxuiSettingOptionalsTooltip,UI,Menu,x,,Turns optional UI elements on/off for SMXui.,,,,,
-smxuiSettingThirdForgeSlot,UI,Menu,x,,Third Forge Slot,,,,,
-smxuiSettingThirdForgeSlotTooltip,UI,Menu,x,,Turns the Third Forge Slot on/off for SMXui.\n\nPress F1 for console and run xui reload to activate.,,,,,
-smxuiSettingBigBags,UI,Menu,x,,SMXui Big Bag Mods,,,,,
-smxuiSettingBigBagsTooltip,UI,Menu,x,,Turns optional Big Bag Mods on/off for SMXui.,,,,,
-smxuiSettingBigBag100,UI,Menu,x,,100 Slot Backpack,,,,,
-smxuiSettingBigBag100Tooltip,UI,Menu,x,,Turns the 100 Slot Backpack on/off for SMXui.\n\nYou can only have one Big Bag Mod active.\nPick one and stick with it!\n\nRequires restarting the game.,,,,,
-smxuiSettingBigBag200,UI,Menu,x,,200 Slot Backpack,,,,,
-smxuiSettingBigBag200Tooltip,UI,Menu,x,,Turns the 200 Slot Backpack on/off for SMXui.\n\nYou can only have one Big Bag Mod active.\nPick one and stick with it!\n\nRequires restarting the game.,,,,,
-smxuiSettingBigBag300,UI,Menu,x,,300 Slot Backpack,,,,,
-smxuiSettingBigBag300Tooltip,UI,Menu,x,,Turns the 300 Slot Backpack on/off for SMXui.\n\nYou can only have one Big Bag Mod active.\nPick one and stick with it!\n\nRequires restarting the game.,,,,,
-smxuiSettingBigBag400,UI,Menu,x,,400 Slot Backpack,,,,,
-smxuiSettingBigBag400Tooltip,UI,Menu,x,,Turns the 400 Slot Backpack on/off for SMXui.\n\nYou can only have one Big Bag Mod active.\nPick one and stick with it!\n\nRequires restarting the game.,,,,,
-
-attSkillsName,progression,Attribute,,,Skill Distribution,,,,,,,,,,,,,,
-attSkillsDesc,progression,Attribute,,,Hi survivor!\n\nWelcome to the Skill Distribution window! From here you will learn to distribute your hard earned skill points so that you can progress the apocalypse in style! And who knows... you might just survive this thing!\n\n
-
-attBooksName,progression,Attribute,,,Books & Magazines,,,,,,,,,,,,,,
-attBooksDesc,progression,Attribute,,,In the old world before the ... 'incident'. Experts in their field would create books and manuals or other instructions that could be used to study and gain greater insight into the fields in question. Now a days these books are considered a rare commodity.
-
-attCraftingName,progression,Attribute,,,Crafting Magazines,,,,,,,,,,,,,,
-
 TwitchInfo_ActionDisableAction,xui,Menu,,,Disable,,,,,,,,,,,,,,
 TwitchInfo_ActionEnableAction,xui,Menu,,,Enable,,,,,,,,,,,,,,
 lblLevel,UI,Tooltip,,,{0},,{0},{0},{0},{0},{0},{0},{0},{0},{0},{0},{0},{0},{0}
@@ -49,3 +24,9 @@ modDyeWhite,item_modifiers,mod,,,Solvent,,Flüssig,Disolvente,solvant,Solvente,�
 modDyeYellow,item_modifiers,mod,,,Yellow,,Gelb,Amarillo,jaune,Giallo,黄,노란색,Żółty,Amarelo,Желтый,Sarı,黄,黃
 
 statEntityDamageRanged,ui_display,Item stat,,,Damage,,Schaden,Daño,Dommage,Danno,ダメージ,손상,Szkoda,Dano,Повреждать,Zarar,损害,損害,Daño
+
+>>>> COMPATIBILITY <<<<
+
+attperfectionName,progression,Attribute,,Perfection,Совершенствование
+attLegendPerksName,progression,Attribute,,,Legend,,,,,,レジェンド,,,,Легенда,,传奇,傳奇
+
