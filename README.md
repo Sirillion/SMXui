@@ -1,5 +1,5 @@
 # SMXui - THE UI REPLACEMENT MODLET
-> Verified to work with: 1.1B14
+> Verified to work with: 1.2B27
 
 > Dependencies: [SMXcore](https://github.com/Sirillion/SMXcore)
 
@@ -13,15 +13,15 @@ With the release of A21 SMXhud has now evolved into the world of Harmony. This m
 SMXui is an extension of SMXhud and SMXmenu and will bring the art style over to the rest of the user interface. We've tried to maintain as close a relation to the vanilla interface as possible but we have also granted ourselves some artistic freedom when it comes to some areas. It deviates from vanilla with the fifth crafting queue slot which I added to make it fit the overall design better. The other changes we made are all optional like the third forge slot, the target health bar and the big bag conversion modlets for those that want a bit bigger bags.
 
 
-<p align="center"><img src="https://7dtd-community.s3.us-east-2.amazonaws.com/monthly_2022_01/A20.0_2022-01-16_23-35-03.jpg.091f467cd630f28b8408b22ec4b74131.jpg" width="1080" title="SMXui - Forge Workstation - A20">
+<p align="center"><img src="https://i.imgur.com/ZIDAtuv.jpeg" width="1080" title="SMXui - Forge Workstation - v1.0">
 </p>
-<p align="center"><img src="https://7dtd-community.s3.us-east-2.amazonaws.com/monthly_2022_01/A20.0_2022-01-16_23-48-50.jpg.d9a94e4925fc6a7e809fbd66642a3cc6.jpg" width="1080" title="SMXui - Trader Conversation Window - A20">
+<p align="center"><img src="https://i.imgur.com/sKUiFHV.jpeg" width="1080" title="SMXui - NPC Conversation Window - v1.0">
 </p>
-<p align="center"><img src="https://7dtd-community.s3.us-east-2.amazonaws.com/monthly_2022_01/A20.0_2022-01-16_23-35-57.jpg.441b7e0b20a8b1964fd15546ca9c31ce.jpg" width="1080" title="SMXui - Character Window - A20">
+<p align="center"><img src="https://i.imgur.com/gDBaAx7.jpeg" width="1080" title="SMXui - Character Window - v1.0">
 </p>
-<p align="center"><img src="https://7dtd-community.s3.us-east-2.amazonaws.com/monthly_2022_01/A20.0_2022-01-16_23-35-18.jpg.51f0aaa2e1809e4e67fe3f0647768357.jpg" width="1080" title="SMXui - Vehicle Window - A20">
+<p align="center"><img src="https://i.imgur.com/YnAZqGb.jpeg" width="1080" title="SMXui - Skills Window - v1.0">
 </p>
-<p align="center"><img src="https://7dtd-community.s3.us-east-2.amazonaws.com/monthly_2022_02/A20.3_2022-02-28_19-38-23.jpg.a055e75b74b79d4bacdea88247289f53.jpg" width="1080" title="SMXui - Map Windows - A20">
+<p align="center"><img src="https://i.imgur.com/2qubNDW.jpeg" width="1080" title="SMXui - ItemInfo Window - v1.0">
 </p>
 
 ## **WELCOME**
