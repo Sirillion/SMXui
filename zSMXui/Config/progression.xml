@@ -73,7 +73,7 @@
 					<effect_description level="2" desc_key="perkMachineGunnerRank2Desc" long_desc_key="perkMachineGunnerRank2LongDesc"/>
 					<effect_description level="3" desc_key="perkMachineGunnerRank3Desc" long_desc_key="perkMachineGunnerRank3LongDesc"/>
 					<effect_description level="4" desc_key="perkMachineGunnerRank4Desc" long_desc_key="perkMachineGunnerRank4LongDesc"/>
-					<effect_description level="5" desc_key="perkMachineGunnerRank5Desc" long_desc_key="perkMachineGunnerRank5LongDesc" />
+					<effect_description level="5" desc_key="perkMachineGunnerRank5Desc" long_desc_key="perkMachineGunnerRank5LongDesc"/>
 				</effect_group>
 			</perk>
 		</insertBefore>
@@ -270,7 +270,7 @@
 		<set xpath="/progression/perks/perk[@name='perkBrawler']/@icon">smx_ui_skill_symbol_brawler</set>
 		<set xpath="/progression/perks/perk[@name='perkFlurryOfFortitude']/@icon">smx_ui_skill_symbol_fof</set>
 		<set xpath="/progression/perks/perk[@name='perkTheHuntsman']/@icon">smx_ui_skill_symbol_huntsman</set>
-		<set xpath="/progression/perks/perk[@name='perkWellInsulated']/@icon">smx_ui_skill_symbol_wellinsulated</set>
+		<!--set xpath="/progression/perks/perk[@name='perkWellInsulated']/@icon">smx_ui_skill_symbol_wellinsulated</set-->
 		<set xpath="/progression/perks/perk[@name='perkLivingOffTheLand']/@icon">smx_ui_skill_symbol_livingofftheland</set>
 		<set xpath="/progression/perks/perk[@name='perkPainTolerance']/@icon">smx_ui_skill_symbol_paintolerance</set>
 		<set xpath="/progression/perks/perk[@name='perkHealingFactor']/@icon">smx_ui_skill_symbol_healingfactor</set>
@@ -327,6 +327,7 @@
 		<set xpath="/progression/skills/book_group[@name='skillPistolPete']/@icon">bookPistolPeteTakeAim</set>
 		<set xpath="/progression/skills/book_group[@name='skillArchery']/@icon">bookRangersArrowRecovery</set>
 		<set xpath="/progression/skills/book_group[@name='skillShotguns']/@icon">bookShotgunMessiahDamage</set>
+		<set xpath="/progression/skills/book_group[@name='skillSledgeSaga']/@icon">bookSledgeSagaKnockdown</set>
 		<set xpath="/progression/skills/book_group[@name='skillSniper']/@icon">bookSniperDamage</set>
 		<set xpath="/progression/skills/book_group[@name='skillSpearHunter']/@icon">bookSpearHunter1Damage</set>
 		<set xpath="/progression/skills/book_group[@name='skillUrbanCombat']/@icon">bookUrbanCombatLanding</set>

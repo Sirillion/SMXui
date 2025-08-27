@@ -5,13 +5,17 @@
       <Category name="Optionals" displayKey="smxuiSettingOptionals" tooltipKey="smxuiSettingOptionalsTooltip">
         <Switch name="ThirdForgeSlot" displayKey="smxuiSettingThirdForgeSlot" tooltipKey="smxuiSettingThirdForgeSlotTooltip" value="On" defaultValue="Off" leftValue="Off" rightValue="On" />
       </Category>
-      <Category name="BigBags" displayKey="smxuiSettingBigBags" tooltipKey="smxuiSettingBigBagsTooltip">
-        <Switch name="BigBag100" displayKey="smxuiSettingBigBag100" tooltipKey="smxuiSettingBigBag100Tooltip" value="On" defaultValue="Off" leftValue="Off" rightValue="On" />
-        <Switch name="BigBag200" displayKey="smxuiSettingBigBag200" tooltipKey="smxuiSettingBigBag200Tooltip" value="Off" defaultValue="Off" leftValue="Off" rightValue="On" />
-        <Switch name="BigBag300" displayKey="smxuiSettingBigBag300" tooltipKey="smxuiSettingBigBag300Tooltip" value="Off" defaultValue="Off" leftValue="Off" rightValue="On" />
-        <Switch name="BigBag400" displayKey="smxuiSettingBigBag400" tooltipKey="smxuiSettingBigBag400Tooltip" value="Off" defaultValue="Off" leftValue="Off" rightValue="On" />
-      </Category>
     </Tab>
   </Global>
-  <World />
+  <World>
+      <Category name="BigBags" displayKey="smxuiSettingBigBags" tooltipKey="smxuiSettingBigBagsTooltip">
+        <!--Switch name="BigBag100" displayKey="smxuiSettingBigBag100" tooltipKey="smxuiSettingBigBag100Tooltip" value="On" defaultValue="Off" leftValue="Off" rightValue="On" />
+        <Switch name="BigBag200" displayKey="smxuiSettingBigBag200" tooltipKey="smxuiSettingBigBag200Tooltip" value="Off" defaultValue="Off" leftValue="Off" rightValue="On" />
+        <Switch name="BigBag300" displayKey="smxuiSettingBigBag300" tooltipKey="smxuiSettingBigBag300Tooltip" value="Off" defaultValue="Off" leftValue="Off" rightValue="On" />
+        <Switch name="BigBag400" displayKey="smxuiSettingBigBag400" tooltipKey="smxuiSettingBigBag400Tooltip" value="Off" defaultValue="Off" leftValue="Off" rightValue="On" /-->
+	    <Selector name="BigBags" displayKey="smxuiSettingBigBags" tooltipKey="smxuiSettingBigBagsTooltip" value="Vanilla" defaultValue="Vanilla" wrap="false">
+          <Property type="arrayValues" allowedValues="Vanilla,100,200,300,400"/>
+        </Selector>
+      </Category>
+  </World>
 </ModSettings>
