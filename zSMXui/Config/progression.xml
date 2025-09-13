@@ -239,10 +239,10 @@
 		<set xpath="/progression/perks/perk[@name='perkDemolitionsExpert']/@icon">smx_ui_skill_symbol_demolitionsexpert</set>
 		<set xpath="/progression/perks/perk[@name='perkJavelinMaster']/@icon">smx_ui_skill_symbol_javelinmaster</set>
 		<set xpath="/progression/perks/perk[@name='perkFlurryOfPerception']/@icon">smx_ui_skill_symbol_fop</set>
-		<set xpath="/progression/perks/perk[@name='perkInfiltrator']/@icon">smx_ui_skill_symbol_perception</set>
+		<!--set xpath="/progression/perks/perk[@name='perkInfiltrator']/@icon">smx_ui_skill_symbol_perception</set-->
 		<set xpath="/progression/perks/perk[@name='perkAnimalTracker']/@icon">smx_ui_skill_symbol_animaltracker</set>
 		<set xpath="/progression/perks/perk[@name='perkPenetrator']/@icon">smx_ui_skill_symbol_penetrator</set>
-		<set xpath="/progression/perks/perk[@name='perkLuckyLooter']/@icon">smx_ui_skill_symbol_luckylooter</set>
+		<set xpath="/progression/perks/perk[@name='perkPerceptionMastery']/@icon">smx_ui_skill_symbol_perception</set>
 		<set xpath="/progression/perks/perk[@name='perkTreasureHunter']/@icon">smx_ui_skill_symbol_treasurehunter</set>
 		<set xpath="/progression/perks/perk[@name='perkSalvageOperations']/@icon">smx_ui_skill_symbol_salvageoperations</set>
 
@@ -255,9 +255,8 @@
 		<set xpath="/progression/perks/perk[@name='perkPummelPete']/@icon">smx_ui_skill_symbol_pummelpete</set>
 		<set xpath="/progression/perks/perk[@name='perkSkullCrusher']/@icon">smx_ui_skill_symbol_skullcrusher</set>
 		<set xpath="/progression/perks/perk[@name='perkFlurryOfStrength']/@icon">smx_ui_skill_symbol_fos</set>
-		<set xpath="/progression/perks/perk[@name='perkHeavyArmor']/@icon">smx_ui_skill_symbol_heavyarmor</set>
-		<set xpath="/progression/perks/perk[@name='perkPackMule']/@icon">smx_ui_skill_symbol_strength</set>
-		<set xpath="/progression/perks/perk[@name='perkMasterChef']/@icon">smx_ui_skill_symbol_masterchef</set>
+		<set xpath="/progression/perks/perk[@name='perkPackMule']/@icon">ui_game_symbol_loot_sack</set>
+		<set xpath="/progression/perks/perk[@name='perkStrengthMastery']/@icon">smx_ui_skill_symbol_strength</set>
 		<set xpath="/progression/perks/perk[@name='perkMiner69r']/@icon">smx_ui_skill_symbol_miner69er</set>
 		<set xpath="/progression/perks/perk[@name='perkMotherLode']/@icon">smx_ui_skill_symbol_motherlode</set>
 
@@ -271,11 +270,11 @@
 		<set xpath="/progression/perks/perk[@name='perkFlurryOfFortitude']/@icon">smx_ui_skill_symbol_fof</set>
 		<set xpath="/progression/perks/perk[@name='perkTheHuntsman']/@icon">smx_ui_skill_symbol_huntsman</set>
 		<!--set xpath="/progression/perks/perk[@name='perkWellInsulated']/@icon">smx_ui_skill_symbol_wellinsulated</set-->
-		<set xpath="/progression/perks/perk[@name='perkLivingOffTheLand']/@icon">smx_ui_skill_symbol_livingofftheland</set>
 		<set xpath="/progression/perks/perk[@name='perkPainTolerance']/@icon">smx_ui_skill_symbol_paintolerance</set>
+		<set xpath="/progression/perks/perk[@name='perkFortitudeMastery']/@icon">smx_ui_skill_symbol_fortitude</set>
 		<set xpath="/progression/perks/perk[@name='perkHealingFactor']/@icon">smx_ui_skill_symbol_healingfactor</set>
 		<set xpath="/progression/perks/perk[@name='perkSlowMetabolism']/@icon">smx_ui_skills_symbol_slowmetabolism</set>
-		<set xpath="/progression/perks/perk[@name='perkRuleOneCardio']/@icon">smx_ui_skill_symbol_fortitude</set>
+		<set xpath="/progression/perks/perk[@name='perkRuleOneCardio']/@icon">ui_game_symbol_cardio</set>
 
 
 <!--	// SMX // Agility Tweaks -->
@@ -286,9 +285,10 @@
 		<set xpath="/progression/perks/perk[@name='perkArchery']/@icon">smx_ui_skill_symbol_archery</set>
 		<set xpath="/progression/perks/perk[@name='perkDeepCuts']/@icon">smx_ui_skill_symbol_deepcuts</set>
 		<set xpath="/progression/perks/perk[@name='perkFlurryOfAgility']/@icon">smx_ui_skill_symbol_foa</set>
-		<set xpath="/progression/perks/perk[@name='perkRunAndGun']/@icon">smx_ui_skill_symbol_agility</set>
-		<set xpath="/progression/perks/perk[@name='perkMediumArmor']/@icon">smx_ui_skill_symbol_mediumarmor</set>
+		<!--set xpath="/progression/perks/perk[@name='perkRunAndGun']/@icon">smx_ui_skill_symbol_agility</set-->
+		<set xpath="/progression/perks/perk[@name='perkHardTarget']/@icon">ui_game_symbol_marksmanship</set>
 		<set xpath="/progression/perks/perk[@name='perkParkour']/@icon">smx_ui_skill_symbol_parkour</set>
+		<set xpath="/progression/perks/perk[@name='perkAgilityMastery']/@icon">smx_ui_skill_symbol_agility</set>
 		<set xpath="/progression/perks/perk[@name='perkHiddenStrike']/@icon">smx_ui_skill_symbol_hiddenstrike</set>
 		<set xpath="/progression/perks/perk[@name='perkFromTheShadows']/@icon">smx_ui_skill_symbol_fromtheshadows</set>
 
@@ -299,14 +299,27 @@
 
 		<set xpath="/progression/perks/perk[@name='perkTurrets']/@icon">smx_ui_skill_symbol_turrets</set>
 		<set xpath="/progression/perks/perk[@name='perkElectrocutioner']/@icon">smx_ui_skill_symbol_electrocutioner</set>
-		<set xpath="/progression/perks/perk[@name='perkFlurryOfIntellect']/@icon">smx_ui_skill_symbol_intellect</set>
+		<set xpath="/progression/perks/perk[@name='perkFlurryOfIntellect']/@icon">ui_game_symbol_knunchuck</set>
 		<set xpath="/progression/perks/perk[@name='perkBetterBarter']/@icon">smx_ui_skill_symbol_betterbarter</set>
 		<set xpath="/progression/perks/perk[@name='perkDaringAdventurer']/@icon">smx_ui_skill_symbol_daringadventurer</set>
 		<set xpath="/progression/perks/perk[@name='perkCharismaticNature']/@icon">smx_ui_skill_symbol_charismaticnature</set>
 		<set xpath="/progression/perks/perk[@name='perkPhysician']/@icon">smx_ui_skill_symbol_physician</set>
 		<set xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/@icon">smx_ui_skill_symbol_advancedengineering</set>
 		<set xpath="/progression/perks/perk[@name='perkGreaseMonkey']/@icon">smx_ui_skill_symbol_greasemonkey</set>
+		<set xpath="/progression/perks/perk[@name='perkIntellectMastery']/@icon">smx_ui_skill_symbol_intellect</set>
+
+
+<!--	// SMX // General Tweaks -->
+
+		<!-- SIRILLION: WE SET NEW CUSTOM ICONS FOR THE GENERAL PERKS. -->
+
+		<set xpath="/progression/perks/perk[@name='perkLightArmor']/@icon">ui_game_symbol_light_armor</set>
+		<set xpath="/progression/perks/perk[@name='perkMediumArmor']/@icon">smx_ui_skill_symbol_mediumarmor</set>
+		<set xpath="/progression/perks/perk[@name='perkHeavyArmor']/@icon">smx_ui_skill_symbol_heavyarmor</set>
+		<set xpath="/progression/perks/perk[@name='perkMasterChef']/@icon">smx_ui_skill_symbol_masterchef</set>
+		<set xpath="/progression/perks/perk[@name='perkLivingOffTheLand']/@icon">smx_ui_skill_symbol_livingofftheland</set>
 		<set xpath="/progression/perks/perk[@name='perkLockPicking']/@icon">smx_ui_skill_symbol_lockpicking</set>
+		<set xpath="/progression/perks/perk[@name='perkLuckyLooter']/@icon">smx_ui_skill_symbol_luckylooter</set>
 
 
 <!--	// SMX // Skill Book Icon Swap -->
