@@ -1,5 +1,5 @@
 # SMXui - THE UI REPLACEMENT MODLET
-> Verified to work with: 2.3B9
+> Verified to work with: 2.5B23
 
 > Dependencies: [SMXcore](https://github.com/Sirillion/SMXcore)
 
@@ -13,7 +13,7 @@ With the release of A21 SMXhud has now evolved into the world of Harmony. This m
 SMXui is an extension of SMXhud and SMXmenu and will bring the art style over to the rest of the user interface. We've tried to maintain as close a relation to the vanilla interface as possible but we have also granted ourselves some artistic freedom when it comes to some areas. It deviates from vanilla with the fifth crafting queue slot which I added to make it fit the overall design better. The other changes we made are all optional like the third forge slot, the target health bar and the big bag conversion modlets for those that want a bit bigger bags.
 
 
-<p align="center"><img src="https://i.imgur.com/ZIDAtuv.jpeg" width="1080" title="SMXui - Forge Workstation - v1.0">
+<p align="center"><img src="https://imgur.com/pc8vJ12.jpg" width="1080" title="SMXui - Apiary Collector - v2.5">
 </p>
 <p align="center"><img src="https://i.imgur.com/sKUiFHV.jpeg" width="1080" title="SMXui - NPC Conversation Window - v1.0">
 </p>
@@ -26,7 +26,7 @@ SMXui is an extension of SMXhud and SMXmenu and will bring the art style over to
 
 ## **WELCOME**
 
-Welcome to the new and improved SMX series for 7 Days to Die - v2.3.
+Welcome to the new and improved SMX series for 7 Days to Die - v2.5.
 
 The goal with this mod is to give the entire 7 Days to Die user interface an extreme makeover an refashion it into how I believe the user interface for the game should be experienced. SMX consist of several modlets which can be broken down into three separate mods: SMXhud, SMXmenu and SMXui. These are all stand alone and can be used separately or, as is the intention, together with the other two and all three mods combined is what makes the SMX experience complete!
 

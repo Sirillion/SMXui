@@ -12,6 +12,9 @@
 	    <Selector name="BigBags" displayKey="smxuiSettingBigBags" tooltipKey="smxuiSettingBigBagsTooltip" value="Vanilla" defaultValue="Vanilla" wrap="false">
           <Property type="arrayValues" allowedValues="Vanilla,100,200,300,400"/>
         </Selector>
+	    <Selector name="BigContainers" displayKey="smxuiSettingBigContainers" tooltipKey="smxuiSettingBigContainersTooltip" value="Vanilla" defaultValue="Vanilla" wrap="false">
+          <Property type="arrayValues" allowedValues="Vanilla,Double,Triple"/>
+        </Selector>
       </Category>
   </World>
 </ModSettings>

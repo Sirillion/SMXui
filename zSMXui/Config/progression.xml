@@ -136,13 +136,13 @@
 					<requirement name="ItemHasTags" tags="perkGunslinger"/>
 						<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar=".GunslingerCombo" operation="add" value="1">
 							<requirement name="ProgressionLevel" progression_name="perkGunslinger" operation="GTE" value="3"/>
-							<requirement name="NotHasBuff" buff="buffPerkGunslingerBonus"/>
+							<requirement name="!HasBuff" buff="buffPerkGunslingerBonus"/>
 							<requirement name="IsAlive" target="other"/>
 						</triggered_effect>
 
 						<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffPerkGunslinger">
 							<requirement name="ProgressionLevel" progression_name="perkGunslinger" operation="GTE" value="3"/>
-							<requirement name="NotHasBuff" buff="buffPerkGunslingerBonus"/>
+							<requirement name="!HasBuff" buff="buffPerkGunslingerBonus"/>
 							<requirement name="IsAlive" target="other"/>
 						</triggered_effect>
 
