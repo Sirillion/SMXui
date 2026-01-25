@@ -1,5 +1,5 @@
 # SMXui - THE UI REPLACEMENT MODLET
-> Verified to work with: 2.5B23
+> Verified to work with: 2.5B27
 
 > Dependencies: [SMXcore](https://github.com/Sirillion/SMXcore)
 

@@ -30,3 +30,5 @@ statEntityDamageRanged,ui_display,Item stat,,,Damage,,Schaden,Daño,Dommage,Dann
 attperfectionName,progression,Attribute,,Perfection,Совершенствование
 attLegendPerksName,progression,Attribute,,,Legend,,,,,,レジェンド,,,,Легенда,,传奇,傳奇
 
+journalComplete,UI,Journal,,,Redeem,,Einlösen,Canjear,Valider,Riscatta,受け取り,교환,Odbierz,Resgatar,Завершить,Al,兑换,兌換
+journalTrack,UI,Journal,,,Track,,Verfolgen,Rastrear,Suivre,Traccia,追跡,추적,Śledź,Rastrear,Отследить,Takip Et,追踪,追蹤

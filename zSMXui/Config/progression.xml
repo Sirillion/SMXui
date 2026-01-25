@@ -255,7 +255,7 @@
 		<set xpath="/progression/perks/perk[@name='perkPummelPete']/@icon">smx_ui_skill_symbol_pummelpete</set>
 		<set xpath="/progression/perks/perk[@name='perkSkullCrusher']/@icon">smx_ui_skill_symbol_skullcrusher</set>
 		<set xpath="/progression/perks/perk[@name='perkFlurryOfStrength']/@icon">smx_ui_skill_symbol_fos</set>
-		<set xpath="/progression/perks/perk[@name='perkPackMule']/@icon">ui_game_symbol_loot_sack</set>
+		<set xpath="/progression/perks/perk[@name='perkPackMule']/@icon">smx_ui_skill_symbol_packmule</set>
 		<set xpath="/progression/perks/perk[@name='perkStrengthMastery']/@icon">smx_ui_skill_symbol_strength</set>
 		<set xpath="/progression/perks/perk[@name='perkMiner69r']/@icon">smx_ui_skill_symbol_miner69er</set>
 		<set xpath="/progression/perks/perk[@name='perkMotherLode']/@icon">smx_ui_skill_symbol_motherlode</set>
@@ -285,7 +285,7 @@
 		<set xpath="/progression/perks/perk[@name='perkArchery']/@icon">smx_ui_skill_symbol_archery</set>
 		<set xpath="/progression/perks/perk[@name='perkDeepCuts']/@icon">smx_ui_skill_symbol_deepcuts</set>
 		<set xpath="/progression/perks/perk[@name='perkFlurryOfAgility']/@icon">smx_ui_skill_symbol_foa</set>
-		<!--set xpath="/progression/perks/perk[@name='perkRunAndGun']/@icon">smx_ui_skill_symbol_agility</set-->
+		<set xpath="/progression/perks/perk[@name='perkRunAndGun']/@icon">smx_ui_skill_symbol_agility</set>
 		<set xpath="/progression/perks/perk[@name='perkHardTarget']/@icon">ui_game_symbol_marksmanship</set>
 		<set xpath="/progression/perks/perk[@name='perkParkour']/@icon">smx_ui_skill_symbol_parkour</set>
 		<set xpath="/progression/perks/perk[@name='perkAgilityMastery']/@icon">smx_ui_skill_symbol_agility</set>

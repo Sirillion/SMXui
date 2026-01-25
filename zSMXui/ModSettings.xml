@@ -3,18 +3,18 @@
   <Global>
     <Tab name="Optionals" displayKey="smxuiOptionalDownloads" tooltipKey="smxuiOptionalDownloadsTooltip">
       <Category name="Optionals" displayKey="smxuiSettingOptionals" tooltipKey="smxuiSettingOptionalsTooltip">
-        <Switch name="ThirdForgeSlot" displayKey="smxuiSettingThirdForgeSlot" tooltipKey="smxuiSettingThirdForgeSlotTooltip" value="On" defaultValue="Off" leftValue="Off" rightValue="On" />
+        <Switch name="ThirdForgeSlot" displayKey="smxuiSettingThirdForgeSlot" tooltipKey="smxuiSettingThirdForgeSlotTooltip" defaultValue="Off" leftValue="Off" rightValue="On" />
       </Category>
     </Tab>
   </Global>
   <World>
-      <Category name="BigBags" displayKey="smxuiSettingBigBags" tooltipKey="smxuiSettingBigBagsTooltip">
-	    <Selector name="BigBags" displayKey="smxuiSettingBigBags" tooltipKey="smxuiSettingBigBagsTooltip" value="Vanilla" defaultValue="Vanilla" wrap="false">
-          <Property type="arrayValues" allowedValues="Vanilla,100,200,300,400"/>
-        </Selector>
-	    <Selector name="BigContainers" displayKey="smxuiSettingBigContainers" tooltipKey="smxuiSettingBigContainersTooltip" value="Vanilla" defaultValue="Vanilla" wrap="false">
-          <Property type="arrayValues" allowedValues="Vanilla,Double,Triple"/>
-        </Selector>
-      </Category>
+    <Category name="BigBags" displayKey="smxuiSettingBigBags" tooltipKey="smxuiSettingBigBagsTooltip">
+      <Selector name="BigBags" displayKey="smxuiSettingBigBags" tooltipKey="smxuiSettingBigBagsTooltip" defaultValue="Vanilla">
+        <Property type="arrayValues" allowedValues="Vanilla,100,200,300,400" />
+      </Selector>
+      <Selector name="BigContainers" displayKey="smxuiSettingBigContainers" tooltipKey="smxuiSettingBigContainersTooltip" defaultValue="Vanilla">
+        <Property type="arrayValues" allowedValues="Vanilla,Double,Triple" />
+      </Selector>
+    </Category>
   </World>
 </ModSettings>
